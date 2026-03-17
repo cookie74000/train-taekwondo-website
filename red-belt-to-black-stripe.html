@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Tuition — Train Taekwondo Schools</title>
-    <meta name="description" content="Book a 30-minute online private coaching session with Mr Gavin Cook. AI-powered progress report included. Perfect for grading and competition preparation.">
-    <link rel="stylesheet" href="shared.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Belt to Black Stripe — 2nd Kup Grading | Train Taekwondo Schools</title>
+  <meta name="description" content="Your complete interactive pre-grading checklist for 2nd Kup (Red Belt to Black Stripe) TAGB (ITF) Taekwondo. Tick off every practical item before grading day.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="shared.css">
 <style>
 /* ===== TRAIN TAEKWONDO SCHOOLS — SHARED STYLES ===== */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
@@ -599,283 +600,679 @@ img { max-width: 100%; display: block; }
   .hero-trust { gap: 20px; }
 }
 
+</style><style>
+  /* ── Colour palette ──
+     Black:       #111111
+     Dark gold:   #b8860b
+     Gold:        #d4a017
+     Bright gold: #f0c040
+     Light gold:  #fdf3d0
+     Off-white:   #f9f6ee
+  */
+
+  .ttk-wrap {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Hero banner ── */
+  .ttk-hero {
+    background: linear-gradient(135deg, #111111 0%, #1c1c1c 60%, #2a2000 100%);
+    border-radius: 12px;
+    padding: 28px 24px 22px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #b8860b;
+  }
+  .ttk-hero .belt-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #d4a017 0%, #f0c040 100%);
+    color: #111111;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .ttk-hero h1 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: #f0c040;
+  }
+  .ttk-hero .subtitle {
+    font-size: 0.95rem;
+    color: #c8a84b;
+    margin: 0;
+  }
+
+  /* ── Welcome card ── */
+  .ttk-card {
+    background: #f9f6ee;
+    border-left: 5px solid #d4a017;
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .ttk-card p { margin: 0 0 10px; font-size: 0.95rem; }
+  .ttk-card p:last-child { margin-bottom: 0; }
+
+  /* ── Section headings ── */
+  .ttk-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 28px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d4a017;
+  }
+  .ttk-section-title .icon {
+    background: #111111;
+    color: #f0c040;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Resource buttons ── */
+  .ttk-resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .ttk-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    border: 2px solid #b8860b;
+    border-radius: 9px;
+    padding: 12px 14px;
+    text-decoration: none !important;
+    color: #111111 !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  .ttk-btn:hover { background: #111111; color: #f0c040 !important; border-color: #d4a017; }
+  .ttk-btn .btn-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .ttk-btn.full-width { grid-column: 1 / -1; }
+
+  /* ── Progress bar ── */
+  .ttk-progress-wrap {
+    background: #f9f6ee;
+    border: 1px solid #e0c870;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+  .ttk-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 8px;
+  }
+  .ttk-progress-bar-bg {
+    background: #e8ddb0;
+    border-radius: 6px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .ttk-progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #b8860b, #f0c040);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── Checklist ── */
+  .ttk-checklist-group {
+    margin-bottom: 22px;
+  }
+  .ttk-group-title {
+    background: #111111;
+    color: #f0c040;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 7px 7px 0 0;
+    margin-bottom: 0;
+    border: 2px solid #b8860b;
+    border-bottom: none;
+  }
+  .ttk-checklist {
+    border: 2px solid #b8860b;
+    border-top: none;
+    border-radius: 0 0 9px 9px;
+    overflow: hidden;
+  }
+  .ttk-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 14px;
+    border-bottom: 1px solid #f0e6b0;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+    background: #fff;
+  }
+  .ttk-check-item:last-child { border-bottom: none; }
+  .ttk-check-item:hover { background: #fdf3d0; }
+  .ttk-check-item.checked { background: #fdf8e1; }
+  .ttk-check-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    accent-color: #b8860b;
+    cursor: pointer;
+  }
+  .ttk-check-item .item-text {
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    flex: 1;
+  }
+  .ttk-check-item.checked .item-text {
+    color: #7a6000;
+    text-decoration: line-through;
+    text-decoration-color: #d4a017;
+  }
+  .ttk-check-item .item-korean {
+    font-size: 0.78rem;
+    color: #8a7030;
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── Korean terms table ── */
+  .ttk-terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+  .ttk-terms-table thead tr {
+    background: #111111;
+    color: #f0c040;
+  }
+  .ttk-terms-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .ttk-terms-table tbody tr:nth-child(even) { background: #fdf8e1; }
+  .ttk-terms-table tbody tr:hover { background: #fdf3d0; }
+  .ttk-terms-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e8ddb0;
+    vertical-align: top;
+  }
+  .ttk-terms-table td:first-child { font-weight: 600; color: #111111; }
+  .ttk-terms-table td:last-child { color: #5a4a00; font-style: italic; }
+
+  /* ── Tenets ── */
+  .ttk-tenets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .ttk-tenet {
+    background: linear-gradient(135deg, #111111, #2a2000);
+    color: #f0c040;
+    border: 1px solid #b8860b;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Completion banner ── */
+  .ttk-complete-banner {
+    display: none;
+    background: linear-gradient(135deg, #111111, #2a2000);
+    color: #f0c040;
+    border: 2px solid #d4a017;
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  /* ── Save / Reset buttons ── */
+  .ttk-btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .ttk-save-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #b8860b, #d4a017);
+    border: none;
+    border-radius: 9px;
+    color: #111111;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .ttk-save-btn:hover { opacity: 0.85; }
+  .ttk-save-btn.saved {
+    background: linear-gradient(135deg, #2a5a1a, #3a7a22);
+    color: #fff;
+  }
+  .ttk-reset-btn {
+    flex: 1;
+    background: none;
+    border: 1px solid #d4a017;
+    border-radius: 9px;
+    color: #8a7030;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 11px 14px;
+    cursor: pointer;
+  }
+  .ttk-reset-btn:hover { background: #fdf3d0; }
+
+  /* ── Ready-to-grade button ── */
+  .ttk-ready-wrap {
+    margin-top: 18px;
+    border: 2px dashed #c8a840;
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-align: center;
+    background: #f9f6ee;
+    transition: border-color 0.4s, background 0.4s;
+  }
+  .ttk-ready-wrap.active {
+    border: 2px solid #d4a017;
+    background: linear-gradient(135deg, #111111, #2a2000);
+    animation: ttk-glow 1.5s ease-in-out 1;
+  }
+  @keyframes ttk-glow {
+    0%   { box-shadow: 0 0 0px #d4a017; }
+    50%  { box-shadow: 0 0 22px #f0c040; }
+    100% { box-shadow: 0 0 6px #d4a017; }
+  }
+  .ttk-ready-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #b0a070;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    transition: color 0.4s;
+  }
+  .ttk-ready-wrap.active .ttk-ready-label {
+    color: #f0c040;
+  }
+  .ttk-ready-btn {
+    display: inline-block;
+    width: 100%;
+    background: #d0c090;
+    color: #888;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: not-allowed;
+    opacity: 0.55;
+    transition: background 0.4s, color 0.4s, opacity 0.4s, transform 0.15s;
+    pointer-events: none;
+  }
+  .ttk-ready-btn.active {
+    background: linear-gradient(135deg, #b8860b, #f0c040);
+    color: #111111;
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .ttk-ready-btn.active:hover {
+    transform: scale(1.02);
+    opacity: 0.92;
+  }
+  .ttk-ready-btn.sent {
+    background: linear-gradient(135deg, #2a5a1a, #3a7a22);
+    color: #fff;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .ttk-resources { grid-template-columns: 1fr; }
+    .ttk-btn.full-width { grid-column: auto; }
+    .ttk-hero h1 { font-size: 1.25rem; }
+  }
 </style>
-    <style>
-        .page-hero {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
-            padding: 80px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8c414' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            z-index: 0;
-        }
-        .page-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-hero .badge {
-            display: inline-block;
-            background: #e8c414;
-            color: #0a0a0a;
-            font-weight: 700;
-            font-size: 0.8rem;
-            padding: 6px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-        .page-hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: #ffffff;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-        .page-hero h1 span { color: #e8c414; }
-        .page-hero p {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.7;
-        }
-        .hero-price {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(232,196,20,0.1);
-            border: 2px solid #e8c414;
-            border-radius: 12px;
-            padding: 16px 28px;
-            margin-bottom: 30px;
-        }
-        .hero-price .amount {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #e8c414;
-            line-height: 1;
-        }
-        .hero-price .details { text-align: left; }
-        .hero-price .details strong { display: block; color: #ffffff; font-size: 1rem; }
-        .hero-price .details span { color: #aaaaaa; font-size: 0.85rem; }
-        .hero-cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-gold {
-            background: #e8c414;
-            color: #0a0a0a;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1rem;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        .btn-gold:hover {
-            background: #f5d430;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(232,196,20,0.3);
-        }
-        .btn-outline-gold {
-            background: transparent;
-            color: #e8c414;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1rem;
-            display: inline-block;
-            border: 2px solid #e8c414;
-            transition: all 0.3s;
-        }
-        .btn-outline-gold:hover {
-            background: rgba(232,196,20,0.1);
-            transform: translateY(-2px);
-        }
-        .steps-section { background: #0d0d0d; padding: 80px 20px; }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .step-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 28px 20px;
-            text-align: center;
-        }
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: #e8c414;
-            color: #0a0a0a;
-            font-weight: 900;
-            font-size: 1.3rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-        .step-card h3 { color: #ffffff; font-size: 1rem; margin-bottom: 8px; }
-        .step-card p { color: #888888; font-size: 0.9rem; line-height: 1.6; }
-        .step-icon { font-size: 2rem; margin-bottom: 12px; }
-        .included-section { background: #111111; padding: 80px 20px; }
-        .included-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .included-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-left: 4px solid #e8c414;
-            border-radius: 8px;
-            padding: 24px;
-        }
-        .included-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
-        .included-card h3 { color: #e8c414; font-size: 1rem; margin-bottom: 8px; }
-        .included-card p { color: #aaaaaa; font-size: 0.9rem; line-height: 1.6; }
-        .sample-section { background: #0d0d0d; padding: 80px 20px; }
-        .sample-preview {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        @media (max-width: 768px) { .sample-preview { grid-template-columns: 1fr; } }
-        .sample-text h2 { color: #ffffff; font-size: 1.8rem; margin-bottom: 16px; }
-        .sample-text h2 span { color: #e8c414; }
-        .sample-text p { color: #aaaaaa; line-height: 1.7; margin-bottom: 16px; }
-        .report-features { list-style: none; padding: 0; margin: 0 0 24px; }
-        .report-features li { color: #cccccc; padding: 6px 0; font-size: 0.95rem; }
-        .report-features li::before { content: '\2705  '; }
-        .sample-pdf-preview {
-            background: #1a1a1a;
-            border: 2px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-        }
-        .who-section { background: #111111; padding: 80px 20px; }
-        .who-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .who-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 28px 20px;
-            text-align: center;
-        }
-        .who-card .emoji { font-size: 2.5rem; margin-bottom: 12px; }
-        .who-card h3 { color: #ffffff; font-size: 1rem; margin-bottom: 8px; }
-        .who-card p { color: #888888; font-size: 0.875rem; line-height: 1.6; }
-        .form-section { background: #0a0a0a; padding: 80px 20px; }
-        .form-container {
-            max-width: 680px;
-            margin: 0 auto;
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 16px;
-            padding: 40px;
-        }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 600px) {
-            .form-row { grid-template-columns: 1fr; }
-            .form-container { padding: 24px; }
-        }
-        .form-group { margin-bottom: 20px; }
-        .form-group label {
-            display: block;
-            color: #e8c414;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            background: #0d0d0d;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            padding: 12px 14px;
-            color: #ffffff;
-            font-size: 0.95rem;
-            font-family: inherit;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus { outline: none; border-color: #e8c414; }
-        .form-group select option { background: #1a1a1a; }
-        .form-group textarea { resize: vertical; min-height: 100px; }
-        .form-submit {
-            width: 100%;
-            background: #e8c414;
-            color: #0a0a0a;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 8px;
-        }
-        .form-submit:hover {
-            background: #f5d430;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(232,196,20,0.3);
-        }
-        .form-note { color: #666666; font-size: 0.8rem; text-align: center; margin-top: 12px; }
-        .success-message {
-            display: none;
-            background: #1a3a1a;
-            border: 1px solid #27ae60;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            color: #27ae60;
-            margin-top: 20px;
-        }
-        .section-title { text-align: center; margin-bottom: 48px; }
-        .section-title h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: #ffffff; margin-bottom: 12px; }
-        .section-title h2 span { color: #e8c414; }
-        .section-title p { color: #888888; max-width: 560px; margin: 0 auto; line-height: 1.7; }
-        .faq-section { background: #111111; padding: 80px 20px; }
-        .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #2a2a2a; padding: 20px 0; }
-        .faq-item h3 { color: #e8c414; font-size: 1rem; margin-bottom: 8px; }
-        .faq-item p { color: #aaaaaa; font-size: 0.95rem; line-height: 1.7; }
-    </style>
+  <style>
+    .grade-page-hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+      padding: 72px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #e8c414;
+    }
+    .grade-page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8c414' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 0;
+    }
+    .grade-page-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .grade-eyebrow {
+      display: inline-block;
+      background: #e8c414;
+      color: #0a0a0a;
+      font-family: 'Russo One', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      padding: 5px 14px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .grade-page-hero h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .grade-page-hero h1 span { color: #e8c414; }
+    .grade-page-hero p {
+      color: #aaaaaa;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .grade-content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 48px;
+    }
+    .grade-content-wrap .ttk-wrap {
+      max-width: 100%;
+    }
+    .grade-content-wrap .ttk-hero {
+      display: none;
+    }
+    .grade-content-wrap .ttk-welcome {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-left: 4px solid #d4a017;
+    }
+    .grade-content-wrap .ttk-welcome p {
+      color: #cccccc;
+    }
+  </style>
+<style>
+  .ttk-wrap {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .ttk-hero {
+    background: linear-gradient(135deg, #111111 0%, #1c1c1c 60%, #2a2000 100%);
+    border-radius: 12px;
+    padding: 28px 24px 22px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #b8860b;
+  }
+  .ttk-hero .belt-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #d4a017 0%, #f0c040 100%);
+    color: #111111;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .ttk-hero h1 { font-size: 1.55rem; font-weight: 800; margin: 0 0 6px; color: #f0c040; }
+  .ttk-hero .subtitle { font-size: 0.95rem; color: #c8a84b; margin: 0; }
+  .ttk-card {
+    background: #f9f6ee;
+    border-left: 5px solid #d4a017;
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .ttk-card p { margin: 0 0 10px; font-size: 0.95rem; }
+  .ttk-card p:last-child { margin-bottom: 0; }
+  .ttk-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 28px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d4a017;
+  }
+  .ttk-section-title .icon {
+    background: #111111;
+    color: #f0c040;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; flex-shrink: 0;
+  }
+  .ttk-resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .ttk-btn {
+    display: flex; align-items: center; gap: 9px;
+    background: #fff; border: 2px solid #b8860b; border-radius: 9px;
+    padding: 12px 14px; text-decoration: none !important;
+    color: #111111 !important; font-weight: 600; font-size: 0.85rem;
+    transition: background 0.2s, color 0.2s; cursor: pointer;
+  }
+  .ttk-btn:hover { background: #111111; color: #f0c040 !important; border-color: #d4a017; }
+  .ttk-btn .btn-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .ttk-btn.full-width { grid-column: 1 / -1; }
+  .ttk-progress-wrap {
+    background: #f9f6ee; border: 1px solid #e0c870;
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 20px;
+  }
+  .ttk-progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.85rem; font-weight: 600; color: #111111; margin-bottom: 8px;
+  }
+  .ttk-progress-bar-bg {
+    background: #e8ddb0; border-radius: 6px; height: 12px; overflow: hidden;
+  }
+  .ttk-progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #b8860b, #f0c040);
+    border-radius: 6px; transition: width 0.4s ease; width: 0%;
+  }
+  .ttk-checklist-group { margin-bottom: 22px; }
+  .ttk-group-title {
+    background: #111111; color: #f0c040; font-weight: 700;
+    font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 7px 14px; border-radius: 7px 7px 0 0; margin-bottom: 0;
+    border: 2px solid #b8860b; border-bottom: none;
+  }
+  .ttk-checklist {
+    border: 2px solid #b8860b; border-top: none;
+    border-radius: 0 0 9px 9px; overflow: hidden;
+  }
+  .ttk-check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 11px 14px; border-bottom: 1px solid #f0e6b0;
+    cursor: pointer; transition: background 0.15s;
+    user-select: none; background: #fff;
+  }
+  .ttk-check-item:last-child { border-bottom: none; }
+  .ttk-check-item:hover { background: #fdf3d0; }
+  .ttk-check-item.checked { background: #fdf8e1; }
+  .ttk-check-item input[type="checkbox"] {
+    width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px;
+    accent-color: #b8860b; cursor: pointer;
+  }
+  .ttk-check-item .item-text { font-size: 0.9rem; color: #1a1a1a; flex: 1; }
+  .ttk-check-item.checked .item-text {
+    color: #7a6000; text-decoration: line-through;
+    text-decoration-color: #d4a017;
+  }
+  .ttk-check-item .item-korean {
+    font-size: 0.78rem; color: #8a7030; font-style: italic;
+    display: block; margin-top: 2px;
+  }
+  .ttk-terms-table {
+    width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 4px;
+  }
+  .ttk-terms-table thead tr { background: #111111; color: #f0c040; }
+  .ttk-terms-table thead th { padding: 9px 12px; text-align: left; font-weight: 600; }
+  .ttk-terms-table tbody tr:nth-child(even) { background: #fdf8e1; }
+  .ttk-terms-table tbody tr:hover { background: #fdf3d0; }
+  .ttk-terms-table td { padding: 8px 12px; border-bottom: 1px solid #e8ddb0; vertical-align: top; }
+  .ttk-terms-table td:first-child { font-weight: 600; color: #111111; }
+  .ttk-terms-table td:last-child { color: #5a4a00; font-style: italic; }
+  .ttk-tenets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ttk-tenet {
+    background: linear-gradient(135deg, #111111, #2a2000);
+    color: #f0c040; border: 1px solid #b8860b; border-radius: 20px;
+    padding: 6px 16px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px;
+  }
+  .ttk-complete-banner {
+    display: none;
+    background: linear-gradient(135deg, #111111, #2a2000);
+    color: #f0c040; border: 2px solid #d4a017; border-radius: 10px;
+    padding: 18px 20px; text-align: center; margin-top: 20px;
+    font-weight: 700; font-size: 1rem;
+  }
+  .ttk-btn-row { display: flex; gap: 10px; margin-top: 14px; }
+  .ttk-save-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #b8860b, #d4a017);
+    border: none; border-radius: 9px; color: #111111;
+    font-size: 0.88rem; font-weight: 700; padding: 11px 14px;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .ttk-save-btn:hover { opacity: 0.85; }
+  .ttk-save-btn.saved { background: linear-gradient(135deg, #2a5a1a, #3a7a22); color: #fff; }
+  .ttk-reset-btn {
+    flex: 1; background: none; border: 1px solid #d4a017; border-radius: 9px;
+    color: #8a7030; font-size: 0.88rem; font-weight: 600; padding: 11px 14px; cursor: pointer;
+  }
+  .ttk-reset-btn:hover { background: #fdf3d0; }
+  .ttk-ready-wrap {
+    margin-top: 18px; border: 2px dashed #c8a840; border-radius: 12px;
+    padding: 16px 18px; text-align: center; background: #f9f6ee;
+    transition: border-color 0.4s, background 0.4s;
+  }
+  .ttk-ready-wrap.active {
+    border: 2px solid #d4a017;
+    background: linear-gradient(135deg, #111111, #2a2000);
+    animation: ttk-glow 1.5s ease-in-out 1;
+  }
+  @keyframes ttk-glow {
+    0%   { box-shadow: 0 0 0px #d4a017; }
+    50%  { box-shadow: 0 0 22px #f0c040; }
+    100% { box-shadow: 0 0 6px #d4a017; }
+  }
+  .ttk-ready-label {
+    font-size: 0.8rem; font-weight: 600; color: #b0a070;
+    margin-bottom: 10px; letter-spacing: 0.5px; transition: color 0.4s;
+  }
+  .ttk-ready-wrap.active .ttk-ready-label { color: #f0c040; }
+  .ttk-ready-btn {
+    display: inline-block; width: 100%;
+    background: #d0c090; color: #888; border: none; border-radius: 10px;
+    padding: 14px 20px; font-size: 1rem; font-weight: 800; letter-spacing: 0.5px;
+    cursor: not-allowed; opacity: 0.55;
+    transition: background 0.4s, color 0.4s, opacity 0.4s, transform 0.15s;
+    pointer-events: none;
+  }
+  .ttk-ready-btn.active {
+    background: linear-gradient(135deg, #b8860b, #f0c040);
+    color: #111111; cursor: pointer; opacity: 1; pointer-events: auto;
+  }
+  .ttk-ready-btn.active:hover { transform: scale(1.02); opacity: 0.92; }
+  .ttk-ready-btn.sent {
+    background: linear-gradient(135deg, #2a5a1a, #3a7a22);
+    color: #fff; cursor: default; pointer-events: none;
+  }
+  /* Upsell card */
+  .ttk-upsell {
+    margin: 28px 0 20px;
+    background: linear-gradient(135deg, #111111, #1e1a00);
+    border: 2px solid #d4a017;
+    border-radius: 12px;
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .ttk-upsell h3 { color: #f0c040; font-size: 1.05rem; margin: 0 0 10px; }
+  .ttk-upsell p { color: #e0d090; font-size: 0.88rem; margin: 0 0 14px; }
+  .ttk-upsell-features {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-bottom: 16px;
+  }
+  .ttk-upsell-feature {
+    background: rgba(212,160,23,0.15); border: 1px solid #b8860b;
+    color: #f0c040; border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; font-weight: 600;
+  }
+  .ttk-upsell-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #b8860b, #f0c040);
+    color: #111111; font-weight: 800; font-size: 0.9rem;
+    padding: 12px 22px; border-radius: 9px; text-decoration: none !important;
+    letter-spacing: 0.3px;
+  }
+  .ttk-upsell-note { color: #8a7030; font-size: 0.78rem; margin: 10px 0 0; }
+  @media (max-width: 480px) {
+    .ttk-resources { grid-template-columns: 1fr; }
+    .ttk-btn.full-width { grid-column: auto; }
+    .ttk-hero h1 { font-size: 1.25rem; }
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -898,17 +1295,11 @@ img { max-width: 100%; display: block; }
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li class="nav-dropdown">
-          <a href="#">Belt Testing</a>
+          <a href="white-belt-to-yellow-stripe.html">Belt Testing</a>
           <div class="dropdown-menu">
-            <a href="white-belt-to-yellow-stripe.html">⬜ White Belt → Yellow Stripe</a>
+            <a href="white-belt-to-yellow-stripe.html">🥋 White Belt → Yellow Stripe</a>
             <a href="yellow-stripe-to-yellow-belt.html">🟡 Yellow Stripe → Yellow Belt</a>
-            <a href="yellow-belt-to-green-stripe.html">💚 Yellow Belt → Green Stripe</a>
-          <a href="green-stripe-to-green-belt.html">🟢 Green Stripe → Green Belt</a>
-            <a href="green-belt-to-blue-stripe.html">💙 Green Belt → Blue Stripe</a>
-            <a href="blue-stripe-to-blue-belt.html">🔵 Blue Stripe → Blue Belt</a>
-            <a href="blue-belt-to-red-stripe.html">❤️ Blue Belt → Red Stripe</a>
-            <a href="red-stripe-to-red-belt.html">🔴 Red Stripe → Red Belt</a>
-            <a href="red-belt-to-black-stripe.html">🖤 Red Belt → Black Stripe</a>
+            <a href="green-stripe-to-green-belt.html" style="color:var(--gold);">💚 Green Stripe → Green Belt</a>
           </div>
         </li>
         <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
@@ -930,323 +1321,389 @@ img { max-width: 100%; display: block; }
     <a href="guide-for-parents.html" class="sub" style="color:var(--gold);">↳ Guide for Parents</a>
     <a href="reviews.html">Reviews</a>
     <a href="faq.html">FAQ</a>
-    <a href="#">Belt Testing</a>
-    <a href="white-belt-to-yellow-stripe.html" class="sub">↳ ⬜ White Belt → Yellow Stripe</a>
-    <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ 🟡 Yellow Stripe → Yellow Belt</a>
-    <a href="yellow-belt-to-green-stripe.html" class="sub">↳ 💚 Yellow Belt → Green Stripe</a>
+    <a href="white-belt-to-yellow-stripe.html">Belt Testing</a>
+    <a href="white-belt-to-yellow-stripe.html" class="sub">↳ White Belt → Yellow Stripe</a>
+    <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ Yellow Stripe → Yellow Belt</a>
+    <a href="green-stripe-to-green-belt.html" class="sub" style="color:var(--gold);">↳ Green Stripe → Green Belt</a>
     <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
     <a href="membership.html" style="color:var(--gold);">Join Now →</a>
   </div>
 </header>
-
-<!-- PAGE HERO -->
-<section class="page-hero" id="top">
-    <div class="page-hero-content">
-        <span class="badge">&#x1F94B; Online Private Coaching</span>
-        <h1>1-to-1 Private Tuition<br><span>with Mr Gavin Cook</span></h1>
-        <p>A focused 30-minute online coaching session tailored to your goals — grading preparation, competition training, or technique refinement. Includes a full AI-powered progress report.</p>
-        <div class="hero-price">
-            <div class="amount">&#163;25</div>
-            <div class="details">
-                <strong>Per 30-Minute Session</strong>
-                <span>Includes full written progress report</span>
-            </div>
-        </div>
-        <div class="hero-cta-group">
-            <a href="#book" class="btn-gold">&#x1F4C5; Book Your Session</a>
-            <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/GYqdATtEBPYKAWEM.pdf" target="_blank" class="btn-outline-gold">&#x1F4C4; See a Sample Report</a>
-        </div>
-    </div>
+<section class="grade-page-hero">
+  <div class="grade-page-hero-content">
+    <span class="grade-eyebrow">2nd Kup &mdash; TAGB (ITF) Taekwondo</span>
+    <h1>Red Belt to <span>Black Stripe</span></h1>
+    <p>Your complete pre-grading revision guide, checklist, and resources for 2nd Kup. Tick off every practical item before grading day &mdash; no excuses!</p>
+  </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="steps-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>How It <span>Works</span></h2>
-            <p>Simple, seamless and professional — from booking to receiving your report</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-icon">&#x1F4DD;</div>
-                <div class="step-number">1</div>
-                <h3>Book Your Session</h3>
-                <p>Fill in the enquiry form below. Gavin will email you within 24 hours to confirm a date and time.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon">&#x1F3A5;</div>
-                <div class="step-number">2</div>
-                <h3>Join on Google Meet</h3>
-                <p>You'll receive a Google Meet link. The session is recorded automatically to Google Drive.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon">&#x1F916;</div>
-                <div class="step-number">3</div>
-                <h3>AI Analyses the Session</h3>
-                <p>After the session, AI reviews the recording — identifying techniques covered, corrections given, and areas to improve.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon">&#x1F4CA;</div>
-                <div class="step-number">4</div>
-                <h3>Receive Your Report</h3>
-                <p>A professionally formatted PDF progress report is emailed to you within 24 hours of your session.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="grade-content-wrap">
+<div class="ttk-wrap">
 
-<!-- WHAT'S INCLUDED -->
-<section class="included-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>What's <span>Included</span></h2>
-            <p>Everything you need to accelerate your progress — all for &#163;25</p>
-        </div>
-        <div class="included-grid">
-            <div class="included-card">
-                <div class="icon">&#x1F94B;</div>
-                <h3>30-Minute 1-to-1 Coaching</h3>
-                <p>Focused, personalised coaching with Mr Gavin Cook (5th Dan, TAGB Certified) via Google Meet. No distractions — just you and your coach.</p>
-            </div>
-            <div class="included-card">
-                <div class="icon">&#x1F3AF;</div>
-                <h3>Tailored to Your Goals</h3>
-                <p>Whether you're preparing for grading, a competition, or want to fix a specific technique — the session is built around what you need.</p>
-            </div>
-            <div class="included-card">
-                <div class="icon">&#x1F916;</div>
-                <h3>AI-Powered Session Analysis</h3>
-                <p>The session recording is analysed using AI to identify exactly what was covered, what corrections were made, and what needs more work.</p>
-            </div>
-            <div class="included-card">
-                <div class="icon">&#x1F4C4;</div>
-                <h3>Full Written Progress Report</h3>
-                <p>A detailed PDF report covering strengths observed, areas to improve, a prioritised action plan, and a grading readiness assessment.</p>
-            </div>
-            <div class="included-card">
-                <div class="icon">&#x1F4C5;</div>
-                <h3>Action Plan for Next Grading</h3>
-                <p>Specific, prioritised actions with practice frequency recommendations — so you know exactly what to work on between now and your next grading or competition.</p>
-            </div>
-            <div class="included-card">
-                <div class="icon">&#x1F4AC;</div>
-                <h3>Coach's Personal Notes</h3>
-                <p>Gavin's personal observations and encouragement included in every report — not just data, but genuine coaching insight.</p>
-            </div>
-        </div>
-    </div>
-</section>
+  <!-- Hero -->
+  <div class="ttk-hero">
+    <div class="belt-badge">❤️ Red Belt → 🖤 Black Stripe</div>
+    <h1>Getting Ready to Grade</h1>
+    <p class="subtitle">2nd Kup — TAGB (ITF) Taekwondo</p>
+  </div>
 
-<!-- SAMPLE REPORT -->
-<section class="sample-section" id="sample">
-    <div class="container">
-        <div class="sample-preview">
-            <div class="sample-text">
-                <h2>See What Your <span>Report Looks Like</span></h2>
-                <p>Every student receives a professionally formatted, branded PDF progress report after their session. Here's an example of what you'll receive:</p>
-                <ul class="report-features">
-                    <li>Student details &amp; session summary</li>
-                    <li>Overall session rating</li>
-                    <li>Techniques covered with time breakdown</li>
-                    <li>Strengths observed during the session</li>
-                    <li>Areas to improve with specific corrections</li>
-                    <li>Prioritised action plan (High / Med / Low)</li>
-                    <li>Grading readiness assessment</li>
-                    <li>Coach's personal notes &amp; encouragement</li>
-                    <li>Recommended next steps</li>
-                </ul>
-                <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/GYqdATtEBPYKAWEM.pdf" target="_blank" class="btn-gold">&#x1F4C4; Download Sample Report (PDF)</a>
-            </div>
-            <div class="sample-pdf-preview">
-                <p style="color:#888;font-size:0.9rem;margin-bottom:12px;">Sample Progress Report</p>
-                <div style="background:#0a0a0a;border-radius:8px;padding:20px;border:2px solid #e8c414;">
-                    <div style="background:#e8c414;border-radius:6px;padding:12px;margin-bottom:12px;text-align:center;">
-                        <strong style="color:#0a0a0a;font-size:0.9rem;">TRAIN TAEKWONDO SCHOOLS</strong><br>
-                        <span style="color:#0a0a0a;font-size:0.75rem;">PRIVATE TUITION &mdash; Progress Report</span>
-                    </div>
-                    <div style="background:#1a1a1a;border-radius:4px;padding:10px;margin-bottom:8px;">
-                        <div style="color:#e8c414;font-size:0.7rem;font-weight:700;margin-bottom:4px;">STUDENT DETAILS</div>
-                        <div style="color:#ccc;font-size:0.75rem;">Jamie Thompson &middot; Blue Belt &middot; 15 March 2026</div>
-                    </div>
-                    <div style="background:#1a1a1a;border-radius:4px;padding:10px;margin-bottom:8px;">
-                        <div style="color:#e8c414;font-size:0.7rem;font-weight:700;margin-bottom:4px;">OVERALL RATING</div>
-                        <div style="color:#e8c414;font-size:1rem;">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                        <div style="color:#ccc;font-size:0.7rem;">4/5 &mdash; Strong performance</div>
-                    </div>
-                    <div style="background:#1a1a1a;border-radius:4px;padding:10px;margin-bottom:8px;">
-                        <div style="color:#e8c414;font-size:0.7rem;font-weight:700;margin-bottom:4px;">&#x1F4AA; STRENGTHS</div>
-                        <div style="color:#ccc;font-size:0.7rem;line-height:1.5;">Pattern memory &middot; Kihap &middot; Attitude &amp; focus</div>
-                    </div>
-                    <div style="background:#1a1a1a;border-radius:4px;padding:10px;margin-bottom:8px;">
-                        <div style="color:#e8c414;font-size:0.7rem;font-weight:700;margin-bottom:4px;">&#x1F3AF; AREAS TO IMPROVE</div>
-                        <div style="color:#ccc;font-size:0.7rem;line-height:1.5;">Back stance &middot; Kick recoil &middot; Eye contact</div>
-                    </div>
-                    <div style="background:#1a1a1a;border-radius:4px;padding:10px;">
-                        <div style="color:#e8c414;font-size:0.7rem;font-weight:700;margin-bottom:4px;">&#x1F4C5; ACTION PLAN</div>
-                        <div style="color:#ccc;font-size:0.7rem;line-height:1.5;">HIGH: Back stance drills daily<br>HIGH: Kick recoil practice daily<br>MED: Mirror work 3&times; per week</div>
-                    </div>
-                </div>
-                <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/GYqdATtEBPYKAWEM.pdf" target="_blank" class="btn-gold" style="margin-top:16px;display:inline-block;font-size:0.9rem;padding:10px 20px;">View Full Sample PDF &rarr;</a>
-            </div>
-        </div>
-    </div>
-</section>
+  <!-- Welcome -->
+  <div class="ttk-card">
+    <p>Congratulations, <strong>Red Belts</strong>! 👊 Reaching Red Belt is a significant milestone, and now you're preparing for <strong>Black Stripe</strong> — the first step toward the ultimate goal of Black Belt in your Taekwondo journey. At this level, your training emphasizes <strong>mastery, precision, power, control, and mental focus</strong>, alongside a deep understanding of TAGB (ITF) principles.</p>
+    <p>Black Stripe grading demands excellence. Every pattern, technique, and sparring session must be performed with <strong>confidence, sharpness, and consistent control</strong>. Examiners will look for strong stances, accurate strikes and blocks, fluid combinations, and the ability to perform under pressure. At this stage, <strong>attitude, discipline, and focus</strong> are just as important as physical skill.</p>
+    <p>🚨 <strong>Training Commitment is Critical</strong><br>Progressing toward Black Belt requires serious dedication. Training only once or twice a week is no longer sufficient. To succeed at Black Stripe, aim for <strong>multiple sessions each week</strong>, focusing on both technique and conditioning. Extra practice builds strength, endurance, confidence, and prepares you for the advanced skills required at Black Belt.</p>
+    <p>🥊 <strong>Sparring Gets More Demanding</strong><br>Sparring at Black Stripe requires advanced timing, control, combinations, and strategy. You must demonstrate awareness, adaptability, and confidence under pressure. Regular sparring is essential to develop the skills needed for both grading and competition at advanced levels.</p>
+    <p>Use the grading video provided to support your training at the club. Practice alongside your classes to refine techniques, build confidence, and fully understand what will be expected on grading day.</p>
+    <p>Commit to your training, focus on quality and consistency, and push yourself to perform at your best — Black Stripe is where you truly begin the journey to mastery. 🥋🖤</p>
+  </div>
 
-<!-- WHO IS IT FOR -->
-<section class="who-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Who Is It <span>For?</span></h2>
-            <p>Private tuition is ideal for students who want to accelerate their progress</p>
-        </div>
-        <div class="who-grid">
-            <div class="who-card">
-                <div class="emoji">&#x1F3C5;</div>
-                <h3>Grading Preparation</h3>
-                <p>Preparing for your next belt? Get focused coaching on the specific techniques, patterns and sparring required for your grade.</p>
-            </div>
-            <div class="who-card">
-                <div class="emoji">&#x1F3C6;</div>
-                <h3>Competition Training</h3>
-                <p>Competing in a tournament? Work on your sparring tactics, patterns performance, and competition mindset with one-to-one coaching.</p>
-            </div>
-            <div class="who-card">
-                <div class="emoji">&#x1F3AF;</div>
-                <h3>Technique Refinement</h3>
-                <p>Want to fix a specific kick, stance or pattern? A focused session can achieve more in 30 minutes than weeks of group training.</p>
-            </div>
-            <div class="who-card">
-                <div class="emoji">&#x1F31F;</div>
-                <h3>Confidence Building</h3>
-                <p>Struggling with nerves before grading or competition? Private coaching builds confidence in a supportive, pressure-free environment.</p>
-            </div>
-        </div>
-    </div>
-</section>
+  <!-- Resources -->
+  <div class="ttk-section-title">
+    <span class="icon">📚</span> Training Resources
+  </div>
+  <div class="ttk-resources">
+    <a class="ttk-btn" href="https://www.blackbeltschools.com/syllabus/gradings.asp?grade=9" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">▶️</span><span>2nd Kup Grading Resources</span>
+    </a>
+    <a class="ttk-btn" href="https://drive.google.com/drive/folders/1P2sW3zeTmPr9t0k_JmfwlJcYYI2GBaCY?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🎧</span><span>Theory Audio Download</span>
+    </a>
+    <a class="ttk-btn" href="https://www.blackbeltschools.com/syllabus/koreanquiz.asp" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🇰🇷</span><span>Korean Quiz</span>
+    </a>
+  </div>
 
-<!-- ENQUIRY FORM -->
-<section class="form-section" id="book">
-    <div class="container">
-        <div class="section-title">
-            <h2>Book Your <span>Session</span></h2>
-            <p>Fill in the form below and Gavin will be in touch within 24 hours to confirm your session date and time</p>
-        </div>
-        <div class="form-container">
-            <form id="tuitionForm" action="https://formspree.io/f/xnjgdqyj" method="POST">
-                <input type="hidden" name="form_type" value="Private 1-2-1 Enquiry">
-                <input type="hidden" name="_subject" value="Private 1-2-1 Enquiry">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="parent_name">Parent / Guardian Name *</label>
-                        <input type="text" id="parent_name" name="parent_name" required placeholder="Your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="student_name">Student Name *</label>
-                        <input type="text" id="student_name" name="student_name" required placeholder="Student's name">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="07xxx xxxxxx">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="current_grade">Current Grade / Belt</label>
-                        <select id="current_grade" name="current_grade">
-                            <option value="">Select grade...</option>
-                            <option>White Belt (10th Kup)</option>
-                            <option>White/Yellow Tag (9th Kup)</option>
-                            <option>Yellow Belt (8th Kup)</option>
-                            <option>Yellow/Green Tag (7th Kup)</option>
-                            <option>Green Belt (6th Kup)</option>
-                            <option>Green/Blue Tag (5th Kup)</option>
-                            <option>Blue Belt (4th Kup)</option>
-                            <option>Blue/Red Tag (3rd Kup)</option>
-                            <option>Red Belt (2nd Kup)</option>
-                            <option>Red/Black Tag (1st Kup)</option>
-                            <option>Black Belt (1st Dan+)</option>
-                            <option>Ninja Skillz Programme</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="session_focus">Session Focus *</label>
-                        <select id="session_focus" name="session_focus" required>
-                            <option value="">Select focus...</option>
-                            <option>Grading Preparation</option>
-                            <option>Competition Training</option>
-                            <option>Pattern / Tul Work</option>
-                            <option>Sparring Techniques</option>
-                            <option>Kicking Techniques</option>
-                            <option>Self-Defence</option>
-                            <option>General Technique Improvement</option>
-                            <option>Other (please specify below)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="next_grading">Next Grading / Competition Date (if applicable)</label>
-                    <input type="text" id="next_grading" name="next_grading" placeholder="e.g. May 2026 grading">
-                </div>
-                <div class="form-group">
-                    <label for="availability">Your Availability</label>
-                    <input type="text" id="availability" name="availability" placeholder="e.g. Weekday evenings, Saturday mornings">
-                </div>
-                <div class="form-group">
-                    <label for="message">Anything Else You'd Like Gavin to Know?</label>
-                    <textarea id="message" name="message" placeholder="Tell us about specific techniques you want to work on, any injuries, or anything else relevant..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">&#x1F4C5; Send Enquiry &mdash; &#163;25 per session</button>
-                <p class="form-note">&#x1F512; Your details are kept private and never shared. Gavin will reply within 24 hours.</p>
-            </form>
-            <div class="success-message" id="successMsg">
-                <strong>&#x2705; Enquiry sent!</strong><br>
-                Thank you &mdash; Gavin will be in touch within 24 hours to confirm your session date and time.
-            </div>
-        </div>
-    </div>
-</section>
+  <!-- 1-Step Sparring Note -->
+  <div class="ttk-section-title">
+    <span class="icon">🥊</span> 1-Step Sparring — Advanced (Ilbo Matsoki)
+  </div>
+  <div class="ttk-card" style="margin-bottom: 20px; font-size: 0.9rem;">
+    <p>At 2nd Kup, Red Belts develop their <strong>own 1-step sparring techniques</strong> using the following five categories (not in a set order). Both attacker and defender start in parallel ready stance. The attacker steps forward with the right leg and punches with the right hand; on the second occasion, with the left leg and left hand.</p>
+    <ol style="margin: 8px 0 0 18px; line-height: 1.8;">
+      <li>Hand only</li>
+      <li>Foot only</li>
+      <li>Hand and foot</li>
+      <li>Foot and hand</li>
+      <li>Jumping</li>
+    </ol>
+  </div>
 
-<!-- FAQ -->
-<section class="faq-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Frequently Asked <span>Questions</span></h2>
-        </div>
-        <div class="faq-list">
-            <div class="faq-item">
-                <h3>What equipment do I need for the session?</h3>
-                <p>Just a device with a camera (phone, tablet or laptop), a Google account to join Google Meet, and enough space to move around safely. Wear your dobok if you have one.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do I pay?</h3>
-                <p>Payment details will be provided when Gavin confirms your session. Payment is due before the session takes place.</p>
-            </div>
-            <div class="faq-item">
-                <h3>When will I receive my progress report?</h3>
-                <p>Your PDF progress report will be emailed to you within 24 hours of your session completing.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I book multiple sessions?</h3>
-                <p>Absolutely &mdash; many students book regular sessions in the run-up to grading or competition. Each session includes a fresh progress report tracking your improvement.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is this suitable for beginners?</h3>
-                <p>Yes &mdash; private tuition is available for all grades from white belt upwards, including Ninja Skillz students. Sessions are tailored to your current level and goals.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What if I need to cancel or reschedule?</h3>
-                <p>Please give at least 24 hours notice if you need to cancel or reschedule. Just reply to Gavin's confirmation email and he'll arrange an alternative time.</p>
-            </div>
-        </div>
+  <!-- Progress bar -->
+  <div class="ttk-progress-wrap">
+    <div class="ttk-progress-label">
+      <span>Your progress</span>
+      <span id="ttk-progress-text">0 / 21 practical items completed</span>
     </div>
-</section>
+    <div class="ttk-progress-bar-bg">
+      <div class="ttk-progress-bar-fill" id="ttk-progress-fill"></div>
+    </div>
+  </div>
+  <p style="font-size:0.82rem; color:#6a5a20; margin-bottom:18px;">
+    Tick each item once you are confident you can perform it correctly. The progress bar tracks your <strong>practical skills</strong> — complete all of those to unlock the notification button. Theory and Korean sections are <em>bonus</em> items to help you prepare further. No excuses! 💪
+  </p>
 
+  <!-- ── CHECKLIST GROUP 1: Stances ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🦵 Stances (Sogi)</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Parallel Ready Stance <span class="item-korean">Narani Chumbi Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Walking Stance <span class="item-korean">Gunnun Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">L-Stance <span class="item-korean">Niunja Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Sitting Stance <span class="item-korean">Annun Sogi</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 2: Practical Techniques ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🥊 Practical Techniques</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Combinations in line from Patterns <span class="item-korean">Set by the grading examiner</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">L-Stance — Knifehand Guarding Block — Middle Side Piercing Kick — Outward Knifehand Strike <span class="item-korean">Niunja Sogi — Sonkal Daebi Makgi — Kaunde Yop Cha Jirugi — Bakat Sonkal Taerigi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">X-Fist Pressing Block — Walking Stance Side Elbow Thrust (sliding motion) <span class="item-korean">Kyocha Joomuk Noollo Makgi — Gunnun Sogi Yop Palkup Tulgi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">High Turning Kick (fast motion) — High Turning Kick — L-Stance Knifehand Guarding Block <span class="item-korean">Nopunde Dollyo Chagi — Nopunde Dollyo Chagi — Niunja Sogi Sonkal Daebi Makgi</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 3: Pattern ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🔄 Pattern (Tul) — Hwa-Rang (29 Movements)</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I can perform Hwa-Rang (29 movements) from start to finish</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I know the meaning of Hwa-Rang <span class="item-korean">Named after the Hwa-Rang youth group, which originated in the Silla Dynasty around 600 AD. This group became the driving force for the unification of the three Kingdoms of Korea. The 29 movements refer to the 29th Infantry Division, where Taekwondo developed into maturity</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I know the starting position of Hwa-Rang <span class="item-korean">Closed Ready Stance 'C' (Moa Junbi Sogi 'C')</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I return to the correct starting position at the end of the pattern</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 4: 1-Step Sparring Advanced + All Sparring ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🤺 Sparring — 3-Step, 2-Step &amp; 1-Step Advanced</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">3-Step Sparring (Sambo Matsoki) — I can perform all 3-step sparring sequences correctly</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">2-Step Sparring (Ibo Matsoki) — I can perform all 2-step sparring sequences correctly</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">1-Step Advanced — Hand only counter <span class="item-korean">Develop your own technique using hands only to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">1-Step Advanced — Foot only counter <span class="item-korean">Develop your own technique using feet only to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">1-Step Advanced — Hand and foot counter <span class="item-korean">Develop your own technique using hand then foot to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">1-Step Advanced — Foot and hand counter <span class="item-korean">Develop your own technique using foot then hand to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">1-Step Advanced — Jumping counter <span class="item-korean">Develop your own technique incorporating a jump to defend and counter the single-step attack</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 5: Advanced Sparring ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">⚔️ Free Sparring</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Semi-Free Sparring — Advanced Level: step forward and execute any 3 techniques (hand or foot) <span class="item-korean">Defence: any suitable block for each technique · Counter: any hand or foot technique</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Free Sparring (Jayoo Matsoki) — demonstrate controlled free sparring with good timing, distancing, combination work, and confidence under pressure</div>
+      </label>
+    </div>
+  </div>
+  <!-- ── CHECKLIST GROUP 6: Attitude & Discipline ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">⭐ Attitude &amp; Discipline</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I bow when entering and leaving the Dojang</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I listen carefully and respond respectfully to my instructor</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">My Dobok is clean, pressed, and my belt is tied correctly</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I train with focus, effort, and a positive attitude</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 6: Theory (bonus) ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🧠 Theory <span style="font-size:0.75rem;font-weight:400;color:#8a7030;">(bonus — not required to unlock the button)</span></div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">What is 3-step sparring? <span class="item-korean">Teaches distance, facing, forearm conditioning, correct blocks, stances, counter attacks and timing</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">What is the meaning of Hwa-Rang pattern? <span class="item-korean">Named after the Hwa-Rang youth group from the Silla Dynasty (600 AD). This group drove the unification of the three Kingdoms of Korea. 29 movements = the 29th Infantry Division, where Taekwondo developed into maturity</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">How many movements in Hwa-Rang? <span class="item-korean">29 movements</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">What is 3-step sparring (Sambo Matsoki)? <span class="item-korean">Designed for beginners to learn basic techniques. Teaches proper distance, correct facing, forearm conditioning, correct blocks, correct stances, counter attacks, and timing</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 7: Korean Counting (bonus) ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🇰🇷 Korean Counting (1–10) <span style="font-size:0.75rem;font-weight:400;color:#8a7030;">(bonus)</span></div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I can count from 1 to 5 in Korean <span class="item-korean">Hana, Dul, Set, Net, Dasut</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">I can count from 6 to 10 in Korean <span class="item-korean">Yasut, Ilgop, Yodul, Ahop, Yul</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST GROUP 8: Korean Commands (bonus) ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🗣️ Key Korean Commands &amp; Terms <span style="font-size:0.75rem;font-weight:400;color:#8a7030;">(bonus)</span></div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Attention <span class="item-korean">Charyot</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Bow <span class="item-korean">Kyong-ye</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Ready <span class="item-korean">Chumbi</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Start / Begin <span class="item-korean">Sijak</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Stop <span class="item-korean">Goman</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Return to ready stance <span class="item-korean">Baro</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange8(this)">
+        <div class="item-text">Training hall <span class="item-korean">Dojang</span></div>
+      </label>
+    </div>
+  </div>
+
+    <!-- Completion banner -->
+  <div class="ttk-complete-banner" id="ttk-complete">
+    🥋 Outstanding work! You've ticked every practical item — you're ready for your Black Stripe grading! See you on grading day! 🏆🖤
+  </div>
+
+  <!-- Save / Reset -->
+  <div class="ttk-btn-row">
+    <button class="ttk-save-btn" id="ttk-save-btn" onclick="ttk_save8()">💾 Save Progress</button>
+    <button class="ttk-reset-btn" onclick="ttk_reset8()">↺ Reset &amp; Clear</button>
+  </div>
+
+  <!-- Ready to grade -->
+  <div class="ttk-ready-wrap" id="ttk-ready-wrap">
+    <div class="ttk-ready-label" id="ttk-ready-label">Complete all practical items to unlock this button</div>
+    <div class="ttk-name-field" id="ttk-name-field" style="display:none; margin-bottom:12px;">
+      <label for="ttk-student-name" style="display:block; font-size:0.85rem; font-weight:700; color:#b8860b; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">Your Full Name</label>
+      <input type="text" id="ttk-student-name" placeholder="e.g. Jamie Smith" autocomplete="name"
+        style="width:100%; padding:10px 14px; border:2px solid #d4a017; border-radius:6px; font-size:0.95rem; background:#fff; color:#111; outline:none; box-sizing:border-box;">
+      <div id="ttk-name-error" style="display:none; color:#c0392b; font-size:0.8rem; margin-top:4px;">Please enter your full name before sending.</div>
+    </div>
+    <button class="ttk-ready-btn" id="ttk-ready-btn" onclick="ttk_notify_ready8()">🥋 Tell Mr Cook I'm Ready to Grade!</button>
+  </div>
+
+  <!-- Virtual 1-2-1 Upsell -->
+  <div class="ttk-upsell">
+    <h3>Still Struggling with the Practical Techniques?</h3>
+    <p>A focused 30-minute virtual 1-to-1 session with Mr Cook could make all the difference before your grading. Get personalised coaching, instant feedback, and a recording to review — all from home.</p>
+    <div class="ttk-upsell-features">
+      <span class="ttk-upsell-feature">⏱ 30 minutes coaching</span>
+      <span class="ttk-upsell-feature">🎥 Session recorded</span>
+      <span class="ttk-upsell-feature">📝 Written feedback</span>
+      <span class="ttk-upsell-feature">🏠 Train from home</span>
+    </div>
+    <a class="ttk-upsell-btn" href="https://www.traintaekwondo.co.uk/private-tuition.html" target="_blank" rel="noopener noreferrer">
+      Book a Virtual 1-2-1 — £25 per session →
+    </a>
+    <p class="ttk-upsell-note">Sessions available evenings &amp; weekends · Mr Cook replies within 24 hours</p>
+  </div>
+
+  <!-- Korean Terms Reference -->
+  <div class="ttk-section-title">
+    <span class="icon">🇰🇷</span> Korean Terms Reference (2nd Kup)
+  </div>
+  <table class="ttk-terms-table">
+    <thead><tr><th>English</th><th>Korean</th></tr></thead>
+    <tbody>
+      <tr><td>Closed Ready Stance C</td><td>Moa Junbi Sogi C</td></tr>
+      <tr><td>Flying High Kick</td><td>Twimyo Nopi Chagi</td></tr>
+      <tr><td>Inside</td><td>An</td></tr>
+      <tr><td>Instep</td><td>Baldung</td></tr>
+      <tr><td>Outside</td><td>Bakat</td></tr>
+      <tr><td>Pushing Block</td><td>Miro Makgi</td></tr>
+      <tr><td>Reverse Footsword</td><td>Baldal Dung</td></tr>
+      <tr><td>Sweeping Block</td><td>Hullyo Makgi</td></tr>
+      <tr><td>Twin Foot Kick</td><td>Sang Bal Chagi</td></tr>
+      <tr><td>Twisting Kick</td><td>Bituro Chagi</td></tr>
+      <tr><td>Upward Punch</td><td>Ollyo Jirugi</td></tr>
+      <tr><td>Vertical Kick</td><td>Sewo Chagi</td></tr>
+      <tr><td>3-Step Sparring</td><td>Sambo Matsoki</td></tr>
+      <tr><td>Pattern</td><td>Tul</td></tr>
+      <tr><td>Attention</td><td>Charyot</td></tr>
+      <tr><td>Bow</td><td>Kyong-ye</td></tr>
+      <tr><td>Ready</td><td>Chumbi</td></tr>
+      <tr><td>Start / Begin</td><td>Sijak</td></tr>
+      <tr><td>Stop</td><td>Goman</td></tr>
+      <tr><td>Return to ready stance</td><td>Baro</td></tr>
+      <tr><td>Training hall</td><td>Dojang</td></tr>
+      <tr><td>Instructor</td><td>Sabum</td></tr>
+      <tr><td>Student</td><td>Jeja</td></tr>
+      <tr><td>Uniform</td><td>Dobok</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Tenets -->
+  <div class="ttk-section-title">
+    <span class="icon">⭐</span> The 5 Tenets of Taekwondo
+  </div>
+  <div class="ttk-tenets">
+    <span class="ttk-tenet">Courtesy</span>
+    <span class="ttk-tenet">Integrity</span>
+    <span class="ttk-tenet">Perseverance</span>
+    <span class="ttk-tenet">Self Control</span>
+    <span class="ttk-tenet">Indomitable Spirit</span>
+  </div>
+
+</div><!-- end .ttk-wrap -->
+</div><!-- end .ttk-wrap -->
+</div>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -1259,35 +1716,210 @@ img { max-width: 100%; display: block; }
     </div>
     <div class="footer-bottom"><span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span><span>TAGB Affiliated · UK Sport Recognised</span></div>
   </div>
-</footer>
+</footer><script>
+(function () {
+  'use strict';
+  var SAVE_KEY = 'ttk_2kup_v1';
 
-<script>
-document.getElementById('tuitionForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = this;
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
+  function storeSave(key, value) {
+    try { localStorage.setItem(key, value); } catch(e) {}
+    try { sessionStorage.setItem(key, value); } catch(e) {}
     try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-            form.style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        } else {
-            btn.textContent = 'Send Enquiry';
-            btn.disabled = false;
-            alert('Something went wrong. Please try again or email us directly.');
-        }
-    } catch(err) {
-        btn.textContent = 'Send Enquiry';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again.');
+      var d = new Date(); d.setTime(d.getTime() + 365*24*60*60*1000);
+      document.cookie = key + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    } catch(e) {}
+  }
+  function storeLoad(key) {
+    try { var v = localStorage.getItem(key); if (v) return v; } catch(e) {}
+    try { var v = sessionStorage.getItem(key); if (v) return v; } catch(e) {}
+    try {
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(key + '=') === 0) return decodeURIComponent(c.substring(key.length + 1));
+      }
+    } catch(e) {}
+    return null;
+  }
+  function storeClear(key) {
+    try { localStorage.removeItem(key); } catch(e) {}
+    try { sessionStorage.removeItem(key); } catch(e) {}
+    try { document.cookie = key + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/'; } catch(e) {}
+  }
+
+  window.ttkChange8 = function(cb) {
+    var label = cb.parentElement;
+    if (!label) return;
+    if (cb.checked) { label.classList.add('checked'); }
+    else { label.classList.remove('checked'); }
+    updateProgress8();
+    autoSave8();
+  };
+
+  function updateProgress8() {
+    var allPractical = document.querySelectorAll('.ttk-check-item:not(.ttk-theory)');
+    var checkedPractical = document.querySelectorAll('.ttk-check-item:not(.ttk-theory) input[type="checkbox"]:checked');
+    var total = allPractical.length;
+    var done = checkedPractical.length;
+    var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+    var fill   = document.getElementById('ttk-progress-fill');
+    var text   = document.getElementById('ttk-progress-text');
+    var banner = document.getElementById('ttk-complete');
+    var wrap   = document.getElementById('ttk-ready-wrap');
+    var btn    = document.getElementById('ttk-ready-btn');
+    var lbl    = document.getElementById('ttk-ready-label');
+    var nameField = document.getElementById('ttk-name-field');
+
+    if (fill) fill.style.width = pct + '%';
+    if (text) text.textContent = done + ' / ' + total + ' practical items completed';
+
+    if (done === total && total > 0) {
+      if (banner) banner.style.display = 'block';
+      if (wrap && !wrap.classList.contains('active')) wrap.classList.add('active');
+      if (btn && !btn.classList.contains('sent')) {
+        btn.classList.add('active'); btn.classList.remove('disabled');
+        btn.style.pointerEvents = 'auto'; btn.style.cursor = 'pointer'; btn.style.opacity = '1';
+      }
+      if (nameField) nameField.style.display = 'block';
+      if (lbl) lbl.textContent = 'Enter your full name below and let Mr Cook know!';
+    } else {
+      if (banner) banner.style.display = 'none';
+      if (wrap) wrap.classList.remove('active');
+      if (btn && !btn.classList.contains('sent')) {
+        btn.classList.remove('active');
+        btn.style.pointerEvents = 'none'; btn.style.cursor = 'not-allowed'; btn.style.opacity = '0.55';
+      }
+      if (nameField) nameField.style.display = 'none';
+      if (lbl) lbl.textContent = 'Complete all ' + total + ' practical items to unlock this button';
     }
-});
+  }
+
+  function autoSave8() {
+    try {
+      var items = document.querySelectorAll('.ttk-check-item');
+      var state = [];
+      items.forEach(function(label) {
+        var cb = label.querySelector('input[type="checkbox"]');
+        state.push(cb ? cb.checked : false);
+      });
+      storeSave(SAVE_KEY, JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  window.ttk_save8 = function() {
+    autoSave8();
+    var btn = document.getElementById('ttk-save-btn');
+    if (btn) {
+      btn.textContent = '✅ Progress Saved!'; btn.classList.add('saved');
+      setTimeout(function() { btn.textContent = '💾 Save Progress'; btn.classList.remove('saved'); }, 2000);
+    }
+  };
+
+  window.ttk_reset8 = function() {
+    if (!confirm('Clear all ticks and saved progress?')) return;
+    storeClear(SAVE_KEY); storeClear(SAVE_KEY + '_sent'); storeClear(SAVE_KEY + '_name');
+    document.querySelectorAll('.ttk-check-item').forEach(function(label) {
+      var cb = label.querySelector('input[type="checkbox"]');
+      if (cb) cb.checked = false;
+      label.classList.remove('checked');
+    });
+    var btn = document.getElementById('ttk-ready-btn');
+    if (btn) {
+      btn.classList.remove('sent', 'active');
+      btn.textContent = '🥋 Tell Mr Cook I\'m Ready to Grade!';
+      btn.style.pointerEvents = 'none'; btn.style.opacity = '0.55';
+    }
+    var nameInput = document.getElementById('ttk-student-name');
+    if (nameInput) nameInput.value = '';
+    updateProgress8();
+  };
+
+  function loadSaved8() {
+    try {
+      var saved = storeLoad(SAVE_KEY);
+      if (!saved) return;
+      var state = JSON.parse(saved);
+      var items = document.querySelectorAll('.ttk-check-item');
+      items.forEach(function(label, i) {
+        var cb = label.querySelector('input[type="checkbox"]');
+        if (cb && state[i]) { cb.checked = true; label.classList.add('checked'); }
+      });
+    } catch(e) {}
+  }
+
+  function checkAlreadySent8() {
+    try {
+      if (storeLoad(SAVE_KEY + '_sent') === '1') {
+        var btn = document.getElementById('ttk-ready-btn');
+        var lbl = document.getElementById('ttk-ready-label');
+        var nameField = document.getElementById('ttk-name-field');
+        var savedName = storeLoad(SAVE_KEY + '_name') || '';
+        if (btn) { btn.textContent = '✅ Mr Cook has been notified!'; btn.classList.add('sent'); btn.style.pointerEvents = 'none'; }
+        if (lbl) lbl.textContent = savedName ? 'Great work, ' + savedName + ' — see you on grading day! 🥋💥' : 'Great work — see you on grading day! 🥋💥';
+        if (nameField) nameField.style.display = 'none';
+      }
+    } catch(e) {}
+  }
+
+  window.ttk_notify_ready8 = function() {
+    var btn = document.getElementById('ttk-ready-btn');
+    if (!btn || !btn.classList.contains('active')) return;
+    var nameInput = document.getElementById('ttk-student-name');
+    var nameErr = document.getElementById('ttk-name-error');
+    var name = nameInput ? nameInput.value.trim() : '';
+    if (!name) {
+      if (nameErr) nameErr.style.display = 'block';
+      if (nameInput) nameInput.focus();
+      return;
+    }
+    if (nameErr) nameErr.style.display = 'none';
+    btn.textContent = '⏳ Sending...'; btn.style.pointerEvents = 'none';
+
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', 'student@traintaekwondo.co.uk');
+    formData.append('_subject', '2nd Kup Ready to Grade — ' + name);
+    formData.append('message', name + ' has completed all practical items for the 5th Kup pre-grading checklist and is ready to grade.');
+    formData.append('form_type', 'Ready to Grade — 2nd Kup');
+
+    fetch('https://formspree.io/f/xnjgdqyj', {
+      method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        btn.textContent = '✅ Mr Cook has been notified!';
+        btn.classList.add('sent'); btn.classList.remove('active');
+        var lbl = document.getElementById('ttk-ready-label');
+        if (lbl) lbl.textContent = 'Great work, ' + name + ' — see you on grading day! 🥋💥';
+        var nameField = document.getElementById('ttk-name-field');
+        if (nameField) nameField.style.display = 'none';
+        storeSave(SAVE_KEY + '_sent', '1'); storeSave(SAVE_KEY + '_name', name);
+      } else {
+        btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
+      }
+    }).catch(function() {
+      btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
+    });
+  };
+
+  function init8() {
+    loadSaved8();
+    updateProgress8();
+    checkAlreadySent8();
+  }
+
+  function tryInit8() {
+    var items = document.querySelectorAll('.ttk-check-item');
+    if (items.length > 0) { init8(); }
+    else { setTimeout(tryInit8, 80); }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryInit8);
+  } else {
+    tryInit8();
+  }
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ninja Skillz &amp; Taekwondo Stamford Bridge | Train Taekwondo Schools — Village Hall</title>
+  <meta name="description" content="Ninja Skillz and Junior &amp; Family TAGB Taekwondo at Stamford Bridge Village Hall. Friday evenings — Early Skillz 5pm, Basic Skillz 5:30pm, Junior &amp; Family Taekwondo 6pm. First taster session FREE." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFD700;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --grey: #1a1a1a;
+      --text: #f0f0f0;
+      --muted: #aaaaaa;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
+
+    /* ANNOUNCEMENT BAR */
+    .announcement-bar {
+      background: var(--yellow);
+      color: var(--black);
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .announcement-bar a { color: var(--black); text-decoration: underline; cursor: pointer; }
+
+    /* NAV */
+    .nav {
+      background: #0a0a0a;
+      border-bottom: 1px solid #222;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-logo span { font-size: 1rem; font-weight: 900; color: var(--yellow); letter-spacing: 1px; text-transform: uppercase; }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); }
+    @media (max-width: 480px) { .nav-logo span { display: none; } }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0d0d05 50%, #0a0a0a 100%);
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      background-image: url('images/tagb-back.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.2;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .hero h1 span { color: var(--yellow); }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #ccc;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .free-badge {
+      display: inline-block;
+      border: 2px solid var(--yellow);
+      color: var(--yellow);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255,215,0,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,215,0,0.4); }
+
+    /* TIMETABLE STRIP */
+    .timetable-strip {
+      background: #111;
+      border-top: 3px solid var(--yellow);
+      border-bottom: 1px solid #222;
+      padding: 0;
+      overflow-x: auto;
+    }
+    .timetable-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .timetable-item {
+      padding: 20px 16px;
+      text-align: center;
+      border-right: 1px solid #222;
+    }
+    .timetable-item:last-child { border-right: none; }
+    .timetable-time { color: var(--yellow); font-size: 1.1rem; font-weight: 900; margin-bottom: 4px; }
+    .timetable-class { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+    .timetable-ages { color: var(--muted); font-size: 0.78rem; }
+    @media (max-width: 640px) {
+      .timetable-inner { grid-template-columns: repeat(2, 1fr); }
+      .timetable-item:nth-child(2) { border-right: none; }
+    }
+
+    /* SESSION INFO STRIP */
+    .session-strip {
+      background: #111;
+      border-bottom: 1px solid #222;
+      padding: 28px 20px;
+    }
+    .session-strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .session-item {
+      text-align: center;
+      padding: 12px 28px;
+      border-right: 1px solid #2a2a2a;
+    }
+    .session-item:last-child { border-right: none; }
+    .session-item .label { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+    .session-item .value { color: var(--yellow); font-size: 1.1rem; font-weight: 800; }
+    .session-item .sub { color: #777; font-size: 0.75rem; margin-top: 2px; }
+    @media (max-width: 640px) { .session-item { border-right: none; border-bottom: 1px solid #2a2a2a; padding: 12px 20px; } }
+
+    /* ESTABLISHED */
+    .established-section {
+      background: var(--grey);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+    .established-section h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+    .established-section h2 span { color: var(--yellow); }
+    .established-section p { color: var(--muted); max-width: 700px; margin: 0 auto 36px; font-size: 1rem; line-height: 1.8; }
+    .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .stat-item { text-align: center; padding: 20px 28px; background: #111; border-radius: 8px; border: 1px solid #2a2a2a; min-width: 120px; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--yellow); }
+    .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* PROGRAMMES */
+    .programmes { background: var(--black); padding: 70px 20px; }
+    .section-title { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: #fff; text-align: center; margin-bottom: 12px; }
+    .section-title span { color: var(--yellow); }
+    .section-sub { color: var(--muted); text-align: center; max-width: 640px; margin: 0 auto 48px; font-size: 1rem; line-height: 1.7; }
+    .programmes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .programme-card {
+      background: var(--grey);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .programme-card:hover { transform: translateY(-4px); border-color: var(--yellow); }
+    .programme-card.featured { border-color: var(--yellow); border-width: 2px; }
+    .programme-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .programme-card h3 { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .programme-card .ages { color: var(--yellow); font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; }
+    .programme-card .time-badge {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: var(--yellow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .programme-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px; }
+    .programme-features { list-style: none; margin-bottom: 24px; }
+    .programme-features li { color: #ccc; font-size: 0.88rem; padding: 6px 0; border-bottom: 1px solid #2a2a2a; display: flex; align-items: flex-start; gap: 8px; }
+    .programme-features li::before { content: '✓'; color: var(--yellow); font-weight: 900; flex-shrink: 0; }
+
+    /* WHAT TO EXPECT */
+    .expect { background: var(--grey); padding: 70px 20px; }
+    .expect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .expect-card { background: #111; border-radius: 10px; padding: 28px 24px; text-align: center; border: 1px solid #2a2a2a; }
+    .expect-icon { font-size: 2.5rem; margin-bottom: 14px; }
+    .expect-card h3 { color: var(--yellow); font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+    .expect-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+
+    /* BELT JOURNEY */
+    .belt-journey { background: var(--black); padding: 70px 20px; }
+    .belt-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto; }
+    .belt-item { text-align: center; }
+    .belt-sash { width: 60px; height: 12px; border-radius: 3px; margin: 0 auto 6px; }
+    .belt-name { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--grey); padding: 70px 20px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .testimonial-card { background: #111; border-radius: 10px; padding: 28px 24px; border: 1px solid #2a2a2a; }
+    .stars { color: var(--yellow); font-size: 1.1rem; margin-bottom: 12px; }
+    .testimonial-text { color: #ddd; font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .testimonial-author { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+
+    /* INSTRUCTOR */
+    .instructor { background: var(--black); padding: 70px 20px; }
+    .instructor-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; margin: 0 auto; align-items: center; }
+    @media (max-width: 768px) { .instructor-inner { grid-template-columns: 1fr; } }
+    .instructor-img { width: 100%; border-radius: 12px; border: 3px solid var(--yellow); }
+    .instructor-tag { display: inline-block; background: var(--yellow); color: var(--black); font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; margin-bottom: 14px; }
+    .instructor-content h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .instructor-content .title { color: var(--yellow); font-weight: 700; font-size: 1rem; margin-bottom: 16px; }
+    .instructor-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
+    .cred-list { list-style: none; margin-top: 20px; }
+    .cred-list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1e1e1e; color: #ccc; font-size: 0.9rem; }
+    .cred-icon { font-size: 1.1rem; }
+
+    /* URGENCY */
+    .urgency { background: var(--yellow); padding: 50px 20px; text-align: center; }
+    .urgency h2 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 900; color: var(--black); margin-bottom: 12px; }
+    .urgency p { color: #333; max-width: 600px; margin: 0 auto 24px; font-size: 1rem; line-height: 1.7; }
+    .btn-dark { display: inline-block; background: var(--black); color: var(--yellow); font-weight: 800; font-size: 1rem; padding: 14px 32px; border-radius: 6px; text-decoration: none; }
+
+    /* REGISTER FORM */
+    .register { background: var(--grey); padding: 70px 20px; }
+    .form-container { background: #111; border-radius: 14px; padding: 44px 40px; max-width: 580px; margin: 0 auto; border: 1px solid #2a2a2a; }
+    @media (max-width: 640px) { .form-container { padding: 28px 20px; } }
+    .form-container h2 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .form-container p { color: var(--muted); margin-bottom: 28px; font-size: 0.95rem; line-height: 1.7; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; color: #ccc; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .form-group input, .form-group select {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--yellow); }
+    .form-group select option { background: #1a1a1a; }
+    .form-submit { width: 100%; border: none; cursor: pointer; font-family: inherit; font-size: 1rem; margin-top: 8px; }
+    .form-privacy { color: #555; font-size: 0.78rem; text-align: center; margin-top: 14px; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #050505; padding: 40px 20px; text-align: center; border-top: 1px solid #1a1a1a; }
+    footer p { color: #555; font-size: 0.85rem; margin-bottom: 8px; line-height: 1.7; }
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    /* STICKY CTA */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--yellow);
+      text-align: center;
+      padding: 14px 20px;
+      z-index: 200;
+    }
+    .sticky-cta a { color: var(--black); font-weight: 800; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.5px; }
+    @media (max-width: 768px) { .sticky-cta { display: block; } }
+
+    /* UTILITIES */
+    .hide-mobile { display: inline-block; }
+    @media (max-width: 640px) { .hide-mobile { display: none; } }
+    .container { max-width: 1100px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🥋 NEW BEGINNER INTAKES EVERY FRIDAY THROUGHOUT SEPTEMBER &nbsp;|&nbsp; 🎁 FIRST TASTER SESSION COMPLETELY FREE &nbsp;|&nbsp; <a href="#register">BOOK YOUR SPACE →</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://www.traintaekwondo.co.uk" class="nav-logo">
+    <img src="images/gallery-01.png" alt="Train Taekwondo Schools Logo" />
+    <span>Train Taekwondo</span>
+  </a>
+  <a href="#register" class="nav-cta hide-mobile">Book Free Taster →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🥋 Ninja Skillz &amp; TAGB Taekwondo — Stamford Bridge</div>
+  <h1>Friday Nights in<br><span>Stamford Bridge</span></h1>
+  <p>Four programmes under one roof at Stamford Bridge Village Hall — from Ninja Skillz for toddlers right through to Junior and Family Taekwondo. New beginner intakes every Friday throughout September. Your first session is completely free.</p>
+  <div class="free-badge">
+    🎁 First Taster Session — Completely FREE
+  </div>
+  <br>
+  <a href="#register" class="btn-primary">Book Your FREE Taster Session →</a>
+</section>
+
+<!-- TIMETABLE STRIP -->
+<div class="timetable-strip">
+  <div class="timetable-inner">
+    <div class="timetable-item">
+      <div class="timetable-time">5:00 – 5:30 PM</div>
+      <div class="timetable-class">🐣 Early Skillz</div>
+      <div class="timetable-ages">Ages 3 – 4</div>
+    </div>
+    <div class="timetable-item">
+      <div class="timetable-time">5:30 – 6:00 PM</div>
+      <div class="timetable-class">⭐ Basic Skillz</div>
+      <div class="timetable-ages">Ages 5 – 6</div>
+    </div>
+    <div class="timetable-item">
+      <div class="timetable-time">6:00 – 7:00 PM</div>
+      <div class="timetable-class">🥋 Junior Taekwondo</div>
+      <div class="timetable-ages">Ages 5 – 16</div>
+    </div>
+    <div class="timetable-item">
+      <div class="timetable-time">6:00 – 7:00 PM</div>
+      <div class="timetable-class">👨‍👩‍👧 Family Taekwondo</div>
+      <div class="timetable-ages">Adults &amp; Children</div>
+    </div>
+  </div>
+</div>
+
+<!-- SESSION INFO STRIP -->
+<div class="session-strip">
+  <div class="session-strip-inner">
+    <div class="session-item">
+      <div class="label">Day</div>
+      <div class="value">Friday</div>
+      <div class="sub">Every week</div>
+    </div>
+    <div class="session-item">
+      <div class="label">Venue</div>
+      <div class="value">Village Hall</div>
+      <div class="sub">Stamford Bridge</div>
+    </div>
+    <div class="session-item">
+      <div class="label">September Intakes</div>
+      <div class="value">Every Friday</div>
+      <div class="sub">Throughout September</div>
+    </div>
+    <div class="session-item">
+      <div class="label">First Session</div>
+      <div class="value">FREE</div>
+      <div class="sub">No commitment required</div>
+    </div>
+  </div>
+</div>
+
+<!-- ESTABLISHED SECTION -->
+<section class="established-section">
+  <h2>A Club With a <span>Proven Track Record</span></h2>
+  <p>This isn't a new class — it's an established, well-run club that has been building confident young people in Stamford Bridge for years. From tiny three-year-olds taking their first steps on the mat to families earning black belts together, this is a community that works.</p>
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Black Belts Produced</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Coaching</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Locations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5th Dan</div>
+      <div class="stat-label">Chief Instructor</div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME VIDEO -->
+<section style="background:#0a0a0a;padding:64px 20px;text-align:center;">
+  <div style="display:inline-block;background:#FFD700;color:#0a0a0a;font-size:0.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:3px;margin-bottom:20px;">A MESSAGE FROM GAVIN</div>
+  <h2 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;margin-bottom:12px;">Meet Your <span style="color:#FFD700;">Instructor</span></h2>
+  <p style="color:#aaa;font-size:1rem;max-width:600px;margin:0 auto 36px;line-height:1.7;">Before you come down, take 30 seconds to hear from Gavin directly — then let him walk you through exactly what the programme looks like for your child.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:900px;margin:0 auto;">
+    <div>
+      <p style="color:#FFD700;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">👋 Gavin's Welcome</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.6);background:#111;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111;border-radius:12px;border:2px dashed #333;">
+          <div style="font-size:3rem;margin-bottom:12px;">🎬</div>
+          <p style="color:#555;font-size:0.9rem;font-weight:600;">Welcome video coming soon</p>
+          <p style="color:#444;font-size:0.78rem;margin-top:6px;">Gavin's 30-second introduction</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="color:#FFD700;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">🥋 About the Programmes</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.6);background:#111;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#111;border-radius:12px;border:2px dashed #333;">
+          <div style="font-size:3rem;margin-bottom:12px;">🤖</div>
+          <p style="color:#555;font-size:0.9rem;font-weight:600;">Programme overview coming soon</p>
+          <p style="color:#444;font-size:0.78rem;margin-top:6px;">AI Gavin walks you through the classes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section class="programmes" id="programmes">
+  <h2 class="section-title">Friday Night <span>Programmes</span></h2>
+  <p class="section-sub">Four classes across the evening — something for every age, from your first steps on the mat to the full TAGB black belt journey.</p>
+  <div class="programmes-grid">
+
+    <!-- Early Skillz -->
+    <div class="programme-card featured">
+      <span class="programme-tag">Ninja Skillz</span>
+      <h3>Early Skillz</h3>
+      <div class="ages">Ages 3 – 4</div>
+      <div class="time-badge">⏰ 5:00 – 5:30 PM</div>
+      <p>A brain-based movement programme designed specifically for tiny minds. Early Skillz builds coordination, listening skills and confidence in a fun, structured 30-minute session — the perfect first step for little ones.</p>
+      <ul class="programme-features">
+        <li>Designed for ages 3 and 4 — developmentally appropriate</li>
+        <li>Brain-based Ninja Skillz curriculum</li>
+        <li>Builds coordination, focus and listening</li>
+        <li>Fun, energetic and structured</li>
+        <li>Certified Ninja Skillz instructor</li>
+      </ul>
+      <a href="#register" class="btn-primary" style="display:block;text-align:center;">Book Free Taster →</a>
+    </div>
+
+    <!-- Basic Skillz -->
+    <div class="programme-card featured">
+      <span class="programme-tag">Ninja Skillz</span>
+      <h3>Basic Skillz</h3>
+      <div class="ages">Ages 5 – 6</div>
+      <div class="time-badge">⏰ 5:30 – 6:00 PM</div>
+      <p>The next step in the Ninja Skillz journey. Basic Skillz introduces more structured movement, early martial arts foundations and the badge progression system that keeps children motivated and coming back every week.</p>
+      <ul class="programme-features">
+        <li>Builds on Early Skillz foundations</li>
+        <li>Badge and level progression system</li>
+        <li>Early martial arts movement patterns</li>
+        <li>Develops self-regulation and teamwork</li>
+        <li>Natural bridge to Junior Taekwondo</li>
+      </ul>
+      <a href="#register" class="btn-primary" style="display:block;text-align:center;">Book Free Taster →</a>
+    </div>
+
+    <!-- Junior Taekwondo -->
+    <div class="programme-card">
+      <span class="programme-tag" style="background:transparent;border:2px solid var(--yellow);color:var(--yellow);">TAGB Taekwondo</span>
+      <h3>Junior Taekwondo</h3>
+      <div class="ages">Ages 5 – 16</div>
+      <div class="time-badge">⏰ 6:00 – 7:00 PM</div>
+      <p>The full TAGB belt system — from white belt through to black belt. Structured, progressive, and taught by a 5th Dan instructor who genuinely cares about every student's development.</p>
+      <ul class="programme-features">
+        <li>Official TAGB grading syllabus — nationally recognised</li>
+        <li>Patterns, sparring, self-defence &amp; fitness</li>
+        <li>Regular gradings — visible progress every few months</li>
+        <li>Builds focus, discipline and self-confidence</li>
+        <li>Pathway all the way to Black Belt</li>
+      </ul>
+      <a href="#register" class="btn-primary" style="display:block;text-align:center;">Book Free Taster →</a>
+    </div>
+
+    <!-- Family Taekwondo -->
+    <div class="programme-card">
+      <span class="programme-tag" style="background:transparent;border:2px solid var(--yellow);color:var(--yellow);">Family Programme</span>
+      <h3>Family Taekwondo</h3>
+      <div class="ages">Adults &amp; Children Together</div>
+      <div class="time-badge">⏰ 6:00 – 7:00 PM</div>
+      <p>Train alongside your child on the same mat, earning the same belts, sharing the same journey. One of the most powerful things a family can do together — and one of the most fun.</p>
+      <ul class="programme-features">
+        <li>Parents and children train in the same class</li>
+        <li>Same TAGB syllabus — everyone progresses together</li>
+        <li>Great for fitness, bonding and shared goals</li>
+        <li>No experience needed — all abilities welcome</li>
+        <li>A shared journey your family will never forget</li>
+      </ul>
+      <a href="#register" class="btn-primary" style="display:block;text-align:center;">Book Free Taster →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect">
+  <h2 class="section-title">What to <span>Expect</span></h2>
+  <p class="section-sub">Your first Friday is completely free and zero pressure. Here's what happens.</p>
+  <div class="expect-grid">
+    <div class="expect-card">
+      <div class="expect-icon">👋</div>
+      <h3>A Warm Welcome</h3>
+      <p>Gavin will meet you at the door, introduce himself, and make sure your child feels comfortable before they step on the mat.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-icon">🥋</div>
+      <h3>Join the Class</h3>
+      <p>Your child joins in straight away. No standing on the sidelines — they're part of the group from minute one.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-icon">⭐</div>
+      <h3>Instant Progress</h3>
+      <p>By the end of the first session, they'll have learned something real. You'll see the difference immediately.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-icon">💬</div>
+      <h3>No Pressure Chat</h3>
+      <p>After the session, Gavin will have a quick word with you about how it went and what the next steps look like — no hard sell, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BELT JOURNEY (Taekwondo only) -->
+<section class="belt-journey">
+  <h2 class="section-title">The <span>Belt Journey</span></h2>
+  <p class="section-sub">Every student starts at white belt. The journey to black belt takes 5 years — and every step of the way is earned.</p>
+  <div class="belt-row">
+    <div class="belt-item"><div class="belt-sash" style="background:#fff;border:1px solid #555;"></div><div class="belt-name">White</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#fff;border-bottom:4px solid #FFD700;"></div><div class="belt-name">White/Yellow</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#FFD700;"></div><div class="belt-name">Yellow</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#FFD700;border-bottom:4px solid #28a745;"></div><div class="belt-name">Yellow/Green</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#28a745;"></div><div class="belt-name">Green</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#28a745;border-bottom:4px solid #007bff;"></div><div class="belt-name">Green/Blue</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#007bff;"></div><div class="belt-name">Blue</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#007bff;border-bottom:4px solid #cc0000;"></div><div class="belt-name">Blue/Red</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#cc0000;"></div><div class="belt-name">Red</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#cc0000;border-bottom:4px solid #111;"></div><div class="belt-name">Red/Black</div></div>
+    <div class="belt-item"><div class="belt-sash" style="background:#111;border:1px solid #555;"></div><div class="belt-name">Black</div></div>
+  </div>
+  <p style="text-align:center;color:var(--muted);margin-top:28px;font-size:0.9rem;">Each belt has multiple grades (Kups). Students reach black belt in 5 years with regular attendance.</p>
+</section>
+
+<!-- PROMO VIDEO -->
+<section style="background:#0a0a0a;padding:64px 20px;text-align:center;">
+  <div style="display:inline-block;background:#FFD700;color:#0a0a0a;font-size:0.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:3px;margin-bottom:20px;">SEE US IN ACTION</div>
+  <h2 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;margin-bottom:12px;">Watch the <span style="color:#FFD700;">Club in Action</span></h2>
+  <p style="color:#aaa;font-size:1rem;max-width:600px;margin:0 auto 36px;line-height:1.7;">See what a real Train Taekwondo Schools class looks like — the atmosphere, the coaching, and the students who've been on this journey.</p>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:800px;margin:0 auto;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.6);">
+    <iframe src="https://www.youtube.com/embed/22WZjqHc9D8" title="Train Taekwondo Schools — Club Promo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+  </div>
+  <p style="color:#555;font-size:0.82rem;margin-top:20px;">📍 Stamford Bridge Village Hall &nbsp;|&nbsp; Friday evenings from 5:00 PM</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2 class="section-title">What Parents Are <span>Saying</span></h2>
+  <p class="section-sub">From families who've been part of Train Taekwondo Schools.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"My son James joined 3 years ago — from the first day he met Gavin a bond was formed. Sometimes children need a helping hand in life that a parent can't give, and Gavin's bond with James and the rest of the students is something that will stay with them into adulthood."</p>
+      <div class="testimonial-author">Sarah M. — Parent of James, Black Belt</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"We started as a family — me and both my kids. Three years later we've all graded together and it's genuinely one of the best things we've ever done as a family. Gavin is an exceptional instructor and a genuinely good person."</p>
+      <div class="testimonial-author">Mark T. — Family member, Blue Belt</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"My daughter was really shy when she started. Within six months she was standing up in front of the class demonstrating techniques. The confidence she's gained has carried into school and everything else she does."</p>
+      <div class="testimonial-author">Claire B. — Parent of Emily, Green Belt</div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="instructor">
+  <div class="instructor-inner">
+    <div>
+      <img src="images/tagb-back.jpeg" alt="Gavin Cook — 5th Dan Black Belt, Chief Instructor" class="instructor-img" />
+    </div>
+    <div class="instructor-content">
+      <span class="instructor-tag">Chief Instructor</span>
+      <h2>Gavin Cook</h2>
+      <div class="title">5th Dan Black Belt — TAGB Certified</div>
+      <p>Gavin has been training in Taekwondo for over 43 years and has been running Train Taekwondo Schools for 15 years. He has produced over 100 black belts and coached hundreds of families across East Yorkshire and York.</p>
+      <p>His approach is simple: every student who walks through the door is treated as an individual, and every student is capable of reaching black belt if they're given the right environment and the right coach.</p>
+      <ul class="cred-list">
+        <li><span class="cred-icon">🥋</span> 5th Dan Black Belt — TAGB Certified</li>
+        <li><span class="cred-icon">🏆</span> International &amp; National TAGB Competitor</li>
+        <li><span class="cred-icon">🧠</span> Certified Ninja Skillz Instructor</li>
+        <li><span class="cred-icon">👨‍🏫</span> 15+ Years Coaching Experience</li>
+        <li><span class="cred-icon">📍</span> 5 Locations Across East Yorkshire &amp; York</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<div class="urgency">
+  <h2>September Intakes — Every Friday Evening</h2>
+  <p>New beginners are welcome every Friday throughout September. Spaces are limited per class — the earlier you register, the sooner your child gets started.</p>
+  <a href="#register" class="btn-dark">Claim Your Child's Free Taster →</a>
+</div>
+
+<!-- REGISTER FORM -->
+<section class="register" id="register">
+  <div class="form-container">
+    <h2>Book Your Free Taster Session</h2>
+    <p>Fill in your details and Gavin will be in touch to confirm your Friday session. No commitment, no cost.</p>
+    <form action="https://formspree.io/f/xnjgdqyj" method="POST">
+      <input type="hidden" name="location" value="Stamford Bridge — Village Hall" />
+      <div class="form-group">
+        <label>Parent's Name</label>
+        <input type="text" name="parent_name" placeholder="Your full name" required />
+      </div>
+      <div class="form-group">
+        <label>Child's Name</label>
+        <input type="text" name="child_name" placeholder="Child's first name" required />
+      </div>
+      <div class="form-group">
+        <label>Child's Age</label>
+        <input type="number" name="child_age" placeholder="e.g. 5" min="3" max="18" required />
+      </div>
+      <div class="form-group">
+        <label>Programme</label>
+        <select name="programme" required>
+          <option value="" disabled selected>Select a programme</option>
+          <option value="Early Skillz (Ages 3-4, 5-5:30pm)">🐣 Early Skillz — Ages 3–4 (5:00–5:30pm)</option>
+          <option value="Basic Skillz (Ages 5-6, 5:30-6pm)">⭐ Basic Skillz — Ages 5–6 (5:30–6:00pm)</option>
+          <option value="Junior Taekwondo (Ages 5-16, 6-7pm)">🥋 Junior Taekwondo — Ages 5–16 (6:00–7:00pm)</option>
+          <option value="Family Taekwondo (6-7pm)">👨‍👩‍👧‍👦 Family Taekwondo (6:00–7:00pm)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="07xxx xxxxxx" required />
+      </div>
+      <button type="submit" class="btn-primary form-submit">🥋 Book My Free Taster Session</button>
+      <p class="form-privacy">🔒 We respect your privacy. Your details will only be used to confirm your taster session and will never be shared with third parties.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Train Taekwondo Schools — Stamford Bridge</strong></p>
+  <p>Stamford Bridge Village Hall &nbsp;|&nbsp; Friday evenings from 5:00 PM</p>
+  <p>📞 <a href="tel:07833665905">07833 665905</a> &nbsp;|&nbsp; ✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p>
+  <p style="margin-top:10px;">
+    <a href="https://wa.me/447426907627?text=Hi%20Gavin%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Stamford%20Bridge%20Friday%20classes" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+      WhatsApp Us
+    </a>
+  </p>
+  <p style="margin-top:12px;font-size:0.78rem;">Part of Train Taekwondo Schools — <a href="https://www.traintaekwondo.co.uk">www.traintaekwondo.co.uk</a></p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#register">🥋 Book Your FREE Taster Session →</a>
+</div>
+
+<script>
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.innerHTML = `
+            <div style="text-align:center;padding:40px 20px;">
+              <div style="font-size:3rem;margin-bottom:16px;">🥋</div>
+              <h3 style="color:#FFD700;font-size:1.5rem;margin-bottom:12px;">You're Booked In!</h3>
+              <p style="color:#aaa;line-height:1.7;">Thanks — Gavin will be in touch shortly to confirm your Friday taster session at Stamford Bridge Village Hall. We'll see you on the mat!</p>
+            </div>`;
+        } else {
+          throw new Error('Form error');
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — please call 07833 665905';
+        btn.disabled = false;
+        btn.style.background = '#c0392b';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

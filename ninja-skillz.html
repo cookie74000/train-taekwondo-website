@@ -632,7 +632,41 @@ img { max-width: 100%; display: block; }
 .free-taster-bar h3 { font-size: 1.4rem; margin-bottom: 8px; }
 .free-taster-bar p { font-size: 0.92rem; margin-bottom: 16px; }
 @media (max-width: 768px) { .skillz-tier-grid { grid-template-columns: 1fr; } }
-</style>
+
+    /* Mobile nav accordion */
+    .mobile-nav-toggle {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-align: left;
+      padding: 14px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mobile-nav-toggle:hover { color: var(--gold); }
+    .mobile-nav-toggle .toggle-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
+    .mobile-nav-toggle[aria-expanded="true"] .toggle-arrow {
+      transform: rotate(180deg);
+    }
+    .mobile-nav-section {
+      display: none;
+      background: rgba(0,0,0,0.2);
+    }
+    .mobile-nav-section.open { display: block; }
+    </style>
 </head>
 <body>
 
@@ -691,22 +725,48 @@ img { max-width: 100%; display: block; }
       </button>
     </nav>
   </div>
-  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
-    <a href="ninja-skillz.html">Classes</a>
-    <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
-    <a href="spectrum-skillz.html" class="sub" style="color:var(--gold);">↳ Spectrum Skillz (Ages 7–14)</a>
-    <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
-    <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">
+      Classes <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub" style="color:var(--gold);">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+    </div>
+
     <a href="locations.html">Locations</a>
     <a href="timetable.html">Timetable</a>
-    <a href="about.html">About</a>
-    <a href="reviews.html">Reviews</a>
+
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('aboutSection', this)" aria-expanded="false">
+      About <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="aboutSection">
+      <a href="about.html" class="sub">↳ About Us</a>
+      <a href="guide-for-parents.html" class="sub" style="color:var(--gold);">↳ Guide for Parents</a>
+      <a href="reviews.html" class="sub">↳ Reviews</a>
+    </div>
+
     <a href="faq.html">FAQ</a>
-    <a href="#">Belt Testing</a>
-    <a href="white-belt-to-yellow-stripe.html" class="sub">↳ ⬜ White Belt → Yellow Stripe</a>
-    <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ 🟡 Yellow Stripe → Yellow Belt</a>
-    <a href="yellow-belt-to-green-stripe.html" class="sub">↳ 💚 Yellow Belt → Green Stripe</a>
+
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('beltSection', this)" aria-expanded="false">
+      Belt Testing <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="beltSection">
+      <a href="white-belt-to-yellow-stripe.html" class="sub">↳ ⬜ White Belt → Yellow Stripe</a>
+      <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ 🟡 Yellow Stripe → Yellow Belt</a>
+      <a href="yellow-belt-to-green-stripe.html" class="sub">↳ 💚 Yellow Belt → Green Stripe</a>
+      <a href="green-stripe-to-green-belt.html" class="sub">↳ 💚 Green Stripe → Green Belt</a>
+      <a href="green-belt-to-blue-stripe.html" class="sub">↳ 🔵 Green Belt → Blue Stripe</a>
+      <a href="blue-stripe-to-blue-belt.html" class="sub">↳ 🔵 Blue Stripe → Blue Belt</a>
+      <a href="blue-belt-to-red-stripe.html" class="sub">↳ 🔴 Blue Belt → Red Stripe</a>
+      <a href="red-stripe-to-red-belt.html" class="sub">↳ 🔴 Red Stripe → Red Belt</a>
+      <a href="red-belt-to-black-stripe.html" class="sub">↳ ⬛ Red Belt → Black Stripe</a>
+    </div>
+
     <a href="contact.html">Contact</a>
     <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
     <a href="membership.html" style="color:var(--gold);">Join Now →</a>
@@ -956,5 +1016,20 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
 </footer>
+
+  <script>
+    function toggleMobileSection(sectionId, btn) {
+      var section = document.getElementById(sectionId);
+      var isOpen = section.classList.contains('open');
+      // Close all sections first
+      document.querySelectorAll('.mobile-nav-section').forEach(function(s) { s.classList.remove('open'); });
+      document.querySelectorAll('.mobile-nav-toggle').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+      // Toggle the clicked one
+      if (!isOpen) {
+        section.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
 </body>
 </html>

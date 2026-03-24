@@ -302,11 +302,11 @@ img { max-width: 100%; display: block; }
           <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Mr Cook, Chief Instructor</div>
         </div>
         <div class="places-section">
-          <div class="places-label">Places Remaining This Term</div>
-          <div class="places-bar-track">
-            <div class="places-bar-fill" id="bar-badger" style="width: 0%;"></div>
+          <div class="places-label">Availability</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:4px;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--green); flex-shrink:0;"></span>
+            <span style="color:#fff; font-size:0.88rem;"><strong>Places available</strong> — book now to secure your child's spot</span>
           </div>
-          <div class="places-text" id="text-badger"><span class="places-loading">Loading availability...</span></div>
         </div>
         <div class="club-card-footer">
           <a href="https://buy.stripe.com/00w5kC81ha36bfa80obII0a" id="btn-badger" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
@@ -330,11 +330,11 @@ img { max-width: 100%; display: block; }
           <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Train Taekwondo instructor</div>
         </div>
         <div class="places-section">
-          <div class="places-label">Places Remaining This Term</div>
-          <div class="places-bar-track">
-            <div class="places-bar-fill" id="bar-pocklington" style="width: 0%;"></div>
+          <div class="places-label">Availability</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:4px;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--green); flex-shrink:0;"></span>
+            <span style="color:#fff; font-size:0.88rem;"><strong>Places available</strong> — book now to secure your child's spot</span>
           </div>
-          <div class="places-text" id="text-pocklington"><span class="places-loading">Loading availability...</span></div>
         </div>
         <div class="club-card-footer">
           <a href="https://buy.stripe.com/fZu3cuepF7UY972a8wbII09" id="btn-pocklington" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
@@ -358,11 +358,11 @@ img { max-width: 100%; display: block; }
           <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Train Taekwondo instructor</div>
         </div>
         <div class="places-section">
-          <div class="places-label">Places Remaining This Term</div>
-          <div class="places-bar-track">
-            <div class="places-bar-fill" id="bar-beverley" style="width: 0%;"></div>
+          <div class="places-label">Availability</div>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:4px;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--green); flex-shrink:0;"></span>
+            <span style="color:#fff; font-size:0.88rem;"><strong>Places available</strong> — book now to secure your child's spot</span>
           </div>
-          <div class="places-text" id="text-beverley"><span class="places-loading">Loading availability...</span></div>
         </div>
         <div class="club-card-footer">
           <a href="https://buy.stripe.com/bJecN4epF8Z2dnieoMbII0b" id="btn-beverley" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
@@ -466,88 +466,6 @@ img { max-width: 100%; display: block; }
 </footer>
 
 <script>
-// =====================================================
-// CONFIGURATION — Update these when Stripe is connected
-// =====================================================
-const CLUBS = {
-  badger: {
-    apiEndpoint: '/.netlify/functions/get-places?club=badger-hill',
-    maxPlaces: 0,   // UPDATE: set max places e.g. 15
-    barId: 'bar-badger',
-    textId: 'text-badger',
-    btnId: 'btn-badger',
-    stripeLink: 'https://buy.stripe.com/00w5kC81ha36bfa80obII0a'
-  },
-  pocklington: {
-    apiEndpoint: '/.netlify/functions/get-places?club=pocklington',
-    maxPlaces: 0,   // UPDATE: set max places e.g. 12
-    barId: 'bar-pocklington',
-    textId: 'text-pocklington',
-    btnId: 'btn-pocklington',
-    stripeLink: 'https://buy.stripe.com/fZu3cuepF7UY972a8wbII09'
-  },
-  beverley: {
-    apiEndpoint: '/.netlify/functions/get-places?club=beverley-breakfast',
-    maxPlaces: 0,   // UPDATE: set max places e.g. 10
-    barId: 'bar-beverley',
-    textId: 'text-beverley',
-    btnId: 'btn-beverley',
-    stripeLink: 'https://buy.stripe.com/bJecN4epF8Z2dnieoMbII0b'
-  }
-};
-
-// =====================================================
-// PLACES COUNTER — fetches live data from Netlify function
-// =====================================================
-async function loadPlaces(clubKey) {
-  const club = CLUBS[clubKey];
-  const bar = document.getElementById(club.barId);
-  const text = document.getElementById(club.textId);
-  const btn = document.getElementById(club.btnId);
-
-  // If not yet configured, show a friendly placeholder
-  if (club.maxPlaces === 0 || club.stripeLink.startsWith('STRIPE_LINK')) {
-    text.innerHTML = '<strong style="color:var(--gold);">Places available</strong> — contact us to book';
-    bar.style.width = '30%';
-    bar.classList.remove('warning', 'full');
-    return;
-  }
-
-  try {
-    const res = await fetch(club.apiEndpoint);
-    const data = await res.json();
-    const booked = data.booked || 0;
-    const remaining = Math.max(0, club.maxPlaces - booked);
-    const pct = Math.min(100, (booked / club.maxPlaces) * 100);
-
-    bar.style.width = pct + '%';
-    bar.classList.remove('warning', 'full');
-
-    if (remaining === 0) {
-      bar.classList.add('full');
-      text.innerHTML = '<strong style="color:var(--red);">Fully Booked</strong> — join the waiting list';
-      btn.classList.remove('btn-gold');
-      btn.classList.add('btn-disabled');
-      btn.textContent = 'Fully Booked';
-      btn.removeAttribute('href');
-    } else if (remaining <= 3) {
-      bar.classList.add('warning');
-      text.innerHTML = '<strong style="color:var(--orange);">Only ' + remaining + ' place' + (remaining === 1 ? '' : 's') + ' left!</strong> Book now to avoid missing out.';
-    } else {
-      text.innerHTML = '<strong>' + remaining + ' of ' + club.maxPlaces + '</strong> places remaining';
-    }
-  } catch (e) {
-    text.innerHTML = 'Contact us to check availability';
-  }
-}
-
-// Load all clubs on page load
-document.addEventListener('DOMContentLoaded', function() {
-  loadPlaces('badger');
-  loadPlaces('pocklington');
-  loadPlaces('beverley');
-});
-
 // =====================================================
 // MOBILE NAV
 // =====================================================

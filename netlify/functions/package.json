@@ -1,0 +1,8 @@
+{
+  "name": "train-taekwondo-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify serverless functions for Train Taekwondo Schools",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

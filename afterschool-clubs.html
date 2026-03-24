@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>After School Clubs | Train Taekwondo Schools</title>
+<meta name="description" content="Train Taekwondo Schools after school clubs in York, Pocklington and Beverley. Book your child's place for next term.">
+<!-- Hidden from search engines -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+  --black:   #0a0a0a;
+  --dark:    #111111;
+  --dark2:   #1a1a1a;
+  --dark3:   #222222;
+  --gold:    #e8c414;
+  --gold2:   #f5d430;
+  --red:     #c0392b;
+  --white:   #ffffff;
+  --grey:    #aaaaaa;
+  --border:  #2a2a2a;
+  --green:   #27ae60;
+  --orange:  #e67e22;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 { font-family: 'Russo One', sans-serif; line-height: 1.2; letter-spacing: 0.02em; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.gold { color: var(--gold); }
+.divider { width: 60px; height: 4px; background: var(--gold); margin: 16px auto 0; border-radius: 2px; }
+
+.btn { display: inline-block; padding: 14px 32px; font-family: 'Russo One', sans-serif; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 4px; cursor: pointer; border: none; transition: all 0.2s ease; text-align: center; text-decoration: none; }
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-lg { padding: 18px 44px; font-size: 1.05rem; }
+.btn-sm { padding: 10px 22px; font-size: 0.82rem; }
+.btn-disabled { background: var(--dark3); color: var(--grey); cursor: not-allowed; border: 2px solid var(--border); }
+.btn-disabled:hover { transform: none; box-shadow: none; background: var(--dark3); color: var(--grey); }
+
+/* ANNOUNCE BAR */
+.announce-bar { background: var(--gold); color: var(--black); text-align: center; padding: 10px 24px; font-family: 'Russo One', sans-serif; font-size: 0.82rem; letter-spacing: 0.06em; }
+.announce-bar a { color: var(--black); text-decoration: underline; }
+
+/* HEADER / NAV */
+.site-header { background: var(--black); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo img { height: 52px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a { color: var(--white); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 3px; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px; min-width: 200px; padding: 8px 0; z-index: 100; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.82rem; color: var(--white); border-radius: 0; }
+.dropdown-menu a:hover { color: var(--gold); background: rgba(232,196,20,0.06); }
+.nav-cta { margin-left: 12px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+.mobile-nav { display: none; background: var(--dark); border-top: 1px solid var(--border); padding: 16px 0; }
+.mobile-nav.open { display: block; }
+.mobile-nav a { display: block; padding: 12px 24px; color: var(--white); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav a.sub { padding-left: 40px; font-size: 0.82rem; color: var(--grey); }
+.mobile-nav-toggle { display: block; width: 100%; text-align: left; padding: 12px 24px; background: none; border: none; border-bottom: 1px solid var(--border); color: var(--white); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; font-family: 'Lato', sans-serif; }
+.mobile-nav-toggle:hover { color: var(--gold); }
+.toggle-arrow { float: right; transition: transform 0.3s; display: inline-block; }
+.mobile-nav-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+.mobile-nav-section { display: none; }
+.mobile-nav-section.open { display: block; }
+
+/* PAGE HERO */
+.page-hero { background: linear-gradient(135deg, var(--dark2) 0%, #0d1a0d 100%); border-bottom: 3px solid var(--gold); padding: 64px 0; text-align: center; }
+.page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+.page-hero p { color: var(--grey); margin-top: 12px; font-size: 1.05rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.hero-eyebrow { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Russo One', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; padding: 5px 14px; border-radius: 2px; text-transform: uppercase; margin-bottom: 20px; }
+
+/* VIDEO SECTIONS */
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 3px solid var(--gold); box-shadow: 0 0 40px rgba(232,196,20,0.2); }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; border: none; }
+
+/* HEYGEN PLACEHOLDER */
+.heygen-placeholder { background: var(--dark3); border: 3px dashed var(--gold); border-radius: 10px; padding: 60px 40px; text-align: center; }
+.heygen-placeholder .icon { font-size: 3.5rem; margin-bottom: 16px; }
+.heygen-placeholder h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--gold); }
+.heygen-placeholder p { color: var(--grey); font-size: 0.92rem; max-width: 480px; margin: 0 auto; }
+
+/* CLUB CARDS */
+.clubs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+
+.club-card { background: var(--dark2); border: 2px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+.club-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+
+.club-card-header { padding: 24px 24px 0; }
+.club-badge { display: inline-block; font-family: 'Russo One', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+.badge-york { background: rgba(232,196,20,0.15); color: var(--gold); border: 1px solid rgba(232,196,20,0.3); }
+.badge-pocklington { background: rgba(39,174,96,0.15); color: #4ade80; border: 1px solid rgba(39,174,96,0.3); }
+.badge-beverley { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+
+.club-card h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.club-card .school-name { color: var(--grey); font-size: 0.88rem; margin-bottom: 16px; }
+
+.club-details { padding: 0 24px; }
+.detail-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #ccc; }
+.detail-row:last-child { border-bottom: none; }
+.detail-icon { font-size: 1rem; flex-shrink: 0; width: 20px; text-align: center; }
+
+/* PLACES COUNTER */
+.places-section { padding: 16px 24px; background: var(--dark3); margin: 16px 0 0; }
+.places-label { font-size: 0.75rem; font-family: 'Russo One', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+.places-bar-track { background: var(--border); border-radius: 4px; height: 8px; overflow: hidden; margin-bottom: 8px; }
+.places-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; background: var(--green); }
+.places-bar-fill.warning { background: var(--orange); }
+.places-bar-fill.full { background: var(--red); }
+.places-text { font-size: 0.82rem; color: var(--grey); }
+.places-text strong { color: var(--white); }
+.places-loading { font-size: 0.82rem; color: var(--grey); font-style: italic; }
+
+.club-card-footer { padding: 20px 24px 24px; }
+
+/* TRUST BAR */
+.trust-bar { background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 0; }
+.trust-bar-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+.trust-stat { text-align: center; padding: 12px 36px; border-right: 1px solid var(--border); }
+.trust-stat:last-child { border-right: none; }
+.trust-stat .num { font-family: 'Russo One', sans-serif; font-size: 2rem; color: var(--gold); line-height: 1; }
+.trust-stat .label { font-size: 0.78rem; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+/* INFO SECTION */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.info-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; }
+.info-card .info-icon { font-size: 2rem; margin-bottom: 14px; }
+.info-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--gold); }
+.info-card p { color: var(--grey); font-size: 0.88rem; line-height: 1.7; }
+
+/* FOOTER */
+.site-footer { background: var(--dark); border-top: 1px solid var(--border); padding: 56px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand img { height: 48px; margin-bottom: 16px; }
+.footer-brand p { color: var(--grey); font-size: 0.88rem; line-height: 1.7; }
+.footer-col h4 { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: var(--grey); font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-col p { color: var(--grey); font-size: 0.88rem; line-height: 1.8; }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--grey); }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .clubs-grid { grid-template-columns: 1fr; }
+  .trust-stat { padding: 12px 20px; }
+  .section { padding: 56px 0; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="announce-bar">
+  🥋 After School Clubs — <a href="#clubs">Book Your Child's Place for Next Term</a>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/gallery-01.png" alt="Train Taekwondo Schools"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown"><a href="ninja-skillz.html">Classes</a>
+          <div class="dropdown-menu">
+            <a href="ninja-skillz.html">🥷 Ninja Skillz (Ages 3–7)</a>
+            <a href="spectrum-skillz.html">🧩 Spectrum Skillz (Ages 7–14)</a>
+            <a href="family-taekwondo.html">🥋 Family Taekwondo</a>
+            <a href="private-tuition.html">🎯 Private Tuition (Online)</a>
+          </div>
+        </li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-gold btn-sm nav-cta">Join Now</a>
+      <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">Classes <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+    </div>
+    <a href="locations.html">Locations</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="about.html">About</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
+    <a href="membership.html" style="color:var(--gold);">Join Now →</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="hero-eyebrow">Train Taekwondo Schools</span>
+    <h1>After School <span class="gold">Clubs</span></h1>
+    <p>Taekwondo and Martial Arts after school clubs across East Yorkshire — building confidence, focus, and fitness in a fun, safe environment.</p>
+  </div>
+</section>
+
+<!-- HEYGEN VIDEO MESSAGE -->
+<section class="section" style="background: var(--dark); padding: 64px 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="hero-eyebrow">A Message from Mr Cook</span>
+      <h2>Welcome to Our <span class="gold">After School Clubs</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div style="max-width: 760px; margin: 0 auto;">
+      <!-- HEYGEN VIDEO — REPLACE src WITH YOUR HEYGEN EMBED LINK -->
+      <!-- To embed: In HeyGen, click Share > Embed > copy the iframe src URL -->
+      <div class="heygen-placeholder" id="heygenPlaceholder">
+        <div class="icon">🎬</div>
+        <h3>Video Message Coming Soon</h3>
+        <p>Mr Cook's personal welcome message will appear here once the HeyGen video is ready. Replace this placeholder with your HeyGen embed code.</p>
+        <p style="margin-top: 12px; font-size: 0.8rem; color: var(--border);"><!-- HEYGEN EMBED: replace this entire div with: &lt;div class="video-wrapper"&gt;&lt;iframe src="YOUR_HEYGEN_EMBED_URL" allow="autoplay; fullscreen"&gt;&lt;/iframe&gt;&lt;/div&gt; --></p>
+      </div>
+      <!-- UNCOMMENT AND REPLACE URL WHEN HEYGEN VIDEO IS READY:
+      <div class="video-wrapper">
+        <iframe src="YOUR_HEYGEN_EMBED_URL_HERE" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Message from Mr Cook"></iframe>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-stat"><div class="num">3</div><div class="label">Schools</div></div>
+      <div class="trust-stat"><div class="num">15+</div><div class="label">Years Experience</div></div>
+      <div class="trust-stat"><div class="num">TAGB</div><div class="label">Affiliated</div></div>
+      <div class="trust-stat"><div class="num">DBS</div><div class="label">Checked Instructors</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CLUBS SECTION -->
+<section class="section" id="clubs" style="background: var(--dark2);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="hero-eyebrow">Current Term</span>
+      <h2>Our <span class="gold">After School Clubs</span></h2>
+      <div class="divider"></div>
+      <p style="color: var(--grey); max-width: 620px; margin: 20px auto 0; line-height: 1.8;">Book your child's place for next term. Places are limited — secure yours before they fill up.</p>
+    </div>
+
+    <div class="clubs-grid">
+
+      <!-- CLUB 1: Badger Hill Primary, York -->
+      <div class="club-card">
+        <div class="club-card-header">
+          <span class="club-badge badge-york">York</span>
+          <h3>Badger Hill Primary School</h3>
+          <p class="school-name">Bad Bargain Lane, York, YO31 0LF</p>
+        </div>
+        <div class="club-details">
+          <div class="detail-row"><span class="detail-icon">📅</span> After school — weekly sessions</div>
+          <div class="detail-row"><span class="detail-icon">🥋</span> Taekwondo — all abilities welcome</div>
+          <div class="detail-row"><span class="detail-icon">👦</span> Open to all pupils at the school</div>
+          <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Mr Cook, Chief Instructor</div>
+        </div>
+        <div class="places-section">
+          <div class="places-label">Places Remaining This Term</div>
+          <div class="places-bar-track">
+            <div class="places-bar-fill" id="bar-badger" style="width: 0%;"></div>
+          </div>
+          <div class="places-text" id="text-badger"><span class="places-loading">Loading availability...</span></div>
+        </div>
+        <div class="club-card-footer">
+          <a href="STRIPE_LINK_BADGER_HILL" id="btn-badger" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
+            Pay for Next Term →
+          </a>
+          <p style="color: var(--grey); font-size: 0.78rem; margin-top: 10px; text-align: center;">Secure payment via Stripe &nbsp;·&nbsp; 🔒 SSL encrypted</p>
+        </div>
+      </div>
+
+      <!-- CLUB 2: Pocklington St Mary's & St Joseph's -->
+      <div class="club-card">
+        <div class="club-card-header">
+          <span class="club-badge badge-pocklington">Pocklington</span>
+          <h3>St Mary's &amp; St Joseph's School</h3>
+          <p class="school-name">Pocklington, East Yorkshire</p>
+        </div>
+        <div class="club-details">
+          <div class="detail-row"><span class="detail-icon">📅</span> After school — weekly sessions</div>
+          <div class="detail-row"><span class="detail-icon">🥋</span> Taekwondo — all abilities welcome</div>
+          <div class="detail-row"><span class="detail-icon">👦</span> Open to all pupils at the school</div>
+          <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Train Taekwondo instructor</div>
+        </div>
+        <div class="places-section">
+          <div class="places-label">Places Remaining This Term</div>
+          <div class="places-bar-track">
+            <div class="places-bar-fill" id="bar-pocklington" style="width: 0%;"></div>
+          </div>
+          <div class="places-text" id="text-pocklington"><span class="places-loading">Loading availability...</span></div>
+        </div>
+        <div class="club-card-footer">
+          <a href="STRIPE_LINK_POCKLINGTON" id="btn-pocklington" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
+            Pay for Next Term →
+          </a>
+          <p style="color: var(--grey); font-size: 0.78rem; margin-top: 10px; text-align: center;">Secure payment via Stripe &nbsp;·&nbsp; 🔒 SSL encrypted</p>
+        </div>
+      </div>
+
+      <!-- CLUB 3: Breakfast Club, St Mary's Beverley -->
+      <div class="club-card">
+        <div class="club-card-header">
+          <span class="club-badge badge-beverley">Beverley</span>
+          <h3>St Mary's Primary School</h3>
+          <p class="school-name">Breakfast Club &nbsp;·&nbsp; Beverley, East Yorkshire</p>
+        </div>
+        <div class="club-details">
+          <div class="detail-row"><span class="detail-icon">🌅</span> Breakfast club — morning sessions</div>
+          <div class="detail-row"><span class="detail-icon">🥋</span> Taekwondo — all abilities welcome</div>
+          <div class="detail-row"><span class="detail-icon">👦</span> Open to all pupils at the school</div>
+          <div class="detail-row"><span class="detail-icon">👨‍🏫</span> Led by Train Taekwondo instructor</div>
+        </div>
+        <div class="places-section">
+          <div class="places-label">Places Remaining This Term</div>
+          <div class="places-bar-track">
+            <div class="places-bar-fill" id="bar-beverley" style="width: 0%;"></div>
+          </div>
+          <div class="places-text" id="text-beverley"><span class="places-loading">Loading availability...</span></div>
+        </div>
+        <div class="club-card-footer">
+          <a href="STRIPE_LINK_BEVERLEY" id="btn-beverley" class="btn btn-gold" style="width:100%; display:block; text-align:center;">
+            Pay for Next Term →
+          </a>
+          <p style="color: var(--grey); font-size: 0.78rem; margin-top: 10px; text-align: center;">Secure payment via Stripe &nbsp;·&nbsp; 🔒 SSL encrypted</p>
+        </div>
+      </div>
+
+    </div><!-- end clubs-grid -->
+  </div>
+</section>
+
+<!-- PROMO VIDEO -->
+<section class="section" style="background: var(--dark); padding: 64px 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="hero-eyebrow">See It in Action</span>
+      <h2>What Our <span class="gold">Classes Look Like</span></h2>
+      <div class="divider"></div>
+      <p style="color: var(--grey); max-width: 620px; margin: 20px auto 0; line-height: 1.8;">Watch our club promo video and see what a Train Taekwondo Schools session really looks like — fun, energetic, and great for kids of all abilities.</p>
+    </div>
+    <div style="max-width: 860px; margin: 0 auto;">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/22WZjqHc9D8" title="Train Taekwondo Schools Promo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO SECTION -->
+<section class="section" style="background: var(--dark2); padding: 64px 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="hero-eyebrow">Good to Know</span>
+      <h2>Everything You <span class="gold">Need to Know</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">👕</div>
+        <h4>No Uniform Required</h4>
+        <p>Children can attend in their school PE kit or comfortable sports clothing. No special equipment is needed to get started.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🥋</div>
+        <h4>All Abilities Welcome</h4>
+        <p>Complete beginners are always welcome. Our sessions are structured so that children of all experience levels can participate and progress together.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🔒</div>
+        <h4>DBS Checked Instructors</h4>
+        <p>All Train Taekwondo instructors are fully DBS checked, TAGB certified, and first-aid trained. Your child's safety is our top priority.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📋</div>
+        <h4>Term-Based Booking</h4>
+        <p>Clubs run on a term-by-term basis. Payment secures your child's place for the full term. Places are limited so early booking is recommended.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">❓</div>
+        <h4>Questions?</h4>
+        <p>Contact Mr Cook directly on <a href="tel:07833665905">07833 665905</a> or via <a href="https://wa.me/447426907627" target="_blank" rel="noopener noreferrer" style="color:#25D366;">WhatsApp</a> — always happy to help.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🏫</div>
+        <h4>Interested in Your School?</h4>
+        <p>We are always looking to partner with new schools across East Yorkshire. Get in touch to discuss bringing a club to your school.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: var(--dark); padding: 64px 0;">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <h2>Ready to <span class="gold">Secure a Place?</span></h2>
+      <div class="divider"></div>
+      <p style="color: var(--grey); margin-top: 24px; font-size: 1.05rem; line-height: 1.85;">Scroll up to find your child's school and click the button to pay for next term. Places fill up fast — don't miss out.</p>
+      <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#clubs" class="btn btn-gold btn-lg">View Available Clubs →</a>
+        <a href="contact.html" class="btn btn-outline">Contact Mr Cook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col"><h4>Locations</h4><ul><li><a href="locations.html">York</a></li><li><a href="locations.html">Beverley</a></li><li><a href="locations.html">Stamford Bridge</a></li><li><a href="locations.html">Pocklington</a></li><li><a href="locations.html">Market Weighton</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 <a href="tel:07833665905" style="color:inherit;text-decoration:none;">07833 665905</a><br><a href="https://wa.me/447426907627" target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:600;">WhatsApp</a><br>✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span><span>TAGB Affiliated · UK Sport Recognised</span></div>
+  </div>
+</footer>
+
+<script>
+// =====================================================
+// CONFIGURATION — Update these when Stripe is connected
+// =====================================================
+const CLUBS = {
+  badger: {
+    apiEndpoint: '/.netlify/functions/get-places?club=badger-hill',
+    maxPlaces: 0,   // UPDATE: set max places e.g. 15
+    barId: 'bar-badger',
+    textId: 'text-badger',
+    btnId: 'btn-badger',
+    stripeLink: 'STRIPE_LINK_BADGER_HILL'  // UPDATE: paste Stripe payment link
+  },
+  pocklington: {
+    apiEndpoint: '/.netlify/functions/get-places?club=pocklington',
+    maxPlaces: 0,   // UPDATE: set max places e.g. 12
+    barId: 'bar-pocklington',
+    textId: 'text-pocklington',
+    btnId: 'btn-pocklington',
+    stripeLink: 'STRIPE_LINK_POCKLINGTON'  // UPDATE: paste Stripe payment link
+  },
+  beverley: {
+    apiEndpoint: '/.netlify/functions/get-places?club=beverley-breakfast',
+    maxPlaces: 0,   // UPDATE: set max places e.g. 10
+    barId: 'bar-beverley',
+    textId: 'text-beverley',
+    btnId: 'btn-beverley',
+    stripeLink: 'STRIPE_LINK_BEVERLEY'     // UPDATE: paste Stripe payment link
+  }
+};
+
+// =====================================================
+// PLACES COUNTER — fetches live data from Netlify function
+// =====================================================
+async function loadPlaces(clubKey) {
+  const club = CLUBS[clubKey];
+  const bar = document.getElementById(club.barId);
+  const text = document.getElementById(club.textId);
+  const btn = document.getElementById(club.btnId);
+
+  // If not yet configured, show a friendly placeholder
+  if (club.maxPlaces === 0 || club.stripeLink.startsWith('STRIPE_LINK')) {
+    text.innerHTML = '<strong style="color:var(--gold);">Places available</strong> — contact us to book';
+    bar.style.width = '30%';
+    bar.classList.remove('warning', 'full');
+    return;
+  }
+
+  try {
+    const res = await fetch(club.apiEndpoint);
+    const data = await res.json();
+    const booked = data.booked || 0;
+    const remaining = Math.max(0, club.maxPlaces - booked);
+    const pct = Math.min(100, (booked / club.maxPlaces) * 100);
+
+    bar.style.width = pct + '%';
+    bar.classList.remove('warning', 'full');
+
+    if (remaining === 0) {
+      bar.classList.add('full');
+      text.innerHTML = '<strong style="color:var(--red);">Fully Booked</strong> — join the waiting list';
+      btn.classList.remove('btn-gold');
+      btn.classList.add('btn-disabled');
+      btn.textContent = 'Fully Booked';
+      btn.removeAttribute('href');
+    } else if (remaining <= 3) {
+      bar.classList.add('warning');
+      text.innerHTML = '<strong style="color:var(--orange);">Only ' + remaining + ' place' + (remaining === 1 ? '' : 's') + ' left!</strong> Book now to avoid missing out.';
+    } else {
+      text.innerHTML = '<strong>' + remaining + ' of ' + club.maxPlaces + '</strong> places remaining';
+    }
+  } catch (e) {
+    text.innerHTML = 'Contact us to check availability';
+  }
+}
+
+// Load all clubs on page load
+document.addEventListener('DOMContentLoaded', function() {
+  loadPlaces('badger');
+  loadPlaces('pocklington');
+  loadPlaces('beverley');
+});
+
+// =====================================================
+// MOBILE NAV
+// =====================================================
+function toggleMobileSection(sectionId, btn) {
+  var section = document.getElementById(sectionId);
+  var isOpen = section.classList.contains('open');
+  document.querySelectorAll('.mobile-nav-section').forEach(function(s) { s.classList.remove('open'); });
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+  if (!isOpen) {
+    section.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+</script>
+</body>
+</html>

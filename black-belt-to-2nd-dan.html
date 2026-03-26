@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Belt (1st Dan) to 2nd Dan — TAGB Grading | Train Taekwondo Schools</title>
+  <meta name="description" content="Your complete interactive pre-grading checklist for 1st Dan to 2nd Dan TAGB (ITF) Taekwondo. Patterns, sparring, destruction, Korean terms, and all additional requirements.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="shared.css">
+<style>
+/* ===== TRAIN TAEKWONDO SCHOOLS — SHARED STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+  --black:   #0a0a0a;
+  --dark:    #111111;
+  --dark2:   #1a1a1a;
+  --dark3:   #222222;
+  --gold:    #e8c414;
+  --gold2:   #f5d430;
+  --red:     #c0392b;
+  --white:   #ffffff;
+  --grey:    #aaaaaa;
+  --border:  #2a2a2a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Russo One', sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section-sm { padding: 48px 0; }
+.gold { color: var(--gold); }
+.text-center { text-align: center; }
+.divider { width: 60px; height: 4px; background: var(--gold); margin: 16px auto 0; border-radius: 2px; }
+.divider-left { margin: 16px 0 0; }
+.btn {
+  display: inline-block; padding: 14px 32px;
+  font-family: 'Russo One', sans-serif; font-size: 0.95rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 4px; cursor: pointer; border: none;
+  transition: all 0.2s ease; text-align: center;
+}
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-lg { padding: 18px 44px; font-size: 1.05rem; }
+.btn-sm { padding: 10px 22px; font-size: 0.82rem; }
+
+/* ===== ANNOUNCEMENT BAR ===== */
+.announce-bar {
+  background: var(--gold); color: var(--black); text-align: center;
+  padding: 10px 24px; font-family: 'Russo One', sans-serif; font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.announce-bar a { color: var(--black); text-decoration: underline; }
+
+/* ===== HEADER / NAV ===== */
+.site-header {
+  background: var(--dark); border-bottom: 2px solid var(--border);
+  position: sticky; top: 0; z-index: 1000;
+}
+.nav-inner {
+  display: flex; align-items: center; gap: 32px;
+  height: 72px;
+}
+.nav-logo img { height: 52px; width: auto; }
+.nav-logo span { font-family: 'Russo One', sans-serif; font-size: 1.1rem; color: var(--white); }
+.nav-links { display: flex; gap: 24px; list-style: none; margin-left: auto; }
+.nav-links a { font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-dropdown { position: relative; }
+.nav-dropdown .dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--dark2); border: 1px solid var(--border);
+  min-width: 240px; border-radius: 4px; padding: 8px 0; z-index: 200;
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.85rem; color: var(--white); text-transform: none; letter-spacing: 0; }
+.dropdown-menu a:hover { background: var(--dark3); color: var(--gold); }
+.nav-cta { margin-left: 8px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+.mobile-nav { display: none; background: var(--dark2); border-top: 1px solid var(--border); }
+.mobile-nav.open { display: block; }
+.mobile-nav a { display: block; padding: 14px 20px; color: var(--white); font-weight: 600; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav a.sub { padding-left: 36px; font-size: 0.88rem; color: var(--grey); }
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; margin-left: auto; }
+}
+
+/* ===== FOOTER ===== */
+.site-footer { background: var(--gold); color: var(--black); padding: 56px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand img { height: 56px; margin-bottom: 16px; }
+.footer-brand p { font-size: 0.88rem; color: rgba(0,0,0,0.7); line-height: 1.65; max-width: 280px; }
+.footer-col h4 { font-family: 'Russo One', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col a { color: rgba(0,0,0,0.75); font-size: 0.88rem; }
+.footer-col a:hover { color: var(--black); }
+.footer-col p { font-size: 0.88rem; line-height: 1.7; color: rgba(0,0,0,0.75); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.15); padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(0,0,0,0.6); flex-wrap: wrap; gap: 8px; }
+@media (max-width: 700px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; }
+}
+
+/* ===== GRADE PAGE HERO ===== */
+.grade-page-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  padding: 72px 24px 56px; text-align: center;
+  position: relative; overflow: hidden;
+  border-bottom: 3px solid #e8c414;
+}
+.grade-page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8c414' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+.grade-page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.grade-eyebrow {
+  display: inline-block; background: #e8c414; color: #0a0a0a;
+  font-family: 'Russo One', sans-serif; font-size: 0.72rem;
+  letter-spacing: 0.15em; padding: 5px 14px; border-radius: 2px;
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.grade-page-hero h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #ffffff; margin-bottom: 14px;
+}
+.grade-page-hero h1 span { color: #e8c414; }
+.grade-page-hero p { color: #aaaaaa; font-size: 1.05rem; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+/* ===== GRADE CONTENT WRAP ===== */
+.grade-content-wrap { max-width: 900px; margin: 0 auto; padding: 48px 24px 48px; }
+.grade-content-wrap .ttk-wrap { max-width: 100%; }
+.grade-content-wrap .ttk-hero { display: none; }
+.grade-content-wrap .ttk-welcome { background: #1a1a1a; border: 1px solid #2a2a2a; border-left: 4px solid #d4a017; }
+.grade-content-wrap .ttk-welcome p { color: #cccccc; }
+
+/* ===== CHECKLIST WIDGET STYLES ===== */
+.ttk-wrap { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; max-width: 680px; margin: 0 auto; line-height: 1.6; }
+.ttk-card { background: #f9f6ee; border-left: 5px solid #d4a017; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+.ttk-card p { margin: 0 0 10px; font-size: 0.95rem; }
+.ttk-card p:last-child { margin-bottom: 0; }
+.ttk-section-title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.1rem; font-weight: 700; color: #111111;
+  margin: 28px 0 14px; padding-bottom: 8px;
+  border-bottom: 2px solid #d4a017;
+}
+.ttk-section-title .icon {
+  background: #111111; color: #f0c040; border-radius: 50%;
+  width: 30px; height: 30px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.9rem; flex-shrink: 0;
+}
+.ttk-resources { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.ttk-btn {
+  display: flex; align-items: center; gap: 9px;
+  background: #fff; border: 2px solid #b8860b; border-radius: 9px;
+  padding: 12px 14px; text-decoration: none !important;
+  color: #111111 !important; font-weight: 600; font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s; cursor: pointer;
+}
+.ttk-btn:hover { background: #111111; color: #f0c040 !important; border-color: #d4a017; }
+.ttk-btn .btn-icon { font-size: 1.2rem; flex-shrink: 0; }
+.ttk-btn.full-width { grid-column: 1 / -1; }
+.ttk-progress-wrap { background: #f9f6ee; border: 1px solid #e0c870; border-radius: 10px; padding: 16px 18px; margin-bottom: 20px; }
+.ttk-progress-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: #111111; margin-bottom: 8px; }
+.ttk-progress-bar-bg { background: #e8ddb0; border-radius: 6px; height: 12px; overflow: hidden; }
+.ttk-progress-bar-fill { height: 100%; background: linear-gradient(90deg, #b8860b, #f0c040); border-radius: 6px; transition: width 0.4s ease; width: 0%; }
+.ttk-checklist-group { margin-bottom: 22px; }
+.ttk-group-title {
+  background: #111111; color: #f0c040; font-weight: 700;
+  font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 7px 7px 0 0; margin-bottom: 0;
+  border: 2px solid #b8860b; border-bottom: none;
+}
+.ttk-checklist { border: 2px solid #b8860b; border-top: none; border-radius: 0 0 9px 9px; overflow: hidden; }
+.ttk-check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 11px 14px; border-bottom: 1px solid #f0e6b0;
+  cursor: pointer; transition: background 0.15s; user-select: none; background: #fff;
+}
+.ttk-check-item:last-child { border-bottom: none; }
+.ttk-check-item:hover { background: #fdf3d0; }
+.ttk-check-item.checked { background: #fdf8e1; }
+.ttk-check-item input[type="checkbox"] { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; accent-color: #b8860b; cursor: pointer; }
+.ttk-check-item .item-text { font-size: 0.9rem; color: #1a1a1a; flex: 1; }
+.ttk-check-item.checked .item-text { color: #7a6000; text-decoration: line-through; text-decoration-color: #d4a017; }
+.ttk-check-item .item-korean { font-size: 0.78rem; color: #8a7030; font-style: italic; display: block; margin-top: 2px; }
+.ttk-terms-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 4px; }
+.ttk-terms-table thead tr { background: #111111; color: #f0c040; }
+.ttk-terms-table thead th { padding: 9px 12px; text-align: left; font-weight: 600; }
+.ttk-terms-table tbody tr:nth-child(even) { background: #fdf8e1; }
+.ttk-terms-table tbody tr:hover { background: #fdf3d0; }
+.ttk-terms-table td { padding: 8px 12px; border-bottom: 1px solid #e8ddb0; vertical-align: top; }
+.ttk-terms-table td:first-child { font-weight: 600; color: #111111; }
+.ttk-terms-table td:last-child { color: #5a4a00; font-style: italic; }
+.ttk-tenets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ttk-tenet { background: linear-gradient(135deg, #111111, #2a2000); color: #f0c040; border: 1px solid #b8860b; border-radius: 20px; padding: 6px 16px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; }
+.ttk-complete-banner { display: none; background: linear-gradient(135deg, #111111, #2a2000); color: #f0c040; border: 2px solid #d4a017; border-radius: 10px; padding: 18px 20px; text-align: center; margin-top: 20px; font-weight: 700; font-size: 1rem; }
+.ttk-btn-row { display: flex; gap: 10px; margin-top: 14px; }
+.ttk-save-btn { flex: 1; background: linear-gradient(135deg, #b8860b, #d4a017); border: none; border-radius: 9px; color: #111111; font-size: 0.88rem; font-weight: 700; padding: 11px 14px; cursor: pointer; transition: opacity 0.2s; }
+.ttk-save-btn:hover { opacity: 0.85; }
+.ttk-save-btn.saved { background: linear-gradient(135deg, #2a5a1a, #3a7a22); color: #fff; }
+.ttk-reset-btn { flex: 1; background: none; border: 1px solid #d4a017; border-radius: 9px; color: #8a7030; font-size: 0.88rem; font-weight: 600; padding: 11px 14px; cursor: pointer; }
+.ttk-reset-btn:hover { background: #fdf3d0; }
+.ttk-ready-wrap { margin-top: 18px; border: 2px dashed #c8a840; border-radius: 12px; padding: 16px 18px; text-align: center; background: #f9f6ee; transition: border-color 0.4s, background 0.4s; }
+.ttk-ready-wrap.active { border: 2px solid #d4a017; background: linear-gradient(135deg, #111111, #2a2000); animation: ttk-glow 1.5s ease-in-out 1; }
+@keyframes ttk-glow { 0% { box-shadow: 0 0 0px #d4a017; } 50% { box-shadow: 0 0 22px #f0c040; } 100% { box-shadow: 0 0 6px #d4a017; } }
+.ttk-ready-label { font-size: 0.8rem; font-weight: 600; color: #b0a070; margin-bottom: 10px; letter-spacing: 0.5px; transition: color 0.4s; }
+.ttk-ready-wrap.active .ttk-ready-label { color: #f0c040; }
+.ttk-ready-btn { display: inline-block; width: 100%; background: #d0c090; color: #888; border: none; border-radius: 10px; padding: 14px 20px; font-size: 1rem; font-weight: 800; letter-spacing: 0.5px; cursor: not-allowed; opacity: 0.55; transition: background 0.4s, color 0.4s, opacity 0.4s, transform 0.15s; pointer-events: none; }
+.ttk-ready-btn.active { background: linear-gradient(135deg, #b8860b, #f0c040); color: #111111; cursor: pointer; opacity: 1; pointer-events: auto; }
+.ttk-ready-btn.active:hover { transform: scale(1.02); opacity: 0.92; }
+.ttk-ready-btn.sent { background: linear-gradient(135deg, #2a5a1a, #3a7a22); color: #fff; cursor: default; pointer-events: none; }
+.ttk-upsell { margin: 28px 0 20px; background: linear-gradient(135deg, #111111, #1e1a00); border: 2px solid #d4a017; border-radius: 12px; padding: 22px 20px; text-align: center; }
+.ttk-upsell h3 { color: #f0c040; font-size: 1.05rem; margin: 0 0 10px; }
+.ttk-upsell p { color: #e0d090; font-size: 0.88rem; margin: 0 0 14px; }
+.ttk-upsell-features { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.ttk-upsell-feature { background: rgba(212,160,23,0.15); border: 1px solid #b8860b; color: #f0c040; border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; font-weight: 600; }
+.ttk-upsell-btn { display: inline-block; background: linear-gradient(135deg, #b8860b, #f0c040); color: #111111; font-weight: 800; font-size: 0.9rem; padding: 12px 22px; border-radius: 9px; text-decoration: none !important; letter-spacing: 0.3px; }
+.ttk-upsell-note { color: #8a7030; font-size: 0.78rem; margin: 10px 0 0; }
+
+/* ===== ADDITIONAL REQUIREMENTS BOX ===== */
+.ttk-requirements-box {
+  background: linear-gradient(135deg, #111111, #1a1a00);
+  border: 2px solid #d4a017;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+.ttk-requirements-box h3 {
+  color: #f0c040;
+  font-family: 'Russo One', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.ttk-requirements-box p {
+  color: #e0d090;
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+  line-height: 1.65;
+}
+.ttk-requirements-box p:last-child { margin-bottom: 0; }
+.ttk-requirements-box ol {
+  margin: 8px 0 0 20px;
+  color: #e0d090;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.ttk-requirements-box strong { color: #f0c040; }
+.ttk-requirements-box .req-note {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(232,196,20,0.08);
+  border-left: 3px solid #d4a017;
+  border-radius: 0 6px 6px 0;
+  color: #c8a84b;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ===== PATTERN ACCORDION ===== */
+.pattern-accordion { margin-bottom: 16px; border: 2px solid #b8860b; border-radius: 9px; overflow: hidden; }
+.pattern-accordion-header {
+  background: #111111; color: #f0c040; font-weight: 700;
+  font-size: 0.9rem; padding: 12px 16px; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  user-select: none;
+}
+.pattern-accordion-header:hover { background: #1a1a00; }
+.pattern-accordion-arrow { font-size: 0.7rem; transition: transform 0.25s; }
+.pattern-accordion-header.open .pattern-accordion-arrow { transform: rotate(180deg); }
+.pattern-accordion-body { display: none; background: #fff; padding: 0; }
+.pattern-accordion-body.open { display: block; }
+.pattern-move { padding: 9px 14px; border-bottom: 1px solid #f0e6b0; font-size: 0.85rem; color: #1a1a1a; }
+.pattern-move:last-child { border-bottom: none; }
+.pattern-move strong { color: #111111; display: block; margin-bottom: 2px; }
+.pattern-move span { color: #6a5a20; font-size: 0.8rem; }
+.pattern-meta { background: #fdf8e1; padding: 12px 14px; border-bottom: 1px solid #f0e6b0; font-size: 0.85rem; color: #5a4a00; }
+.pattern-meta strong { color: #111111; }
+
+/* Mobile nav accordion */
+.mobile-nav-toggle {
+  display: block; width: 100%; background: none; border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08); color: #fff;
+  font-size: 1rem; font-family: inherit; font-weight: 600;
+  letter-spacing: 0.04em; text-align: left; padding: 14px 20px;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+}
+.mobile-nav-toggle:hover { color: var(--gold); }
+.mobile-nav-toggle .toggle-arrow { font-size: 0.7rem; transition: transform 0.25s ease; display: inline-block; }
+.mobile-nav-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+.mobile-nav-section { display: none; background: rgba(0,0,0,0.2); }
+.mobile-nav-section.open { display: block; }
+
+@media (max-width: 480px) {
+  .ttk-resources { grid-template-columns: 1fr; }
+  .ttk-btn.full-width { grid-column: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/gallery-01.png" alt="Train Taekwondo Schools"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown"><a href="ninja-skillz.html">Classes</a>
+          <div class="dropdown-menu">
+            <a href="ninja-skillz.html">🥷 Ninja Skillz (Ages 3–7)</a>
+            <a href="spectrum-skillz.html">🧩 Spectrum Skillz (Ages 7–14)</a>
+            <a href="family-taekwondo.html">🥋 Family Taekwondo</a>
+            <a href="private-tuition.html">🎯 Private Tuition (Online)</a>
+          </div>
+        </li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown"><a href="about.html">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html">👥 About Us</a>
+            <a href="guide-for-parents.html">📋 Guide for Parents</a>
+            <a href="reviews.html">⭐ Reviews</a>
+          </div>
+        </li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="nav-dropdown"><a href="white-belt-to-yellow-stripe.html" class="active">Belt Testing</a>
+          <div class="dropdown-menu">
+            <a href="white-belt-to-yellow-stripe.html">⬜ White Belt → Yellow Stripe</a>
+            <a href="yellow-stripe-to-yellow-belt.html">🟡 Yellow Stripe → Yellow Belt</a>
+            <a href="yellow-belt-to-green-stripe.html">💚 Yellow Belt → Green Stripe</a>
+            <a href="green-stripe-to-green-belt.html">💚 Green Stripe → Green Belt</a>
+            <a href="green-belt-to-blue-stripe.html">🔵 Green Belt → Blue Stripe</a>
+            <a href="blue-stripe-to-blue-belt.html">🔵 Blue Stripe → Blue Belt</a>
+            <a href="blue-belt-to-red-stripe.html">🔴 Blue Belt → Red Stripe</a>
+            <a href="red-stripe-to-red-belt.html">🔴 Red Stripe → Red Belt</a>
+            <a href="red-belt-to-black-stripe.html">⬛ Red Belt → Black Stripe</a>
+            <a href="black-belt-to-2nd-dan.html" style="color:var(--gold);">🥋 Black Belt → 2nd Dan</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-gold btn-sm nav-cta">Join Now</a>
+      <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">Classes <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub" style="color:var(--gold);">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+    </div>
+    <a href="locations.html">Locations</a>
+    <a href="timetable.html">Timetable</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('aboutSection', this)" aria-expanded="false">About <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="aboutSection">
+      <a href="about.html" class="sub">↳ About Us</a>
+      <a href="guide-for-parents.html" class="sub" style="color:var(--gold);">↳ Guide for Parents</a>
+      <a href="reviews.html" class="sub">↳ Reviews</a>
+    </div>
+    <a href="faq.html">FAQ</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('beltSection', this)" aria-expanded="false">Belt Testing <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="beltSection">
+      <a href="white-belt-to-yellow-stripe.html" class="sub">↳ ⬜ White Belt → Yellow Stripe</a>
+      <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ 🟡 Yellow Stripe → Yellow Belt</a>
+      <a href="yellow-belt-to-green-stripe.html" class="sub">↳ 💚 Yellow Belt → Green Stripe</a>
+      <a href="green-stripe-to-green-belt.html" class="sub">↳ 💚 Green Stripe → Green Belt</a>
+      <a href="green-belt-to-blue-stripe.html" class="sub">↳ 🔵 Green Belt → Blue Stripe</a>
+      <a href="blue-stripe-to-blue-belt.html" class="sub">↳ 🔵 Blue Stripe → Blue Belt</a>
+      <a href="blue-belt-to-red-stripe.html" class="sub">↳ 🔴 Blue Belt → Red Stripe</a>
+      <a href="red-stripe-to-red-belt.html" class="sub">↳ 🔴 Red Stripe → Red Belt</a>
+      <a href="red-belt-to-black-stripe.html" class="sub">↳ ⬛ Red Belt → Black Stripe</a>
+      <a href="black-belt-to-2nd-dan.html" class="sub" style="color:var(--gold);">↳ 🥋 Black Belt → 2nd Dan</a>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
+    <a href="membership.html" style="color:var(--gold);">Join Now →</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="grade-page-hero">
+  <div class="grade-page-hero-content">
+    <span class="grade-eyebrow">1st Dan &rarr; 2nd Dan &mdash; TAGB (ITF) Taekwondo</span>
+    <h1>Black Belt to <span>2nd Dan</span></h1>
+    <p>Your complete pre-grading revision guide, checklist, and resources for 1st Dan. Tick off every practical item before grading day — no excuses!</p>
+  </div>
+</section>
+
+<div class="grade-content-wrap">
+<div class="ttk-wrap">
+
+  <!-- Welcome -->
+  <div class="ttk-card">
+    <p>Congratulations, <strong>Black Belts</strong>! 🥋 Achieving your 1st Dan is a monumental achievement — but the journey continues. Grading for <strong>2nd Dan</strong> is a significant step that demands not just physical excellence, but a deep understanding of Taekwondo's principles, a commitment to the TAGB community, and a minimum of <strong>two years of dedicated training</strong>.</p>
+    <p>At this level, examiners expect <strong>mastery of three patterns</strong> (Ge-Baek, Kwang-Gae, and Po-Eun), advanced sparring skills, power destruction, and a thorough knowledge of Korean terminology. Your technique must be sharp, your stances solid, and your attitude exemplary.</p>
+    <p>🚨 <strong>Minimum Training Time: 2 Years</strong><br>There is no shortcut to 2nd Dan. The TAGB requires a minimum of two years' continuous training after receiving your 1st Dan. Your TAGB licence book must be stamped at all required Black Belt pre-grading sessions during this period.</p>
+    <p>💪 <strong>Black Belt Pre-Grading Sessions</strong><br>All Black Belts must attend at least one special TAGB Black Belt pre-grading training session every six months (licence books must be stamped), and all three immediately prior to the grading for which they are applying. These sessions are non-negotiable.</p>
+  </div>
+
+  <!-- TAGB Additional Requirements Box -->
+  <div class="ttk-requirements-box">
+    <h3>⚠️ TAGB Additional Requirements — 1st Dan to 2nd Dan</h3>
+    <p>In addition to the standard grading syllabus, all candidates for 2nd Dan must strictly adhere to the following:</p>
+    <ol>
+      <li><strong>Attend Umpires Course Part 1.</strong></li>
+      <li><strong>Officiate or compete</strong> (in at least 2 events) at a minimum of <strong>one national TAGB tournament each year</strong>.</li>
+      <li><strong>Application forms</strong> must be signed by the student (or parent if the student is under 16 years of age) and endorsed by their Instructor and Area Co-ordinator.</li>
+    </ol>
+    <p style="margin-top:12px;"><strong>Regarding juniors (under 16):</strong> There is no requirement for any Black Belt who is under 16 years old to attend Umpires', Referees', or Instructors' courses, or to officiate at any TAGB tournaments. However, the <strong>minimum training times for Black Belts aged under 16 are double</strong> those printed.</p>
+    <p>All Black Belts must hold a current TAGB licence continuously over the whole training period.</p>
+    <div class="req-note">Note: Minimum training time is 2 years. Variations of the grading format are at the examiner's discretion. This sheet is for guidance only.</div>
+  </div>
+
+  <!-- Resources -->
+  <div class="ttk-section-title">
+    <span class="icon">📚</span> Training Resources
+  </div>
+  <div class="ttk-resources">
+    <a class="ttk-btn" href="https://www.blackbeltschools.com/syllabus/gradings.asp?grade=11" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">▶️</span><span>1st Dan Grading Resources (TAGB)</span>
+    </a>
+    <a class="ttk-btn" href="https://drive.google.com/drive/folders/1P2sW3zeTmPr9t0k_JmfwlJcYYI2GBaCY?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🎧</span><span>Theory Audio Download</span>
+    </a>
+    <a class="ttk-btn" href="https://www.blackbeltschools.com/syllabus/koreanquiz.asp" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🇰🇷</span><span>Korean Quiz</span>
+    </a>
+    <a class="ttk-btn" href="https://www.blackbeltschools.com/syllabus/gradings.asp?grade=12" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🏆</span><span>2nd Dan Syllabus Preview</span>
+    </a>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="ttk-progress-wrap">
+    <div class="ttk-progress-label">
+      <span>Your progress</span>
+      <span id="ttk-progress-text">0 / 0 practical items completed</span>
+    </div>
+    <div class="ttk-progress-bar-bg">
+      <div class="ttk-progress-bar-fill" id="ttk-progress-fill"></div>
+    </div>
+  </div>
+  <p style="font-size:0.82rem; color:#6a5a20; margin-bottom:18px;">
+    Tick each item once you are confident you can perform it correctly. The progress bar tracks your <strong>practical skills</strong> — complete all of those to unlock the notification button. Theory and Korean sections are <em>bonus</em> items to help you prepare further. No excuses! 💪
+  </p>
+
+  <!-- ── GROUP 1: Patterns ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🔄 Patterns (Tul) — All Three Required</div>
+    <div class="ttk-checklist">
+      <!-- Ge-Baek -->
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I can perform <strong>Ge-Baek</strong> (44 movements) from start to finish <span class="item-korean">Starting position: Parallel ready stance</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I know the meaning of Ge-Baek <span class="item-korean">Named after Ge-Baek, a great general in the Baek Je Dynasty (660 AD). The diagram represents his severe and strict military discipline.</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I return to the correct starting position at the end of Ge-Baek</div>
+      </label>
+      <!-- Kwang-Gae -->
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I can perform <strong>Kwang-Gae</strong> (39 movements) from start to finish <span class="item-korean">Starting position: Parallel stance with a heaven hand</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I know the meaning of Kwang-Gae <span class="item-korean">Named after the famous Kwang-Gae-Toh-Wang, the 19th King of the Koguryo Dynasty, who regained all the lost territories including the greater part of Manchuria. The diagram represents the expansion and recovery of lost territory. The 39 movements refer to the first two figures of 391 AD, the year he came to the throne.</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I return to the correct starting position at the end of Kwang-Gae</div>
+      </label>
+      <!-- Po-Eun -->
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I can perform <strong>Po-Eun</strong> (36 movements) from start to finish <span class="item-korean">Starting position: Parallel stance with a heaven hand</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I know the meaning of Po-Eun <span class="item-korean">Po-Eun is the pseudonym of a loyal subject Chong Mong-Chu (1400) who was a famous poet and whose poem "I would not serve a second master though I might be crucified a hundred times" is known to every Korean. He was also a pioneer in the field of physics. The diagram represents his unerring loyalty to the king and country towards the end of the Koryo Dynasty.</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I return to the correct starting position at the end of Po-Eun</div>
+      </label>
+      <!-- All previous patterns -->
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I can perform all previous patterns (Chon-Ji through Choong-Moo) to the required standard when requested by the examiner</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 2: Sparring ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🤺 Sparring (Matsoki)</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">1-Step Sparring Advanced — Hand only counter <span class="item-korean">Develop your own technique using hands only to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">1-Step Sparring Advanced — Foot only counter <span class="item-korean">Develop your own technique using feet only to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">1-Step Sparring Advanced — Hand and foot counter <span class="item-korean">Develop your own technique using hand then foot to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">1-Step Sparring Advanced — Foot and hand counter <span class="item-korean">Develop your own technique using foot then hand to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">1-Step Sparring Advanced — Jumping counter <span class="item-korean">Develop your own technique incorporating a jump to defend and counter the single-step attack</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Free Sparring (Jayoo Matsoki) — demonstrate advanced controlled free sparring with strong timing, distancing, combination work, and confidence under pressure</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 3: Destruction ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">💥 Destruction (Gyokpa — Power Breaking)</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Hand destruction — demonstrate a powerful hand technique break (set by the examiner) <span class="item-korean">e.g. Knife-hand, reverse knife-hand, palm heel, or punch</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Foot destruction — demonstrate a powerful kick break (set by the examiner) <span class="item-korean">e.g. Side kick, turning kick, back kick, or flying kick</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 4: Practical Techniques ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🥊 Practical Techniques &amp; Combinations</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Combinations in line from patterns — as set by the grading examiner</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Consecutive kick combinations (Yonsok chagi) — demonstrate fluid consecutive kicking techniques</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Flying side piercing kick (Twimyo Yop Cha Jirugi) — demonstrate with power and correct technique</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Turning kick, flying side kick, land twin vertical punch — as found in Ge-Baek (moves 22–24) <span class="item-korean">Perform 22 and 23 in a fast motion</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Dwiyo torro (jump turn) into rising block and punch — as found in Ge-Baek (moves 43–44)</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Pressing kick, side kick, land knife-hand inward strike (L-stance) — as found in Kwang-Gae (moves 13–15) <span class="item-korean">Perform 13 and 14 as a consecutive kick</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 5: Stances ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🦵 Stances (Sogi) — All Required</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Parallel Ready Stance <span class="item-korean">Narani Chumbi Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Walking Stance <span class="item-korean">Gunnun Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">L-Stance <span class="item-korean">Niunja Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Sitting Stance <span class="item-korean">Annun Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Bending Ready Stance A <span class="item-korean">Goburyo Junbi Sogi A</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Low Stance <span class="item-korean">Nachuo Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">X-Stance <span class="item-korean">Kyocha Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">One-Leg Stance <span class="item-korean">Waebal Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Rear Foot Stance <span class="item-korean">Dwit Bal Sogi</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">Closed Stance <span class="item-korean">Moa Sogi</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 6: TAGB Requirements ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">📋 TAGB Mandatory Requirements</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I hold a current TAGB licence and it has been continuous throughout my training period</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I have attended at least one TAGB Black Belt pre-grading training session every six months (licence book stamped)</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I have attended all three TAGB Black Belt pre-grading sessions immediately prior to this grading (licence book stamped)</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I have attended Umpires Course Part 1 <span class="item-korean">(Not required if under 16 years old)</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I have officiated or competed (in at least 2 events) at a minimum of one national TAGB tournament each year <span class="item-korean">(Not required if under 16 years old)</span></div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">My application form has been signed by me (or parent/guardian if under 16) and endorsed by my Instructor and Area Co-ordinator</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I have held my 1st Dan for a minimum of 2 years</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 7: Attitude & Discipline ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">⭐ Attitude &amp; Discipline</div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I bow when entering and leaving the Dojang</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I listen carefully and respond respectfully to my instructor</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">My Dobok is clean, pressed, and my belt is tied correctly</div>
+      </label>
+      <label class="ttk-check-item" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">I train with focus, effort, and a positive attitude</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 8: Theory (bonus) ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🧠 Theory <span style="font-size:0.75rem;font-weight:400;color:#8a7030;">(bonus — not required to unlock the button)</span></div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">What is the meaning of Ge-Baek? <span class="item-korean">Named after Ge-Baek, a great general in the Baek Je Dynasty (660 AD). The diagram represents his severe and strict military discipline.</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">How many movements in Ge-Baek? <span class="item-korean">44 movements</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">What is the meaning of Kwang-Gae? <span class="item-korean">Named after Kwang-Gae-Toh-Wang, the 19th King of the Koguryo Dynasty, who regained all the lost territories including the greater part of Manchuria. The diagram represents the expansion and recovery of lost territory. The 39 movements refer to the first two figures of 391 AD, the year he came to the throne.</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">How many movements in Kwang-Gae? <span class="item-korean">39 movements</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">What is the meaning of Po-Eun? <span class="item-korean">Po-Eun is the pseudonym of Chong Mong-Chu (1400), a famous poet and pioneer in physics. His poem "I would not serve a second master though I might be crucified a hundred times" is known to every Korean. The diagram represents his unerring loyalty to the king and country towards the end of the Koryo Dynasty.</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">How many movements in Po-Eun? <span class="item-korean">36 movements</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">What is the Korean word for Breaking? <span class="item-korean">Gyokpa</span></div>
+      </label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1">
+        <input type="checkbox" onchange="ttkChange1d(this)">
+        <div class="item-text">What is a consecutive kick? <span class="item-korean">Yonsok chagi — two or more kicks delivered in rapid succession without placing the foot down between kicks</span></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- ── GROUP 9: Korean Terms (bonus) ── -->
+  <div class="ttk-checklist-group">
+    <div class="ttk-group-title">🇰🇷 Korean Terms <span style="font-size:0.75rem;font-weight:400;color:#8a7030;">(bonus — not required to unlock the button)</span></div>
+    <div class="ttk-checklist">
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">9 shaped block <span class="item-korean">Gutcha makgi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Angle punch <span class="item-korean">Giokja jirugi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Back elbow thrust <span class="item-korean">Dwit palkup taerigi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Back of forearm <span class="item-korean">Dung palmok</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Base of knifehand <span class="item-korean">Sonkal batang</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Breaking <span class="item-korean">Gyokpa</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Consecutive kick <span class="item-korean">Yonsok chagi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Crescent kick <span class="item-korean">Bandal chagi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Flat fingertips <span class="item-korean">Opun sonkut</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Horizontal punch <span class="item-korean">Soopyong jirugi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Knuckle fist <span class="item-korean">Joongi joomuk</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Reverse knifehand block <span class="item-korean">Sonkal dung makgi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Rising knee kick <span class="item-korean">Ollyo moorup chagi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Rising palm heel block <span class="item-korean">Ollyo sonbadak makgi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Sliding <span class="item-korean">Mikulgi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Straight fingertips <span class="item-korean">Sun sonkut</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Twin side elbow thrust <span class="item-korean">Sang yop palkup tulgi</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">U-shaped grasp <span class="item-korean">Mong dung i japki</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Under fist <span class="item-korean">Mit joomuk</span></div></label>
+      <label class="ttk-check-item ttk-theory" data-ttk="1"><input type="checkbox" onchange="ttkChange1d(this)"><div class="item-text">Under forearm <span class="item-korean">Mit palmok</span></div></label>
+    </div>
+  </div>
+
+  <!-- Completion banner -->
+  <div class="ttk-complete-banner" id="ttk-complete">
+    🥋 Outstanding work! You've ticked every practical item — you're ready for your 2nd Dan grading! See you on grading day! 🏆⬛
+  </div>
+
+  <!-- Save / Reset -->
+  <div class="ttk-btn-row">
+    <button class="ttk-save-btn" id="ttk-save-btn" onclick="ttk_save1d()">💾 Save Progress</button>
+    <button class="ttk-reset-btn" onclick="ttk_reset1d()">↺ Reset &amp; Clear</button>
+  </div>
+
+  <!-- Ready to grade -->
+  <div class="ttk-ready-wrap" id="ttk-ready-wrap">
+    <div class="ttk-ready-label" id="ttk-ready-label">Complete all practical items to unlock this button</div>
+    <div class="ttk-name-field" id="ttk-name-field" style="display:none; margin-bottom:12px;">
+      <label for="ttk-student-name" style="display:block; font-size:0.85rem; font-weight:700; color:#b8860b; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">Your Full Name</label>
+      <input type="text" id="ttk-student-name" placeholder="e.g. Jamie Smith" autocomplete="name"
+        style="width:100%; padding:10px 14px; border:2px solid #d4a017; border-radius:6px; font-size:0.95rem; background:#fff; color:#111; outline:none; box-sizing:border-box;">
+      <div id="ttk-name-error" style="display:none; color:#c0392b; font-size:0.8rem; margin-top:4px;">Please enter your full name before sending.</div>
+    </div>
+    <button class="ttk-ready-btn" id="ttk-ready-btn" onclick="ttk_notify_ready1d()">🥋 Tell Mr Cook I'm Ready to Grade!</button>
+  </div>
+
+  <!-- Virtual 1-2-1 Upsell -->
+  <div class="ttk-upsell">
+    <h3>Want to Sharpen Up Before Grading?</h3>
+    <p>A focused 30-minute virtual 1-to-1 session with Mr Cook could make all the difference. Get personalised coaching on your patterns, sparring, or destruction — all from home.</p>
+    <div class="ttk-upsell-features">
+      <span class="ttk-upsell-feature">⏱ 30 minutes coaching</span>
+      <span class="ttk-upsell-feature">🎥 Session recorded</span>
+      <span class="ttk-upsell-feature">📝 Written feedback</span>
+      <span class="ttk-upsell-feature">🏠 Train from home</span>
+    </div>
+    <a class="ttk-upsell-btn" href="https://www.traintaekwondo.co.uk/private-tuition.html" target="_blank" rel="noopener noreferrer">
+      Book a Virtual 1-2-1 — £25 per session →
+    </a>
+    <p class="ttk-upsell-note">Sessions available evenings &amp; weekends · Mr Cook replies within 24 hours</p>
+  </div>
+
+  <!-- Korean Terms Reference Table -->
+  <div class="ttk-section-title">
+    <span class="icon">🇰🇷</span> Korean Terms Reference (1st Dan)
+  </div>
+  <table class="ttk-terms-table">
+    <thead><tr><th>English</th><th>Korean</th></tr></thead>
+    <tbody>
+      <tr><td>9 shaped block</td><td>Gutcha makgi</td></tr>
+      <tr><td>Angle punch</td><td>Giokja jirugi</td></tr>
+      <tr><td>Arm</td><td>Pal</td></tr>
+      <tr><td>Back elbow thrust</td><td>Dwit palkup taerigi</td></tr>
+      <tr><td>Back hand</td><td>Sondung</td></tr>
+      <tr><td>Back of forearm</td><td>Dung palmok</td></tr>
+      <tr><td>Base of knifehand</td><td>Sonkal batang</td></tr>
+      <tr><td>Breaking</td><td>Gyokpa</td></tr>
+      <tr><td>Chest</td><td>Gasum</td></tr>
+      <tr><td>Consecutive kick</td><td>Yonsok chagi</td></tr>
+      <tr><td>Crescent kick</td><td>Bandal chagi</td></tr>
+      <tr><td>Eye</td><td>Angoo</td></tr>
+      <tr><td>Fingers</td><td>Songarak</td></tr>
+      <tr><td>Flat fingertips</td><td>Opun sonkut</td></tr>
+      <tr><td>Grabbing</td><td>Butjaba</td></tr>
+      <tr><td>Horizontal punch</td><td>Soopyong jirugi</td></tr>
+      <tr><td>Knuckle fist</td><td>Joongi joomuk</td></tr>
+      <tr><td>Leg</td><td>Dari</td></tr>
+      <tr><td>Reverse knifehand block</td><td>Sonkal dung makgi</td></tr>
+      <tr><td>Rising knee kick</td><td>Ollyo moorup chagi</td></tr>
+      <tr><td>Rising palm heel block</td><td>Ollyo sonbadak makgi</td></tr>
+      <tr><td>Sliding</td><td>Mikulgi</td></tr>
+      <tr><td>Straight fingertips</td><td>Sun sonkut</td></tr>
+      <tr><td>Turn</td><td>Dolgi</td></tr>
+      <tr><td>Twin side elbow thrust</td><td>Sang yop palkup tulgi</td></tr>
+      <tr><td>U-shaped grasp</td><td>Mong dung i japki</td></tr>
+      <tr><td>Under</td><td>Mit</td></tr>
+      <tr><td>Under fist</td><td>Mit joomuk</td></tr>
+      <tr><td>Under forearm</td><td>Mit palmok</td></tr>
+      <tr><td>Pattern</td><td>Tul</td></tr>
+      <tr><td>Attention</td><td>Charyot</td></tr>
+      <tr><td>Bow</td><td>Kyong-ye</td></tr>
+      <tr><td>Ready</td><td>Chumbi</td></tr>
+      <tr><td>Start / Begin</td><td>Sijak</td></tr>
+      <tr><td>Stop</td><td>Goman</td></tr>
+      <tr><td>Return to ready stance</td><td>Baro</td></tr>
+      <tr><td>Training hall</td><td>Dojang</td></tr>
+      <tr><td>Instructor</td><td>Sabum</td></tr>
+      <tr><td>Student</td><td>Jeja</td></tr>
+      <tr><td>Uniform</td><td>Dobok</td></tr>
+      <tr><td>Black Belt</td><td>Yudanja</td></tr>
+      <tr><td>1st Dan</td><td>Il Dan</td></tr>
+      <tr><td>2nd Dan</td><td>Ee Dan</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Pattern Diagrams Section -->
+  <div class="ttk-section-title">
+    <span class="icon">📐</span> Pattern Diagram Reference
+  </div>
+  <p style="font-size:0.88rem; color:#6a5a20; margin-bottom:16px;">Click each pattern to expand the full movement breakdown.</p>
+
+  <!-- Ge-Baek Accordion -->
+  <div class="pattern-accordion" id="acc-gebaek">
+    <div class="pattern-accordion-header" onclick="togglePattern('gebaek')">
+      🔄 Ge-Baek — 44 Movements <span class="pattern-accordion-arrow">▼</span>
+    </div>
+    <div class="pattern-accordion-body" id="gebaek-body">
+      <div class="pattern-meta"><strong>Meaning:</strong> Named after Ge-Baek, a great general in the Baek Je Dynasty (660 AD). The diagram represents his severe and strict military discipline.<br><strong>Starting Position:</strong> Parallel ready stance</div>
+      <div class="pattern-move"><strong>1. Checking block (L-stance)</strong><span>Move the right foot to C forming a right L-stance toward D while executing a checking block D with an X-knife-hand</span></div>
+      <div class="pattern-move"><strong>2–4. Twist kick, double punch (walking stance)</strong><span>2: Low twisting kick to D with right foot · 3: Right walking stance, middle punch right fist · 4: Middle punch left fist (fast motion)</span></div>
+      <div class="pattern-move"><strong>5–6. Rising block, low block (walking stance)</strong><span>5: Left walking stance toward D, rising block left forearm · 6: Low block left forearm (continuous motion)</span></div>
+      <div class="pattern-move"><strong>7. Double arc hand block</strong><span>High block to AD with double arc hand while looking through it, left walking stance</span></div>
+      <div class="pattern-move"><strong>8. Bending stance</strong><span>Turn face toward D forming right bending ready stance A toward D</span></div>
+      <div class="pattern-move"><strong>9–11. Scooping block, middle punch, front back fist strike (sitting stance)</strong><span>9: Sitting stance toward AC, scooping block left palm · 10: Middle punch right fist (connecting motion) · 11: Front strike left back fist</span></div>
+      <div class="pattern-move"><strong>12. Knife-hand guarding block (L-stance)</strong><span>Move right foot on line AB then left foot to C, right L-stance toward C, middle guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>13–15. Front snap kick, flat fingertip thrust × 2 (low stance)</strong><span>13: Low front snap kick to C left foot · 14: Left low stance, high thrust left flat fingertip · 15: High thrust right flat fingertip</span></div>
+      <div class="pattern-move"><strong>16–17. Side kick, forearm guarding block (L-stance)</strong><span>16: Middle side piercing kick to C right foot · 17: Right L-stance toward D, middle guarding block forearm</span></div>
+      <div class="pattern-move"><strong>18. Forearm guarding block (L-stance)</strong><span>Move right foot to D counter-clockwise, right L-stance toward C, middle guarding block forearm</span></div>
+      <div class="pattern-move"><strong>19. Knife-hand guarding block (L-stance)</strong><span>Move left foot to D counter-clockwise, right L-stance toward D, middle guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>20. 9-shape block (sitting stance)</strong><span>Move left foot on line CD, sitting stance toward A, right 9-shape block</span></div>
+      <div class="pattern-move"><strong>21. Low knife-hand block (walking stance)</strong><span>Move right foot to D counter-clockwise, left walking stance toward C, low block left knife-hand</span></div>
+      <div class="pattern-move"><strong>22–24. Turning kick, flying side kick, twin vertical punch (fast motion)</strong><span>22: Middle turning kick to BC right foot · 23: Flying side piercing kick to C right foot (fast motion with 22) · 24: Right walking stance, high vertical punch twin fist</span></div>
+      <div class="pattern-move"><strong>25–26. Double arc hand block, upset punch</strong><span>25: High block to AC double arc-hand · 26: Upset punch to C left fist</span></div>
+      <div class="pattern-move"><strong>27. Front elbow strike into palm (walking stance)</strong><span>Move right foot on line CD, left walking stance toward D, strike left palm with right front elbow</span></div>
+      <div class="pattern-move"><strong>28. Jump into double forearm block (X-stance)</strong><span>Jump to D, right X-stance toward BD, high block right double forearm</span></div>
+      <div class="pattern-move"><strong>29–31. Scooping block, middle punch, front back fist strike (sitting stance)</strong><span>29: Sitting stance toward BD, scooping block right palm · 30: Middle punch left fist (connecting motion) · 31: Front strike right back fist</span></div>
+      <div class="pattern-move"><strong>32. Reverse knife-hand strike (walking stance)</strong><span>Move left foot to C, left walking stance, high front strike right reverse knife-hand</span></div>
+      <div class="pattern-move"><strong>33. Turning kick</strong><span>Move left foot to A half shoulder width, middle turning kick to C right foot</span></div>
+      <div class="pattern-move"><strong>34. Vertical punch (walking stance)</strong><span>Lower right foot to C, counter-clockwise to left walking stance toward D, high vertical punch twin fist</span></div>
+      <div class="pattern-move"><strong>35. Knuckle punch with side fist to shoulder (L-stance)</strong><span>Middle strike to D right middle knuckle fist, left side fist in front of right shoulder, right L-stance toward D</span></div>
+      <div class="pattern-move"><strong>36. 9-shape block (sitting stance)</strong><span>Move right foot to D, sitting stance toward B, left 9-shape block</span></div>
+      <div class="pattern-move"><strong>37–38. Low reverse knife-hand block, low knife-hand block (continuous motion)</strong><span>37: Low guarding block to C reverse knife-hand · 38: Low guarding block to C knife-hand</span></div>
+      <div class="pattern-move"><strong>39. W-shape block (sitting stance)</strong><span>Move left foot to D stamping motion, sitting stance toward A, W-shape block outer forearm</span></div>
+      <div class="pattern-move"><strong>40. W-shape block (sitting stance)</strong><span>Move left foot to C stamping motion, sitting stance toward B, W-shape block outer forearm</span></div>
+      <div class="pattern-move"><strong>41–42. Rising block, punch (walking stance)</strong><span>41: Right walking stance toward C, rising block right forearm · 42: Middle punch left fist</span></div>
+      <div class="pattern-move"><strong>43–44. Dwiyo torro into rising block, punch (walking stance)</strong><span>43: Left walking stance toward D, rising block left forearm, move right foot then left foot (dwiyo torro) · 44: Middle punch right fist</span></div>
+      <div class="pattern-move"><strong>END:</strong><span>Bring the right foot back to a ready posture</span></div>
+    </div>
+  </div>
+
+  <!-- Kwang-Gae Accordion -->
+  <div class="pattern-accordion" id="acc-kwanggae">
+    <div class="pattern-accordion-header" onclick="togglePattern('kwanggae')">
+      🔄 Kwang-Gae — 39 Movements <span class="pattern-accordion-arrow">▼</span>
+    </div>
+    <div class="pattern-accordion-body" id="kwanggae-body">
+      <div class="pattern-meta"><strong>Meaning:</strong> Named after Kwang-Gae-Toh-Wang, the 19th King of the Koguryo Dynasty, who regained all the lost territories including the greater part of Manchuria. The diagram represents the expansion and recovery of lost territory. The 39 movements refer to the first two figures of 391 AD, the year he came to the throne.<br><strong>Starting Position:</strong> Parallel stance with a heaven hand</div>
+      <div class="pattern-move"><strong>1. Move hands into closed ready stance B</strong><span>Bring left foot to right foot, close ready stance B toward D, both hands in circular motion</span></div>
+      <div class="pattern-move"><strong>2. Slow upset punch (walking stance)</strong><span>Move left foot to D, left walking stance, upset punch right fist. Slow motion.</span></div>
+      <div class="pattern-move"><strong>3. Slow upset punch (walking stance)</strong><span>Move right foot to D, right walking stance, upset punch left fist. Slow motion.</span></div>
+      <div class="pattern-move"><strong>4. Double step into high hooking block (walking stance)</strong><span>Move left foot to side front of right foot, then right foot to D, right walking stance, high hooking block right palm. Double stepping motion.</span></div>
+      <div class="pattern-move"><strong>5. Low knife-hand guarding block (slide into L-stance)</strong><span>Move right foot to C sliding motion, right L-stance toward D, low guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>6. Double step into high hooking block (walking stance)</strong><span>Move right foot to side of left foot, then left foot to D, left walking stance, high hooking block left palm. Double stepping motion.</span></div>
+      <div class="pattern-move"><strong>7. Low knife-hand guarding block (slide into L-stance)</strong><span>Move left foot to C sliding motion, left L-stance toward D, low guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>8. High section knife-hand guarding block (rear foot stance)</strong><span>Move left foot to D, right rear foot stance toward D, high guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>9. High section knife-hand guarding block (rear foot stance)</strong><span>Move right foot to D, left rear foot stance toward D, high guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>10. Turn into slow upward palm block (walking stance)</strong><span>Move left foot to side front of right foot then turn counter-clockwise. Slow motion.</span></div>
+      <div class="pattern-move"><strong>11. Slow upward palm block (walking stance)</strong><span>Move right foot to C, right walking stance toward C, upward block left palm. Slow motion.</span></div>
+      <div class="pattern-move"><strong>12. Low right knife-hand block into palm (close stance)</strong><span>Low front block right knife-hand in circular motion, hitting left palm, bring left foot to right foot, close stance toward C</span></div>
+      <div class="pattern-move"><strong>13–15. Pressing kick, side kick, land knife-hand inward strike (L-stance)</strong><span>13: Pressing kick to E left foot · 14: Middle side piercing kick to E left foot (consecutive kick with 13) · 15: Right L-stance toward E, high inward strike right knife-hand, left side fist in front of right shoulder</span></div>
+      <div class="pattern-move"><strong>16. Downward strike (close stance)</strong><span>Downward strike to E left side fist, close stance toward C, pulling left foot to right foot</span></div>
+      <div class="pattern-move"><strong>17–19. Pressing kick, side kick, land knife-hand inward strike (L-stance)</strong><span>17: Pressing kick to F right foot · 18: Middle side piercing kick to F right foot (consecutive kick with 17) · 19: Left L-stance toward F, high inward strike knife-hand, right side fist in front of left shoulder</span></div>
+      <div class="pattern-move"><strong>20. Downward strike (close stance)</strong><span>Downward strike to F right side fist, close stance toward C, pulling right foot to left foot</span></div>
+      <div class="pattern-move"><strong>21. Slow pressing block (low stance)</strong><span>Move left foot to C, left low stance toward C, pressing block right palm. Slow motion.</span></div>
+      <div class="pattern-move"><strong>22. Slow pressing block (low stance)</strong><span>Move right foot to C, right low stance toward C, pressing block left palm. Slow motion.</span></div>
+      <div class="pattern-move"><strong>23. High back fist side strike + stamp (sitting stance)</strong><span>Move right foot to D stamping motion, sitting stance toward F, high side strike to D right back fist</span></div>
+      <div class="pattern-move"><strong>24. Double forearm block (walking stance)</strong><span>Middle block to D right double forearm, right walking stance toward D, pivoting with left foot</span></div>
+      <div class="pattern-move"><strong>25. Low forearm block (maintain walking stance)</strong><span>Low block to D left forearm, shifting to C, maintaining right walking stance toward D</span></div>
+      <div class="pattern-move"><strong>26. Slow flat fingertip thrust (low stance)</strong><span>High thrust to D right flat fingertip, right low stance toward D, slipping right foot to D. Slow motion.</span></div>
+      <div class="pattern-move"><strong>27. High back fist side strike + stamp (sitting stance)</strong><span>Move left foot on line CD stamping motion, sitting stance toward F, high side strike to C left back fist</span></div>
+      <div class="pattern-move"><strong>28. Double forearm block (walking stance)</strong><span>Middle block to C left double forearm, left walking stance toward C, pivoting with left foot</span></div>
+      <div class="pattern-move"><strong>29. Low reverse forearm block (maintain walking stance)</strong><span>Low reverse block to C right forearm, shifting to D, maintaining left walking stance toward C</span></div>
+      <div class="pattern-move"><strong>30. Slow flat fingertip thrust (low stance)</strong><span>High thrust to C left flat fingertip, left low stance toward C, slipping left foot to C. Slow motion.</span></div>
+      <div class="pattern-move"><strong>31. Twin vertical punch + stamp (walking stance)</strong><span>Move right foot to C stamping motion, right walking stance toward C, high vertical punch twin fist</span></div>
+      <div class="pattern-move"><strong>32. Twin upset punch + stamp (walking stance)</strong><span>Move left foot to A stamping motion, left walking stance toward A, upset punch twin fist</span></div>
+      <div class="pattern-move"><strong>33–34. Front snap kick, land knife-hand guarding block (L-stance)</strong><span>33: Middle front snap kick to A right foot · 34: Lower right foot, move left foot to A, left L-stance toward B, middle guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>35. High section punch (walking stance)</strong><span>Move left foot to B, left walking stance toward B, high punch left fist</span></div>
+      <div class="pattern-move"><strong>36. Twin upset punch + stamp (walking stance)</strong><span>Move right foot to B stamping motion, right walking stance toward B, upset punch twin fist</span></div>
+      <div class="pattern-move"><strong>37–38. Front snap kick, land knife-hand guarding block (L-stance)</strong><span>37: Middle front snap kick to B left foot · 38: Lower left foot to right foot, move right foot to B, right L-stance toward A, middle guarding block knife-hand</span></div>
+      <div class="pattern-move"><strong>39. High section punch (walking stance)</strong><span>Move right foot to A, right walking stance toward A, high punch right fist</span></div>
+      <div class="pattern-move"><strong>END:</strong><span>Bring the left foot back to a ready posture</span></div>
+    </div>
+  </div>
+
+  <!-- Po-Eun Accordion -->
+  <div class="pattern-accordion" id="acc-poeun">
+    <div class="pattern-accordion-header" onclick="togglePattern('poeun')">
+      🔄 Po-Eun — 36 Movements <span class="pattern-accordion-arrow">▼</span>
+    </div>
+    <div class="pattern-accordion-body" id="poeun-body">
+      <div class="pattern-meta"><strong>Meaning:</strong> Po-Eun is the pseudonym of Chong Mong-Chu (1400), a famous poet and pioneer in physics. His poem "I would not serve a second master though I might be crucified a hundred times" is known to every Korean. The diagram represents his unerring loyalty to the king and country towards the end of the Koryo Dynasty.<br><strong>Starting Position:</strong> Parallel stance with a heaven hand</div>
+      <div class="pattern-move"><strong>1. Guarding block (L-stance)</strong><span>Move left foot to B, right L-stance toward B, middle guarding block forearm</span></div>
+      <div class="pattern-move"><strong>2–3. Lift both fists, pressing kick (one-leg stance)</strong><span>2: Pull right foot to left knee joint, left one-leg stance toward D, lift both fists, face toward A · 3: Pressing kick to A right foot</span></div>
+      <div class="pattern-move"><strong>4. Land knife-hand strike (sitting stance)</strong><span>Lower right foot to A, sitting stance toward D, middle side strike to A right knife-hand</span></div>
+      <div class="pattern-move"><strong>5. Left angle punch</strong><span>Angle punch left fist, maintaining sitting stance toward D</span></div>
+      <div class="pattern-move"><strong>6–12. Continuous motion sequence</strong><span>6: Left pressing block + right side front forearm block · 7: Right pressing block + left side front forearm block · 8: Middle wedging block inner forearm · 9: Right back elbow assisted thrust to C · 10: Middle punch to D right fist, left palm to right elbow · 11: Left back elbow assisted thrust to C · 12: Right horizontal punch to A. Perform 6–12 in continuous motion.</span></div>
+      <div class="pattern-move"><strong>13. Low right front block + left finger belly (right X-stance)</strong><span>Cross left foot over right foot, right X-stance toward D, low front block right outer forearm, left finger belly on right under forearm</span></div>
+      <div class="pattern-move"><strong>14. U-shape grasp (L-stance)</strong><span>Move right foot to A, left L-stance toward A, U-shape grasp to A</span></div>
+      <div class="pattern-move"><strong>15. Twin horizontal elbow strike (closed stance)</strong><span>Bring left foot to right foot, closed stance toward D, horizontal thrust twin elbow, face toward B. Slow motion.</span></div>
+      <div class="pattern-move"><strong>16. Right side back fist strike + left arm to lower side (sitting stance)</strong><span>Move left foot to B, sitting stance toward D, side back strike to C right back fist, left arm extending to side downward</span></div>
+      <div class="pattern-move"><strong>17. Low left front block + right finger belly (left X-stance)</strong><span>Cross right foot over left foot, left X-stance toward D, low front block left outer forearm, right finger belly to left side fist</span></div>
+      <div class="pattern-move"><strong>18. Low reverse knife-hand guarding block (sitting stance)</strong><span>Move left foot to B, sitting stance toward D, low guarding block to B reverse knife-hand</span></div>
+      <div class="pattern-move"><strong>19. Guarding block (L-stance)</strong><span>Forearm middle guarding block to A, left L-stance toward A, pivoting with left foot</span></div>
+      <div class="pattern-move"><strong>20–21. Lift both fists, pressing kick (one-leg stance)</strong><span>20: Pull left foot to right knee joint, right one-leg stance toward D, lift both fists, face toward B · 21: Pressing kick to B left foot</span></div>
+      <div class="pattern-move"><strong>22. Land knife-hand strike (sitting stance)</strong><span>Lower left foot to B, sitting stance toward D, middle side strike to B left knife-hand</span></div>
+      <div class="pattern-move"><strong>23. Right angle punch</strong><span>Angle punch right fist, maintaining sitting stance toward D</span></div>
+      <div class="pattern-move"><strong>24–30. Continuous motion sequence (mirror of 6–12)</strong><span>24: Right pressing block + left side front forearm block · 25: Left pressing block + right side front forearm block · 26: Middle wedging block inner forearm · 27: Left back elbow assisted thrust to C · 28: Middle punch to D left fist, right palm to left elbow · 29: Right back elbow assisted thrust to C · 30: Left horizontal punch to B. Perform 24–30 in continuous motion.</span></div>
+      <div class="pattern-move"><strong>31. Low left front block + right finger belly (right X-stance)</strong><span>Cross right foot over left foot, left X-stance toward D, low front block left outer forearm, right finger belly on left under forearm</span></div>
+      <div class="pattern-move"><strong>32. U-shape grasp (L-stance)</strong><span>Move left foot to B, right L-stance toward B, U-shape grasp to B</span></div>
+      <div class="pattern-move"><strong>33. Twin horizontal elbow strike (closed stance)</strong><span>Bring right foot to left foot, closed stance toward D, horizontal thrust twin elbow, face toward A. Slow motion.</span></div>
+      <div class="pattern-move"><strong>34. Left side back fist strike + right arm to lower side (sitting stance)</strong><span>Move right foot to A, sitting stance toward D, side back strike to C left back fist, right arm extending to side downward</span></div>
+      <div class="pattern-move"><strong>35. Low right front block + left finger belly (left X-stance)</strong><span>Cross left foot over right foot, right X-stance toward D, low front block right outer forearm, left finger belly to right side fist</span></div>
+      <div class="pattern-move"><strong>36. Low reverse knife-hand guarding block (sitting stance)</strong><span>Move right foot to A, sitting stance toward D, low guarding block to A reverse knife-hand</span></div>
+      <div class="pattern-move"><strong>END:</strong><span>Bring the left foot back to a ready posture</span></div>
+    </div>
+  </div>
+
+  <!-- Tenets -->
+  <div class="ttk-section-title">
+    <span class="icon">⭐</span> The 5 Tenets of Taekwondo
+  </div>
+  <div class="ttk-tenets">
+    <span class="ttk-tenet">Courtesy</span>
+    <span class="ttk-tenet">Integrity</span>
+    <span class="ttk-tenet">Perseverance</span>
+    <span class="ttk-tenet">Self Control</span>
+    <span class="ttk-tenet">Indomitable Spirit</span>
+  </div>
+
+</div><!-- end .ttk-wrap -->
+</div><!-- end .grade-content-wrap -->
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col"><h4>Locations</h4><ul><li><a href="locations.html">York</a></li><li><a href="locations.html">Beverley</a></li><li><a href="locations.html">Stamford Bridge</a></li><li><a href="locations.html">Pocklington</a></li><li><a href="locations.html">Market Weighton</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 <a href="tel:07833665905" style="color:inherit;text-decoration:none;">07833 665905</a><br><a href="https://wa.me/447426907627?text=Hi%20Gavin%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20classes" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:#25D366;text-decoration:none;font-weight:600;">WhatsApp</a><br>✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span><span>TAGB Affiliated · UK Sport Recognised</span></div>
+  </div>
+</footer>
+
+<script>
+/* ── Pattern accordion ── */
+function togglePattern(id) {
+  var body = document.getElementById(id + '-body');
+  var header = body.previousElementSibling;
+  var isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  header.classList.toggle('open', !isOpen);
+}
+
+/* ── Mobile nav accordion ── */
+function toggleMobileSection(sectionId, btn) {
+  var section = document.getElementById(sectionId);
+  var isOpen = section.classList.contains('open');
+  document.querySelectorAll('.mobile-nav-section').forEach(function(s) { s.classList.remove('open'); });
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+  if (!isOpen) {
+    section.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ── Checklist logic ── */
+(function () {
+  'use strict';
+  var SAVE_KEY = 'ttk_1dan_v1';
+
+  function storeSave(key, value) {
+    try { localStorage.setItem(key, value); } catch(e) {}
+    try { sessionStorage.setItem(key, value); } catch(e) {}
+    try {
+      var d = new Date(); d.setTime(d.getTime() + 365*24*60*60*1000);
+      document.cookie = key + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    } catch(e) {}
+  }
+  function storeLoad(key) {
+    try { var v = localStorage.getItem(key); if (v) return v; } catch(e) {}
+    try { var v = sessionStorage.getItem(key); if (v) return v; } catch(e) {}
+    try {
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(key + '=') === 0) return decodeURIComponent(c.substring(key.length + 1));
+      }
+    } catch(e) {}
+    return null;
+  }
+  function storeClear(key) {
+    try { localStorage.removeItem(key); } catch(e) {}
+    try { sessionStorage.removeItem(key); } catch(e) {}
+    try { document.cookie = key + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/'; } catch(e) {}
+  }
+
+  window.ttkChange1d = function(cb) {
+    var label = cb.parentElement;
+    if (!label) return;
+    if (cb.checked) { label.classList.add('checked'); }
+    else { label.classList.remove('checked'); }
+    updateProgress1d();
+    autoSave1d();
+  };
+
+  function updateProgress1d() {
+    var allPractical = document.querySelectorAll('.ttk-check-item:not(.ttk-theory)');
+    var checkedPractical = document.querySelectorAll('.ttk-check-item:not(.ttk-theory) input[type="checkbox"]:checked');
+    var total = allPractical.length;
+    var done = checkedPractical.length;
+    var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+    var fill   = document.getElementById('ttk-progress-fill');
+    var text   = document.getElementById('ttk-progress-text');
+    var banner = document.getElementById('ttk-complete');
+    var wrap   = document.getElementById('ttk-ready-wrap');
+    var btn    = document.getElementById('ttk-ready-btn');
+    var lbl    = document.getElementById('ttk-ready-label');
+    var nameField = document.getElementById('ttk-name-field');
+
+    if (fill) fill.style.width = pct + '%';
+    if (text) text.textContent = done + ' / ' + total + ' practical items completed';
+
+    if (done === total && total > 0) {
+      if (banner) banner.style.display = 'block';
+      if (wrap && !wrap.classList.contains('active')) wrap.classList.add('active');
+      if (btn && !btn.classList.contains('sent')) {
+        btn.classList.add('active'); btn.classList.remove('disabled');
+        btn.style.pointerEvents = 'auto'; btn.style.cursor = 'pointer'; btn.style.opacity = '1';
+      }
+      if (nameField) nameField.style.display = 'block';
+      if (lbl) lbl.textContent = 'Enter your full name below and let Mr Cook know!';
+    } else {
+      if (banner) banner.style.display = 'none';
+      if (wrap) wrap.classList.remove('active');
+      if (btn && !btn.classList.contains('sent')) {
+        btn.classList.remove('active');
+        btn.style.pointerEvents = 'none'; btn.style.cursor = 'not-allowed'; btn.style.opacity = '0.55';
+      }
+      if (nameField) nameField.style.display = 'none';
+      if (lbl) lbl.textContent = 'Complete all ' + total + ' practical items to unlock this button';
+    }
+  }
+
+  function autoSave1d() {
+    try {
+      var items = document.querySelectorAll('.ttk-check-item');
+      var state = [];
+      items.forEach(function(label) {
+        var cb = label.querySelector('input[type="checkbox"]');
+        state.push(cb ? cb.checked : false);
+      });
+      storeSave(SAVE_KEY, JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  window.ttk_save1d = function() {
+    autoSave1d();
+    var btn = document.getElementById('ttk-save-btn');
+    if (btn) {
+      btn.textContent = '✅ Progress Saved!'; btn.classList.add('saved');
+      setTimeout(function() { btn.textContent = '💾 Save Progress'; btn.classList.remove('saved'); }, 2000);
+    }
+  };
+
+  window.ttk_reset1d = function() {
+    if (!confirm('Clear all ticks and saved progress?')) return;
+    storeClear(SAVE_KEY); storeClear(SAVE_KEY + '_sent'); storeClear(SAVE_KEY + '_name');
+    document.querySelectorAll('.ttk-check-item').forEach(function(label) {
+      var cb = label.querySelector('input[type="checkbox"]');
+      if (cb) cb.checked = false;
+      label.classList.remove('checked');
+    });
+    var btn = document.getElementById('ttk-ready-btn');
+    if (btn) {
+      btn.classList.remove('sent', 'active');
+      btn.textContent = '🥋 Tell Mr Cook I\'m Ready to Grade!';
+      btn.style.pointerEvents = 'none'; btn.style.opacity = '0.55';
+    }
+    var nameInput = document.getElementById('ttk-student-name');
+    if (nameInput) nameInput.value = '';
+    updateProgress1d();
+  };
+
+  function loadSaved1d() {
+    try {
+      var saved = storeLoad(SAVE_KEY);
+      if (!saved) return;
+      var state = JSON.parse(saved);
+      var items = document.querySelectorAll('.ttk-check-item');
+      items.forEach(function(label, i) {
+        var cb = label.querySelector('input[type="checkbox"]');
+        if (cb && state[i]) { cb.checked = true; label.classList.add('checked'); }
+      });
+    } catch(e) {}
+  }
+
+  function checkAlreadySent1d() {
+    try {
+      if (storeLoad(SAVE_KEY + '_sent') === '1') {
+        var btn = document.getElementById('ttk-ready-btn');
+        var lbl = document.getElementById('ttk-ready-label');
+        var nameField = document.getElementById('ttk-name-field');
+        var savedName = storeLoad(SAVE_KEY + '_name') || '';
+        if (btn) { btn.textContent = '✅ Mr Cook has been notified!'; btn.classList.add('sent'); btn.style.pointerEvents = 'none'; }
+        if (lbl) lbl.textContent = savedName ? 'Great work, ' + savedName + ' — see you on grading day! 🥋💥' : 'Great work — see you on grading day! 🥋💥';
+        if (nameField) nameField.style.display = 'none';
+      }
+    } catch(e) {}
+  }
+
+  window.ttk_notify_ready1d = function() {
+    var btn = document.getElementById('ttk-ready-btn');
+    if (!btn || !btn.classList.contains('active')) return;
+    var nameInput = document.getElementById('ttk-student-name');
+    var nameErr = document.getElementById('ttk-name-error');
+    var name = nameInput ? nameInput.value.trim() : '';
+    if (!name) {
+      if (nameErr) nameErr.style.display = 'block';
+      if (nameInput) nameInput.focus();
+      return;
+    }
+    if (nameErr) nameErr.style.display = 'none';
+    btn.textContent = '⏳ Sending...'; btn.style.pointerEvents = 'none';
+
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', 'student@traintaekwondo.co.uk');
+    formData.append('_subject', '1st Dan Ready to Grade — ' + name);
+    formData.append('message', name + ' has completed all practical items for the 1st Dan pre-grading checklist and is ready to grade for 2nd Dan.');
+    formData.append('form_type', 'Ready to Grade — 1st Dan to 2nd Dan');
+
+    fetch('https://formspree.io/f/xnjgdqyj', {
+      method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        btn.textContent = '✅ Mr Cook has been notified!';
+        btn.classList.add('sent'); btn.classList.remove('active');
+        var lbl = document.getElementById('ttk-ready-label');
+        if (lbl) lbl.textContent = 'Great work, ' + name + ' — see you on grading day! 🥋💥';
+        var nameField = document.getElementById('ttk-name-field');
+        if (nameField) nameField.style.display = 'none';
+        storeSave(SAVE_KEY + '_sent', '1'); storeSave(SAVE_KEY + '_name', name);
+      } else {
+        btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
+      }
+    }).catch(function() {
+      btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
+    });
+  };
+
+  function init1d() {
+    loadSaved1d();
+    updateProgress1d();
+    checkAlreadySent1d();
+  }
+
+  function tryInit1d() {
+    var items = document.querySelectorAll('.ttk-check-item');
+    if (items.length > 0) { init1d(); }
+    else { setTimeout(tryInit1d, 80); }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryInit1d);
+  } else {
+    tryInit1d();
+  }
+})();
+</script>
+</body>
+</html>

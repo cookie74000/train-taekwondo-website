@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp AI Agent for Martial Arts Schools | Train Taekwondo</title>
+  <meta name="description" content="Get a 24/7 WhatsApp AI agent for your martial arts school. Automatically answer enquiries, book free tasters, and register new members — all inside WhatsApp. Set up by a real martial arts instructor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111827;
+      --card: #1a2235;
+      --border: #1e2d45;
+      --green: #25D366;
+      --green-dark: #128C7E;
+      --green-light: #dcfce7;
+      --accent: #f59e0b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 1.1rem; color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo .wa-icon {
+      width: 32px; height: 32px; background: var(--green);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .nav-cta {
+      background: var(--green); color: var(--black);
+      padding: 8px 20px; border-radius: 8px;
+      font-weight: 700; font-size: 0.875rem;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #1db954; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 100px 24px 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #0d1f14 50%, #0a0a0a 100%);
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0;
+      background: url('hero-image.jpg') center/cover no-repeat;
+      opacity: 0.08;
+    }
+    .hero-glow {
+      position: absolute; top: 20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,211,102,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.3);
+      color: var(--green); padding: 6px 14px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; margin-bottom: 20px;
+    }
+    .hero-badge::before { content: '●'; font-size: 8px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 900; line-height: 1.1;
+      color: var(--white); margin-bottom: 20px;
+    }
+    h1 span { color: var(--green); }
+
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted);
+      margin-bottom: 32px; max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--green); color: var(--black);
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 800; font-size: 1rem;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; border: 1px solid var(--border);
+      transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+    /* Phone mockup */
+    .hero-phone {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .phone-wrap {
+      position: relative;
+      width: 280px;
+    }
+    .phone-frame {
+      background: #1a1a2e;
+      border: 2px solid #2d3748;
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .phone-screen {
+      background: #0b141a;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 520px;
+    }
+    .wa-header {
+      background: #1f2c34;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .wa-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center;
+      justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+    .wa-name { font-size: 0.85rem; font-weight: 600; color: #e9edef; }
+    .wa-status { font-size: 0.7rem; color: var(--green); }
+    .wa-messages { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .wa-msg {
+      max-width: 85%; padding: 8px 12px; border-radius: 8px;
+      font-size: 0.75rem; line-height: 1.4;
+    }
+    .wa-msg.bot {
+      background: #1f2c34; color: #e9edef;
+      border-radius: 0 8px 8px 8px; align-self: flex-start;
+    }
+    .wa-msg.user {
+      background: #005c4b; color: #e9edef;
+      border-radius: 8px 0 8px 8px; align-self: flex-end;
+    }
+    .wa-menu-btn {
+      background: #1f2c34; border: 1px solid #2d3748;
+      border-radius: 8px; padding: 10px 14px; margin: 4px 12px;
+      font-size: 0.72rem; color: var(--green); font-weight: 600;
+      text-align: center; cursor: pointer;
+    }
+    .wa-options {
+      margin: 4px 12px;
+      background: #1f2c34; border-radius: 8px;
+      overflow: hidden;
+    }
+    .wa-option {
+      padding: 8px 14px; font-size: 0.72rem; color: #e9edef;
+      border-bottom: 1px solid #2d3748; display: flex; align-items: center; gap: 8px;
+    }
+    .wa-option:last-child { border-bottom: none; }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-bar {
+      background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+    .proof-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.875rem; color: var(--muted);
+    }
+    .proof-item strong { color: var(--white); }
+    .proof-dot { width: 4px; height: 4px; background: var(--border); border-radius: 50%; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800; color: var(--white); line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    h2 span { color: var(--green); }
+    .section-sub {
+      font-size: 1.05rem; color: var(--muted); max-width: 600px; margin-bottom: 48px;
+    }
+
+    /* ── PROBLEM ── */
+    .problem-section { background: var(--dark); }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+    }
+    .problem-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .problem-icon { font-size: 2rem; margin-bottom: 12px; }
+    .problem-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .problem-card p { font-size: 0.875rem; color: var(--muted); }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .steps::before {
+      content: '';
+      position: absolute; left: 24px; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--green), transparent);
+    }
+    .step {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding: 0 0 40px 0;
+    }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); color: var(--black);
+      font-weight: 900; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative; z-index: 1;
+    }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .step-content p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+    }
+    .feature-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--green); transform: translateY(-4px); }
+    .feature-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 16px;
+    }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .feature-card p { font-size: 0.875rem; color: var(--muted); }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--dark); }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+      max-width: 960px; margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px; position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--green);
+      box-shadow: 0 0 40px rgba(37,211,102,0.15);
+    }
+    .pricing-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: var(--black);
+      font-size: 0.75rem; font-weight: 800; padding: 4px 16px; border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-name { font-size: 0.85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .pricing-price {
+      font-size: 2.8rem; font-weight: 900; color: var(--white); line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-price span { font-size: 1.2rem; font-weight: 600; color: var(--muted); }
+    .pricing-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .pricing-features li {
+      font-size: 0.875rem; color: var(--text);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .pricing-features li.no::before { content: '✗'; color: #ef4444; }
+    .pricing-features li.no { color: var(--muted); }
+    .pricing-btn {
+      display: block; text-align: center;
+      padding: 12px; border-radius: 10px;
+      font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .pricing-btn.primary { background: var(--green); color: var(--black); }
+    .pricing-btn.primary:hover { background: #1db954; }
+    .pricing-btn.outline { border: 1px solid var(--border); color: var(--white); }
+    .pricing-btn.outline:hover { border-color: var(--green); color: var(--green); }
+
+    /* ── COSTS TABLE ── */
+    .costs-section { background: var(--black); }
+    .costs-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--card); border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .costs-table th {
+      background: #0f1a24; padding: 14px 20px;
+      text-align: left; font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .costs-table td {
+      padding: 14px 20px; font-size: 0.875rem; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .costs-table tr:last-child td { border-bottom: none; }
+    .costs-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .cost-free { color: var(--green); font-weight: 700; }
+    .cost-low { color: #86efac; }
+    .cost-total { background: rgba(37,211,102,0.08) !important; font-weight: 700; }
+
+    /* ── TESTIMONIAL / ABOUT ── */
+    .about-section { background: var(--dark); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .about-img {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .about-img img { width: 100%; display: block; }
+    .about-text .section-label { margin-bottom: 12px; }
+    .about-text h2 { margin-bottom: 16px; }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 0.95rem; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px;
+    }
+    .stat-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+    }
+    .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--green); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 20px; font-weight: 600; color: var(--white);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.95rem;
+    }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--green); }
+    .faq-a {
+      padding: 0 20px 16px; font-size: 0.875rem; color: var(--muted); line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, #0d1f14 0%, #0a0a0a 100%);
+      text-align: center; padding: 100px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .cta-section h2 { margin-bottom: 16px; }
+    .cta-section p { color: var(--muted); max-width: 500px; margin: 0 auto 36px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 32px 24px; text-align: center;
+    }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-phone { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .proof-inner { gap: 20px; }
+      .proof-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="wa-icon">🥋</div>
+    TKD WhatsApp Agent
+  </a>
+  <a href="#contact" class="nav-cta">Get Started →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Built by a real martial arts instructor</div>
+      <h1>Your Martial Arts School Needs a <span>24/7 WhatsApp AI Agent</span></h1>
+      <p class="hero-sub">Automatically answer enquiries, book free tasters, and register new members — all inside WhatsApp. No apps, no websites, no missed leads.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">🥋 Get My Agent — £299</a>
+        <a href="#how-it-works" class="btn-secondary">See How It Works ↓</a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="wa-header">
+              <div class="wa-avatar">🥋</div>
+              <div>
+                <div class="wa-name">Train Taekwondo</div>
+                <div class="wa-status">● Online</div>
+              </div>
+            </div>
+            <div class="wa-messages">
+              <div class="wa-msg bot">Hi! Welcome to Train Taekwondo! 🥋👋<br><br>I'm your virtual assistant. Tap <strong>Show Options</strong> to get started!</div>
+              <div class="wa-menu-btn">☰ Show Options</div>
+              <div class="wa-options">
+                <div class="wa-option">🎯 Book Free Taster</div>
+                <div class="wa-option">💳 Pay for Afterschool</div>
+                <div class="wa-option">🥋 Join / Membership</div>
+                <div class="wa-option">👨‍🏫 About the Instructor</div>
+                <div class="wa-option">🎬 Watch Promo Video</div>
+                <div class="wa-option">📅 Class Schedule</div>
+              </div>
+              <div class="wa-msg user">Book Free Taster</div>
+              <div class="wa-msg bot">Great! Let's get you registered 🏆 What's your first name?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-item"><strong>6,500+</strong> martial arts schools in the UK</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><strong>24/7</strong> automated member enquiries</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><strong>£0/month</strong> WhatsApp API cost (Meta free tier)</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><strong>Built &amp; proven</strong> on a live school</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2>You're losing members while you're <span>on the mat</span></h2>
+    <p class="section-sub">Every unanswered enquiry is a potential student who signs up somewhere else. Most martial arts instructors are teaching when new leads come in.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">📱</div>
+        <h3>Missed WhatsApp messages</h3>
+        <p>Parents and adults message outside business hours. By the time you reply, they've already booked elsewhere.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔁</div>
+        <h3>Same questions, every day</h3>
+        <p>"What time are the classes?" "How much does it cost?" "Do you do a free trial?" You answer these 10 times a week.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📋</div>
+        <h3>Manual registration forms</h3>
+        <p>Paper forms, emails, and spreadsheets. New member data gets lost, forgotten, or entered late.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <h3>Expensive chatbot platforms</h3>
+        <p>Generic chatbot tools charge £50–£300/month and aren't built for martial arts. You end up paying for features you never use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2>Live in under <span>48 hours</span></h2>
+    <p class="section-sub">I handle the entire setup. You just need a Facebook Business account and a WhatsApp number — I do everything else.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>You send me your school details</h3>
+          <p>Class times, locations, prices, instructor bio, FAQs — I build your custom knowledge base from your website and the information you provide.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>I build and configure your agent</h3>
+          <p>I set up the WhatsApp Business API, connect the AI, configure your 6-option interactive menu, and customise the registration flow with your branding.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>I deploy it to your WhatsApp number</h3>
+          <p>Your agent goes live on your existing WhatsApp number. I connect it to your website and test every flow end-to-end before handover.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>You get instant WhatsApp alerts for every new lead</h3>
+          <p>Every time someone books a free taster or registers, you receive a WhatsApp notification with their full details — name, age, location, and contact info.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background: var(--dark);">
+  <div class="section-inner">
+    <div class="section-label">What's Included</div>
+    <h2>Everything your school needs, <span>nothing it doesn't</span></h2>
+    <p class="section-sub">Built specifically for martial arts schools by someone who runs one. Every feature is designed around how instructors actually work.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Interactive 6-Option Menu</h3>
+        <p>A tap-to-select menu pops up for every new contact. Book Free Taster, Pay for Afterschool, Join, About Instructor, Promo Video, and Class Schedule.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Full In-WhatsApp Registration</h3>
+        <p>Collects name, DOB, email, phone, address, emergency contact, preferred location, and membership type — all conversationally inside WhatsApp.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>GPT-4 Powered AI Responses</h3>
+        <p>Answers any question about your school intelligently. If it doesn't know the answer, it directs the member to contact you directly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Instant Admin Alerts</h3>
+        <p>You receive a WhatsApp message the moment someone completes registration, with all their details formatted and ready to add to your system.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>Booking & Payment Links</h3>
+        <p>After registration, the bot sends a direct button to your booking or payment platform (ClubManager, PayPal, Stripe, or any URL you use).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Website Integration</h3>
+        <p>A WhatsApp chat button added to your website so visitors can message your AI agent directly from any page with one tap.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Permanent Token Setup</h3>
+        <p>I configure a System User token that never expires — so your bot never goes offline due to an expired access token.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Custom Knowledge Base</h3>
+        <p>Your school's specific class times, locations, belt system, prices, and FAQs are all loaded in so the bot answers accurately about your school.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛠️</div>
+        <h3>30-Day Support Included</h3>
+        <p>I'm available for 30 days after launch to tweak responses, add new prompts, update class times, or fix anything that needs adjusting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2>Simple, transparent <span>pricing</span></h2>
+    <p class="section-sub">One-time setup fee. No monthly platform fees. You only pay for the tiny infrastructure costs — which I'll help you keep as low as possible.</p>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">£199<span>/setup</span></div>
+        <div class="pricing-desc">Perfect for solo instructors running 1–2 locations who want to automate basic enquiries.</div>
+        <ul class="pricing-features">
+          <li>WhatsApp AI agent setup</li>
+          <li>6-option interactive menu</li>
+          <li>In-WhatsApp registration flow</li>
+          <li>Admin WhatsApp alerts</li>
+          <li>Custom knowledge base (1 location)</li>
+          <li>Permanent token configuration</li>
+          <li>14-day post-launch support</li>
+          <li class="no">Website chat button integration</li>
+          <li class="no">Multi-location support</li>
+          <li class="no">Email notification setup</li>
+        </ul>
+        <a href="#contact" class="pricing-btn outline">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-name">Professional</div>
+        <div class="pricing-price">£299<span>/setup</span></div>
+        <div class="pricing-desc">The complete package for established schools with multiple locations and a website.</div>
+        <ul class="pricing-features">
+          <li>Everything in Starter</li>
+          <li>Website WhatsApp chat button</li>
+          <li>Multi-location support (up to 5)</li>
+          <li>Email notification setup</li>
+          <li>Booking/payment platform integration</li>
+          <li>Custom welcome message branding</li>
+          <li>30-day post-launch support</li>
+          <li>Knowledge base from your website</li>
+          <li>Full handover documentation</li>
+        </ul>
+        <a href="#contact" class="pricing-btn primary">Get Started →</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Multi-School</div>
+        <div class="pricing-price">£499<span>/setup</span></div>
+        <div class="pricing-desc">For associations, franchises, or instructors running 3+ separate school brands.</div>
+        <ul class="pricing-features">
+          <li>Everything in Professional</li>
+          <li>Up to 3 separate WhatsApp agents</li>
+          <li>Separate branding per school</li>
+          <li>Centralised admin alerts</li>
+          <li>Priority setup (24-hour turnaround)</li>
+          <li>60-day post-launch support</li>
+          <li>Quarterly knowledge base updates</li>
+          <li>Dedicated setup call included</li>
+        </ul>
+        <a href="#contact" class="pricing-btn outline">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ONGOING COSTS -->
+<section class="costs-section" id="costs">
+  <div class="section-inner">
+    <div class="section-label">Ongoing Costs</div>
+    <h2>What does it cost to <span>run each month?</span></h2>
+    <p class="section-sub">After the one-time setup fee, your monthly running costs are extremely low — typically under £5/month for most schools.</p>
+    <table class="costs-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>What It Does</th>
+          <th>Monthly Cost</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>WhatsApp Business API</strong></td>
+          <td>Sends and receives messages via Meta</td>
+          <td class="cost-free">£0</td>
+          <td>Meta's free tier — unlimited service conversations</td>
+        </tr>
+        <tr>
+          <td><strong>Render.com Hosting</strong></td>
+          <td>Runs the bot server 24/7</td>
+          <td class="cost-free">£0</td>
+          <td>Free tier (may upgrade to £7/mo for always-on)</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI API (GPT-4)</strong></td>
+          <td>Powers the AI responses</td>
+          <td class="cost-low">~£2–5</td>
+          <td>Based on ~500 messages/month at typical school volume</td>
+        </tr>
+        <tr>
+          <td><strong>GitHub</strong></td>
+          <td>Stores the code for auto-deployment</td>
+          <td class="cost-free">£0</td>
+          <td>Free public or private repositories</td>
+        </tr>
+        <tr class="cost-total">
+          <td><strong>Total</strong></td>
+          <td></td>
+          <td><strong>~£2–5/mo</strong></td>
+          <td>Less than a coffee per month to run a 24/7 AI agent</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 16px; font-size: 0.8rem; color: var(--muted);">* If the school upgrades to Render's paid tier for always-on hosting, add £7/month. Still under £12/month total.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="class-image.jpg" alt="Taekwondo class in session" loading="lazy" />
+      </div>
+      <div class="about-text">
+        <div class="section-label">Built by an Instructor, for Instructors</div>
+        <h2>I built this for my own school — <span>then made it available to yours</span></h2>
+        <p>I'm Gavin Cook, a 4th Dan Black Belt and founder of Train Taekwondo Schools. I run classes across 5 locations in Yorkshire and was losing leads every week because I couldn't answer WhatsApp messages while teaching.</p>
+        <p>I built this AI agent for my own school first. It now handles all new member enquiries, books free tasters, and registers students automatically — while I'm on the mat. I've made it available to other martial arts instructors because I know exactly what you need.</p>
+        <p>You're not buying a generic chatbot. You're getting a system built by someone who has the same problems you do.</p>
+        <div class="about-stats">
+          <div class="stat-box">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Locations running this system</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">14+</div>
+            <div class="stat-label">Years teaching martial arts</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Automated member enquiries</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">£0</div>
+            <div class="stat-label">WhatsApp API monthly cost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Common <span>questions</span></h2>
+    <p class="section-sub">Everything you need to know before getting started.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I need any technical knowledge to use this?</div>
+        <div class="faq-a">None at all. I handle the entire setup. You'll need a Facebook Business account (free) and a WhatsApp number — I guide you through the 5-minute Meta setup and do everything else myself.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will it work on my existing WhatsApp number?</div>
+        <div class="faq-a">Yes. The agent runs on the WhatsApp Business API which can be connected to your existing number. Your number stays the same — it just gains AI capabilities.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if someone asks something the bot doesn't know?</div>
+        <div class="faq-a">The AI is trained on your school's specific information. If someone asks something outside its knowledge, it politely tells them it doesn't have that information and directs them to contact you directly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I update the class times or prices myself?</div>
+        <div class="faq-a">Yes — the knowledge base is a simple file I can update for you, or I can show you how to edit it yourself. Updates typically take under 10 minutes and redeploy automatically.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does it work for all martial arts styles?</div>
+        <div class="faq-a">Absolutely. The system works for Taekwondo, Karate, BJJ, MMA, Kickboxing, Judo, or any other style. The knowledge base is fully customised to your school.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does setup take?</div>
+        <div class="faq-a">Typically 24–48 hours from when you send me your school details. The Professional package includes a setup call to go through everything together.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What booking platforms does it integrate with?</div>
+        <div class="faq-a">Any platform with a URL — ClubManager, TeamUp, Mindbody, PayPal, Stripe, or even just a Google Form. After registration, the bot sends a button linking to your chosen platform.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get Started</div>
+    <h2>Ready to stop missing <span>new members?</span></h2>
+    <p>Message me on WhatsApp and I'll have your AI agent live within 48 hours. No contracts, no monthly fees, no technical knowledge needed.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/447833665905?text=Hi%20Gavin%2C%20I%27m%20interested%20in%20the%20WhatsApp%20AI%20agent%20for%20my%20martial%20arts%20school" class="btn-primary" target="_blank" rel="noopener">
+        💬 Message Me on WhatsApp
+      </a>
+      <a href="mailto:gavin@traintaekwondo.co.uk?subject=WhatsApp%20AI%20Agent%20Enquiry" class="btn-secondary">
+        ✉️ Send an Email
+      </a>
+    </div>
+    <p style="margin-top: 24px; font-size: 0.8rem; color: var(--muted);">Typical response within 2 hours during business hours · 30-day money-back guarantee</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Train Taekwondo Schools · Built by <a href="https://www.traintaekwondo.co.uk">Gavin Cook</a> · <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp AI Agent Demo | Train Taekwondo</title>
+  <meta name="description" content="Live demo of the Train Taekwondo WhatsApp AI Agent. See exactly how it handles new member enquiries, books free tasters, and registers students automatically." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --wa-bg: #0b141a;
+      --wa-header: #1f2c34;
+      --wa-bot-bubble: #1f2c34;
+      --wa-user-bubble: #005c4b;
+      --wa-text: #e9edef;
+      --wa-muted: #8696a0;
+      --wa-green: #25d366;
+      --wa-border: #2a3942;
+      --wa-input-bg: #1f2c34;
+      --wa-tick: #53bdeb;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #111b21;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── TOP BANNER ── */
+    .demo-banner {
+      width: 100%;
+      background: linear-gradient(135deg, #1a2e1a, #0d1f14);
+      border-bottom: 1px solid #1e3a1e;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .demo-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .demo-logo {
+      width: 36px; height: 36px;
+      background: var(--wa-green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .demo-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+    .demo-subtitle {
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+    .demo-badge {
+      background: rgba(37,211,102,0.15);
+      border: 1px solid rgba(37,211,102,0.4);
+      color: var(--wa-green);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .demo-cta-link {
+      background: var(--wa-green);
+      color: #000;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      width: 100%;
+      max-width: 1200px;
+      padding: 32px 16px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── LEFT PANEL ── */
+    .left-panel h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .left-panel h1 span { color: var(--wa-green); }
+    .left-panel p {
+      font-size: 1rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--wa-green);
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .reset-btn {
+      background: transparent;
+      border: 1px solid #2a3942;
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .reset-btn:hover {
+      border-color: var(--wa-green);
+      color: var(--wa-green);
+    }
+
+    .steps-hint {
+      margin-top: 32px;
+      background: #1a2535;
+      border: 1px solid #1e2d45;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .steps-hint h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #1e2d45;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num-sm {
+      width: 22px; height: 22px;
+      background: var(--wa-green);
+      color: #000;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── PHONE FRAME ── */
+    .phone-outer {
+      display: flex;
+      justify-content: center;
+    }
+    .phone-frame {
+      width: 380px;
+      background: #1a1a2e;
+      border: 2px solid #2d3748;
+      border-radius: 40px;
+      padding: 14px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .phone-notch {
+      width: 80px; height: 6px;
+      background: #2d3748;
+      border-radius: 3px;
+      margin: 0 auto 10px;
+    }
+    .phone-screen {
+      background: var(--wa-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 620px;
+    }
+
+    /* ── WA HEADER ── */
+    .wa-header {
+      background: var(--wa-header);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .wa-back { color: var(--wa-muted); font-size: 1.1rem; cursor: pointer; }
+    .wa-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--wa-green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .wa-info { flex: 1; }
+    .wa-name { font-size: 0.85rem; font-weight: 700; color: var(--wa-text); }
+    .wa-status { font-size: 0.68rem; color: var(--wa-green); }
+    .wa-icons { display: flex; gap: 14px; color: var(--wa-muted); font-size: 1rem; }
+
+    /* ── CHAT AREA ── */
+    .wa-chat {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: var(--wa-bg);
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .wa-chat::-webkit-scrollbar { width: 4px; }
+    .wa-chat::-webkit-scrollbar-thumb { background: #2a3942; border-radius: 2px; }
+
+    /* ── DATE DIVIDER ── */
+    .date-divider {
+      text-align: center;
+      margin: 6px 0;
+    }
+    .date-divider span {
+      background: rgba(17,27,33,0.7);
+      color: var(--wa-muted);
+      font-size: 0.68rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* ── MESSAGES ── */
+    .msg-row {
+      display: flex;
+      flex-direction: column;
+      max-width: 82%;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .msg-row.bot { align-self: flex-start; }
+    .msg-row.user { align-self: flex-end; }
+
+    .bubble {
+      padding: 7px 10px 5px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--wa-text);
+      position: relative;
+    }
+    .msg-row.bot .bubble {
+      background: var(--wa-bot-bubble);
+      border-radius: 0 8px 8px 8px;
+    }
+    .msg-row.user .bubble {
+      background: var(--wa-user-bubble);
+      border-radius: 8px 0 8px 8px;
+    }
+    .bubble .time {
+      font-size: 0.6rem;
+      color: var(--wa-muted);
+      float: right;
+      margin-left: 8px;
+      margin-top: 2px;
+    }
+    .bubble .tick {
+      font-size: 0.65rem;
+      color: var(--wa-tick);
+      margin-left: 2px;
+    }
+
+    /* ── INTERACTIVE MENU BUTTON ── */
+    .wa-menu-btn {
+      background: var(--wa-bot-bubble);
+      border: 1px solid var(--wa-border);
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: #53bdeb;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .wa-menu-btn:hover { background: #263640; }
+
+    /* ── OPTIONS LIST ── */
+    .wa-options {
+      background: var(--wa-bot-bubble);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 4px;
+      border: 1px solid var(--wa-border);
+      animation: fadeIn 0.3s ease;
+    }
+    .wa-option {
+      padding: 9px 12px;
+      font-size: 0.75rem;
+      color: var(--wa-text);
+      border-bottom: 1px solid var(--wa-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .wa-option:last-child { border-bottom: none; }
+    .wa-option:hover { background: #263640; }
+    .wa-option .opt-icon { font-size: 1rem; flex-shrink: 0; }
+
+    /* ── QUICK REPLY CHIPS ── */
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      animation: fadeIn 0.3s ease;
+    }
+    .qr-chip {
+      background: transparent;
+      border: 1px solid #53bdeb;
+      color: #53bdeb;
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .qr-chip:hover { background: rgba(83,189,235,0.1); }
+
+    /* ── CTA BUTTON ── */
+    .wa-cta-btn {
+      background: transparent;
+      border-top: 1px solid var(--wa-border);
+      padding: 9px 12px;
+      font-size: 0.75rem;
+      color: #53bdeb;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    .wa-cta-btn:hover { background: #263640; }
+
+    /* ── TYPING INDICATOR ── */
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 12px;
+      background: var(--wa-bot-bubble);
+      border-radius: 0 8px 8px 8px;
+      width: fit-content;
+      animation: fadeIn 0.3s ease;
+    }
+    .typing-dot {
+      width: 6px; height: 6px;
+      background: var(--wa-muted);
+      border-radius: 50%;
+      animation: typingBounce 1.2s infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+      30% { transform: translateY(-4px); opacity: 1; }
+    }
+
+    /* ── INPUT BAR ── */
+    .wa-input-bar {
+      background: var(--wa-header);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .wa-input {
+      flex: 1;
+      background: #2a3942;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 14px;
+      color: var(--wa-text);
+      font-size: 0.78rem;
+      outline: none;
+      font-family: inherit;
+    }
+    .wa-input::placeholder { color: var(--wa-muted); }
+    .wa-send-btn {
+      width: 36px; height: 36px;
+      background: var(--wa-green);
+      border: none;
+      border-radius: 50%;
+      color: #000;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .wa-send-btn:hover { background: #1db954; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .left-panel { order: 2; }
+      .phone-outer { order: 1; }
+      .phone-frame { width: 100%; max-width: 380px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="demo-banner">
+  <div class="demo-banner-left">
+    <div class="demo-logo">🥋</div>
+    <div>
+      <div class="demo-title">WhatsApp AI Agent — Live Demo</div>
+      <div class="demo-subtitle">Train Taekwondo Schools · Built by Gavin Cook, 4th Dan</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <span class="demo-badge">● Interactive Demo</span>
+    <a href="/whatsapp-agent/" class="demo-cta-link">Get This for Your School →</a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <h1>See your <span>AI agent</span> in action</h1>
+    <p>This is an interactive demo of the exact WhatsApp AI agent running on Train Taekwondo Schools. Type a message or tap the menu options to experience the full member journey — from first contact to completed registration.</p>
+
+    <ul class="feature-list">
+      <li>Instant welcome message with 6-option interactive menu</li>
+      <li>Full in-WhatsApp registration — name, DOB, email, phone, address, emergency contact</li>
+      <li>Intelligent AI responses to any question about the school</li>
+      <li>Booking link sent automatically after registration completes</li>
+      <li>Admin WhatsApp alert sent to instructor with member details</li>
+      <li>Works 24/7 — even while you're on the mat</li>
+    </ul>
+
+    <button class="reset-btn" onclick="resetDemo()">↺ Restart Demo from Beginning</button>
+
+    <div class="steps-hint">
+      <h3>Try these in the demo</h3>
+      <div class="step-item"><div class="step-num-sm">1</div>Type anything to start — the welcome menu appears</div>
+      <div class="step-item"><div class="step-num-sm">2</div>Tap "Book Free Taster" to start the registration flow</div>
+      <div class="step-item"><div class="step-num-sm">3</div>Follow the prompts to complete a full registration</div>
+      <div class="step-item"><div class="step-num-sm">4</div>Try "Class Schedule" or "About the Instructor"</div>
+      <div class="step-item"><div class="step-num-sm">5</div>Ask any question — the AI answers intelligently</div>
+    </div>
+  </div>
+
+  <!-- PHONE -->
+  <div class="phone-outer">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+
+        <!-- WA HEADER -->
+        <div class="wa-header">
+          <div class="wa-back">‹</div>
+          <div class="wa-avatar">🥋</div>
+          <div class="wa-info">
+            <div class="wa-name">Train Taekwondo</div>
+            <div class="wa-status">● Online</div>
+          </div>
+          <div class="wa-icons">
+            <span>📹</span>
+            <span>📞</span>
+            <span>⋮</span>
+          </div>
+        </div>
+
+        <!-- CHAT AREA -->
+        <div class="wa-chat" id="chatArea">
+          <div class="date-divider"><span>Today</span></div>
+        </div>
+
+        <!-- INPUT BAR -->
+        <div class="wa-input-bar">
+          <span style="color:var(--wa-muted);font-size:1.1rem;">😊</span>
+          <input class="wa-input" id="userInput" type="text" placeholder="Message" onkeydown="handleKey(event)" />
+          <button class="wa-send-btn" onclick="sendMessage()">➤</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ── STATE ──
+  const STATE = {
+    IDLE: 'idle',
+    MENU_SHOWN: 'menu_shown',
+    REG_FIRST_NAME: 'reg_first_name',
+    REG_LAST_NAME: 'reg_last_name',
+    REG_DOB: 'reg_dob',
+    REG_EMAIL: 'reg_email',
+    REG_PHONE: 'reg_phone',
+    REG_ADDRESS: 'reg_address',
+    REG_TOWN: 'reg_town',
+    REG_POSTCODE: 'reg_postcode',
+    REG_EMERGENCY: 'reg_emergency',
+    REG_LOCATION: 'reg_location',
+    REG_MEMBERSHIP: 'reg_membership',
+    REG_COMPLETE: 'reg_complete',
+    OPEN: 'open'
+  };
+
+  let currentState = STATE.IDLE;
+  let regData = {};
+  let hasStarted = false;
+
+  const chat = document.getElementById('chatArea');
+  const input = document.getElementById('userInput');
+
+  function getTime() {
+    const now = new Date();
+    return now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+  }
+
+  function addBotBubble(text, delay = 0) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        // Show typing first
+        const typingRow = document.createElement('div');
+        typingRow.className = 'msg-row bot';
+        typingRow.innerHTML = `<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+        chat.appendChild(typingRow);
+        scrollChat();
+
+        setTimeout(() => {
+          typingRow.remove();
+          const row = document.createElement('div');
+          row.className = 'msg-row bot';
+          row.innerHTML = `<div class="bubble">${text}<span class="time">${getTime()}</span></div>`;
+          chat.appendChild(row);
+          scrollChat();
+          resolve();
+        }, 800 + Math.random() * 400);
+      }, delay);
+    });
+  }
+
+  function addUserBubble(text) {
+    const row = document.createElement('div');
+    row.className = 'msg-row user';
+    row.innerHTML = `<div class="bubble">${text}<span class="time">${getTime()}</span> <span class="tick">✓✓</span></div>`;
+    chat.appendChild(row);
+    scrollChat();
+  }
+
+  function addElement(el, delay = 0) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        chat.appendChild(el);
+        scrollChat();
+        resolve();
+      }, delay);
+    });
+  }
+
+  function scrollChat() {
+    setTimeout(() => { chat.scrollTop = chat.scrollHeight; }, 50);
+  }
+
+  function removeInteractives() {
+    document.querySelectorAll('.wa-options, .wa-menu-btn, .quick-replies, .wa-cta-btn').forEach(el => el.remove());
+  }
+
+  // ── WELCOME FLOW ──
+  async function showWelcome() {
+    currentState = STATE.MENU_SHOWN;
+    await addBotBubble("Hi! Welcome to Train Taekwondo Schools! 🥋👋<br><br>I'm your virtual assistant, here to help you get started on your martial arts journey. Whether you're looking to build confidence, get fit, or just have fun — you're in the right place! 💥<br><br>Tap <strong>Show Options</strong> below to get started, or just type your question!", 300);
+
+    const menuBtn = document.createElement('div');
+    menuBtn.className = 'msg-row bot';
+    menuBtn.innerHTML = `<div class="wa-menu-btn" onclick="showOptions()">☰ Show Options</div>`;
+    await addElement(menuBtn, 400);
+  }
+
+  function showOptions() {
+    removeInteractives();
+    const opts = document.createElement('div');
+    opts.className = 'wa-options';
+    opts.innerHTML = `
+      <div class="wa-option" onclick="handleOption('taster')"><span class="opt-icon">🎯</span> Book Free Taster</div>
+      <div class="wa-option" onclick="handleOption('afterschool')"><span class="opt-icon">💳</span> Pay for Afterschool</div>
+      <div class="wa-option" onclick="handleOption('membership')"><span class="opt-icon">🥋</span> Join / Membership</div>
+      <div class="wa-option" onclick="handleOption('instructor')"><span class="opt-icon">👨‍🏫</span> About the Instructor</div>
+      <div class="wa-option" onclick="handleOption('video')"><span class="opt-icon">🎬</span> Watch Promo Video</div>
+      <div class="wa-option" onclick="handleOption('schedule')"><span class="opt-icon">📅</span> Class Schedule</div>
+    `;
+    const row = document.createElement('div');
+    row.className = 'msg-row bot';
+    row.appendChild(opts);
+    chat.appendChild(row);
+    scrollChat();
+  }
+
+  async function handleOption(opt) {
+    removeInteractives();
+    switch(opt) {
+      case 'taster':
+        addUserBubble('🎯 Book Free Taster');
+        await addBotBubble("Brilliant! I can register you right here in WhatsApp — it only takes 2 minutes and you don't need to fill in any forms! 🏆<br><br>Would you like to go ahead?", 400);
+        const qr = document.createElement('div');
+        qr.className = 'quick-replies';
+        qr.innerHTML = `<div class="qr-chip" onclick="startReg()">Yes, let's go! 👍</div><div class="qr-chip" onclick="handleFreeText('Tell me more first')">Tell me more first</div>`;
+        chat.appendChild(qr);
+        scrollChat();
+        currentState = STATE.MENU_SHOWN;
+        break;
+
+      case 'afterschool':
+        addUserBubble('💳 Pay for Afterschool');
+        await addBotBubble("Our afterschool clubs run in local primary schools across Yorkshire. 🏫<br><br>Tap the button below to view all locations and book your child's place:", 400);
+        const ctaAS = document.createElement('div');
+        ctaAS.className = 'msg-row bot';
+        ctaAS.innerHTML = `<div style="background:var(--wa-bot-bubble);border:1px solid var(--wa-border);border-radius:8px;overflow:hidden;margin-top:4px;"><div style="padding:10px 12px;font-size:0.75rem;color:var(--wa-text);">🏫 <strong>Afterschool Clubs</strong><br><span style="color:var(--wa-muted);font-size:0.7rem;">traintaekwondo.co.uk</span></div><div class="wa-cta-btn" onclick="window.open('https://www.traintaekwondo.co.uk/afterschool-clubs.html','_blank')">🔗 View Afterschool Clubs →</div></div>`;
+        await addElement(ctaAS, 400);
+        currentState = STATE.OPEN;
+        break;
+
+      case 'membership':
+        addUserBubble('🥋 Join / Membership');
+        await addBotBubble("Great choice! Here's a quick summary of our membership options:<br><br>🥋 <strong>Free Taster</strong> — Come try a class completely free, no commitment<br>⭐ <strong>Basic</strong> — £30/month, 1 class per week<br>🚀 <strong>Accelerated</strong> — £40/month, unlimited classes<br><br>All memberships include your uniform, grading fees, and insurance.", 400);
+        const ctaMem = document.createElement('div');
+        ctaMem.className = 'msg-row bot';
+        ctaMem.innerHTML = `<div style="background:var(--wa-bot-bubble);border:1px solid var(--wa-border);border-radius:8px;overflow:hidden;margin-top:4px;"><div style="padding:10px 12px;font-size:0.75rem;color:var(--wa-text);">🥋 <strong>Membership Options</strong><br><span style="color:var(--wa-muted);font-size:0.7rem;">traintaekwondo.co.uk</span></div><div class="wa-cta-btn" onclick="window.open('https://www.traintaekwondo.co.uk/membership.html','_blank')">🔗 View Full Membership Details →</div></div>`;
+        await addElement(ctaMem, 400);
+        currentState = STATE.OPEN;
+        break;
+
+      case 'instructor':
+        addUserBubble('👨‍🏫 About the Instructor');
+        await addBotBubble("Meet your instructor — <strong>Gavin Cook, 4th Dan Black Belt</strong> 🥋<br><br>Gavin has been training in Taekwondo for over 14 years and has been teaching since 2011. He holds qualifications from the TAGB (Taekwondo Association of Great Britain) and is a fully insured, DBS-checked instructor.<br><br>Gavin runs 5 locations across Yorkshire and is passionate about helping people of all ages build confidence, fitness, and discipline through martial arts.<br><br>🏆 4th Dan Black Belt<br>📍 5 locations in Yorkshire<br>✅ DBS checked & fully insured<br>🎓 TAGB qualified instructor", 400);
+        currentState = STATE.OPEN;
+        break;
+
+      case 'video':
+        addUserBubble('🎬 Watch Promo Video');
+        await addBotBubble("Check out our latest videos on YouTube to see our classes in action! 🎬", 400);
+        const ctaVid = document.createElement('div');
+        ctaVid.className = 'msg-row bot';
+        ctaVid.innerHTML = `<div style="background:var(--wa-bot-bubble);border:1px solid var(--wa-border);border-radius:8px;overflow:hidden;margin-top:4px;"><div style="padding:10px 12px;font-size:0.75rem;color:var(--wa-text);">🎬 <strong>Train Taekwondo on YouTube</strong><br><span style="color:var(--wa-muted);font-size:0.7rem;">youtube.com</span></div><div class="wa-cta-btn" onclick="window.open('https://www.youtube.com/@traintaekwondo','_blank')">▶ Watch on YouTube →</div></div>`;
+        await addElement(ctaVid, 400);
+        currentState = STATE.OPEN;
+        break;
+
+      case 'schedule':
+        addUserBubble('📅 Class Schedule');
+        await addBotBubble("Here are all our current class locations and times: 📅<br><br>📍 <strong>York</strong> — Mon & Wed 6:30pm, Sat 10am<br>📍 <strong>Pocklington</strong> — Tue 6:30pm, Thu 6:30pm<br>📍 <strong>Market Weighton</strong> — Mon 6pm<br>📍 <strong>Beverley</strong> — Wed 7pm<br>📍 <strong>Brough</strong> — Fri 6:30pm<br><br>All classes are suitable for ages 4 and up. First class is always free! 🥋", 400);
+        currentState = STATE.OPEN;
+        break;
+    }
+  }
+
+  // ── REGISTRATION FLOW ──
+  async function startReg() {
+    removeInteractives();
+    addUserBubble("Yes, let's go! 👍");
+    regData = {};
+    currentState = STATE.REG_FIRST_NAME;
+    await addBotBubble("Let's get you registered! 🏆<br><br>First, what is your <strong>first name</strong>?", 500);
+  }
+
+  async function handleRegStep(text) {
+    switch(currentState) {
+      case STATE.REG_FIRST_NAME:
+        regData.firstName = text;
+        currentState = STATE.REG_LAST_NAME;
+        await addBotBubble(`Thanks ${text}! 😊 What is your <strong>last name</strong>?`);
+        break;
+
+      case STATE.REG_LAST_NAME:
+        regData.lastName = text;
+        currentState = STATE.REG_DOB;
+        await addBotBubble(`Great! What is your <strong>date of birth</strong>? (e.g. 15/03/1990)`);
+        break;
+
+      case STATE.REG_DOB:
+        regData.dob = text;
+        currentState = STATE.REG_EMAIL;
+        await addBotBubble(`Perfect. What is your <strong>email address</strong>?`);
+        break;
+
+      case STATE.REG_EMAIL:
+        regData.email = text;
+        currentState = STATE.REG_PHONE;
+        await addBotBubble(`And your <strong>phone number</strong>? (so we can confirm your class)`);
+        break;
+
+      case STATE.REG_PHONE:
+        regData.phone = text;
+        currentState = STATE.REG_ADDRESS;
+        await addBotBubble(`What is your <strong>address line 1</strong>? (house number and street)`);
+        break;
+
+      case STATE.REG_ADDRESS:
+        regData.address = text;
+        currentState = STATE.REG_TOWN;
+        await addBotBubble(`What is your <strong>town or city</strong>?`);
+        break;
+
+      case STATE.REG_TOWN:
+        regData.town = text;
+        currentState = STATE.REG_POSTCODE;
+        await addBotBubble(`And your <strong>postcode</strong>?`);
+        break;
+
+      case STATE.REG_POSTCODE:
+        regData.postcode = text;
+        currentState = STATE.REG_EMERGENCY;
+        await addBotBubble(`Almost there! Who is your <strong>emergency contact</strong>? (name of a parent, partner, or family member)`);
+        break;
+
+      case STATE.REG_EMERGENCY:
+        regData.emergency = text;
+        currentState = STATE.REG_LOCATION;
+        await addBotBubble(`Which location would you prefer? 📍<br><br>1️⃣ York (Mon/Wed 6:30pm, Sat 10am)<br>2️⃣ Pocklington (Tue/Thu 6:30pm)<br>3️⃣ Market Weighton (Mon 6pm)<br>4️⃣ Beverley (Wed 7pm)<br>5️⃣ Brough (Fri 6:30pm)<br><br>Reply with the number or name.`);
+        break;
+
+      case STATE.REG_LOCATION:
+        const locs = {'1':'York','2':'Pocklington','3':'Market Weighton','4':'Beverley','5':'Brough'};
+        regData.location = locs[text] || text;
+        currentState = STATE.REG_MEMBERSHIP;
+        await addBotBubble(`Which membership would you like?<br><br>1️⃣ <strong>Free Taster</strong> — Come try a class for free (£0)<br>2️⃣ <strong>Basic</strong> — 1 class/week (£30/month)<br>3️⃣ <strong>Accelerated</strong> — Unlimited classes (£40/month)<br><br>Reply 1, 2 or 3.`);
+        break;
+
+      case STATE.REG_MEMBERSHIP:
+        const mems = {'1':'Free Taster (£0)','2':'Basic (£30/mo)','3':'Accelerated (£40/mo)'};
+        regData.membership = mems[text] || text;
+        currentState = STATE.REG_COMPLETE;
+        await completeRegistration();
+        break;
+    }
+  }
+
+  async function completeRegistration() {
+    await addBotBubble(
+      `🎉 <strong>Registration complete!</strong> Here's a summary of your details:<br><br>` +
+      `👤 <strong>Name:</strong> ${regData.firstName} ${regData.lastName}<br>` +
+      `🎂 <strong>DOB:</strong> ${regData.dob}<br>` +
+      `📧 <strong>Email:</strong> ${regData.email}<br>` +
+      `📱 <strong>Phone:</strong> ${regData.phone}<br>` +
+      `🏠 <strong>Address:</strong> ${regData.address}, ${regData.town}, ${regData.postcode}<br>` +
+      `🆘 <strong>Emergency:</strong> ${regData.emergency}<br>` +
+      `📍 <strong>Location:</strong> ${regData.location}<br>` +
+      `🥋 <strong>Membership:</strong> ${regData.membership}<br><br>` +
+      `One last step — tap below to complete your booking! 👇`
+    );
+
+    const ctaReg = document.createElement('div');
+    ctaReg.className = 'msg-row bot';
+    ctaReg.innerHTML = `<div style="background:var(--wa-bot-bubble);border:1px solid var(--wa-border);border-radius:8px;overflow:hidden;margin-top:4px;"><div style="padding:10px 12px;font-size:0.75rem;color:var(--wa-text);">🥋 <strong>Complete Your Booking</strong><br><span style="color:var(--wa-muted);font-size:0.7rem;">traintaekwondo.co.uk</span></div><div class="wa-cta-btn" onclick="window.open('https://www.traintaekwondo.co.uk/membership.html','_blank')">🔗 Complete Booking Now →</div></div>`;
+    await addElement(ctaReg, 600);
+
+    await addBotBubble(`Gavin has been notified and will be in touch to confirm your first class. We can't wait to see you on the mat! 🏆🥋`, 800);
+    currentState = STATE.OPEN;
+  }
+
+  // ── FREE TEXT / AI RESPONSES ──
+  async function handleFreeText(text) {
+    const lower = text.toLowerCase();
+
+    if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('fee')) {
+      await addBotBubble("Our membership options are:<br><br>🆓 <strong>Free Taster</strong> — First class completely free<br>⭐ <strong>Basic</strong> — £30/month (1 class/week)<br>🚀 <strong>Accelerated</strong> — £40/month (unlimited classes)<br><br>All include uniform, grading fees, and insurance. Would you like to book your free taster?");
+    } else if (lower.includes('age') || lower.includes('old') || lower.includes('child') || lower.includes('kid')) {
+      await addBotBubble("We welcome students from age 4 upwards! 👶🥋<br><br>We have age-specific classes for:<br>🐣 Little Dragons (4–6 years)<br>⭐ Juniors (7–12 years)<br>🥋 Seniors (13+ and adults)<br><br>All abilities welcome — no experience needed!");
+    } else if (lower.includes('where') || lower.includes('location') || lower.includes('address')) {
+      await addBotBubble("We run classes at 5 locations across Yorkshire:<br><br>📍 York · 📍 Pocklington · 📍 Market Weighton · 📍 Beverley · 📍 Brough<br><br>Reply with a location name for the exact address and class times!");
+    } else if (lower.includes('gavin') || lower.includes('instructor') || lower.includes('teacher') || lower.includes('coach')) {
+      await handleOption('instructor');
+      return;
+    } else if (lower.includes('schedule') || lower.includes('timetable') || lower.includes('time') || lower.includes('when')) {
+      await handleOption('schedule');
+      return;
+    } else if (lower.includes('book') || lower.includes('taster') || lower.includes('free') || lower.includes('trial') || lower.includes('try')) {
+      await addBotBubble("I'd love to get you booked in for a free taster! 🎯 It's completely free, no commitment needed.<br><br>Shall I register you now? It only takes 2 minutes right here in WhatsApp!");
+      const qr = document.createElement('div');
+      qr.className = 'quick-replies';
+      qr.innerHTML = `<div class="qr-chip" onclick="startReg()">Yes, register me! 🥋</div><div class="qr-chip" onclick="handleOption('schedule')">See class times first</div>`;
+      chat.appendChild(qr);
+      scrollChat();
+    } else if (lower.includes('yes') || lower.includes('yeah') || lower.includes('sure') || lower.includes('ok')) {
+      if (currentState === STATE.MENU_SHOWN || currentState === STATE.OPEN) {
+        await startReg();
+        return;
+      }
+      await addBotBubble("Great! Tap 'Show Options' to see what I can help you with, or just ask me anything about our classes! 😊");
+      const menuBtn = document.createElement('div');
+      menuBtn.className = 'msg-row bot';
+      menuBtn.innerHTML = `<div class="wa-menu-btn" onclick="showOptions()">☰ Show Options</div>`;
+      await addElement(menuBtn, 300);
+    } else {
+      await addBotBubble(`Thanks for your message! I'm the Train Taekwondo virtual assistant. 🥋<br><br>I can help you with class times, pricing, booking a free taster, and more. Tap below to see all options:`, 300);
+      const menuBtn = document.createElement('div');
+      menuBtn.className = 'msg-row bot';
+      menuBtn.innerHTML = `<div class="wa-menu-btn" onclick="showOptions()">☰ Show Options</div>`;
+      await addElement(menuBtn, 400);
+    }
+  }
+
+  // ── MAIN HANDLER ──
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addUserBubble(text);
+    removeInteractives();
+
+    if (!hasStarted) {
+      hasStarted = true;
+      await showWelcome();
+      return;
+    }
+
+    if (currentState === STATE.REG_FIRST_NAME ||
+        currentState === STATE.REG_LAST_NAME ||
+        currentState === STATE.REG_DOB ||
+        currentState === STATE.REG_EMAIL ||
+        currentState === STATE.REG_PHONE ||
+        currentState === STATE.REG_ADDRESS ||
+        currentState === STATE.REG_TOWN ||
+        currentState === STATE.REG_POSTCODE ||
+        currentState === STATE.REG_EMERGENCY ||
+        currentState === STATE.REG_LOCATION ||
+        currentState === STATE.REG_MEMBERSHIP) {
+      await handleRegStep(text);
+    } else {
+      await handleFreeText(text);
+    }
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter') sendMessage();
+  }
+
+  function resetDemo() {
+    chat.innerHTML = '<div class="date-divider"><span>Today</span></div>';
+    currentState = STATE.IDLE;
+    regData = {};
+    hasStarted = false;
+    input.value = '';
+    input.focus();
+  }
+
+  // Auto-start after 1.5s
+  setTimeout(() => {
+    if (!hasStarted) {
+      hasStarted = true;
+      showWelcome();
+    }
+  }, 1500);
+</script>
+</body>
+</html>

@@ -146,7 +146,9 @@ img{max-width:100%;display:block;}
 .pattern-meta strong{color:#111;}
 @media(max-width:480px){.ttk-resources{grid-template-columns:1fr;}}
 
-/* ===== VIDEO SECTION ===== */
+
+
+/* ===== VIDEO LINK CARDS ===== */
 .vid-section {
   background: #111;
   padding: 60px 0 70px;
@@ -189,37 +191,74 @@ img{max-width:100%;display:block;}
 }
 .vid-grid {
   display: grid;
-  gap: 24px;
+  gap: 20px;
 }
-.vid-grid-1 { grid-template-columns: 1fr; max-width: 700px; }
-.vid-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.vid-card {
+.vid-grid-1 { grid-template-columns: 1fr; max-width: 480px; }
+.vid-grid-2 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.vid-grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.vid-grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.vid-link-card {
+  display: block;
   background: #1a1a1a;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #2a2a2a;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
 }
-.vid-wrap {
+.vid-link-card:hover {
+  border-color: #e8c414;
+  transform: translateY(-3px);
+}
+.vid-thumb-wrap {
   position: relative;
+  width: 100%;
   padding-bottom: 56.25%;
-  height: 0;
+  background: #000;
   overflow: hidden;
 }
-.vid-wrap iframe {
+.vid-thumb-wrap img {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  border: 0;
+  object-fit: cover;
+  display: block;
 }
-.vid-label {
-  padding: 12px 16px;
-  font-size: 0.88rem;
+.vid-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px; height: 56px;
+  background: rgba(232,196,20,0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #000;
+  pointer-events: none;
+}
+.vid-link-label {
+  padding: 12px 14px;
+  font-size: 0.85rem;
   color: #ccc;
   margin: 0;
   border-top: 1px solid #2a2a2a;
+  line-height: 1.4;
+}
+.vid-yt-badge {
+  display: inline-block;
+  background: #ff0000;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 @media (max-width: 640px) {
-  .vid-grid-2 { grid-template-columns: 1fr; }
+  .vid-grid-2, .vid-grid-3, .vid-grid-4 { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -616,21 +655,24 @@ img{max-width:100%;display:block;}
 </div>
 
 
+
+
 <!-- VIDEO SECTION -->
 <section class="vid-section">
   <div class="vid-container">
     <div class="vid-heading">
-      <span class="vid-icon">▶</span>
+      <span class="vid-icon">&#9654;</span>
       <h2>Training Videos</h2>
     </div>
-    <p class="vid-sub">Watch these videos to help you prepare for your grading. Study the patterns, techniques and combinations carefully.</p>
+    <p class="vid-sub">Click a video to watch on YouTube. These will help you prepare for your grading — study the patterns, techniques and combinations carefully.</p>
     <div class="vid-grid vid-grid-1">
-      <div class="vid-card">
-        <div class="vid-wrap">
-          <iframe src="https://www.youtube.com/embed/2mzyDl6s04I" title="1st Dan to 2nd Dan — Pattern & Techniques" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <a href="https://www.youtube.com/watch?v=2mzyDl6s04I" target="_blank" rel="noopener noreferrer" class="vid-link-card">
+        <div class="vid-thumb-wrap">
+          <img src="https://img.youtube.com/vi/2mzyDl6s04I/hqdefault.jpg" alt="1st Dan to 2nd Dan — Pattern & Techniques" loading="lazy">
+          <div class="vid-play-btn">&#9654;</div>
         </div>
-        <p class="vid-label">1st Dan to 2nd Dan — Pattern & Techniques</p>
-      </div>
+        <p class="vid-link-label"><span class="vid-yt-badge">YouTube</span>1st Dan to 2nd Dan — Pattern & Techniques</p>
+      </a>
     </div>
   </div>
 </section>

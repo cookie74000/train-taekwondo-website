@@ -145,6 +145,84 @@ img{max-width:100%;display:block;}
 .pattern-meta{background:#fdf8e1;padding:12px 14px;border-bottom:1px solid #f0e6b0;font-size:.85rem;color:#5a4a00;}
 .pattern-meta strong{color:#111;}
 @media(max-width:480px){.ttk-resources{grid-template-columns:1fr;}}
+
+/* ===== VIDEO SECTION ===== */
+.vid-section {
+  background: #111;
+  padding: 60px 0 70px;
+  border-top: 1px solid #222;
+}
+.vid-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.vid-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.vid-icon {
+  background: #e8c414;
+  color: #000;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.vid-heading h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0;
+}
+.vid-sub {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+  max-width: 680px;
+}
+.vid-grid {
+  display: grid;
+  gap: 24px;
+}
+.vid-grid-1 { grid-template-columns: 1fr; max-width: 700px; }
+.vid-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.vid-grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.vid-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+.vid-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.vid-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.vid-label {
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  color: #ccc;
+  margin: 0;
+  border-top: 1px solid #2a2a2a;
+}
+@media (max-width: 640px) {
+  .vid-grid-2, .vid-grid-3 { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -515,6 +593,38 @@ img{max-width:100%;display:block;}
 
 </div>
 </div>
+
+
+<!-- VIDEO SECTION -->
+<section class="vid-section">
+  <div class="vid-container">
+    <div class="vid-heading">
+      <span class="vid-icon">&#9654;</span>
+      <h2>Training Videos</h2>
+    </div>
+    <p class="vid-sub">Watch these videos to help you prepare for your grading. Study the patterns, techniques and combinations carefully.</p>
+    <div class="vid-grid vid-grid-3">
+      <div class="vid-card">
+        <div class="vid-wrap">
+          <iframe src="https://www.youtube.com/embed/6-ECHoGyQVw" title="4th Dan to 5th Dan — Pattern & Techniques" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="vid-label">4th Dan to 5th Dan — Pattern & Techniques</p>
+      </div>
+      <div class="vid-card">
+        <div class="vid-wrap">
+          <iframe src="https://www.youtube.com/embed/Jsbi3scl6A8" title="4th Dan to 5th Dan — Training Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="vid-label">4th Dan to 5th Dan — Training Guide</p>
+      </div>
+      <div class="vid-card">
+        <div class="vid-wrap">
+          <iframe src="https://www.youtube.com/embed/ZSPfnDd9rHo" title="4th Dan to 5th Dan — Pattern Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="vid-label">4th Dan to 5th Dan — Pattern Demonstration</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">

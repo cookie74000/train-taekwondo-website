@@ -2095,6 +2095,23 @@ img { max-width: 100%; display: block; }
     } catch(e) {}
   }
 
+  
+  /* ── TKD Dashboard notification (grading management system) ── */
+  function notifyDashboard8(sName) {
+    try {
+      fetch('https://tkddash-iamcuj9t.manus.space/api/grading/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          studentName: sName,
+          beltGrade: 'Blue Stripe → Blue Belt',
+          gradingDate: 'July 2026',
+          checklistUrl: 'https://www.traintaekwondo.co.uk/blue-stripe-to-blue-belt.html'
+        })
+      }).catch(function() { /* silent fail — dashboard notification is best-effort */ });
+    } catch(e) { /* silent fail */ }
+  }
+  
   window.ttk_notify_ready8 = function() {
     var btn = document.getElementById('ttk-ready-btn');
     if (!btn || !btn.classList.contains('active')) return;
@@ -2127,6 +2144,7 @@ img { max-width: 100%; display: block; }
         var nameField = document.getElementById('ttk-name-field');
         if (nameField) nameField.style.display = 'none';
         storeSave(SAVE_KEY + '_sent', '1'); storeSave(SAVE_KEY + '_name', name);
+        notifyDashboard8(name);
       } else {
         btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
       }

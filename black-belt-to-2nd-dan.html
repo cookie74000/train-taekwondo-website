@@ -1337,6 +1337,23 @@ function toggleMobileSection(sectionId, btn) {
     } catch(e) {}
   }
 
+  
+  /* ── TKD Dashboard notification (grading management system) ── */
+  function notifyDashboard1d(sName) {
+    try {
+      fetch('https://tkddash-iamcuj9t.manus.space/api/grading/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          studentName: sName,
+          beltGrade: '1st Dan → 2nd Dan',
+          gradingDate: 'July 2026',
+          checklistUrl: 'https://www.traintaekwondo.co.uk/black-belt-to-2nd-dan.html'
+        })
+      }).catch(function() { /* silent fail — dashboard notification is best-effort */ });
+    } catch(e) { /* silent fail */ }
+  }
+  
   window.ttk_notify_ready1d = function() {
     var btn = document.getElementById('ttk-ready-btn');
     if (!btn || !btn.classList.contains('active')) return;
@@ -1369,6 +1386,7 @@ function toggleMobileSection(sectionId, btn) {
         var nameField = document.getElementById('ttk-name-field');
         if (nameField) nameField.style.display = 'none';
         storeSave(SAVE_KEY + '_sent', '1'); storeSave(SAVE_KEY + '_name', name);
+        notifyDashboard1d(name);
       } else {
         btn.textContent = '⚠️ Error — tap to try again'; btn.style.pointerEvents = 'auto'; btn.classList.add('active');
       }

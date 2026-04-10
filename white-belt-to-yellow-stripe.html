@@ -1970,6 +1970,23 @@ img { max-width: 100%; display: block; }
   }
 
   /* Send Formspree notification to Mr Cook via native form POST */
+  
+  /* ── TKD Dashboard notification (grading management system) ── */
+  function notifyDashboard(sName) {
+    try {
+      fetch('https://tkddash-iamcuj9t.manus.space/api/grading/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          studentName: sName,
+          beltGrade: 'White Belt → Yellow Stripe',
+          gradingDate: 'July 2026',
+          checklistUrl: 'https://www.traintaekwondo.co.uk/white-belt-to-yellow-stripe.html'
+        })
+      }).catch(function() { /* silent fail — dashboard notification is best-effort */ });
+    } catch(e) { /* silent fail */ }
+  }
+  
   window.ttk_notify_ready = function () {
     var readyBtn = document.getElementById('ttk-ready-btn');
     if (!readyBtn || !readyBtn.classList.contains('active')) return;
@@ -2005,6 +2022,7 @@ img { max-width: 100%; display: block; }
       /* Remember sent state and name */
       try { storeSave(SAVE_KEY + '_sent', '1'); } catch(e) {}
       try { storeSave(SAVE_KEY + '_name', studentName); } catch(e) {}
+      notifyDashboard(studentName);
     }
 
     function onError() {

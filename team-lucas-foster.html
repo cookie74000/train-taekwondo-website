@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Foster — Assistant Instructor | Train Taekwondo Schools</title>
+<meta name="description" content="Meet Lucas Foster, 2nd Dan Black Belt and Assistant Instructor at Train Taekwondo Schools. World Championship bronze medallist, TAGB Umpire Grade 2, and one of the most exciting young competitors in East Yorkshire.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+  --black:   #0a0a0a;
+  --dark:    #111111;
+  --dark2:   #1a1a1a;
+  --dark3:   #222222;
+  --gold:    #e8c414;
+  --gold2:   #f5d430;
+  --red:     #c0392b;
+  --white:   #ffffff;
+  --grey:    #aaaaaa;
+  --border:  #2a2a2a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 { font-family: 'Russo One', sans-serif; line-height: 1.2; letter-spacing: 0.02em; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.gold { color: var(--gold); }
+.divider { width: 60px; height: 4px; background: var(--gold); margin: 16px auto 0; border-radius: 2px; }
+.divider-left { margin: 16px 0 0; }
+
+.btn { display: inline-block; padding: 14px 32px; font-family: 'Russo One', sans-serif; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 4px; cursor: pointer; border: none; transition: all 0.2s ease; text-align: center; }
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-lg { padding: 18px 44px; font-size: 1.05rem; }
+.btn-sm { padding: 10px 22px; font-size: 0.82rem; }
+
+.announce-bar { background: var(--gold); color: var(--black); text-align: center; padding: 10px 24px; font-family: 'Russo One', sans-serif; font-size: 0.82rem; letter-spacing: 0.06em; }
+.announce-bar a { color: var(--black); text-decoration: underline; }
+
+.site-header { background: var(--black); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo img { height: 52px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a { color: var(--white); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 3px; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px; min-width: 200px; padding: 8px 0; z-index: 100; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.82rem; color: var(--white); border-radius: 0; }
+.dropdown-menu a:hover { color: var(--gold); background: rgba(232,196,20,0.06); }
+.nav-cta { margin-left: 12px; }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+
+.mobile-nav { display: none; background: var(--dark); border-top: 1px solid var(--border); padding: 16px 0; }
+.mobile-nav.open { display: block; }
+.mobile-nav a { display: block; padding: 12px 24px; color: var(--white); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav a.sub { padding-left: 40px; font-size: 0.82rem; color: var(--grey); }
+.mobile-nav-toggle { display: block; width: 100%; text-align: left; padding: 12px 24px; background: none; border: none; border-bottom: 1px solid var(--border); color: var(--white); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; font-family: 'Lato', sans-serif; }
+.mobile-nav-toggle:hover { color: var(--gold); }
+.toggle-arrow { float: right; transition: transform 0.3s; display: inline-block; }
+.mobile-nav-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+.mobile-nav-section { display: none; }
+.mobile-nav-section.open { display: block; }
+
+.page-hero { background: var(--dark2); border-bottom: 3px solid var(--gold); padding: 56px 0; text-align: center; }
+.page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+.page-hero p { color: var(--grey); margin-top: 12px; font-size: 1.05rem; }
+
+.hero-eyebrow { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Russo One', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; padding: 5px 14px; border-radius: 2px; text-transform: uppercase; margin-bottom: 20px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.about-img { width: 100%; border-radius: 12px; border: 3px solid var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+.about-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 20px; }
+.about-text p { color: var(--grey); line-height: 1.8; margin-bottom: 16px; }
+
+.cred-list { list-style: none; margin-top: 24px; }
+.cred-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; color: #ccc; }
+.cred-list li:last-child { border-bottom: none; }
+.cred-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.comp-photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.comp-photo-item { position: relative; overflow: hidden; border-radius: 8px; border: 2px solid var(--border); cursor: pointer; aspect-ratio: 3/4; transition: border-color 0.2s, transform 0.2s; }
+.comp-photo-item:hover { border-color: var(--gold); transform: scale(1.02); }
+.comp-photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.comp-photo-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; font-size: 2rem; opacity: 0; transition: opacity 0.2s, background 0.2s; }
+.comp-photo-item:hover .comp-photo-overlay { opacity: 1; background: rgba(0,0,0,0.35); }
+
+.trust-bar { background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 0; }
+.trust-bar-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+.trust-stat { text-align: center; padding: 12px 32px; border-right: 1px solid var(--border); }
+.trust-stat:last-child { border-right: none; }
+.trust-stat .num { font-family: 'Russo One', sans-serif; font-size: 2rem; color: var(--gold); line-height: 1; }
+.trust-stat .label { font-size: 0.78rem; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+/* Quote block */
+.quote-block { background: var(--dark3); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; }
+.quote-block p { color: var(--white); font-size: 1.05rem; font-style: italic; line-height: 1.75; margin: 0; }
+.quote-block cite { display: block; margin-top: 10px; color: var(--gold); font-size: 0.82rem; font-style: normal; font-family: 'Russo One', sans-serif; letter-spacing: 0.06em; }
+
+.site-footer { background: var(--dark); border-top: 1px solid var(--border); padding: 56px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand img { height: 48px; margin-bottom: 16px; }
+.footer-brand p { color: var(--grey); font-size: 0.88rem; line-height: 1.7; }
+.footer-col h4 { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: var(--grey); font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-col p { color: var(--grey); font-size: 0.88rem; line-height: 1.8; }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--grey); }
+
+.breadcrumb { background: var(--dark); border-bottom: 1px solid var(--border); padding: 14px 0; }
+.breadcrumb a { color: var(--grey); font-size: 0.85rem; }
+.breadcrumb a:hover { color: var(--gold); }
+
+/* Fun facts grid */
+.fun-facts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+.fun-fact-card { background: var(--dark3); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.fun-fact-card .ff-label { font-size: 0.72rem; font-family: 'Russo One', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.fun-fact-card .ff-value { font-size: 1rem; color: var(--white); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .comp-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .trust-stat { padding: 12px 20px; }
+  .section { padding: 56px 0; }
+  .fun-facts-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4YNS2XYEZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J4YNS2XYEZ');
+  </script>
+</head>
+<body>
+
+<div class="announce-bar">
+  🥋 FREE Taster Session Available — <a href="membership.html">Book Your Spot Today</a>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/gallery-01.png" alt="Train Taekwondo Schools"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown"><a href="ninja-skillz.html">Classes</a>
+          <div class="dropdown-menu">
+            <a href="ninja-skillz.html">🥷 Ninja Skillz (Ages 3–7)</a>
+            <a href="spectrum-skillz.html">🧩 Spectrum Skillz (Ages 7–14)</a>
+            <a href="family-taekwondo.html">🥋 Family Taekwondo</a>
+            <a href="private-tuition.html">🎯 Private Tuition (Online)</a>
+            <a href="afterschool-clubs.html">🏫 After School Clubs</a>
+          </div>
+        </li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li><a href="club-calendar.html">Calendar</a></li>
+        <li class="nav-dropdown">
+          <a href="about.html">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html">About Us</a>
+            <a href="guide-for-parents.html" style="color:var(--gold);">Guide for Parents</a>
+            <a href="referral.html" style="color:var(--gold);">🎁 Refer a Friend</a>
+          </div>
+        </li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Belt Testing</a>
+          <div class="dropdown-menu">
+            <a href="white-belt-to-yellow-stripe.html">⬜ White Belt → Yellow Stripe</a>
+            <a href="yellow-stripe-to-yellow-belt.html">🟡 Yellow Stripe → Yellow Belt</a>
+            <a href="yellow-belt-to-green-stripe.html">💚 Yellow Belt → Green Stripe</a>
+            <a href="green-stripe-to-green-belt.html">🟢 Green Stripe → Green Belt</a>
+            <a href="green-belt-to-blue-stripe.html">💙 Green Belt → Blue Stripe</a>
+            <a href="blue-stripe-to-blue-belt.html">🔵 Blue Stripe → Blue Belt</a>
+            <a href="blue-belt-to-red-stripe.html">❤️ Blue Belt → Red Stripe</a>
+            <a href="red-stripe-to-red-belt.html">🔴 Red Stripe → Red Belt</a>
+            <a href="red-belt-to-black-stripe.html">⬛ Red Belt → Black Stripe</a>
+            <a href="black-stripe-to-black-belt.html">🥋 Black Stripe → Black Belt</a>
+            <a href="black-belt-to-2nd-dan.html">🥋 Black Belt → 2nd Dan</a>
+            <a href="2nd-dan-to-3rd-dan.html">🥋 2nd Dan → 3rd Dan</a>
+            <a href="3rd-dan-to-4th-dan.html">🥋 3rd Dan → 4th Dan</a>
+            <a href="4th-dan-to-5th-dan.html">🥋 4th Dan → 5th Dan</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-gold btn-sm nav-cta">Join Now</a>
+      <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">Classes <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+      <a href="afterschool-clubs.html" class="sub">↳ 🏫 After School Clubs</a>
+    </div>
+    <a href="locations.html">Locations</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
+    <a href="membership.html" style="color:var(--gold);">Join Now →</a>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="about.html">← Back to About &amp; Meet the Team</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="hero-eyebrow">Assistant Instructor</span>
+    <h1 style="margin-top: 12px;">Lucas <span class="gold">Foster</span></h1>
+    <p>2nd Dan Black Belt &middot; TAGB Umpire Grade 2 &middot; World Championship Bronze Medallist</p>
+  </div>
+</section>
+
+<!-- BIO SECTION -->
+<section class="section" style="background: var(--dark);">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-medal-portrait_005bfd84.jpeg"
+             alt="Lucas Foster — 2nd Dan Black Belt, Train Taekwondo Schools, wearing his TAGB medal"
+             class="about-img"
+             style="object-position: top;">
+        <p style="color: var(--grey); font-size: 0.82rem; text-align: center; margin-top: 10px; font-style: italic;">Lucas at a recent TAGB championship — one of many medal-winning performances across local, national and international competition</p>
+      </div>
+      <div class="about-text">
+        <span class="hero-eyebrow">His Story</span>
+        <h2>A Champion <span class="gold">Since Age 6</span></h2>
+        <p>Lucas Foster began his Taekwondo journey in 2016 at just six years old, and from the very beginning it was clear he had something special. Training consistently through childhood and into his teenage years, he achieved his <strong>1st Dan Black Belt at age 13 in 2022</strong> — a milestone that marked the beginning of an even more impressive chapter.</p>
+        <p>In 2023, Lucas stepped onto the world stage and came home with <strong>bronze at the World Championship</strong> — one of the most significant achievements in the club's history and a result that announced him as one of the most talented young competitors in the country. He competes regularly at local, national and international level, accumulating experience and medals across sparring events throughout his career.</p>
+        <p>Perhaps the most defining moment of Lucas's story came at the <strong>2025 World Championship</strong>. Injured within the first round, he refused to quit. He continued to fight — fairly, with control, and with every ounce of the discipline that Taekwondo instils. His parents describe it as their proudest moment: not the medals, but watching their son demonstrate <strong>perseverance and self-control</strong> under real pressure on the biggest stage. He went on to achieve his <strong>2nd Dan Black Belt in 2025</strong>.</p>
+        <p>Away from competition, Lucas is equally committed to the sport as a whole. He has completed his <strong>TAGB Umpire Grade 2</strong> qualification and is excited to begin officiating at competitions — giving back to the sport that has shaped him and helping to create the same opportunities for the next generation of competitors.</p>
+        <p>As an <strong>Assistant Instructor</strong> at Train Taekwondo Schools, Lucas brings a rare combination of elite competitive experience, genuine passion for the sport, and a natural ability to connect with younger students. For any child in the class who dreams of competing, Lucas is living proof of what is possible.</p>
+
+        <div class="quote-block">
+          <p>"My favourite part of Taekwondo is helping to support at competitions and helping in the classes. Seeing younger students improve and grow — that means as much to me as any medal."</p>
+          <cite>— Lucas Foster, 2nd Dan Black Belt</cite>
+        </div>
+
+        <ul class="cred-list">
+          <li><span class="cred-icon">🥋</span> 2nd Dan Black Belt — TAGB Certified (2025)</li>
+          <li><span class="cred-icon">📅</span> Training since 2016 — 9+ Years</li>
+          <li><span class="cred-icon">🌍</span> World Championship Bronze Medallist (2023)</li>
+          <li><span class="cred-icon">🏆</span> Local, National &amp; International Competitor</li>
+          <li><span class="cred-icon">⚖️</span> TAGB Umpire Grade 2 Qualified</li>
+          <li><span class="cred-icon">📋</span> Assistant Instructor — Train Taekwondo Schools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-stat"><div class="num">9+</div><div class="label">Years Training</div></div>
+      <div class="trust-stat"><div class="num">2nd</div><div class="label">Dan Black Belt</div></div>
+      <div class="trust-stat"><div class="num">🥉</div><div class="label">World Champs 2023</div></div>
+      <div class="trust-stat"><div class="num">Gr.2</div><div class="label">TAGB Umpire</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FUN FACTS SECTION -->
+<section class="section" style="background: var(--dark); padding: 64px 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 8px;">
+      <span class="hero-eyebrow">Get to Know Lucas</span>
+      <h2 style="margin-top: 8px;">Beyond the <span class="gold">Black Belt</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="fun-facts-grid">
+      <div class="fun-fact-card">
+        <div class="ff-label">Favourite Pattern</div>
+        <div class="ff-value">Eui-Am — a 2nd Dan pattern known for its power and precision</div>
+      </div>
+      <div class="fun-fact-card">
+        <div class="ff-label">Coolest Moment</div>
+        <div class="ff-value">Scoring a 360° turning kick in competition — the crowd went wild</div>
+      </div>
+      <div class="fun-fact-card">
+        <div class="ff-label">Hardest Fight</div>
+        <div class="ff-value">Fighting against club member and friend Thomas — the toughest battles are with people you respect</div>
+      </div>
+      <div class="fun-fact-card">
+        <div class="ff-label">Parents' Proudest Moment</div>
+        <div class="ff-value">2025 World Champs — injured in round one, continued to fight with perseverance and self-control</div>
+      </div>
+      <div class="fun-fact-card">
+        <div class="ff-label">Next Goal</div>
+        <div class="ff-value">Officiating at competitions as a TAGB Umpire — getting more involved for the TAGB</div>
+      </div>
+      <div class="fun-fact-card">
+        <div class="ff-label">Biggest Achievement</div>
+        <div class="ff-value">Bronze medal at the 2023 World Championship — competing against the best in the world</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="section" style="background: var(--dark2); padding: 64px 0;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="hero-eyebrow">Lucas Through the Years</span>
+      <h2 style="margin-top: 8px;">Competitor, <span class="gold">Champion</span> &amp; Coach</h2>
+      <div class="divider"></div>
+      <p style="color: var(--grey); max-width: 680px; margin: 20px auto 0; line-height: 1.8;">From his first grading certificate at age 6 through to World Championship fights and 2nd Dan black belt — these photos capture the journey that shaped the assistant instructor your child trains with today.</p>
+    </div>
+
+    <div class="comp-photo-grid">
+      <div class="comp-photo-item" onclick="openLightbox(0)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-early-grading_f637b4b8.jpeg" alt="Lucas Foster — receiving his first grading certificate at age 6 with Mr Cook" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(1)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-patterns_0297fe7b.jpeg" alt="Lucas Foster — performing patterns at a TAGB competition" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(2)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-sparring-action_c99c72c7.jpeg" alt="Lucas Foster — sparring action at a TAGB competition" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(3)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-national-fight_1eadab8b.jpeg" alt="Lucas Foster — sparring at a national TAGB championship" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(4)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-world-champs-2023_a7a4a176.jpeg" alt="Lucas Foster — competing at the 2023 World Championship" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(5)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-competition-fight_cf0b62e9.jpeg" alt="Lucas Foster — competition sparring at a TAGB event" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(6)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-world-champs-fight_0bf89190.jpeg" alt="Lucas Foster — fighting at the World Championship" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(7)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-injured-perseverance_70c0ab6e.jpeg" alt="Lucas Foster — showing perseverance and self-control at the 2025 World Championship after injury" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(8)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-english-champs-gold_02e600a7.jpeg" alt="Lucas Foster — at the English Championships with gold medal" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(9)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-black-belt-cert_f2d9fd52.jpeg" alt="Lucas Foster — receiving his 2nd Dan Black Belt certificate" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(10)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-2nd-dan-cert_4709acc1.jpeg" alt="Lucas Foster — 2nd Dan Black Belt certification" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(11)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-bag-kick-1_a0466bdf.jpeg" alt="Lucas Foster — training at home on the bag" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(12)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-bag-kick-2_da0c6959.jpeg" alt="Lucas Foster — home training, high kick on the bag" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+      <div class="comp-photo-item" onclick="openLightbox(13)">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-medal-portrait_005bfd84.jpeg" alt="Lucas Foster — portrait with TAGB medal" loading="lazy">
+        <div class="comp-photo-overlay"><span>&#128269;</span></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+      <button onclick="closeLightbox()" style="position:absolute; top:20px; right:28px; background:none; border:none; color:#fff; font-size:2.5rem; cursor:pointer; line-height:1;">&#x2715;</button>
+      <button onclick="prevPhoto()" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:rgba(232,196,20,0.15); border:1px solid var(--gold); color:var(--gold); font-size:2rem; cursor:pointer; padding:8px 16px; border-radius:6px;">&#8249;</button>
+      <img id="lightbox-img" src="" alt="Lucas Foster" style="max-width:90vw; max-height:85vh; border-radius:8px; border:2px solid var(--gold); object-fit:contain;">
+      <div id="lightbox-counter" style="color:var(--grey); margin-top:12px; font-size:0.9rem;"></div>
+      <button onclick="nextPhoto()" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); background:rgba(232,196,20,0.15); border:1px solid var(--gold); color:var(--gold); font-size:2rem; cursor:pointer; padding:8px 16px; border-radius:6px;">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: var(--dark);">
+  <div class="container">
+    <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+      <h2>Train with <span class="gold">Our Team</span></h2>
+      <div class="divider"></div>
+      <p style="color: var(--grey); margin-top: 24px; font-size: 1.05rem; line-height: 1.85;">Lucas trains and teaches alongside our instructors at Train Taekwondo Schools. Come and experience the difference that qualified, passionate instructors make — book your free taster session today and see for yourself.</p>
+      <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="membership.html" class="btn btn-gold btn-lg">Book a FREE Taster →</a>
+        <a href="about.html" class="btn btn-outline">← Meet the Full Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col"><h4>Locations</h4><ul><li><a href="locations.html">York</a></li><li><a href="locations.html">Beverley</a></li><li><a href="locations.html">Stamford Bridge</a></li><li><a href="locations.html">Pocklington</a></li><li><a href="locations.html">Market Weighton</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 <a href="tel:07833665905" style="color:inherit;text-decoration:none;">07833 665905</a><br>✉ <a href="mailto:gavin@traintaekwondo.co.uk" style="color:inherit;">gavin@traintaekwondo.co.uk</a></p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span><span>TAGB Affiliated · UK Sport Recognised</span></div>
+  </div>
+</footer>
+
+<script>
+const photos = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-early-grading_f637b4b8.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-patterns_0297fe7b.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-sparring-action_c99c72c7.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-national-fight_1eadab8b.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-world-champs-2023_a7a4a176.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-competition-fight_cf0b62e9.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-world-champs-fight_0bf89190.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-injured-perseverance_70c0ab6e.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-english-champs-gold_02e600a7.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-black-belt-cert_f2d9fd52.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-2nd-dan-cert_4709acc1.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-bag-kick-1_a0466bdf.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-bag-kick-2_da0c6959.jpeg",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/lucas-foster-medal-portrait_005bfd84.jpeg"
+];
+let currentPhoto = 0;
+
+function openLightbox(index) {
+  currentPhoto = index;
+  document.getElementById('lightbox').style.display = 'flex';
+  document.getElementById('lightbox-img').src = photos[currentPhoto];
+  document.getElementById('lightbox-counter').textContent = (currentPhoto + 1) + ' / ' + photos.length;
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function nextPhoto() {
+  currentPhoto = (currentPhoto + 1) % photos.length;
+  document.getElementById('lightbox-img').src = photos[currentPhoto];
+  document.getElementById('lightbox-counter').textContent = (currentPhoto + 1) + ' / ' + photos.length;
+}
+function prevPhoto() {
+  currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+  document.getElementById('lightbox-img').src = photos[currentPhoto];
+  document.getElementById('lightbox-counter').textContent = (currentPhoto + 1) + ' / ' + photos.length;
+}
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('lightbox').style.display !== 'none') {
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+    if (e.key === 'Escape') closeLightbox();
+  }
+});
+
+function toggleMobileSection(sectionId, btn) {
+  var section = document.getElementById(sectionId);
+  var isOpen = section.classList.contains('open');
+  document.querySelectorAll('.mobile-nav-section').forEach(function(s) { s.classList.remove('open'); });
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+  if (!isOpen) {
+    section.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+</script>
+</body>
+</html>

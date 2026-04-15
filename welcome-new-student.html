@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Train Taekwondo Schools!</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+  --black:  #0a0a0a;
+  --dark:   #111111;
+  --dark2:  #1a1a1a;
+  --dark3:  #222222;
+  --gold:   #F5C518;
+  --gold2:  #f5d430;
+  --white:  #ffffff;
+  --grey:   #aaaaaa;
+  --border: #2a2a2a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'Russo One', sans-serif; line-height: 1.2; letter-spacing: 0.02em; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+/* ── HERO ── */
+.welcome-hero {
+  background: var(--dark);
+  border-bottom: 4px solid var(--gold);
+  text-align: center;
+  padding: 56px 24px 48px;
+}
+.welcome-hero img.logo { height: 72px; margin: 0 auto 20px; }
+.welcome-hero .badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.welcome-hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--white); margin-bottom: 16px; }
+.welcome-hero h1 span { color: var(--gold); }
+.welcome-hero p { font-size: 1.05rem; color: #ccc; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* ── CONFETTI STRIP ── */
+.confetti-strip {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+}
+.confetti-strip p { font-size: 1.5rem; letter-spacing: 0.05em; }
+
+/* ── SECTION ── */
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-of-type { border-bottom: none; }
+.section-label {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.section h2 { font-size: 1.55rem; color: var(--white); margin-bottom: 14px; }
+.section h2 span { color: var(--gold); }
+.section p { color: #ccc; font-size: 0.97rem; line-height: 1.75; margin-bottom: 14px; }
+.section p:last-child { margin-bottom: 0; }
+
+/* ── STATS ROW ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--dark2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+.stat-cell {
+  padding: 18px 10px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell .num { display: block; font-size: 1.8rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.stat-cell .lbl { display: block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #666; margin-top: 5px; }
+
+/* ── VIDEO THUMBNAIL ── */
+.video-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 24px 0;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+}
+.video-wrap img { width: 100%; display: block; }
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play-btn {
+  width: 76px; height: 76px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #111;
+  padding-left: 6px;
+  transition: transform 0.2s;
+}
+.video-wrap:hover .play-btn { transform: scale(1.1); }
+.video-caption { font-size: 12px; color: #666; text-align: center; margin-top: 8px; }
+
+/* ── CARD ── */
+.card {
+  background: var(--dark2);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.card:last-child { margin-bottom: 0; }
+.card-label { font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.card h3 { font-size: 1.1rem; color: var(--white); margin-bottom: 8px; }
+.card p { font-size: 0.93rem; color: #aaa; line-height: 1.65; margin: 0; }
+
+/* ── BELT JOURNEY ── */
+.belt-list { list-style: none; margin: 20px 0; }
+.belt-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 14px;
+}
+.belt-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+  border: 2px solid transparent;
+}
+.belt-list li strong { display: block; font-size: 0.93rem; color: var(--white); margin-bottom: 2px; }
+.belt-list li span { font-size: 0.86rem; color: #777; }
+
+/* ── GRADING TABLE ── */
+.grading-table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 0.9rem; }
+.grading-table th { background: var(--gold); color: #111; font-weight: 700; padding: 10px 14px; text-align: left; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.grading-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #ccc; }
+.grading-table tr:nth-child(even) td { background: #1a1a1a; }
+
+/* ── CTA BOX ── */
+.cta-box {
+  background: var(--dark2);
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+.cta-box .cta-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.cta-box p { color: #ccc; font-size: 0.95rem; margin-bottom: 20px; }
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-1px); color: #111; }
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: background 0.2s;
+}
+.btn-outline:hover { background: rgba(245,197,24,0.1); color: var(--gold); }
+
+/* ── WHATSAPP CTA ── */
+.wa-box {
+  background: #0d1a0d;
+  border: 2px solid #25D366;
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+.wa-box p { color: #ccc; font-size: 0.93rem; margin-bottom: 16px; }
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-wa:hover { background: #1ebe5d; color: #fff; }
+
+/* ── INSTRUCTOR CARD ── */
+.instructor-card {
+  background: var(--dark2);
+  border-radius: 8px;
+  padding: 24px;
+}
+.instructor-card .name { font-size: 1.25rem; font-weight: 900; color: var(--white); margin-bottom: 4px; }
+.instructor-card .title { font-size: 0.88rem; font-weight: 600; color: var(--gold); margin-bottom: 14px; }
+.instructor-card p { font-size: 0.9rem; color: #aaa; line-height: 1.7; margin-bottom: 10px; }
+.instructor-card p:last-child { margin-bottom: 0; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.badge-pill {
+  background: #111;
+  border: 1px solid var(--border);
+  color: #ccc;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ── FOOTER ── */
+.site-footer { background: var(--gold); padding: 48px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand img { height: 56px; margin-bottom: 16px; }
+.footer-brand p { font-size: 0.88rem; color: rgba(0,0,0,0.7); line-height: 1.65; max-width: 280px; }
+.footer-col h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #111; margin-bottom: 14px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: rgba(0,0,0,0.75); font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--black); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.15); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; color: rgba(0,0,0,0.6); }
+
+@media (max-width: 700px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .btn-outline { margin-left: 0; margin-top: 10px; display: block; text-align: center; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section class="welcome-hero">
+  <img class="logo" src="images/gallery-01.png" alt="Train Taekwondo Schools">
+  <div class="badge">Creating Champions for Life Since 2011</div>
+  <h1>Welcome to<br><span>Train Taekwondo Schools!</span></h1>
+  <p>We are absolutely thrilled to have you on board. Your journey to becoming a Champion for Life starts right here.</p>
+</section>
+
+<!-- ── CONFETTI ──────────────────────────────────────────────────────────── -->
+<div class="confetti-strip">
+  <p>🥋 🎉 You've just made an amazing decision! 🎉 🥋</p>
+</div>
+
+<!-- ── ABOUT THE CLUB ─────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label">Welcome</div>
+    <h2>More Than Martial Arts — <span>We Build Champions for Life</span></h2>
+    <p>Thank you so much for registering with Train Taekwondo Schools. Whether you are signing up for yourself, your child, or the whole family, you have just taken the first step on an incredible journey — one that goes far beyond kicks and belts.</p>
+    <p>Since opening our doors in 2011, we have been on a mission to help children, juniors and families across East Yorkshire grow in confidence, discipline, focus and fitness. We are proud members of the <strong>TAGB — the Tae Kwon Do Association of Great Britain</strong> — Europe's largest single martial arts organisation, recognised by UK Sport, Sport England and World Taekwondo.</p>
+    <p>We currently run classes across <strong>five locations</strong>: York, Beverley, Stamford Bridge, Pocklington and Market Weighton — with more venues on the way.</p>
+    <div class="stats-row">
+      <div class="stat-cell"><span class="num">15</span><span class="lbl">Years Teaching</span></div>
+      <div class="stat-cell"><span class="num">100+</span><span class="lbl">Black Belts</span></div>
+      <div class="stat-cell"><span class="num">5</span><span class="lbl">Locations</span></div>
+      <div class="stat-cell"><span class="num">500+</span><span class="lbl">Families Trained</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLUB PROMO VIDEO ───────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label">See Us in Action</div>
+    <h2>Watch Our <span>Club Promo Video</span></h2>
+    <p>Before your first session, take two minutes to see exactly what a Train Taekwondo Schools class looks like — the energy, the community, the fun.</p>
+    <a href="https://www.youtube.com/watch?v=22WZjqHc9D8" target="_blank" class="video-wrap">
+      <img src="https://img.youtube.com/vi/22WZjqHc9D8/maxresdefault.jpg" alt="Train Taekwondo Schools Club Promo Video">
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+    </a>
+    <p class="video-caption">Click to watch on YouTube &nbsp;·&nbsp; Train Taekwondo Schools Promo Video</p>
+  </div>
+</section>
+
+<!-- ── GAVIN'S WELCOME VIDEO ──────────────────────────────────────────────── -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label">A Personal Message</div>
+    <h2>A Word From <span>Gavin</span></h2>
+    <p>Gavin has recorded a short personal video message just for you — welcoming you to the club and letting you know exactly what to expect from your first session.</p>
+    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/FPSoXtBnUoBzhMgJ.mp4" target="_blank" class="video-wrap">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/EJLmObnnNeSkUfQU.jpg" alt="A personal welcome from Gavin Cook">
+      <div class="video-overlay"><div class="play-btn">▶</div></div>
+    </a>
+    <p class="video-caption">Click to watch &nbsp;·&nbsp; A personal welcome from Gavin</p>
+    <div class="cta-box">
+      <div class="cta-label">Ready to Take the First Step?</div>
+      <p>Your first session is completely <strong>FREE</strong> — no kit, no commitment, just come along and give it a try.</p>
+      <a href="https://www.traintaekwondo.co.uk" class="btn-gold">Book Your FREE Taster Session →</a>
+      <a href="https://www.traintaekwondo.co.uk/club-calendar.html" class="btn-outline">See Timetable</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEET GAVIN ─────────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label">Your Chief Instructor</div>
+    <h2>Meet <span>Gavin Cook</span></h2>
+    <div class="instructor-card">
+      <div class="name">Gavin Cook</div>
+      <div class="title">5th Dan Black Belt &nbsp;·&nbsp; Chief Instructor &nbsp;·&nbsp; TAGB Certified</div>
+      <p>Gavin has been training in Taekwondo for over <strong>43 years</strong> and has been running Train Taekwondo Schools for <strong>15 years</strong>. As a 5th Dan Black Belt and fully qualified TAGB instructor, Gavin has dedicated his career to helping children, juniors and families discover the life-changing benefits of martial arts.</p>
+      <p>From his early days as a competitive fighter and TAGB champion, to building one of East Yorkshire's most respected Taekwondo schools — every technique Gavin teaches, he has competed with at the highest level. Under his instruction, the club has grown from a single class to a network of five locations, producing <strong>over 100 black belts</strong> and training <strong>500+ families</strong> along the way.</p>
+      <p>Gavin is also a certified <strong>Ninja Skillz instructor</strong>, trained in the brain-based child development programme that has transformed how we teach children aged 3–7. His passion is simple: to help every child and adult who walks through the door become the best version of themselves.</p>
+      <p>Gavin's own sons, Harry and Jack, have both trained since the age of four — a testament to the family values at the heart of everything we do.</p>
+      <div class="badge-row">
+        <span class="badge-pill">✅ 5th Dan Black Belt</span>
+        <span class="badge-pill">✅ TAGB Certified Instructor</span>
+        <span class="badge-pill">✅ DBS Checked</span>
+        <span class="badge-pill">✅ Ninja Skillz Certified</span>
+        <span class="badge-pill">✅ 43 Years Training</span>
+        <span class="badge-pill">✅ First Aid Certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR CLASSES ─────────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label">Our Programmes</div>
+    <h2>Find the <span>Right Class for You</span></h2>
+    <p>We offer a range of programmes designed for every age and ability — from tiny tots taking their first steps on the mat, to adults training alongside their children.</p>
+
+    <div class="card">
+      <div class="card-label">🥷 Ages 3–4 · Little Ninjas</div>
+      <h3>Ninja Skillz — Little Ninjas</h3>
+      <p>A brain-based programme designed specifically for children aged 3–4. 30-minute sessions packed with movement, focus games and confidence-building activities. First taster session always FREE.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">🥋 Ages 5–7 · Junior Ninjas</div>
+      <h3>Ninja Skillz — Junior Ninjas</h3>
+      <p>For children aged 5–7, building on the foundations of Little Ninjas with more structured Taekwondo techniques, patterns and character development. First taster session always FREE.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">👨‍👩‍👧 Ages 5+ · All the Family</div>
+      <h3>Family Taekwondo</h3>
+      <p>Our flagship programme for ages 5 through to adults. Parents and children train side by side on the same mat, earning belts together. A truly unique experience. First taster session always FREE.</p>
+    </div>
+    <div class="card" style="border-left: 4px solid var(--gold);">
+      <div class="card-label">🧩 Ages 7–14 · Max 7 Per Class</div>
+      <h3>Spectrum Skillz</h3>
+      <p>A specialist, internationally-acclaimed programme designed exclusively for children on the autism spectrum. Small classes of no more than 7 children, expert instruction and a safe, structured space to grow. First taster session always FREE.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <a href="https://www.traintaekwondo.co.uk" class="btn-gold">View All Classes</a>
+      <a href="https://www.traintaekwondo.co.uk/club-calendar.html" class="btn-outline">See Timetable</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BELT JOURNEY ───────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label">Your Journey</div>
+    <h2>From White Belt to <span>Black Belt</span> — The 5-Year Journey</h2>
+    <p>One of the most common questions we get asked is: <em>"How long does it take to get a black belt?"</em> With the TAGB, the honest answer for a dedicated student is around <strong>five years</strong> — and every step of that journey is structured, celebrated and deeply rewarding.</p>
+    <p>We grade <strong>three times a year</strong> — in February/March, June/July and October/November — giving every student a regular opportunity to demonstrate their progress. Since opening in 2011, we have proudly produced <strong>over 100 black belts</strong>.</p>
+
+    <ul class="belt-list">
+      <li><div class="belt-dot" style="background:#fff;border-color:#555;"></div><div><strong>White Belt — Starting Out</strong><span>Your first steps on the mat. Learning the basics of stance, movement and the TAGB ethos.</span></div></li>
+      <li><div class="belt-dot" style="background:#f5a623;"></div><div><strong>Yellow Tag &amp; Yellow Belt</strong><span>Building confidence and coordination. First grading opportunity — a huge milestone.</span></div></li>
+      <li><div class="belt-dot" style="background:#7ed321;"></div><div><strong>Green Tag &amp; Green Belt</strong><span>Techniques become more fluid. Patterns (Tuls) and sparring are introduced.</span></div></li>
+      <li><div class="belt-dot" style="background:#4a90e2;"></div><div><strong>Blue Tag &amp; Blue Belt</strong><span>Strength and precision develop. Students begin competing at regional level.</span></div></li>
+      <li><div class="belt-dot" style="background:#d0021b;"></div><div><strong>Red Tag &amp; Red Belt</strong><span>Advanced techniques and patterns. The final stage before the black belt journey begins.</span></div></li>
+      <li><div class="belt-dot" style="background:#111;border-color:var(--gold);"></div><div><strong style="color:var(--gold);">Black Belt — 1st Dan &amp; Beyond</strong><span>The beginning of mastery — not the end. Typically achieved in around 5 years.</span></div></li>
+    </ul>
+
+    <table class="grading-table">
+      <tr>
+        <th>Grading Window</th>
+        <th>Typical Months</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>🌱 Spring Grading</td>
+        <td>February / March</td>
+        <td>First grading of the year</td>
+      </tr>
+      <tr>
+        <td>☀️ Summer Grading</td>
+        <td>June / July</td>
+        <td>Mid-year progress check</td>
+      </tr>
+      <tr>
+        <td>🍂 Autumn Grading</td>
+        <td>October / November</td>
+        <td>End-of-year milestone</td>
+      </tr>
+    </table>
+    <p>Grading is always optional — there is never any pressure to grade before you are ready. Your instructor will let you know when you are ready to step up.</p>
+  </div>
+</section>
+
+<!-- ── WHAT TO BRING ───────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label">First Session</div>
+    <h2>What to Bring to Your <span>First Session</span></h2>
+    <div class="card">
+      <p>✅ &nbsp;<strong>Comfortable clothing</strong> — tracksuit bottoms and a t-shirt are perfect. No need for a dobok (uniform) yet.</p>
+      <p>✅ &nbsp;<strong>Bare feet</strong> — we train without shoes on the mat.</p>
+      <p>✅ &nbsp;<strong>Water bottle</strong> — sessions are energetic!</p>
+      <p>✅ &nbsp;<strong>An open mind and a smile</strong> — that's all we ask.</p>
+      <p style="margin-top:14px;color:#666;">You will be able to purchase your dobok and TAGB licence after your taster session if you decide to join. Your instructor will guide you through everything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHATSAPP ────────────────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label">💬 Get in Touch</div>
+    <h2>Questions? <span>We're Here to Help</span></h2>
+    <p>The quickest way to get an answer is through our WhatsApp agent — available 24/7, it can answer any question about classes, timetables, locations, pricing and more. Or if you prefer, Gavin replies personally — usually within a few hours.</p>
+    <div class="wa-box">
+      <p><strong>Chat with our WhatsApp agent</strong> — available any time of day or night. Ask anything, book a class, or refer a friend in 3 easy clicks.</p>
+      <a href="https://wa.me/447426069502?text=Hi%2C%20I%27ve%20just%20registered%20and%20I%27d%20love%20to%20find%20out%20more%20about%20my%20first%20session!" target="_blank" class="btn-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <p style="margin-top:14px;font-size:0.82rem;color:#555;">Or email: <a href="mailto:gavin@traintaekwondo.co.uk" style="color:var(--gold);">gavin@traintaekwondo.co.uk</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <ul>
+          <li><a href="ninja-skillz.html">Ninja Skillz (3–7)</a></li>
+          <li><a href="family-taekwondo.html">Family Taekwondo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="locations.html">York</a></li>
+          <li><a href="locations.html">Beverley</a></li>
+          <li><a href="locations.html">Stamford Bridge</a></li>
+          <li><a href="locations.html">Pocklington</a></li>
+          <li><a href="locations.html">Market Weighton</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="mailto:gavin@traintaekwondo.co.uk">Email Gavin</a></li>
+          <li><a href="https://wa.me/447426069502" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span>
+      <span>TAGB Affiliated &nbsp;·&nbsp; UK Sport Recognised</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

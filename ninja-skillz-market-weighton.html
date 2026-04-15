@@ -1047,6 +1047,65 @@
   })();
 </script>
 
+<!-- ANALYTICS TRACKING -->
+<script>
+(function() {
+  var TRACK_API = 'https://tkddash-iamcuj9t.manus.space/api/track';
+  var SLUG = 'market-weighton';
+
+  function track(eventType, label) {
+    try {
+      fetch(TRACK_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: SLUG, eventType: eventType, label: label || null }),
+        keepalive: true
+      }).catch(function() {});
+    } catch(e) {}
+  }
+
+  // 1. Page view — fire once on load
+  track('pageview');
+
+  // 2. Video play — fire when the HeyGen video or promo video starts playing
+  document.querySelectorAll('video').forEach(function(v) {
+    var fired = false;
+    v.addEventListener('play', function() {
+      if (!fired) { fired = true; track('video_play', 'mr-cook-video'); }
+    });
+  });
+
+  // 3. YouTube iframe play — listen for postMessage from YouTube API
+  window.addEventListener('message', function(e) {
+    try {
+      var data = JSON.parse(e.data);
+      if (data.event === 'onStateChange' && data.info === 1) {
+        track('video_play', 'ninja-skillz-promo');
+      }
+    } catch(err) {}
+  });
+
+  // 4. Enable YouTube postMessage by adding ?enablejsapi=1 dynamically
+  document.querySelectorAll('iframe[src*="youtube.com"]').forEach(function(iframe) {
+    if (iframe.src.indexOf('enablejsapi') === -1) {
+      iframe.src = iframe.src + (iframe.src.indexOf('?') > -1 ? '&' : '?') + 'enablejsapi=1';
+    }
+  });
+
+  // 5. Link clicks — track WhatsApp, Register, and CTA buttons
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1) {
+      track('link_click', 'whatsapp');
+    } else if (href.indexOf('#register') > -1) {
+      track('link_click', 'register-cta');
+    }
+  });
+})();
+</script>
+
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-cta-text">

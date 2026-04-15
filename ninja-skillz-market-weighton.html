@@ -825,7 +825,7 @@
   <a href="#register" class="btn-dark">Claim Your Child's Space Now →</a>
 
   <div class="spaces-remaining-bar">
-    <div class="spaces-count">⚡ Only <span id="spaces-num">7</span> of 12 spaces left</div>
+    <div class="spaces-count">⚡ Only <span id="spaces-num">7</span> of <span id="spaces-max">12</span> spaces left</div>
     <div class="spaces-text">Per class — first come, first served</div>
     <div class="spaces-progress">
       <div class="spaces-progress-fill" id="spaces-bar" style="width: 58%;"></div>
@@ -977,6 +977,35 @@
 
 
 <script>
+  // LIVE SPACES COUNTER — fetches from tkd-dashboard API
+  (function() {
+    var SPACES_API = 'https://tkddash-iamcuj9t.manus.space/api/spaces?slug=market-weighton';
+    function updateSpacesUI(remaining, max) {
+      var numEl = document.getElementById('spaces-num');
+      var maxEl = document.getElementById('spaces-max');
+      var barEl = document.getElementById('spaces-bar');
+      if (numEl) numEl.textContent = remaining;
+      if (maxEl) maxEl.textContent = max;
+      if (barEl) {
+        var pct = max > 0 ? Math.round(((max - remaining) / max) * 100) : 0;
+        barEl.style.width = pct + '%';
+      }
+      // Also update the programme card warnings
+      var warnings = document.querySelectorAll('.spaces-warning');
+      warnings.forEach(function(w) {
+        w.textContent = '\u26A0 Only ' + remaining + ' spaces remaining';
+      });
+    }
+    fetch(SPACES_API)
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (data && typeof data.spacesRemaining === 'number') {
+          updateSpacesUI(data.spacesRemaining, data.maxSpaces);
+        }
+      })
+      .catch(function() { /* silently fall back to hardcoded value */ });
+  })();
+
   // COUNTDOWN TIMER
   (function() {
     var launch = new Date('2026-05-02T09:00:00').getTime();

@@ -911,6 +911,10 @@
         <input type="number" name="child_age" placeholder="e.g. 4" min="3" max="7" required />
       </div>
       <div class="form-group">
+        <label>Child's Date of Birth</label>
+        <input type="date" name="child_dob" required />
+      </div>
+      <div class="form-group">
         <label>Which Class?</label>
         <select name="class" required>
           <option value="" disabled selected>Select a programme</option>
@@ -953,13 +957,43 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
       try {
+        const fd = new FormData(form);
+
+        // 1. Submit to Formspree (primary)
         const response = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body: fd,
           headers: { 'Accept': 'application/json' }
         });
+
+        // 2. Also send to dashboard API (non-blocking, best-effort)
+        try {
+          // Convert DD/MM/YYYY from date input (YYYY-MM-DD) to DD/MM/YYYY
+          const rawDob = fd.get('child_dob') || '';
+          let dobFormatted = rawDob;
+          if (rawDob && rawDob.includes('-')) {
+            const [y, m, d] = rawDob.split('-');
+            dobFormatted = `${d}/${m}/${y}`;
+          }
+          await fetch('https://tkddash-iamcuj9t.manus.space/api/trpc/tagbLicences.registerInterest', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              json: {
+                slug: 'market-weighton',
+                parentName: fd.get('parent_name') || '',
+                childName: fd.get('child_name') || '',
+                childDob: dobFormatted,
+                classChoice: fd.get('class') || '',
+                email: fd.get('email') || '',
+                phone: fd.get('phone') || ''
+              }
+            })
+          });
+        } catch(_) { /* dashboard call is best-effort, don't block on failure */ }
+
         if (response.ok) {
-          form.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;margin-bottom:16px;">🥷</div><h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You're Registered!</h3><p style="color:#aaa;">Thanks! Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p></div>';
+          form.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;margin-bottom:16px;">🥷</div><h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You\'re Registered!</h3><p style="color:#aaa;">Thanks! Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p></div>';
         } else {
           btn.textContent = '🥷 Secure Our Space — Register Now';
           btn.disabled = false;

@@ -896,11 +896,17 @@
 <section class="register" id="register">
   <div class="form-container">
     <h2>Reserve Your Child's Space Today</h2>
-    <p>Fill in your details and we'll be in touch to confirm your taster session for Saturday 2nd May.</p>
-    <form action="https://formspree.io/f/xnjgdqyj" method="POST">
-      <div class="form-group">
-        <label>Parent's Name</label>
-        <input type="text" name="parent_name" placeholder="Your full name" required />
+    <p>Fill in your details below — takes less than 2 minutes. Gavin will be in touch to confirm your FREE taster session.</p>
+    <form id="mwForm" action="https://formspree.io/f/xnjgdqyj" method="POST">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Parent's First Name</label>
+          <input type="text" name="parent_forename" placeholder="First name" required />
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Parent's Surname</label>
+          <input type="text" name="parent_surname" placeholder="Last name" required />
+        </div>
       </div>
       <div class="form-group">
         <label>Child's Name</label>
@@ -911,22 +917,33 @@
         <input type="date" name="child_dob" required />
       </div>
       <div class="form-group">
-        <label>Which Class?</label>
-        <select name="class" required>
-          <option value="" disabled selected>Select a programme</option>
-          <option value="Little Ninjas (Ages 3-4)">👶 Little Ninjas (Ages 3–4)</option>
-          <option value="Junior Ninjas (Ages 5-7)">🥋 Junior Ninjas (Ages 5–7)</option>
-          <option value="Junior Taekwondo (Ages 7+)">🥋 Junior Taekwondo (Ages 7+)</option>
-          <option value="Family Taekwondo">👨‍👩‍👧‍👦 Family Taekwondo</option>
-        </select>
-      </div>
-      <div class="form-group">
         <label>Email Address</label>
         <input type="email" name="email" placeholder="your@email.com" required />
       </div>
       <div class="form-group">
         <label>Phone Number</label>
         <input type="tel" name="phone" placeholder="07xxx xxxxxx" required />
+      </div>
+      <div class="form-group">
+        <label style="margin-bottom:10px;">Classes I'm Interested In <span style="color:#888;font-size:0.78rem;font-weight:400;text-transform:none;letter-spacing:0;">(tick all that apply)</span></label>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <label style="display:flex;align-items:center;gap:12px;font-size:0.95rem;font-weight:400;text-transform:none;letter-spacing:0;color:#fff;cursor:pointer;background:rgba(255,215,0,0.05);border:1px solid #2a2a2a;border-radius:6px;padding:12px 14px;">
+            <input type="checkbox" name="class_interest" value="Little Ninjas (Ages 3-4)" style="width:18px;height:18px;accent-color:#FFD700;flex-shrink:0;" />
+            <span>👶 <strong>Little Ninjas</strong> <span style="color:#888;font-size:0.82rem;">· Ages 3–4 · Sat 9:00am</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:12px;font-size:0.95rem;font-weight:400;text-transform:none;letter-spacing:0;color:#fff;cursor:pointer;background:rgba(255,215,0,0.05);border:1px solid #2a2a2a;border-radius:6px;padding:12px 14px;">
+            <input type="checkbox" name="class_interest" value="Junior Ninjas (Ages 5-7)" style="width:18px;height:18px;accent-color:#FFD700;flex-shrink:0;" />
+            <span>🥷 <strong>Junior Ninjas</strong> <span style="color:#888;font-size:0.82rem;">· Ages 5–7 · Sat 9:45am</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:12px;font-size:0.95rem;font-weight:400;text-transform:none;letter-spacing:0;color:#fff;cursor:pointer;background:rgba(255,215,0,0.05);border:1px solid #2a2a2a;border-radius:6px;padding:12px 14px;">
+            <input type="checkbox" name="class_interest" value="Junior Taekwondo (Ages 7+)" style="width:18px;height:18px;accent-color:#FFD700;flex-shrink:0;" />
+            <span>🥋 <strong>Junior Taekwondo</strong> <span style="color:#888;font-size:0.82rem;">· Ages 7+ · Sat 10:30am</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:12px;font-size:0.95rem;font-weight:400;text-transform:none;letter-spacing:0;color:#fff;cursor:pointer;background:rgba(255,215,0,0.05);border:1px solid #2a2a2a;border-radius:6px;padding:12px 14px;">
+            <input type="checkbox" name="class_interest" value="Family Taekwondo" style="width:18px;height:18px;accent-color:#FFD700;flex-shrink:0;" />
+            <span>👨‍👩‍👧‍👦 <strong>Family Taekwondo</strong> <span style="color:#888;font-size:0.82rem;">· All ages together</span></span>
+          </label>
+        </div>
       </div>
       <button type="submit" class="btn-primary form-submit">🥷 Secure Our Space — Register Now</button>
       <p class="form-privacy">We respect your privacy. Your details will only be used to confirm your taster session and will never be shared with third parties.</p>
@@ -971,16 +988,18 @@
             const [y, m, d] = rawDob.split('-');
             dobFormatted = `${d}/${m}/${y}`;
           }
+          const classInterests = fd.getAll('class_interest').join(', ');
+          const parentName = (fd.get('parent_forename') || '') + ' ' + (fd.get('parent_surname') || '');
           await fetch('https://tkddash-iamcuj9t.manus.space/api/trpc/tagbLicences.registerInterest', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               json: {
                 slug: 'market-weighton',
-                parentName: fd.get('parent_name') || '',
+                parentName: parentName.trim(),
                 childName: fd.get('child_name') || '',
                 childDob: dobFormatted,
-                classChoice: fd.get('class') || '',
+                classChoice: classInterests || 'Not specified',
                 email: fd.get('email') || '',
                 phone: fd.get('phone') || ''
               }
@@ -989,7 +1008,13 @@
         } catch(_) { /* dashboard call is best-effort, don't block on failure */ }
 
         if (response.ok) {
-          form.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;margin-bottom:16px;">🥷</div><h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You\'re Registered!</h3><p style="color:#aaa;">Thanks! Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p></div>';
+          form.innerHTML = `<div style="text-align:center;padding:40px 0;">
+            <div style="font-size:3rem;margin-bottom:16px;">🥷</div>
+            <h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You're Registered!</h3>
+            <p style="color:#aaa;margin-bottom:24px;">Thanks! Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p>
+            <p style="color:#aaa;font-size:0.9rem;margin-bottom:20px;">Want to complete your registration with Club Manager now?</p>
+            <a href="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68393&showLogo=True&reset=True" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FFD700;color:#000;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:6px;text-decoration:none;">Complete Registration →</a>
+          </div>`;
         } else {
           btn.textContent = '🥷 Secure Our Space — Register Now';
           btn.disabled = false;

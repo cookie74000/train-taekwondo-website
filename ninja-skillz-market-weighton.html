@@ -962,7 +962,7 @@
 
 
 <script>
-  const form = document.querySelector('form');
+  const form = document.getElementById('mwForm');
   if (form) {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -971,49 +971,70 @@
       btn.disabled = true;
       try {
         const fd = new FormData(form);
+        const classInterests = fd.getAll('class_interest').join(', ');
+        const parentForename = fd.get('parent_forename') || '';
+        const parentSurname = fd.get('parent_surname') || '';
+        const childName = fd.get('child_name') || '';
+        const rawDob = fd.get('child_dob') || '';
+        const email = fd.get('email') || '';
+        const phone = fd.get('phone') || '';
 
-        // 1. Submit to Formspree (primary)
-        const response = await fetch(form.action, {
+        // Format DOB from YYYY-MM-DD to DD/MM/YYYY for Club Manager
+        let dobFormatted = '';
+        if (rawDob && rawDob.includes('-')) {
+          const [y, m, d] = rawDob.split('-');
+          dobFormatted = `${d}/${m}/${y}`;
+        }
+
+        const message = classInterests
+          ? `Interested in: ${classInterests}. Child: ${childName} (DOB: ${dobFormatted || rawDob}).`
+          : `Child: ${childName} (DOB: ${dobFormatted || rawDob}).`;
+
+        // 1. Submit to Club Manager SimpleContact API (primary)
+        const cmResponse = await fetch('https://api.clubmanagercentral.com/api/Command/SimpleContactCommand', {
           method: 'POST',
-          body: fd,
-          headers: { 'Accept': 'application/json' }
+          headers: {
+            'Content-Type': 'application/json',
+            'X-BranchKey': 'c29fbb1f-57c9-40b6-af05-bb815424f56e'
+          },
+          body: JSON.stringify({
+            Forenames: parentForename,
+            Surname: parentSurname,
+            Email: email,
+            Mobile: phone,
+            Message: message,
+            DateOfBirth: '',
+            MemberName: childName,
+            ParentSurname: parentSurname,
+            Obscura: '',
+            Tags: null
+          })
         });
 
         // 2. Also send to dashboard API (non-blocking, best-effort)
         try {
-          // Convert DD/MM/YYYY from date input (YYYY-MM-DD) to DD/MM/YYYY
-          const rawDob = fd.get('child_dob') || '';
-          let dobFormatted = rawDob;
-          if (rawDob && rawDob.includes('-')) {
-            const [y, m, d] = rawDob.split('-');
-            dobFormatted = `${d}/${m}/${y}`;
-          }
-          const classInterests = fd.getAll('class_interest').join(', ');
-          const parentName = (fd.get('parent_forename') || '') + ' ' + (fd.get('parent_surname') || '');
           await fetch('https://tkddash-iamcuj9t.manus.space/api/trpc/tagbLicences.registerInterest', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               json: {
                 slug: 'market-weighton',
-                parentName: parentName.trim(),
-                childName: fd.get('child_name') || '',
-                childDob: dobFormatted,
+                parentName: (parentForename + ' ' + parentSurname).trim(),
+                childName: childName,
+                childDob: dobFormatted || rawDob,
                 classChoice: classInterests || 'Not specified',
-                email: fd.get('email') || '',
-                phone: fd.get('phone') || ''
+                email: email,
+                phone: phone
               }
             })
           });
-        } catch(_) { /* dashboard call is best-effort, don't block on failure */ }
+        } catch(_) { /* best-effort */ }
 
-        if (response.ok) {
+        if (cmResponse.ok) {
           form.innerHTML = `<div style="text-align:center;padding:40px 0;">
             <div style="font-size:3rem;margin-bottom:16px;">🥷</div>
             <h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You're Registered!</h3>
-            <p style="color:#aaa;margin-bottom:24px;">Thanks! Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p>
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:20px;">Want to complete your registration with Club Manager now?</p>
-            <a href="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68393&showLogo=True&reset=True" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FFD700;color:#000;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:6px;text-decoration:none;">Complete Registration →</a>
+            <p style="color:#aaa;margin-bottom:24px;">Thanks! You've been added to our system and Gavin will be in touch shortly to confirm your FREE taster session for Saturday 2nd May.</p>
           </div>`;
         } else {
           btn.textContent = '🥷 Secure Our Space — Register Now';

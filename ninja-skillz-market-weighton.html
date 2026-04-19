@@ -990,13 +990,10 @@
           ? `Interested in: ${classInterests}. Child: ${childName} (DOB: ${dobFormatted || rawDob}).`
           : `Child: ${childName} (DOB: ${dobFormatted || rawDob}).`;
 
-        // 1. Submit to Club Manager SimpleContact API (primary)
-        const cmResponse = await fetch('https://api.clubmanagercentral.com/api/Command/SimpleContactCommand', {
+        // 1. Submit to Club Manager via dashboard proxy (avoids CORS)
+        const cmResponse = await fetch('https://tkddash-iamcuj9t.manus.space/api/cm-contact', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-BranchKey': 'c29fbb1f-57c9-40b6-af05-bb815424f56e'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             Forenames: parentForename,
             Surname: parentSurname,
@@ -1005,9 +1002,7 @@
             Message: message,
             DateOfBirth: '',
             MemberName: childName,
-            ParentSurname: parentSurname,
-            Obscura: '',
-            Tags: null
+            ParentSurname: parentSurname
           })
         });
 

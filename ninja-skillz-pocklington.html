@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ninja Skillz Pocklington — Ages 3–14 | Coming Soon 2026</title>
-  <meta name="description" content="Ninja Skillz is coming to Pocklington! Early Skillz (3–4), Basic Skillz (5–6), Core Skillz (7–11) and Spectrum Skillz (7–14). First taster session completely FREE. Register your interest now." />
+  <title>Ninja Skillz Pocklington — Opening 10 September 2025 | The Masonic Hall</title>
+  <meta name="description" content="Ninja Skillz is opening in Pocklington on 10 September 2025 at The Masonic Hall. Early Skillz (3–4), Basic Skillz (5–7) and Spectrum Skillz (7–14). First taster session completely FREE. Book now." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -54,13 +54,8 @@
       max-width: 780px;
       margin: 0 auto;
     }
-    .hero-logo {
-      margin-bottom: 24px;
-    }
-    .hero-logo img {
-      height: 70px;
-      width: auto;
-    }
+    .hero-logo { margin-bottom: 24px; }
+    .hero-logo img { height: 70px; width: auto; }
     .hero-badge-pill {
       display: inline-block;
       background: rgba(255,215,0,0.15);
@@ -129,11 +124,7 @@
       margin: 6px;
     }
     .btn-secondary:hover { background: rgba(255,215,0,0.1); }
-    .hero-stars {
-      margin-top: 20px;
-      color: var(--yellow);
-      font-size: 0.9rem;
-    }
+    .hero-stars { margin-top: 20px; color: var(--yellow); font-size: 0.9rem; }
     .hero-stars span { font-size: 1.1rem; }
 
     /* COUNTDOWN */
@@ -187,13 +178,11 @@
       gap: 40px;
       flex-wrap: wrap;
     }
-    .launch-item {
-      text-align: center;
-    }
+    .launch-item { text-align: center; }
     .launch-icon { font-size: 1.8rem; margin-bottom: 6px; }
     .launch-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px; }
     .launch-value { font-weight: 700; font-size: 1rem; color: #fff; }
-    .launch-value.tbc { color: var(--yellow); }
+    .launch-value.gold { color: var(--yellow); }
 
     /* STATS BAR */
     .stats-bar {
@@ -208,56 +197,68 @@
     .stat-number { font-size: 1.8rem; font-weight: 900; color: var(--black); line-height: 1; }
     .stat-label { font-size: 0.75rem; font-weight: 600; color: #333; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    /* CLASS PHOTO */
-    .class-photo-section { padding: 0; line-height: 0; }
-    .class-photo-section img { width: 100%; max-height: 420px; object-fit: cover; object-position: center 40%; display: block; }
-
-    /* PROGRAMMES */
-    .programmes { padding: 70px 20px; background: var(--dark); }
+    /* TIMETABLE */
+    .timetable-section { padding: 70px 20px; background: var(--dark); }
     .section-title { text-align: center; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 12px; }
     .section-title span { color: var(--yellow); }
     .section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .programmes-grid {
+    .timetable-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-    .programme-card {
+    .timetable-card {
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       border-radius: 12px;
-      padding: 32px 24px;
-      text-align: center;
+      padding: 28px 24px;
       border-top: 4px solid var(--yellow);
       transition: transform 0.2s;
     }
-    .programme-card.spectrum { border-top-color: var(--purple); }
-    .programme-card:hover { transform: translateY(-4px); }
-    .age-badge {
+    .timetable-card.spectrum { border-top-color: var(--purple); }
+    .timetable-card:hover { transform: translateY(-3px); }
+    .timetable-card .tc-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .timetable-card .tc-age {
       display: inline-block;
       background: rgba(255,215,0,0.15);
       color: var(--yellow);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
-    .programme-card.spectrum .age-badge {
+    .timetable-card.spectrum .tc-age {
       background: rgba(123,45,139,0.2);
       color: #c084d4;
     }
-    .programme-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
-    .programme-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
-    .programme-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
-    .programme-card ul { list-style: none; text-align: left; margin-bottom: 20px; }
-    .programme-card ul li { padding: 5px 0; font-size: 0.88rem; color: #ccc; border-bottom: 1px solid #2a2a2a; }
-    .programme-card ul li::before { content: "✓ "; color: var(--yellow); font-weight: 700; }
-    .programme-card.spectrum ul li::before { color: #c084d4; }
+    .timetable-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .timetable-card .tc-time {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .timetable-card.spectrum .tc-time { color: #c084d4; }
+    .timetable-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+    .timetable-card ul { list-style: none; margin-bottom: 16px; }
+    .timetable-card ul li { padding: 4px 0; font-size: 0.85rem; color: #ccc; border-bottom: 1px solid #2a2a2a; }
+    .timetable-card ul li::before { content: "✓ "; color: var(--yellow); font-weight: 700; }
+    .timetable-card.spectrum ul li::before { color: #c084d4; }
+    .spectrum-note {
+      background: rgba(123,45,139,0.12);
+      border: 1px solid rgba(123,45,139,0.35);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      color: #c084d4;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
     .spaces-warning {
       background: rgba(255,60,60,0.1);
       border: 1px solid rgba(255,60,60,0.3);
@@ -268,7 +269,7 @@
       border-radius: 6px;
       margin-bottom: 12px;
     }
-    .programme-card.spectrum .spaces-warning {
+    .timetable-card.spectrum .spaces-warning {
       background: rgba(123,45,139,0.15);
       border-color: rgba(123,45,139,0.4);
       color: #c084d4;
@@ -294,17 +295,26 @@
     .benefit-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--yellow); }
     .benefit-card p { font-size: 0.85rem; color: var(--muted); }
 
-    /* VIDEO */
-    .video-section { padding: 70px 20px; background: #0d0d0d; text-align: center; }
-    .video-wrapper {
+    /* HEYGEN VIDEO */
+    .heygen-section { padding: 70px 20px; background: #0d0d0d; text-align: center; }
+    .heygen-placeholder {
       max-width: 720px;
       margin: 0 auto;
       border-radius: 12px;
       overflow: hidden;
-      border: 3px solid #2a2a2a;
+      border: 3px dashed #333;
       aspect-ratio: 16/9;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--muted);
     }
-    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+    .heygen-placeholder .ph-icon { font-size: 3rem; }
+    .heygen-placeholder .ph-label { font-size: 1rem; font-weight: 700; color: #555; }
+    .heygen-placeholder .ph-sub { font-size: 0.82rem; color: #444; }
 
     /* REVIEWS */
     .reviews { padding: 70px 20px; background: var(--dark); }
@@ -345,7 +355,7 @@
     .urgency { padding: 60px 20px; background: #0d0d0d; text-align: center; }
     .urgency h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; margin-bottom: 12px; }
     .urgency p { color: var(--muted); margin-bottom: 24px; }
-    .spaces-bar {
+    .spaces-bar-wrap {
       max-width: 400px;
       margin: 0 auto 24px;
       background: #1a1a1a;
@@ -361,15 +371,27 @@
     /* REGISTER FORM */
     .register { padding: 70px 20px; background: var(--dark); }
     .form-inner {
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       border-radius: 12px;
       padding: 40px 32px;
     }
+    .form-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; color: #fff; }
+    .form-subtitle { font-size: 0.88rem; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
     .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #ccc; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: var(--yellow);
+    }
     .form-group input, .form-group select {
       width: 100%;
       background: #111;
@@ -381,6 +403,43 @@
     }
     .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--yellow); }
     .form-group select option { background: #111; }
+    .form-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+
+    /* Class checkboxes */
+    .class-checks { display: flex; flex-direction: column; gap: 10px; }
+    .class-check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .class-check-item:hover { border-color: #444; }
+    .class-check-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--yellow); flex-shrink: 0; }
+    .class-check-item.spectrum-item { border-color: rgba(123,45,139,0.3); }
+    .class-check-item.spectrum-item input[type="checkbox"] { accent-color: #c084d4; }
+    .class-check-label { font-size: 0.9rem; font-weight: 600; color: #fff; }
+    .class-check-label .class-time { font-size: 0.78rem; font-weight: 400; color: var(--muted); display: block; margin-top: 2px; }
+    .class-check-item.spectrum-item .class-check-label { color: #c084d4; }
+
+    /* Spectrum note in form */
+    .spectrum-form-note {
+      background: rgba(123,45,139,0.1);
+      border: 1px solid rgba(123,45,139,0.35);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.82rem;
+      color: #c084d4;
+      margin-top: 12px;
+      line-height: 1.6;
+      display: none;
+    }
+    .spectrum-form-note.visible { display: block; }
+
     .btn-submit {
       width: 100%;
       background: var(--yellow);
@@ -447,17 +506,8 @@
       justify-content: space-between;
       gap: 12px;
     }
-    .sticky-cta-text {
-      font-weight: 700;
-      font-size: 0.88rem;
-      line-height: 1.3;
-    }
-    .sticky-cta-text span {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      opacity: 0.75;
-    }
+    .sticky-cta-text { font-weight: 700; font-size: 0.88rem; line-height: 1.3; }
+    .sticky-cta-text span { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.75; }
     .sticky-cta-btn {
       background: var(--black);
       color: var(--yellow);
@@ -476,8 +526,7 @@
       .announcement-bar { display: none !important; }
       .free-badge { display: none !important; }
     }
-
-    </style>
+  </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4YNS2XYEZ"></script>
   <script>
@@ -491,7 +540,7 @@
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announcement-bar">
-  🥷 NINJA SKILLZ COMING TO POCKLINGTON &nbsp;|&nbsp; 🎁 FIRST TASTER SESSION COMPLETELY FREE &nbsp;|&nbsp; LIMITED SPACES — <a href="#register">REGISTER INTEREST</a>
+  🥷 NINJA SKILLZ POCKLINGTON OPENS 10 SEPTEMBER 2025 &nbsp;|&nbsp; 🎁 FIRST TASTER SESSION FREE &nbsp;|&nbsp; LIMITED SPACES — <a href="#register">BOOK NOW</a>
 </div>
 
 <!-- NAV -->
@@ -499,7 +548,7 @@
   <div class="nav-logo">
     <img src="images/gallery-01.png" alt="Train Taekwondo Schools" />
   </div>
-  <a href="#register" class="nav-cta">Register Interest</a>
+  <a href="#register" class="nav-cta">Book Free Taster</a>
 </nav>
 
 <!-- HERO -->
@@ -508,15 +557,15 @@
     <div class="hero-logo">
       <img src="images/site-img-09.png" alt="Ninja Skillz" />
     </div>
-    <div class="hero-badge-pill">🥷 Pocklington — Ages 3 to 14</div>
+    <div class="hero-badge-pill">🥷 Pocklington — Opening 10 September 2025</div>
     <h1>Ninja Skillz is Coming to<br><span>Pocklington!</span></h1>
-    <p class="hero-sub">For <strong>15 years</strong>, Ninja Skillz has built confident, focused and resilient children across Yorkshire. Now we're bringing our <strong>full programme</strong> to Pocklington — four specialist classes covering every child from age 3 to 14.</p>
+    <p class="hero-sub">Three specialist classes at <strong>The Masonic Hall, Pocklington</strong> — every Wednesday from 10 September. Ages 3 to 14. The first session is completely <strong>FREE</strong>.</p>
     <div class="free-badge">
       🎁 First Taster Session is <strong>&nbsp;FREE&nbsp;</strong> — No commitment, just come and try it!
     </div>
     <br>
-    <a href="#register" class="btn-primary hide-mobile">Register Your Interest →</a>
-    <a href="#programmes" class="btn-secondary">See All Programmes</a>
+    <a href="#register" class="btn-primary hide-mobile">Book Your FREE Taster →</a>
+    <a href="#classes" class="btn-secondary">See Class Times</a>
     <div class="hero-stars">
       <span>★★★★★</span> &nbsp;100% recommended · 21 Facebook reviews
     </div>
@@ -525,7 +574,7 @@
 
 <!-- COUNTDOWN -->
 <div class="countdown-section">
-  <div class="countdown-label">🚀 Classes Coming Soon</div>
+  <div class="countdown-label">🚀 Opening Day Countdown</div>
   <div class="countdown-timer" id="countdown">
     <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-unit-label">Days</span></div>
     <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-unit-label">Hours</span></div>
@@ -535,18 +584,18 @@
   <div class="launch-details">
     <div class="launch-item">
       <div class="launch-icon">📅</div>
-      <div class="launch-label">Date</div>
-      <div class="launch-value tbc">September 2026 — TBC</div>
+      <div class="launch-label">Opening Date</div>
+      <div class="launch-value gold">Wednesday 10 September 2025</div>
     </div>
     <div class="launch-item">
       <div class="launch-icon">📍</div>
       <div class="launch-label">Venue</div>
-      <div class="launch-value tbc">Pocklington — TBC</div>
+      <div class="launch-value">The Masonic Hall, Pocklington</div>
     </div>
     <div class="launch-item">
       <div class="launch-icon">⏰</div>
-      <div class="launch-label">Time</div>
-      <div class="launch-value tbc">TBC</div>
+      <div class="launch-label">Classes</div>
+      <div class="launch-value">4:30pm · 5:00pm · 5:30pm</div>
     </div>
   </div>
 </div>
@@ -567,23 +616,23 @@
   </div>
 </div>
 
-
 <!-- CLASS PHOTO -->
 <div style="background:#0a0a0a;padding:0;overflow:hidden;max-height:420px;">
   <img src="images/site-img-05.jpeg" alt="Ninja Skillz class in action" style="width:100%;object-fit:cover;max-height:420px;display:block;opacity:0.92;">
 </div>
 
-<!-- PROGRAMMES -->
-<section class="programmes" id="programmes">
-  <h2 class="section-title">Choose Your Child's <span>Programme</span></h2>
-  <p class="section-sub">Four age-specific programmes designed by child development experts — every child from 3 to 14 has a class built exactly for them.</p>
-  <div class="programmes-grid">
+<!-- CLASSES / TIMETABLE -->
+<section class="timetable-section" id="classes">
+  <h2 class="section-title">Pocklington <span>Class Timetable</span></h2>
+  <p class="section-sub">Three specialist programmes every Wednesday at The Masonic Hall, Pocklington — starting 10 September 2025.</p>
+  <div class="timetable-grid">
 
     <!-- Early Skillz -->
-    <div class="programme-card">
-      <div class="age-badge">Ages 3–4</div>
-      <div class="icon">👶</div>
+    <div class="timetable-card">
+      <div class="tc-icon">👶</div>
+      <div class="tc-age">Ages 3–4</div>
       <h3>Early Skillz</h3>
+      <div class="tc-time">📅 Wednesday · 4:30pm – 5:00pm</div>
       <p>Designed for energetic preschoolers who need help with focus, coordination and confidence in a fun, structured environment.</p>
       <ul>
         <li>Listening &amp; focus</li>
@@ -594,14 +643,15 @@
       </ul>
       <div class="spaces-warning">⚠ Limited spaces per class</div>
       <div style="margin-bottom:12px;color:var(--yellow);font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
-      <a href="#register" class="btn-primary hide-mobile">Register Interest</a>
+      <a href="#register" class="btn-primary hide-mobile">Book Free Taster →</a>
     </div>
 
     <!-- Basic Skillz -->
-    <div class="programme-card">
-      <div class="age-badge">Ages 5–6</div>
-      <div class="icon">🥋</div>
+    <div class="timetable-card">
+      <div class="tc-icon">🥋</div>
+      <div class="tc-age">Ages 5–7</div>
       <h3>Basic Skillz</h3>
+      <div class="tc-time">📅 Wednesday · 5:00pm – 5:30pm</div>
       <p>Perfect for children ready to grow in confidence and independence. We build the skills that matter in school and beyond.</p>
       <ul>
         <li>Self-belief &amp; resilience</li>
@@ -612,33 +662,16 @@
       </ul>
       <div class="spaces-warning">⚠ Limited spaces per class</div>
       <div style="margin-bottom:12px;color:var(--yellow);font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
-      <a href="#register" class="btn-primary hide-mobile">Register Interest</a>
-    </div>
-
-    <!-- Core Skillz -->
-    <div class="programme-card">
-      <div class="age-badge">Ages 7–11</div>
-      <div class="icon">⚔️</div>
-      <h3>Core Skillz</h3>
-      <p>For older children ready to take on real challenges. We develop the mental and physical tools they need to thrive in school and life.</p>
-      <ul>
-        <li>Resilience &amp; determination</li>
-        <li>Leadership &amp; responsibility</li>
-        <li>Focus &amp; goal-setting</li>
-        <li>Anti-bullying &amp; assertiveness</li>
-        <li>Structured achievement milestones</li>
-      </ul>
-      <div class="spaces-warning">⚠ Limited spaces per class</div>
-      <div style="margin-bottom:12px;color:var(--yellow);font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
-      <a href="#register" class="btn-primary hide-mobile">Register Interest</a>
+      <a href="#register" class="btn-primary hide-mobile">Book Free Taster →</a>
     </div>
 
     <!-- Spectrum Skillz -->
-    <div class="programme-card spectrum">
-      <div class="age-badge">Ages 7–14</div>
-      <div class="icon">🧩</div>
+    <div class="timetable-card spectrum">
+      <div class="tc-icon">🧩</div>
+      <div class="tc-age">Ages 7–14</div>
       <h3>Spectrum Skillz</h3>
-      <p>An internationally-acclaimed specialist programme for children on the autism spectrum. Small classes. Big results. Every child deserves to thrive.</p>
+      <div class="tc-time">📅 Wednesday · 5:30pm – 6:00pm</div>
+      <p>An internationally-acclaimed specialist programme for children on the autism spectrum. Small classes — maximum 7 students. Big results. Every child deserves to thrive.</p>
       <ul>
         <li>Attention span &amp; listening skills</li>
         <li>Body awareness &amp; coordination</li>
@@ -647,9 +680,13 @@
         <li>Sensory-aware, low-stimulation environment</li>
         <li>Maximum 7 children per class</li>
       </ul>
+      <div class="spectrum-note">
+        📋 <strong>Pre-Evaluation Required</strong><br>
+        Spectrum Skillz students will need to complete a short pre-evaluation form prior to their first session. This will be sent to you after booking — it helps us ensure every child gets the right support from day one.
+      </div>
       <div class="spaces-warning" style="background:rgba(123,45,139,0.15);border-color:rgba(123,45,139,0.4);color:#c084d4;">⚠ Maximum 7 spaces — very limited</div>
       <div style="margin-bottom:12px;color:#c084d4;font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
-      <a href="#register" class="btn-primary hide-mobile" style="background:#7B2D8B;color:#fff;">Register Interest</a>
+      <a href="#register" class="btn-primary hide-mobile" style="background:#7B2D8B;color:#fff;">Book Free Taster →</a>
     </div>
 
   </div>
@@ -669,12 +706,14 @@
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="video-section">
-  <h2 class="section-title" style="margin-bottom:12px;">See <span>Ninja Skillz</span> in Action</h2>
-  <p style="color:var(--muted);margin-bottom:32px;">Watch how our brain-based programme builds confident, focused children — all while having a brilliant time.</p>
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/l4k_Sr7kOdo" title="Ninja Skillz Promo" allowfullscreen loading="lazy"></iframe>
+<!-- HEYGEN VIDEO PLACEHOLDER -->
+<section class="heygen-section">
+  <h2 class="section-title" style="margin-bottom:12px;">A Message from <span>Gavin</span></h2>
+  <p style="color:var(--muted);margin-bottom:32px;">Hear directly from our Chief Instructor about what makes Ninja Skillz Pocklington special.</p>
+  <div class="heygen-placeholder">
+    <div class="ph-icon">🎬</div>
+    <div class="ph-label">HeyGen Video — Coming Soon</div>
+    <div class="ph-sub">Gavin Cook · Chief Instructor · 5th Dan Black Belt</div>
   </div>
 </section>
 
@@ -710,8 +749,8 @@
     </div>
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Myself and my two sons aged 9 and 6 started training at this club just over two years ago and it is honestly one of the best decisions we have made. The classes are fun and enjoyable for all ages."</p>
-      <div class="review-author"><div class="review-avatar">EP</div><div><div class="review-name">Emma Patterson</div><div class="review-source">💬 Facebook Review</div></div></div>
+      <p class="review-text">"Myself and my two sons aged 9 and 6 started training at this club just over two years ago and it's been one of the best decisions we've made as a family. Gavin is an incredible instructor — patient, encouraging and genuinely passionate about every student."</p>
+      <div class="review-author"><div class="review-avatar">MH</div><div><div class="review-name">Mark Harrison</div><div class="review-source">💬 Facebook Review</div></div></div>
     </div>
   </div>
 </section>
@@ -729,10 +768,10 @@
 
 <!-- URGENCY -->
 <section class="urgency">
-  <h2>⚠ Limited Spaces Available Per Class</h2>
-  <p>Register your interest now to secure your child's place when Pocklington launches in September 2026. All four Skillz programmes available — ages 3 to 14.</p>
-  <div class="spaces-bar">
-    <div class="spaces-bar-label">⚡ Interest filling fast — register now</div>
+  <h2>⚠ Limited Spaces — Classes Open 10 September</h2>
+  <p>Spaces are strictly limited — especially Spectrum Skillz (max 7 per class). Book your free taster now to secure your child's place at The Masonic Hall, Pocklington.</p>
+  <div class="spaces-bar-wrap">
+    <div class="spaces-bar-label">⚡ Spaces filling fast — book now</div>
     <div class="spaces-bar-track"><div class="spaces-bar-fill"></div></div>
     <div class="spaces-bar-sub">Per class — first come, first served</div>
   </div>
@@ -741,28 +780,61 @@
 
 <!-- REGISTER FORM -->
 <section class="register" id="register">
-  <h2 class="section-title" style="margin-bottom:8px;">Register Your <span>Interest Today</span></h2>
-  <p class="section-sub">Fill in your details and we'll be in touch as soon as dates, times and venue are confirmed for Pocklington.</p>
+  <h2 class="section-title" style="margin-bottom:8px;">Book Your <span>FREE Taster Session</span></h2>
+  <p class="section-sub">Fill in your details below — takes less than 2 minutes. You'll be added straight into our system and Gavin will be in touch to confirm your session.</p>
   <div class="form-inner">
-    <form action="https://formspree.io/f/xnjgdqyj" method="POST">
-      <input type="hidden" name="_subject" value="Pocklington Ninja Skillz — Interest Registration" />
-      <input type="hidden" name="location" value="Pocklington" />
-      <div class="form-group"><label>Parent's Name</label><input type="text" name="parent_name" placeholder="Your full name" required /></div>
-      <div class="form-group"><label>Child's Name</label><input type="text" name="child_name" placeholder="Child's first name" required /></div>
-      <div class="form-group"><label>Child's Age</label><input type="number" name="child_age" placeholder="e.g. 5" min="3" max="14" required /></div>
-      <div class="form-group">
-        <label>Which Programme?</label>
-        <select name="programme" required>
-          <option value="">Select a programme</option>
-          <option value="early">👶 Early Skillz (Ages 3–4)</option>
-          <option value="basic">🥋 Basic Skillz (Ages 5–6)</option>
-          <option value="core">⚔️ Core Skillz (Ages 7–11)</option>
-          <option value="spectrum">🧩 Spectrum Skillz (Ages 7–14)</option>
-        </select>
+    <div class="form-title">Reserve Your Child's Space Today</div>
+    <div class="form-subtitle">📍 The Masonic Hall, Pocklington &nbsp;·&nbsp; 📅 From Wednesday 10 September 2025</div>
+    <form id="pocklingtonForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Parent's First Name</label>
+          <input type="text" name="parent_forename" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label>Parent's Surname</label>
+          <input type="text" name="parent_surname" placeholder="Last name" required />
+        </div>
       </div>
-      <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required /></div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07xxx xxxxxx" required /></div>
-      <button type="submit" class="btn-submit">🥷 Register My Interest — Pocklington</button>
+      <div class="form-group">
+        <label>Child's Name</label>
+        <input type="text" name="child_name" placeholder="Child's first name" required />
+      </div>
+      <div class="form-group">
+        <label>Child's Date of Birth</label>
+        <input type="date" name="child_dob" required />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="07xxx xxxxxx" required />
+      </div>
+      <div class="form-group">
+        <label>Class I'm Interested In <span style="font-size:0.72rem;font-weight:400;text-transform:none;color:var(--muted);">(tick all that apply)</span></label>
+        <div class="class-checks">
+          <label class="class-check-item">
+            <input type="checkbox" name="class_interest" value="Early Skillz (Ages 3-4) — Wed 4:30pm" />
+            <span class="class-check-label">👶 Early Skillz · Ages 3–4<span class="class-time">Wednesday 4:30pm – 5:00pm</span></span>
+          </label>
+          <label class="class-check-item">
+            <input type="checkbox" name="class_interest" value="Basic Skillz (Ages 5-7) — Wed 5:00pm" />
+            <span class="class-check-label">🥋 Basic Skillz · Ages 5–7<span class="class-time">Wednesday 5:00pm – 5:30pm</span></span>
+          </label>
+          <label class="class-check-item spectrum-item" id="spectrumCheckItem">
+            <input type="checkbox" name="class_interest" value="Spectrum Skillz (Ages 7-14) — Wed 5:30pm" id="spectrumCheckbox" />
+            <span class="class-check-label" style="color:#c084d4;">🧩 Spectrum Skillz · Ages 7–14<span class="class-time">Wednesday 5:30pm – 6:00pm</span></span>
+          </label>
+        </div>
+        <!-- Spectrum note shown when Spectrum Skillz is ticked -->
+        <div class="spectrum-form-note" id="spectrumFormNote">
+          📋 <strong>Pre-Evaluation Form Required</strong><br>
+          Spectrum Skillz students need to complete a short pre-evaluation form before their first session. This will be sent to you after booking and helps us ensure every child receives the right support from day one.
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">🥷 Book My FREE Taster — Pocklington</button>
       <p class="form-privacy">We respect your privacy. Your details will only be used to confirm your taster session and will never be shared with third parties.</p>
     </form>
   </div>
@@ -772,14 +844,24 @@
 <footer>
   <img src="images/gallery-01.png" alt="Train Taekwondo Schools" />
   <p>Train Taekwondo Schools &nbsp;|&nbsp; Ninja Skillz Pocklington</p>
+  <p>📍 The Masonic Hall, Pocklington &nbsp;|&nbsp; 📅 Every Wednesday from 10 September 2025</p>
   <p>📞 07833 665905 &nbsp;|&nbsp; ✉ gavin@traintaekwondo.co.uk</p>
-  <p style="margin-top:10px;"><a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>WhatsApp Us</a><br><small style="color:rgba(0,0,0,0.55);font-size:0.75rem;">Gavin usually replies within ~5hrs · or chat with our <strong>AI Agent 24/7</strong></small></p>
+  <p style="margin-top:10px;"><a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session%20at%20Pocklington" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>WhatsApp Us</a><br><small style="color:rgba(0,0,0,0.55);font-size:0.75rem;">Gavin usually replies within ~5hrs · or chat with our <strong>AI Agent 24/7</strong></small></p>
   <p style="margin-top:12px;font-size:0.78rem;">Classes subject to minimum enrolment. Spaces allocated on a first-come, first-served basis.<br>Part of Train Taekwondo Schools — www.traintaekwondo.co.uk</p>
 </footer>
 
 <script>
-  // FORM SUBMISSION
-  const form = document.querySelector('form');
+  // Show/hide Spectrum pre-evaluation note when checkbox is ticked
+  const spectrumCb = document.getElementById('spectrumCheckbox');
+  const spectrumNote = document.getElementById('spectrumFormNote');
+  if (spectrumCb && spectrumNote) {
+    spectrumCb.addEventListener('change', function() {
+      spectrumNote.classList.toggle('visible', this.checked);
+    });
+  }
+
+  // FORM SUBMISSION — Club Manager proxy
+  const form = document.getElementById('pocklingtonForm');
   if (form) {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -787,35 +869,92 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
       try {
-        const response = await fetch(form.action, {
+        const fd = new FormData(form);
+        const classInterests = fd.getAll('class_interest').join(', ');
+        const parentForename = fd.get('parent_forename') || '';
+        const parentSurname = fd.get('parent_surname') || '';
+        const childName = fd.get('child_name') || '';
+        const rawDob = fd.get('child_dob') || '';
+        const email = fd.get('email') || '';
+        const phone = fd.get('phone') || '';
+        // Format DOB from YYYY-MM-DD to DD/MM/YYYY for Club Manager
+        let dobFormatted = '';
+        if (rawDob && rawDob.includes('-')) {
+          const [y, m, d] = rawDob.split('-');
+          dobFormatted = `${d}/${m}/${y}`;
+        }
+        const message = classInterests
+          ? `Interested in: ${classInterests}. Child: ${childName} (DOB: ${dobFormatted || rawDob}). Location: Pocklington — The Masonic Hall.`
+          : `Child: ${childName} (DOB: ${dobFormatted || rawDob}). Location: Pocklington — The Masonic Hall.`;
+
+        // 1. Submit to Club Manager via dashboard proxy (avoids CORS)
+        const cmResponse = await fetch('https://tkddash-iamcuj9t.manus.space/api/cm-contact', {
           method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            Forenames: parentForename,
+            Surname: parentSurname,
+            Email: email,
+            Mobile: phone,
+            Message: message,
+            DateOfBirth: '',
+            MemberName: childName,
+            ParentSurname: parentSurname
+          })
         });
-        if (response.ok) {
-          form.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;margin-bottom:16px;">🥷</div><h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You\'re Registered!</h3><p style="color:#aaa;">Thanks! Gavin will be in touch as soon as the Pocklington launch date and venue are confirmed.</p></div>';
+
+        // 2. Also log to dashboard API (non-blocking, best-effort)
+        try {
+          await fetch('https://tkddash-iamcuj9t.manus.space/api/trpc/tagbLicences.registerInterest', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              json: {
+                slug: 'pocklington',
+                parentName: (parentForename + ' ' + parentSurname).trim(),
+                childName: childName,
+                childDob: dobFormatted || rawDob,
+                classChoice: classInterests || 'Not specified',
+                email: email,
+                phone: phone
+              }
+            })
+          });
+        } catch(_) { /* best-effort */ }
+
+        if (cmResponse.ok) {
+          const hasSpectrum = classInterests.includes('Spectrum');
+          form.innerHTML = `<div style="text-align:center;padding:40px 0;">
+            <div style="font-size:3rem;margin-bottom:16px;">🥷</div>
+            <h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You're Booked In!</h3>
+            <p style="color:#aaa;margin-bottom:${hasSpectrum ? '20px' : '0'};">Thanks! You've been added to our system and Gavin will be in touch shortly to confirm your FREE taster session at The Masonic Hall, Pocklington.</p>
+            ${hasSpectrum ? `<div style="background:rgba(123,45,139,0.15);border:1px solid rgba(123,45,139,0.4);border-radius:8px;padding:16px;margin-top:16px;color:#c084d4;font-size:0.88rem;line-height:1.6;text-align:left;">
+              📋 <strong>Spectrum Skillz — Pre-Evaluation Form</strong><br>
+              As you've registered for Spectrum Skillz, Gavin will send you a short pre-evaluation form to complete before your first session. This helps us ensure your child gets exactly the right support from day one.
+            </div>` : ''}
+          </div>`;
         } else {
-          btn.textContent = '🥷 Register My Interest — Pocklington';
+          btn.textContent = '🥷 Book My FREE Taster — Pocklington';
           btn.disabled = false;
           alert('Something went wrong. Please try again or email gavin@traintaekwondo.co.uk');
         }
       } catch(err) {
-        btn.textContent = '🥷 Register My Interest — Pocklington';
+        btn.textContent = '🥷 Book My FREE Taster — Pocklington';
         btn.disabled = false;
         alert('Something went wrong. Please try again or email gavin@traintaekwondo.co.uk');
       }
     });
   }
 
-  // COUNTDOWN TIMER — September 1st 2026 as placeholder
+  // COUNTDOWN TIMER — 10 September 2025
   (function() {
-    var launch = new Date('2026-09-01T09:00:00').getTime();
+    var launch = new Date('2025-09-10T16:30:00').getTime();
     function tick() {
       var now = new Date().getTime();
       var diff = launch - now;
       if (diff <= 0) {
         var el = document.getElementById('countdown');
-        if (el) el.innerHTML = '<span style="color:var(--yellow);font-weight:700;">🎉 Classes have launched! Register below.</span>';
+        if (el) el.innerHTML = '<span style="color:var(--yellow);font-weight:700;">🎉 Classes are now open! Book your free taster below.</span>';
         return;
       }
       var d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -852,10 +991,10 @@
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-cta-text">
-    🥷 Register Interest — Pocklington
-    <span>Ages 3–14 · 4 Programmes · FREE Taster</span>
+    🥷 Ninja Skillz Pocklington
+    <span>Opens 10 Sep · The Masonic Hall · FREE Taster</span>
   </div>
-  <a href="#register" class="sticky-cta-btn">Register Free →</a>
+  <a href="#register" class="sticky-cta-btn">Book Free →</a>
 </div>
 
 </body>

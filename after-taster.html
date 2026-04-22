@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ready to Join? | Train Taekwondo Schools</title>
+<meta name="description" content="You've completed your free taster session — here's how to join Train Taekwondo Schools and choose the right membership for you.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+:root {
+  --black:  #0a0a0a;
+  --dark:   #111111;
+  --dark2:  #1a1a1a;
+  --dark3:  #222222;
+  --gold:   #e8c414;
+  --gold2:  #f5d430;
+  --white:  #ffffff;
+  --grey:   #aaaaaa;
+  --border: #2a2a2a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'Russo One', sans-serif; line-height: 1.2; letter-spacing: 0.02em; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.section:last-of-type { border-bottom: none; }
+.section-label {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.section h2 { font-size: 1.55rem; color: var(--white); margin-bottom: 14px; }
+.section h2 span { color: var(--gold); }
+.section p { color: #ccc; font-size: 0.97rem; line-height: 1.75; margin-bottom: 14px; }
+.section p:last-child { margin-bottom: 0; }
+
+/* ── HERO ── */
+.welcome-hero {
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  border-bottom: 3px solid var(--gold);
+  text-align: center;
+  padding: 56px 24px 48px;
+}
+.welcome-hero img.logo { height: 72px; margin: 0 auto 20px; }
+.welcome-hero .badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.welcome-hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--white); margin-bottom: 16px; }
+.welcome-hero h1 span { color: var(--gold); }
+.welcome-hero p { font-size: 1.05rem; color: #ccc; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* ── CONFETTI ── */
+.confetti-strip {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+}
+.confetti-strip p { font-size: 1.5rem; letter-spacing: 0.05em; }
+
+/* ── VIDEO PLACEHOLDER ── */
+.video-placeholder {
+  background: var(--dark2);
+  border: 2px dashed var(--gold);
+  border-radius: 10px;
+  padding: 48px 24px;
+  text-align: center;
+  margin: 28px 0 8px;
+}
+.video-placeholder .play-icon { font-size: 3rem; margin-bottom: 12px; }
+.video-placeholder p { color: var(--grey); font-size: 0.9rem; margin: 0; }
+.video-placeholder strong { color: var(--gold); }
+.video-caption { font-size: 12px; color: #555; text-align: center; margin-top: 8px; }
+
+/* ── COMPARISON TABLE ── */
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
+.compare-table th {
+  background: var(--dark2);
+  color: var(--gold);
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+}
+.compare-table th:first-child { border-radius: 6px 0 0 0; }
+.compare-table th:last-child { border-radius: 0 6px 0 0; }
+.compare-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: #ccc; vertical-align: top; }
+.compare-table tr:nth-child(even) td { background: #141414; }
+.compare-table .feature { font-weight: 700; color: var(--white); }
+.compare-table .yes { color: #25D366; font-weight: 700; }
+.compare-table .no { color: #666; }
+.compare-table .highlight td { background: rgba(232,196,20,0.06) !important; }
+
+/* ── PRICING CARDS ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.pricing-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.pricing-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.pricing-card.featured { border-color: var(--gold); background: linear-gradient(135deg, rgba(232,196,20,0.06), var(--dark2)); }
+.pricing-name { font-family: 'Russo One', sans-serif; font-size: 1.3rem; color: var(--white); margin-bottom: 8px; }
+.pricing-price { font-family: 'Russo One', sans-serif; font-size: 2rem; color: var(--gold); margin-bottom: 12px; }
+.pricing-price span { font-size: 0.9rem; color: var(--grey); font-family: 'Lato', sans-serif; font-weight: 400; }
+.pricing-desc { font-size: 0.9rem; color: var(--grey); line-height: 1.65; margin-bottom: 20px; flex-grow: 1; }
+.pricing-includes { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 10px; }
+.pricing-list { list-style: none; margin-bottom: 24px; }
+.pricing-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 0.9rem; color: #ccc; }
+.check { color: var(--gold); font-weight: 900; flex-shrink: 0; }
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+
+/* ── WHATSAPP ── */
+.wa-box {
+  background: #0d1f14;
+  border: 1px solid rgba(37,211,102,0.3);
+  border-radius: 8px;
+  padding: 28px 24px;
+  margin-top: 20px;
+}
+.wa-box p { color: #ccc; font-size: 0.95rem; margin-bottom: 16px; }
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-wa:hover { background: #1ebe5a; color: #fff; transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+.site-footer { background: var(--dark); border-top: 1px solid var(--border); padding: 48px 0 28px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand img { height: 52px; margin-bottom: 14px; }
+.footer-brand p { font-size: 0.85rem; color: #666; line-height: 1.7; }
+.footer-col h4 { font-family: 'Russo One', sans-serif; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: #888; font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-col p { color: #888; font-size: 0.88rem; line-height: 1.7; }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; color: #555; }
+
+@media (max-width: 700px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .compare-table { font-size: 0.82rem; }
+  .compare-table th, .compare-table td { padding: 10px 10px; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="welcome-hero">
+  <img class="logo" src="images/gallery-01.png" alt="Train Taekwondo Schools">
+  <div class="badge">🎉 Taster Complete</div>
+  <h1>Hope You <span>Loved It!</span></h1>
+  <p>You've taken the first step — and we're thrilled you came along. Whether you tried Taekwondo, Ninja Skillz or Spectrum Skillz, we hope you felt the energy, the focus, and the fun that makes our classes so special.</p>
+</div>
+
+<!-- ── CONFETTI ── -->
+<div class="confetti-strip">
+  <p>🥋 &nbsp; ⭐ &nbsp; 🏆 &nbsp; 💪 &nbsp; 🎯 &nbsp; ⭐ &nbsp; 🥋</p>
+</div>
+
+<!-- ── GAVIN VIDEO ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">🤖 Message from Gavin</div>
+    <h2>A Personal <span>Welcome</span></h2>
+    <p>Gavin wanted to say a few words about what comes next — and explain the different membership options available to you.</p>
+
+    <!-- HEYGEN VIDEO PLACEHOLDER — replace this div with the video embed when ready -->
+    <div class="video-placeholder">
+      <div class="play-icon">▶</div>
+      <strong>Gavin Cook · 5th Dan Black Belt · AI Avatar</strong>
+      <p style="margin-top:8px;">Video message coming soon — Gavin's AI avatar will explain your next steps and help you choose the right membership.</p>
+    </div>
+    <p class="video-caption">🤖 AI Avatar of Gavin Cook · 5th Dan Black Belt · Chief Instructor</p>
+  </div>
+</section>
+
+<!-- ── NEXT STEPS ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">✅ What Happens Next</div>
+    <h2>Ready to <span>Join the Club?</span></h2>
+    <p>We'd love to have you as a full member. Joining is quick and easy — just select the membership that suits you below, complete the online form, and your first payment will be taken by card. Your membership then renews automatically each month, and you can cancel anytime with one month's notice.</p>
+    <p>Not sure which package is right for you? Read the comparison below — or just message Gavin on WhatsApp and he'll point you in the right direction.</p>
+  </div>
+</section>
+
+<!-- ── MEMBERSHIP COMPARISON ── -->
+<section class="section" style="background:var(--dark2);">
+  <div class="container-wide">
+    <div style="text-align:center;margin-bottom:36px;">
+      <div class="section-label">Compare Memberships</div>
+      <h2 style="font-size:1.55rem;">Which Package <span style="color:var(--gold);">Is Right for You?</span></h2>
+      <p style="color:var(--grey);max-width:560px;margin:10px auto 0;font-size:0.9rem;line-height:1.7;">Three memberships. All include your chosen class, all with no long-term contracts.</p>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="min-width:180px;"></th>
+            <th>Foundation Taekwondo<br><span style="font-family:'Lato',sans-serif;font-weight:400;font-size:0.85rem;color:#ccc;">£30 / month</span></th>
+            <th>Core Skillz<br><span style="font-family:'Lato',sans-serif;font-weight:400;font-size:0.85rem;color:#ccc;">£30 / month</span></th>
+            <th style="background:rgba(232,196,20,0.1);">Black Belt Pathway<br><span style="font-family:'Lato',sans-serif;font-weight:400;font-size:0.85rem;color:#ccc;">£40 / month</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature">Who it's for</td>
+            <td>Those starting their Taekwondo journey — 1 class per week at your chosen location</td>
+            <td>Younger children (ages 3–7) in our Ninja Skillz programme — 1 class per week</td>
+            <td class="highlight">Dedicated Taekwondo students who want to progress as fast as possible</td>
+          </tr>
+          <tr>
+            <td class="feature">Classes per week</td>
+            <td>1</td>
+            <td>1</td>
+            <td class="yes">Up to 3</td>
+          </tr>
+          <tr>
+            <td class="feature">Train at any club</td>
+            <td class="no">Your chosen club only</td>
+            <td class="no">Your chosen club only</td>
+            <td class="yes">✓ Any Taekwondo club</td>
+          </tr>
+          <tr>
+            <td class="feature">Class type</td>
+            <td>Taekwondo</td>
+            <td>Ninja Skillz (ages 3–7)</td>
+            <td>Taekwondo only</td>
+          </tr>
+          <tr>
+            <td class="feature">Best for</td>
+            <td>Getting started at your own pace</td>
+            <td>Young children building confidence through movement</td>
+            <td class="yes">Rapid progression toward Black Belt</td>
+          </tr>
+          <tr>
+            <td class="feature">Cancel anytime</td>
+            <td class="yes">✓ 1 month notice</td>
+            <td class="yes">✓ 1 month notice</td>
+            <td class="yes">✓ 1 month notice</td>
+          </tr>
+          <tr>
+            <td class="feature">Monthly cost</td>
+            <td><strong style="color:var(--gold);">£30</strong></td>
+            <td><strong style="color:var(--gold);">£30</strong></td>
+            <td><strong style="color:var(--gold);">£40</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="text-align:center;color:#555;font-size:0.82rem;margin-top:12px;">Spectrum Skillz (Pocklington · ages 7–14) is a separate specialist programme — see below.</p>
+  </div>
+</section>
+
+<!-- ── PRICING CARDS ── -->
+<section class="section">
+  <div class="container-wide">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">Join Now</div>
+      <h2 style="font-size:1.55rem;">Choose Your <span style="color:var(--gold);">Membership</span></h2>
+      <p style="color:var(--grey);max-width:540px;margin:10px auto 0;font-size:0.9rem;line-height:1.7;">Select your package, choose your location, and complete the short form. Your first payment is taken by card and renews monthly.</p>
+    </div>
+
+    <!-- ROW 1: Black Belt Pathway + Foundation Taekwondo -->
+    <div class="pricing-grid">
+
+      <!-- BLACK BELT PATHWAY -->
+      <div class="pricing-card featured" style="position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;padding:4px 16px;border-radius:20px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">Taekwondo Only · Best Value</div>
+        <div class="pricing-name">Black Belt Pathway</div>
+        <div class="pricing-price">£40 <span>/ month</span></div>
+        <p class="pricing-desc">Want to progress fast in Taekwondo and be the best you can be? Train up to 3 times per week at any of our Taekwondo clubs. The key to rapid improvement is repetition and consistency.</p>
+        <div class="pricing-includes">Includes</div>
+        <ul class="pricing-list">
+          <li><span class="check">✓</span> Up to 3 Taekwondo classes per week</li>
+          <li><span class="check">✓</span> Train at any Taekwondo club</li>
+          <li><span class="check">✓</span> Taekwondo classes only</li>
+          <li><span class="check">✓</span> Cancel anytime (1 month notice)</li>
+        </ul>
+        <a href="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68265&showLogo=True&reset=True" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width:100%;text-align:center;">Join Now →</a>
+      </div>
+
+      <!-- FOUNDATION TAEKWONDO -->
+      <div class="pricing-card">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">Taekwondo</div>
+        <div class="pricing-name">Foundation Taekwondo</div>
+        <div class="pricing-price">£30 <span>/ month</span></div>
+        <p class="pricing-desc">Perfect for those who want to ease into Taekwondo at their own pace. One class per week at your chosen location — a great way to get started.</p>
+        <div class="pricing-includes">Includes</div>
+        <ul class="pricing-list">
+          <li><span class="check">✓</span> 1 class per week</li>
+          <li><span class="check">✓</span> Your chosen location</li>
+          <li><span class="check">✓</span> Cancel anytime (1 month notice)</li>
+          <li><span class="check">✓</span> Upgrade to Black Belt Pathway anytime</li>
+        </ul>
+        <div style="margin-bottom:16px;">
+          <label for="foundationLoc" style="display:block;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--grey);margin-bottom:8px;">Select your club</label>
+          <select id="foundationLoc" style="width:100%;padding:12px 14px;background:var(--dark3);color:var(--white);border:2px solid var(--border);border-radius:4px;font-size:0.95rem;font-family:'Lato',sans-serif;cursor:pointer;">
+            <option value="">-- Choose a location --</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68389&showLogo=True&reset=True">Beverley</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68390&showLogo=True&reset=True">York</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68391&showLogo=True&reset=True">Stamford Bridge</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=68393&showLogo=True&reset=True">Market Weighton</option>
+          </select>
+        </div>
+        <button onclick="var v=document.getElementById('foundationLoc').value; if(v){window.open(v,'_blank');}else{alert('Please select a location first.');}" class="btn btn-outline" style="width:100%;text-align:center;">Join Now →</button>
+      </div>
+
+    </div>
+
+    <!-- ROW 2: Core Skillz -->
+    <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:32px;">
+
+      <!-- CORE SKILLZ -->
+      <div class="pricing-card">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:10px;">Ninja Skillz · Ages 3–7</div>
+        <div class="pricing-name">Core Skillz</div>
+        <div class="pricing-price">£30 <span>/ month</span></div>
+        <p class="pricing-desc">Our Ninja Skillz programme for younger children. Fun, structured classes that build coordination, focus, and confidence through martial arts movement.</p>
+        <div class="pricing-includes">Includes</div>
+        <ul class="pricing-list">
+          <li><span class="check">✓</span> 1 class per week</li>
+          <li><span class="check">✓</span> Your chosen location</li>
+          <li><span class="check">✓</span> Cancel anytime (1 month notice)</li>
+        </ul>
+        <div style="margin-bottom:16px;">
+          <label for="coreLoc" style="display:block;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--grey);margin-bottom:8px;">Select your club</label>
+          <select id="coreLoc" style="width:100%;padding:12px 14px;background:var(--dark3);color:var(--white);border:2px solid var(--border);border-radius:4px;font-size:0.95rem;font-family:'Lato',sans-serif;cursor:pointer;">
+            <option value="">-- Choose a location --</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215845&showLogo=True&reset=True">Beverley</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215848&showLogo=True&reset=True">York</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215847&showLogo=True&reset=True">Stamford Bridge</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215776&showLogo=True&reset=True">Pocklington</option>
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215846&showLogo=True&reset=True">Market Weighton</option>
+          </select>
+        </div>
+        <button onclick="var v=document.getElementById('coreLoc').value; if(v){window.open(v,'_blank');}else{alert('Please select a location first.');}" class="btn btn-outline" style="width:100%;text-align:center;">Join Now →</button>
+      </div>
+
+      <!-- SPECTRUM SKILLZ -->
+      <div class="pricing-card" style="border-color:rgba(123,45,139,0.5);background:linear-gradient(135deg,rgba(123,45,139,0.08),rgba(13,13,13,0));">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#c084d4;margin-bottom:10px;">🧩 Specialist Programme · Ages 7–14</div>
+        <div class="pricing-name" style="color:#c084d4;">Spectrum Skillz</div>
+        <div class="pricing-price" style="color:#c084d4;">£40 <span>/ month</span></div>
+        <p class="pricing-desc">A specialist programme for children on the autism spectrum. Maximum 8 students per class — calm, structured, and tailored to each individual. Based in Pocklington. Places are strictly limited.</p>
+        <div class="pricing-includes">Includes</div>
+        <ul class="pricing-list">
+          <li><span style="color:#c084d4;">✓</span> 1 session per week — Pocklington</li>
+          <li><span style="color:#c084d4;">✓</span> Maximum 8 students per class</li>
+          <li><span style="color:#c084d4;">✓</span> Pre-evaluation form sent after booking</li>
+          <li><span style="color:#c084d4;">✓</span> Cancel anytime (1 month notice)</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215777&showLogo=True&reset=True" target="_blank" rel="noopener noreferrer" class="btn" style="flex:1;text-align:center;background:#7B2D8B;color:#fff;border:none;min-width:140px;">Join Now →</a>
+          <a href="spectrum-skillz.html" class="btn btn-outline" style="flex:1;text-align:center;border-color:rgba(123,45,139,0.5);color:#c084d4;min-width:140px;">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Family banner -->
+    <div style="background:rgba(232,196,20,0.08);border:1px solid rgba(232,196,20,0.25);border-radius:8px;padding:24px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:2rem;">👨‍👩‍👧‍👦</div>
+      <div>
+        <div style="font-family:'Russo One',sans-serif;font-size:1rem;color:var(--gold);margin-bottom:6px;">Family Membership — 3rd Member Trains FREE</div>
+        <div style="color:var(--grey);font-size:0.9rem;">When two family members join, the third trains completely free. Taekwondo is best when you do it together.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PAYMENT INFO ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">💳 Payment</div>
+    <h2>How <span>Payment Works</span></h2>
+    <p>When you click "Join Now" you'll be taken to our secure Club Manager registration form. You'll enter your details and set up your monthly payment by card. Your first payment is taken immediately, and your membership then renews automatically on the same date each month.</p>
+    <p>You can cancel at any time with one month's notice — just let Gavin know by WhatsApp or email and he'll sort it for you.</p>
+    <div style="background:var(--dark2);border-radius:8px;padding:20px 24px;margin-top:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="font-size:1.8rem;">🔒</div>
+      <div>
+        <div style="font-family:'Russo One',sans-serif;font-size:0.9rem;color:var(--gold);margin-bottom:4px;">Secure Payments via Club Manager</div>
+        <div style="color:var(--grey);font-size:0.88rem;line-height:1.65;">All payments are processed securely through Club Manager — the same system used by thousands of martial arts clubs across the UK. Your card details are never stored by us.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHATSAPP ── -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label">💬 Need Help Deciding?</div>
+    <h2>Chat with <span>Gavin</span></h2>
+    <p>Not sure which membership is right for you or your child? Just ask. Our WhatsApp agent is available 24/7 and can answer any question about classes, locations, and pricing. Gavin also replies personally during the day.</p>
+    <div class="wa-box">
+      <p><strong>Chat with our WhatsApp agent</strong> — available any time of day or night. Ask anything, get advice on the right membership, or just say hello.</p>
+      <a href="https://wa.me/447426069502?text=Hi%2C%20I%27ve%20just%20completed%20my%20free%20taster%20session%20and%20I%27d%20like%20to%20find%20out%20more%20about%20joining!" target="_blank" class="btn-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <p style="margin-top:14px;font-size:0.82rem;color:#555;">Or email: <a href="mailto:gavin@traintaekwondo.co.uk" style="color:var(--gold);">gavin@traintaekwondo.co.uk</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col"><h4>Classes</h4><ul><li><a href="ninja-skillz.html">Ninja Skillz</a></li><li><a href="spectrum-skillz.html">Spectrum Skillz</a></li><li><a href="membership.html">Membership</a></li></ul></div>
+      <div class="footer-col"><h4>Locations</h4><ul><li><a href="locations.html">York</a></li><li><a href="locations.html">Beverley</a></li><li><a href="locations.html">Stamford Bridge</a></li><li><a href="locations.html">Pocklington</a></li><li><a href="locations.html">Market Weighton</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="mailto:gavin@traintaekwondo.co.uk">Email Gavin</a></li><li><a href="https://wa.me/447426069502" target="_blank">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span>
+      <span>TAGB Affiliated &nbsp;·&nbsp; UK Sport Recognised</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

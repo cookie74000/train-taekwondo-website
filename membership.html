@@ -889,16 +889,23 @@ img { max-width: 100%; display: block; }
         <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#c084d4;margin-bottom:10px;">🧩 Specialist Programme · Ages 7–14</div>
         <div class="pricing-name" style="color:#c084d4;">Spectrum Skillz</div>
         <div class="pricing-price" style="color:#c084d4;">£40 <span>/ month</span></div>
-        <p class="pricing-desc">A specialist programme for children on the autism spectrum. Maximum 8 students per class — calm, structured, and tailored to each individual. Based in Pocklington. Places are strictly limited.</p>
+        <p class="pricing-desc">A specialist programme for children on the autism spectrum. Maximum 8 students per class — calm, structured, and tailored to each individual. Places are strictly limited.</p>
         <div class="pricing-includes">Includes</div>
         <ul class="pricing-list">
-          <li><span style="color:#c084d4;">✓</span> 1 session per week — Pocklington</li>
+          <li><span style="color:#c084d4;">✓</span> 1 session per week</li>
           <li><span style="color:#c084d4;">✓</span> Maximum 8 students per class</li>
           <li><span style="color:#c084d4;">✓</span> Pre-evaluation form sent after booking</li>
           <li><span style="color:#c084d4;">✓</span> Cancel anytime (1 month notice)</li>
         </ul>
+        <div style="margin-bottom:16px;">
+          <label for="spectrumLocation" style="display:block;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#c084d4;margin-bottom:8px;">Select your club</label>
+          <select id="spectrumLocation" style="width:100%;padding:12px 14px;background:var(--dark3);color:var(--white);border:2px solid rgba(123,45,139,0.5);border-radius:4px;font-size:0.95rem;font-family:'Lato',sans-serif;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c084d4' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;">
+            <option value="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215777&showLogo=True&reset=True" selected>Pocklington</option>
+            <!-- Add new Spectrum Skillz locations here as they open -->
+          </select>
+        </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://traintaekwondo.clubm.mobi/Member/Joining.mvc?mtid=215777&showLogo=True&reset=True" target="_blank" rel="noopener noreferrer" class="btn" style="flex:1;text-align:center;background:#7B2D8B;color:#fff;border:none;min-width:160px;">Join Now →</a>
+          <button onclick="var v=document.getElementById('spectrumLocation').value; if(v){window.open(v,'_blank');}else{alert('Please select a location first.');}" class="btn" style="flex:1;text-align:center;background:#7B2D8B;color:#fff;border:none;min-width:160px;">Join Now →</button>
           <a href="spectrum-skillz.html" class="btn btn-outline" style="flex:1;text-align:center;border-color:rgba(123,45,139,0.5);color:#c084d4;min-width:160px;">Learn More</a>
         </div>
       </div>

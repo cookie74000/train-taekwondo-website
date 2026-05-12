@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belt Testing | Train Taekwondo Schools</title>
+<meta name="description" content="Find your current belt and access everything you need to prepare for your next TAGB grading — patterns, step sparring, theory and more.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+  --black:   #0a0a0a;
+  --dark:    #111111;
+  --dark2:   #1a1a1a;
+  --dark3:   #222222;
+  --gold:    #e8c414;
+  --gold2:   #f5d430;
+  --red:     #c0392b;
+  --white:   #ffffff;
+  --grey:    #aaaaaa;
+  --border:  #2a2a2a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Russo One', sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.gold { color: var(--gold); }
+.text-center { text-align: center; }
+.divider { width: 60px; height: 4px; background: var(--gold); margin: 16px auto 0; border-radius: 2px; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-sm { padding: 10px 22px; font-size: 0.82rem; }
+
+/* ===== ANNOUNCE BAR ===== */
+.announce-bar {
+  background: var(--gold);
+  color: var(--black);
+  text-align: center;
+  padding: 10px 24px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+.announce-bar a { color: var(--black); text-decoration: underline; }
+
+/* ===== HEADER / NAV ===== */
+.site-header {
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo img { height: 52px; width: auto; }
+.nav-links { display: flex; list-style: none; gap: 4px; align-items: center; }
+.nav-links a {
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  min-width: 220px;
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #ccc;
+  font-size: 0.88rem;
+  font-weight: 400;
+  border-radius: 0;
+}
+.dropdown-menu a:hover { background: var(--dark3); color: var(--gold); }
+.nav-cta { margin-left: 12px; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--dark2);
+  border-top: 1px solid var(--border);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: var(--white);
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-nav a.sub {
+  padding-left: 36px;
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: #bbb;
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav-toggle {
+  display: flex;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding: 14px 20px;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-nav-toggle:hover { color: var(--gold); }
+.mobile-nav-toggle .toggle-arrow { font-size: 0.7rem; transition: transform 0.25s ease; display: inline-block; }
+.mobile-nav-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+.mobile-nav-section { display: none; background: rgba(0,0,0,0.2); }
+.mobile-nav-section.open { display: block; }
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #0a1200 50%, #0a0a0a 100%);
+  border-bottom: 3px solid var(--gold);
+  padding: 72px 0 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(232,196,20,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero .eyebrow {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+.page-hero p { color: var(--grey); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+/* ===== BELT GRID ===== */
+.belt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.belt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--dark2);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 16px 22px;
+  text-decoration: none;
+  color: var(--white);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.belt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  color: var(--white);
+}
+
+/* Belt colour strip at top of card */
+.belt-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Individual belt colours */
+.belt-white::before        { background: #ffffff; }
+.belt-white                { border-color: rgba(255,255,255,0.3); }
+.belt-white:hover          { border-color: rgba(255,255,255,0.7); box-shadow: 0 12px 32px rgba(255,255,255,0.1); }
+
+.belt-yellow-stripe::before { background: linear-gradient(90deg, #ffffff 50%, #f5c800 50%); }
+.belt-yellow-stripe         { border-color: rgba(245,200,0,0.3); }
+.belt-yellow-stripe:hover   { border-color: rgba(245,200,0,0.8); box-shadow: 0 12px 32px rgba(245,200,0,0.15); }
+
+.belt-yellow::before       { background: #f5c800; }
+.belt-yellow               { border-color: rgba(245,200,0,0.3); }
+.belt-yellow:hover         { border-color: rgba(245,200,0,0.8); box-shadow: 0 12px 32px rgba(245,200,0,0.2); }
+
+.belt-green-stripe::before { background: linear-gradient(90deg, #f5c800 50%, #2ecc40 50%); }
+.belt-green-stripe         { border-color: rgba(46,204,64,0.3); }
+.belt-green-stripe:hover   { border-color: rgba(46,204,64,0.8); box-shadow: 0 12px 32px rgba(46,204,64,0.15); }
+
+.belt-green::before        { background: #2ecc40; }
+.belt-green                { border-color: rgba(46,204,64,0.3); }
+.belt-green:hover          { border-color: rgba(46,204,64,0.8); box-shadow: 0 12px 32px rgba(46,204,64,0.2); }
+
+.belt-blue-stripe::before  { background: linear-gradient(90deg, #2ecc40 50%, #3498db 50%); }
+.belt-blue-stripe          { border-color: rgba(52,152,219,0.3); }
+.belt-blue-stripe:hover    { border-color: rgba(52,152,219,0.8); box-shadow: 0 12px 32px rgba(52,152,219,0.15); }
+
+.belt-blue::before         { background: #3498db; }
+.belt-blue                 { border-color: rgba(52,152,219,0.3); }
+.belt-blue:hover           { border-color: rgba(52,152,219,0.8); box-shadow: 0 12px 32px rgba(52,152,219,0.2); }
+
+.belt-red-stripe::before   { background: linear-gradient(90deg, #3498db 50%, #e74c3c 50%); }
+.belt-red-stripe           { border-color: rgba(231,76,60,0.3); }
+.belt-red-stripe:hover     { border-color: rgba(231,76,60,0.8); box-shadow: 0 12px 32px rgba(231,76,60,0.15); }
+
+.belt-red::before          { background: #e74c3c; }
+.belt-red                  { border-color: rgba(231,76,60,0.3); }
+.belt-red:hover            { border-color: rgba(231,76,60,0.8); box-shadow: 0 12px 32px rgba(231,76,60,0.2); }
+
+.belt-black-stripe::before { background: linear-gradient(90deg, #e74c3c 50%, #111 50%); border-top: 1px solid #444; }
+.belt-black-stripe         { border-color: rgba(180,180,180,0.3); }
+.belt-black-stripe:hover   { border-color: rgba(180,180,180,0.7); box-shadow: 0 12px 32px rgba(180,180,180,0.1); }
+
+.belt-black::before        { background: #1a1a1a; border-top: 2px solid var(--gold); }
+.belt-black                { border-color: rgba(232,196,20,0.4); }
+.belt-black:hover          { border-color: var(--gold); box-shadow: 0 12px 32px rgba(232,196,20,0.2); }
+
+.belt-2nd-dan::before      { background: linear-gradient(90deg, #111 50%, #111 50%); border-top: 2px solid var(--gold); }
+.belt-2nd-dan              { border-color: rgba(232,196,20,0.4); }
+.belt-2nd-dan:hover        { border-color: var(--gold); box-shadow: 0 12px 32px rgba(232,196,20,0.2); }
+
+.belt-3rd-dan::before      { background: #111; border-top: 2px solid var(--gold); }
+.belt-3rd-dan              { border-color: rgba(232,196,20,0.4); }
+.belt-3rd-dan:hover        { border-color: var(--gold); box-shadow: 0 12px 32px rgba(232,196,20,0.2); }
+
+.belt-4th-dan::before      { background: #111; border-top: 2px solid var(--gold); }
+.belt-4th-dan              { border-color: rgba(232,196,20,0.4); }
+.belt-4th-dan:hover        { border-color: var(--gold); box-shadow: 0 12px 32px rgba(232,196,20,0.2); }
+
+/* Belt visual swatch */
+.belt-swatch {
+  width: 80px;
+  height: 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* Card text */
+.belt-card-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.belt-card-sub {
+  font-size: 0.78rem;
+  color: var(--grey);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.belt-card-arrow {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.belt-card:hover .belt-card-arrow { opacity: 1; }
+
+/* ===== INFO STRIP ===== */
+.info-strip {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-top: 56px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.info-strip-icon { font-size: 2rem; flex-shrink: 0; }
+.info-strip-text h3 { font-size: 1rem; color: var(--gold); margin-bottom: 6px; }
+.info-strip-text p { color: #ccc; font-size: 0.9rem; margin: 0; }
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--gold);
+  color: var(--black);
+  padding: 48px 0 24px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand img { height: 56px; margin-bottom: 16px; }
+.footer-brand p { font-size: 0.88rem; color: rgba(0,0,0,0.7); line-height: 1.65; max-width: 280px; }
+.footer-col h4 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: rgba(0,0,0,0.75); font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--black); }
+.footer-col p { font-size: 0.88rem; color: rgba(0,0,0,0.75); line-height: 1.7; }
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.6);
+}
+.social-links { display: flex; gap: 12px; }
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,0.12);
+  border-radius: 50%;
+  color: var(--black);
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.social-links a:hover { background: rgba(0,0,0,0.25); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .belt-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+@media (max-width: 600px) {
+  .section { padding: 56px 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .belt-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .info-strip { flex-direction: column; }
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J4YNS2XYEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J4YNS2XYEZ');
+</script>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🥷 Ninja Skillz Now Running — <strong>Market Weighton: Saturdays</strong> &nbsp;|&nbsp; <strong>Pocklington: Wed from 10 Sep 2025</strong> &nbsp;·&nbsp; <a href="ninja-skillz.html">Find Out More →</a>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="ninja-skillz.html">Classes</a>
+          <div class="dropdown-menu">
+            <a href="ninja-skillz.html">🥷 Ninja Skillz (Ages 3–7)</a>
+            <a href="spectrum-skillz.html">🧩 Spectrum Skillz (Ages 7–14)</a>
+            <a href="family-taekwondo.html">🥋 Family Taekwondo</a>
+            <a href="private-tuition.html">🎯 Private Tuition (Online)</a>
+            <a href="afterschool-clubs.html">🏫 After School Clubs</a>
+          </div>
+        </li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown">
+          <a href="about.html">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html">About Us</a>
+            <a href="guide-for-parents.html" style="color:var(--gold);">Guide for Parents</a>
+            <a href="referral.html" style="color:var(--gold);">🎁 Refer a Friend</a>
+            <a href="club-calendar.html">Club Calendar</a>
+            <a href="student-spotlight.html">Student Spotlight</a>
+          </div>
+        </li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="belt-testing.html" class="active">Belt Testing</a>
+          <div class="dropdown-menu">
+            <a href="white-belt-to-yellow-stripe.html">⬜ White Belt → Yellow Stripe</a>
+            <a href="yellow-stripe-to-yellow-belt.html">🟡 Yellow Stripe → Yellow Belt</a>
+            <a href="yellow-belt-to-green-stripe.html">💚 Yellow Belt → Green Stripe</a>
+            <a href="green-stripe-to-green-belt.html">🟢 Green Stripe → Green Belt</a>
+            <a href="green-belt-to-blue-stripe.html">💙 Green Belt → Blue Stripe</a>
+            <a href="blue-stripe-to-blue-belt.html">🔵 Blue Stripe → Blue Belt</a>
+            <a href="blue-belt-to-red-stripe.html">❤️ Blue Belt → Red Stripe</a>
+            <a href="red-stripe-to-red-belt.html">🔴 Red Stripe → Red Belt</a>
+            <a href="red-belt-to-black-stripe.html">⬛ Red Belt → Black Stripe</a>
+            <a href="black-stripe-to-black-belt.html">🥋 Black Stripe → Black Belt</a>
+            <a href="black-belt-to-2nd-dan.html">🥋 Black Belt → 2nd Dan</a>
+            <a href="2nd-dan-to-3rd-dan.html">🥋 2nd Dan → 3rd Dan</a>
+            <a href="3rd-dan-to-4th-dan.html">🥋 3rd Dan → 4th Dan</a>
+            <a href="4th-dan-to-5th-dan.html">🥋 4th Dan → 5th Dan</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-gold btn-sm nav-cta">Join Now</a>
+      <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">
+      Classes <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub" style="color:var(--gold);">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+      <a href="afterschool-clubs.html" class="sub">↳ 🏫 After School Clubs</a>
+    </div>
+    <a href="locations.html">Locations</a>
+    <a href="timetable.html">Timetable</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('aboutSection', this)" aria-expanded="false">
+      About <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="aboutSection">
+      <a href="about.html" class="sub">↳ About Us</a>
+      <a href="guide-for-parents.html" class="sub" style="color:var(--gold);">↳ Guide for Parents</a>
+      <a href="referral.html" class="sub" style="color:var(--gold);">↳ 🎁 Refer a Friend</a>
+      <a href="reviews.html" class="sub">↳ Reviews</a>
+      <a href="club-calendar.html" class="sub">↳ Club Calendar</a>
+      <a href="student-spotlight.html" class="sub">↳ Student Spotlight</a>
+    </div>
+    <a href="belt-testing.html" style="color:var(--gold);">Belt Testing</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('beltSection', this)" aria-expanded="false">
+      Belt Syllabus <span class="toggle-arrow">▼</span>
+    </button>
+    <div class="mobile-nav-section" id="beltSection">
+      <a href="white-belt-to-yellow-stripe.html" class="sub">↳ ⬜ White Belt → Yellow Stripe</a>
+      <a href="yellow-stripe-to-yellow-belt.html" class="sub">↳ 🟡 Yellow Stripe → Yellow Belt</a>
+      <a href="yellow-belt-to-green-stripe.html" class="sub">↳ 💚 Yellow Belt → Green Stripe</a>
+      <a href="green-stripe-to-green-belt.html" class="sub">↳ 💚 Green Stripe → Green Belt</a>
+      <a href="green-belt-to-blue-stripe.html" class="sub">↳ 🔵 Green Belt → Blue Stripe</a>
+      <a href="blue-stripe-to-blue-belt.html" class="sub">↳ 🔵 Blue Stripe → Blue Belt</a>
+      <a href="blue-belt-to-red-stripe.html" class="sub">↳ 🔴 Blue Belt → Red Stripe</a>
+      <a href="red-stripe-to-red-belt.html" class="sub">↳ 🔴 Red Stripe → Red Belt</a>
+      <a href="red-belt-to-black-stripe.html" class="sub">↳ ⬛ Red Belt → Black Stripe</a>
+      <a href="black-stripe-to-black-belt.html" class="sub">↳ 🥋 Black Stripe → Black Belt</a>
+      <a href="black-belt-to-2nd-dan.html" class="sub">↳ 🥋 Black Belt → 2nd Dan</a>
+      <a href="2nd-dan-to-3rd-dan.html" class="sub">↳ 🥋 2nd Dan → 3rd Dan</a>
+      <a href="3rd-dan-to-4th-dan.html" class="sub">↳ 🥋 3rd Dan → 4th Dan</a>
+      <a href="4th-dan-to-5th-dan.html" class="sub">↳ 🥋 4th Dan → 5th Dan</a>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
+    <a href="membership.html" style="color:var(--gold);">Join Now →</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">🥋 TAGB Syllabus</span>
+    <h1>Belt Testing &amp;<br><span class="gold">Grading Preparation</span></h1>
+    <p>Select your current belt below to access your full grading syllabus — patterns, step sparring, theory, and everything you need to prepare.</p>
+  </div>
+</section>
+
+<!-- BELT GRID -->
+<section class="section">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom: 8px;">
+      <h2>Select Your <span class="gold">Current Belt</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--grey);margin-top:16px;font-size:0.95rem;">Click your belt to see exactly what you need to learn for your next grading.</p>
+    </div>
+
+    <div class="belt-grid">
+
+      <!-- White Belt -->
+      <a href="white-belt-to-yellow-stripe.html" class="belt-card belt-white">
+        <div class="belt-swatch" style="background:#ffffff;"></div>
+        <div class="belt-card-title">White Belt</div>
+        <div class="belt-card-sub">→ Yellow Stripe</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Yellow Stripe -->
+      <a href="yellow-stripe-to-yellow-belt.html" class="belt-card belt-yellow-stripe">
+        <div class="belt-swatch" style="background:linear-gradient(90deg,#fff 50%,#f5c800 50%);"></div>
+        <div class="belt-card-title">Yellow Stripe</div>
+        <div class="belt-card-sub">→ Yellow Belt</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Yellow Belt -->
+      <a href="yellow-belt-to-green-stripe.html" class="belt-card belt-yellow">
+        <div class="belt-swatch" style="background:#f5c800;"></div>
+        <div class="belt-card-title">Yellow Belt</div>
+        <div class="belt-card-sub">→ Green Stripe</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Green Stripe -->
+      <a href="green-stripe-to-green-belt.html" class="belt-card belt-green-stripe">
+        <div class="belt-swatch" style="background:linear-gradient(90deg,#f5c800 50%,#2ecc40 50%);"></div>
+        <div class="belt-card-title">Green Stripe</div>
+        <div class="belt-card-sub">→ Green Belt</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Green Belt -->
+      <a href="green-belt-to-blue-stripe.html" class="belt-card belt-green">
+        <div class="belt-swatch" style="background:#2ecc40;"></div>
+        <div class="belt-card-title">Green Belt</div>
+        <div class="belt-card-sub">→ Blue Stripe</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Blue Stripe -->
+      <a href="blue-stripe-to-blue-belt.html" class="belt-card belt-blue-stripe">
+        <div class="belt-swatch" style="background:linear-gradient(90deg,#2ecc40 50%,#3498db 50%);"></div>
+        <div class="belt-card-title">Blue Stripe</div>
+        <div class="belt-card-sub">→ Blue Belt</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Blue Belt -->
+      <a href="blue-belt-to-red-stripe.html" class="belt-card belt-blue">
+        <div class="belt-swatch" style="background:#3498db;"></div>
+        <div class="belt-card-title">Blue Belt</div>
+        <div class="belt-card-sub">→ Red Stripe</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Red Stripe -->
+      <a href="red-stripe-to-red-belt.html" class="belt-card belt-red-stripe">
+        <div class="belt-swatch" style="background:linear-gradient(90deg,#3498db 50%,#e74c3c 50%);"></div>
+        <div class="belt-card-title">Red Stripe</div>
+        <div class="belt-card-sub">→ Red Belt</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Red Belt -->
+      <a href="red-belt-to-black-stripe.html" class="belt-card belt-red">
+        <div class="belt-swatch" style="background:#e74c3c;"></div>
+        <div class="belt-card-title">Red Belt</div>
+        <div class="belt-card-sub">→ Black Stripe</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Black Stripe -->
+      <a href="black-stripe-to-black-belt.html" class="belt-card belt-black-stripe">
+        <div class="belt-swatch" style="background:linear-gradient(90deg,#e74c3c 50%,#111 50%);border:1px solid #444;"></div>
+        <div class="belt-card-title">Black Stripe</div>
+        <div class="belt-card-sub">→ Black Belt (1st Dan)</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- Black Belt -->
+      <a href="black-belt-to-2nd-dan.html" class="belt-card belt-black">
+        <div class="belt-swatch" style="background:#111;border:1px solid #e8c414;"></div>
+        <div class="belt-card-title" style="color:var(--gold);">Black Belt (1st Dan)</div>
+        <div class="belt-card-sub">→ 2nd Dan</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- 2nd Dan -->
+      <a href="2nd-dan-to-3rd-dan.html" class="belt-card belt-2nd-dan">
+        <div class="belt-swatch" style="background:#111;border:1px solid #e8c414;"></div>
+        <div class="belt-card-title" style="color:var(--gold);">2nd Dan</div>
+        <div class="belt-card-sub">→ 3rd Dan</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- 3rd Dan -->
+      <a href="3rd-dan-to-4th-dan.html" class="belt-card belt-3rd-dan">
+        <div class="belt-swatch" style="background:#111;border:1px solid #e8c414;"></div>
+        <div class="belt-card-title" style="color:var(--gold);">3rd Dan</div>
+        <div class="belt-card-sub">→ 4th Dan</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+      <!-- 4th Dan -->
+      <a href="4th-dan-to-5th-dan.html" class="belt-card belt-4th-dan">
+        <div class="belt-swatch" style="background:#111;border:1px solid #e8c414;"></div>
+        <div class="belt-card-title" style="color:var(--gold);">4th Dan</div>
+        <div class="belt-card-sub">→ 5th Dan</div>
+        <div class="belt-card-arrow">View Syllabus →</div>
+      </a>
+
+    </div>
+
+    <!-- Info strip -->
+    <div class="info-strip">
+      <div class="info-strip-icon">💡</div>
+      <div class="info-strip-text">
+        <h3>Not sure which belt you are?</h3>
+        <p>Your belt colour is the one you are currently wearing in class. Click that belt above to see what you need to learn to earn the next one. If you're unsure, ask Mr Cook at your next session — he'll point you in the right direction.</p>
+      </div>
+    </div>
+
+    <div class="info-strip" style="margin-top:16px;">
+      <div class="info-strip-icon">📋</div>
+      <div class="info-strip-text">
+        <h3>Ready to enter the grading?</h3>
+        <p>Once you've reviewed your syllabus and feel ready, speak to Mr Cook at class. Grading entry is confirmed through your instructor — make sure you're registered before the closing date. The next grading is on <strong style="color:var(--gold);">Friday 26th June 2026</strong>. <a href="countdown-to-events.html">View the countdown and 1-2-1 prep sessions →</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="https://www.facebook.com/traintaekwondo" target="_blank" title="Facebook">f</a>
+          <a href="#" title="Instagram">ig</a>
+          <a href="#" title="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <ul>
+          <li><a href="ninja-skillz.html">Ninja Skillz (3–7)</a></li>
+          <li><a href="family-taekwondo.html">Family Taekwondo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="locations.html">York</a></li>
+          <li><a href="locations.html">Beverley</a></li>
+          <li><a href="locations.html">Stamford Bridge</a></li>
+          <li><a href="locations.html">Pocklington</a></li>
+          <li><a href="locations.html">Market Weighton</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:07833665905" style="color:inherit;text-decoration:none;">07833 665905</a><br>
+        ✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a><br><br>
+        <a href="contact.html">Contact Us</a><br>
+        <a href="membership.html">Join Now</a><br>
+        <a href="timetable.html">Timetable</a><br>
+        <a href="faq.html">FAQ</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span>
+      <span>TAGB Affiliated &nbsp;·&nbsp; UK Sport Recognised</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileSection(sectionId, btn) {
+  var section = document.getElementById(sectionId);
+  var isOpen = section.classList.contains('open');
+  document.querySelectorAll('.mobile-nav-section').forEach(function(s) { s.classList.remove('open'); });
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+  if (!isOpen) {
+    section.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+</script>
+
+</body>
+</html>

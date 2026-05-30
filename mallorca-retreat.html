@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mallorca Taekwondo Retreat | Train Taekwondo Schools</title>
+<meta name="description" content="A five-day ITF Taekwondo training retreat in Son Serra de Marina, Mallorca — combining daily yoga, beach sessions, patterns, self-defence, philosophy, and recovery in a private retreat house with a purpose-built dojang.">
+<!-- Hidden from search engines — private/invite-only page -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+/* ===== TRAIN TAEKWONDO SCHOOLS — SHARED STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Lato:wght@300;400;700;900&display=swap');
+:root {
+  --black:   #0a0a0a;
+  --dark:    #111111;
+  --dark2:   #1a1a1a;
+  --dark3:   #222222;
+  --gold:    #e8c414;
+  --gold2:   #f5d430;
+  --red:     #c0392b;
+  --white:   #ffffff;
+  --grey:    #aaaaaa;
+  --border:  #2a2a2a;
+  --teal:    #0d9488;
+  --teal2:   #14b8a6;
+  --amber:   #d97706;
+  --orange:  #ea580c;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Russo One', sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold2); }
+img { max-width: 100%; display: block; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section-sm { padding: 48px 0; }
+.gold { color: var(--gold); }
+.text-center { text-align: center; }
+.divider {
+  width: 60px; height: 4px;
+  background: var(--gold);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+.divider-left { margin: 16px 0 0; }
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--black);
+}
+.btn-gold:hover { background: var(--gold2); color: var(--black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,196,20,0.35); }
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-whatsapp:hover { background: #1ebe5d; color: #fff; transform: translateY(-2px); }
+.btn-lg { padding: 18px 44px; font-size: 1.05rem; }
+.btn-sm { padding: 10px 22px; font-size: 0.82rem; }
+
+/* ===== HEADER / NAV ===== */
+.site-header {
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo img { height: 52px; width: auto; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 3px;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  min-width: 200px;
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 0.82rem;
+  color: var(--white);
+  border-radius: 0;
+}
+.dropdown-menu a:hover { color: var(--gold); background: rgba(232,196,20,0.06); }
+.nav-cta { margin-left: 12px; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-nav {
+  display: none;
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  padding: 16px 0;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a {
+  display: block;
+  padding: 12px 24px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav a.sub { padding-left: 40px; font-size: 0.82rem; color: var(--grey); }
+.mobile-nav-toggle {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-nav-section { display: none; }
+.mobile-nav-section.open { display: block; }
+.toggle-arrow { transition: transform 0.2s; }
+.mobile-nav-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/courtyard_24b867eb.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 40px 24px;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(232,196,20,0.15);
+  border: 1px solid rgba(232,196,20,0.4);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.0;
+  margin-bottom: 24px;
+}
+.hero h1 span { color: var(--gold); display: block; }
+.hero p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 110px;
+}
+.hero-stat .num {
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== SECTION HEADERS ===== */
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+.section-header p { color: var(--grey); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+/* ===== INSTRUCTORS ===== */
+.instructors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 32px; }
+.instructor-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px;
+}
+.instructor-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.avatar-gold { background: var(--gold); color: var(--black); }
+.avatar-teal { background: var(--teal); color: #fff; }
+.instructor-card h3 { font-size: 1.4rem; margin-bottom: 4px; }
+.instructor-card .subtitle { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+.instructor-card p { color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+/* ===== VENUE ===== */
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.venue-gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.venue-gallery .wide {
+  grid-column: span 2;
+  height: 320px;
+}
+.venue-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.venue-feature {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.venue-feature .icon { font-size: 2rem; margin-bottom: 14px; }
+.venue-feature h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.venue-feature p { color: var(--grey); font-size: 0.9rem; line-height: 1.65; }
+
+/* ===== PROGRAMME ===== */
+.programme-days { display: flex; flex-direction: column; gap: 32px; }
+.day-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.day-header {
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.day-header .day-num { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+.day-header h3 { font-size: 1.3rem; margin: 0; }
+.day-header .day-theme { font-size: 0.82rem; opacity: 0.8; letter-spacing: 0.06em; }
+.day-body { background: var(--dark2); }
+.schedule-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.schedule-row:last-child { border-bottom: none; }
+.schedule-time {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.schedule-desc { color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.6; }
+
+/* Day colour themes */
+.day-1 .day-header { background: linear-gradient(135deg, #1a3a2a, #0d2a1a); }
+.day-1 .schedule-time { color: #4ade80; }
+.day-2 .day-header { background: linear-gradient(135deg, #1a2a3a, #0d1a2a); }
+.day-2 .schedule-time { color: #60a5fa; }
+.day-3 .day-header { background: linear-gradient(135deg, #2a1a3a, #1a0d2a); }
+.day-3 .schedule-time { color: #c084fc; }
+.day-4 .day-header { background: linear-gradient(135deg, #3a2a0d, #2a1a00); }
+.day-4 .schedule-time { color: #fbbf24; }
+.day-5 .day-header { background: linear-gradient(135deg, #3a1a0d, #2a0d00); }
+.day-5 .schedule-time { color: #fb923c; }
+
+/* ===== INCLUDED ===== */
+.included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 48px; }
+.included-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.included-icon { font-size: 1.8rem; flex-shrink: 0; }
+.included-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+.included-card p { color: var(--grey); font-size: 0.85rem; line-height: 1.6; }
+.not-included {
+  background: rgba(192,57,43,0.08);
+  border: 1px solid rgba(192,57,43,0.25);
+  border-radius: 12px;
+  padding: 28px 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.not-included h4 { color: #f87171; margin-bottom: 14px; font-size: 1rem; }
+.not-included ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.not-included ul li {
+  background: rgba(192,57,43,0.12);
+  border: 1px solid rgba(192,57,43,0.2);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+
+/* ===== PRICING ===== */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 800px; margin: 0 auto; }
+.pricing-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 36px;
+  text-align: center;
+  position: relative;
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 20px 60px rgba(232,196,20,0.15);
+}
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: 100px;
+}
+.pricing-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.pricing-card .price {
+  font-family: 'Russo One', sans-serif;
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+  margin: 20px 0 4px;
+}
+.pricing-card .price-note { color: var(--grey); font-size: 0.85rem; margin-bottom: 28px; }
+.pricing-features { list-style: none; text-align: left; margin-bottom: 32px; }
+.pricing-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-features li::before { content: '✓'; color: var(--gold); font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+.deposit-note {
+  text-align: center;
+  color: var(--grey);
+  font-size: 0.88rem;
+  margin-top: 32px;
+}
+
+/* ===== WHO IS THIS FOR ===== */
+.audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.audience-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.audience-card h4 { font-size: 1rem; margin-bottom: 10px; }
+.audience-card p { color: var(--grey); font-size: 0.88rem; line-height: 1.65; }
+
+/* ===== LOCATION ===== */
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.location-info h3 { font-size: 1.2rem; margin-bottom: 16px; color: var(--gold); }
+.location-info p { color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+.location-detail { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.location-detail .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.location-detail p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+.map-embed { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.map-embed iframe { display: block; width: 100%; height: 380px; border: none; }
+
+/* ===== CTA ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--dark2), var(--dark3));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 64px 48px;
+  text-align: center;
+}
+.cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 16px; }
+.cta-section p { color: var(--grey); font-size: 1.05rem; max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-footer { margin-top: 28px; color: var(--grey); font-size: 0.85rem; }
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--gold);
+  color: var(--black);
+  padding: 56px 0 24px;
+  margin-top: 80px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.footer-brand img { height: 56px; margin-bottom: 16px; }
+.footer-brand p { font-size: 0.88rem; color: rgba(0,0,0,0.7); line-height: 1.65; max-width: 280px; }
+.footer-col h4 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: rgba(0,0,0,0.75); font-size: 0.88rem; }
+.footer-col ul li a:hover { color: var(--black); }
+.footer-col p { font-size: 0.88rem; color: rgba(0,0,0,0.75); line-height: 1.7; }
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.15);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .instructors-grid { grid-template-columns: 1fr; }
+  .venue-gallery { grid-template-columns: 1fr 1fr; }
+  .venue-gallery .wide { grid-column: span 2; }
+  .location-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { min-height: 100svh; }
+  .venue-gallery { grid-template-columns: 1fr; }
+  .venue-gallery .wide { grid-column: span 1; height: 240px; }
+  .venue-gallery img { height: 220px; }
+  .schedule-row { grid-template-columns: 80px 1fr; padding: 14px 20px; }
+  .day-header { padding: 18px 20px; }
+  .cta-section { padding: 40px 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/gallery-01.png" alt="Train Taekwondo Schools"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown"><a href="ninja-skillz.html">Classes</a>
+          <div class="dropdown-menu">
+            <a href="ninja-skillz.html">🥷 Ninja Skillz (Ages 3–7)</a>
+            <a href="spectrum-skillz.html">🧩 Spectrum Skillz (Ages 7–14)</a>
+            <a href="family-taekwondo.html">🥋 Family Taekwondo</a>
+            <a href="private-tuition.html">🎯 Private Tuition (Online)</a>
+            <a href="afterschool-clubs.html">🏫 After School Clubs</a>
+          </div>
+        </li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown">
+          <a href="about.html">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html">About Us</a>
+            <a href="guide-for-parents.html" style="color:var(--gold);">Guide for Parents</a>
+            <a href="referral.html" style="color:var(--gold);">🎁 Refer a Friend</a>
+            <a href="club-calendar.html">Club Calendar</a>
+            <a href="student-spotlight.html">Student Spotlight</a>
+          </div>
+        </li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.traintaekwondo.com" target="_blank">Store</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-gold btn-sm nav-cta">Join Now</a>
+      <button class="nav-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <button class="mobile-nav-toggle" onclick="toggleMobileSection('classesSection', this)" aria-expanded="false">Classes <span class="toggle-arrow">▼</span></button>
+    <div class="mobile-nav-section" id="classesSection">
+      <a href="ninja-skillz.html" class="sub">↳ Ninja Skillz (Ages 3–7)</a>
+      <a href="spectrum-skillz.html" class="sub">↳ Spectrum Skillz (Ages 7–14)</a>
+      <a href="family-taekwondo.html" class="sub">↳ Family Taekwondo</a>
+      <a href="private-tuition.html" class="sub">↳ Private Tuition (Online)</a>
+      <a href="afterschool-clubs.html" class="sub">↳ 🏫 After School Clubs</a>
+    </div>
+    <a href="locations.html">Locations</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="about.html">About</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.traintaekwondo.com" target="_blank">Store 🛒</a>
+    <a href="membership.html" style="color:var(--gold);">Join Now →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇪🇸 Son Serra de Marina · Mallorca · Spain</div>
+    <h1>MALLORCA<span class="gold">TAEKWONDO</span>RETREAT</h1>
+    <p>A five-day ITF Taekwondo training retreat on the island of Mallorca — combining daily yoga, beach sessions, patterns, self-defence, philosophy, and recovery in a private retreat house with a purpose-built dojang.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">5</div><div class="label">Days</div></div>
+      <div class="hero-stat"><div class="num">10</div><div class="label">Max Places</div></div>
+      <div class="hero-stat"><div class="num">2</div><div class="label">Instructors</div></div>
+      <div class="hero-stat"><div class="num" style="font-size:1.4rem;padding-top:4px;">All</div><div class="label">Levels Welcome</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-gold btn-lg">Reserve Your Place</a>
+      <a href="#programme" class="btn btn-outline btn-lg">View Programme</a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Your <span class="gold">Instructors</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">Two experienced martial arts instructors — one from the UK, one based in Mallorca — combining their expertise for a truly unique programme.</p>
+    </div>
+    <div class="instructors-grid">
+      <div class="instructor-card">
+        <div class="instructor-avatar avatar-gold">GC</div>
+        <h3>Gavin Cook</h3>
+        <div class="subtitle">5th Dan · TAGB · Train Taekwondo Schools</div>
+        <p>Gavin is the founder of Train Taekwondo Schools, operating five locations across East Yorkshire. With over 43 years of Taekwondo experience and a 5th Dan black belt through the Taekwondo Association of Great Britain, Gavin brings world-class technical instruction in ITF patterns, kicking, sparring, and breaking. He has trained and graded hundreds of students from white belt through to black belt.</p>
+        <div class="tags">
+          <span class="tag">ITF Patterns</span>
+          <span class="tag">Kicking Technique</span>
+          <span class="tag">Sparring</span>
+          <span class="tag">Breaking</span>
+          <span class="tag">Grading</span>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-avatar avatar-teal">IT</div>
+        <h3>Ioannis Tziolas</h3>
+        <div class="subtitle" style="color:var(--teal2);">ITF Instructor · Son Serra de Marina, Mallorca</div>
+        <p>Ioannis is a Mallorca-based ITF Taekwondo instructor with a passion for blending martial arts with ancient Greek philosophical tradition. His unique Peripatetic teaching system — combining nature walks, guided self-discovery, and reflective discussion — creates a learning experience unlike any conventional training camp. He owns and operates the retreat property and dojang in Son Serra de Marina.</p>
+        <div class="tags">
+          <span class="tag">Self-Defence</span>
+          <span class="tag">Greek Philosophy</span>
+          <span class="tag">Peripatetic Teaching</span>
+          <span class="tag">Yoga</span>
+          <span class="tag">Mindfulness</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="section" style="background:var(--dark2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>The <span class="gold">Venue</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">A private property in the quiet coastal village of Son Serra de Marina — with a purpose-built dojang attached, accommodation for the whole group, and Sa Canova Beach a short walk away.</p>
+    </div>
+    <div class="venue-gallery">
+      <img class="wide" src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/courtyard_24b867eb.jpg" alt="Retreat house courtyard">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/gym-room1_e5831d51.jpg" alt="Training room 1">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/gym-room2_8c4bebcf.jpg" alt="Training room 2" style="grid-column:span 2;">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/gym-room3_e9ac5bde.jpg" alt="Equipped training room">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/gym-equipped_92f73845.jpg" alt="Dojang with punch bag and equipment">
+    </div>
+    <div class="venue-features">
+      <div class="venue-feature">
+        <div class="icon">🏠</div>
+        <h3>Private Retreat House</h3>
+        <p>5 double bedrooms, 3 bathrooms, 3 kitchens. The whole property is exclusively yours for the week — no other guests. Both instructors stay on site throughout.</p>
+      </div>
+      <div class="venue-feature">
+        <div class="icon">🥋</div>
+        <h3>Purpose-Built Dojang</h3>
+        <p>Two fully matted training rooms attached to the property. Red foam puzzle mats, punch bag, boxing gloves, TRX straps, yoga mats, and outdoor courtyard — train morning and evening without leaving the site.</p>
+      </div>
+      <div class="venue-feature">
+        <div class="icon">🏖️</div>
+        <h3>Sa Canova Beach</h3>
+        <p>A beautiful, unspoiled beach a short walk from the property — used for morning yoga and outdoor training sessions in the fresh Mediterranean air. The GR222 coastal trail runs nearby for Peripatetic walks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section class="section" id="programme">
+  <div class="container">
+    <div class="section-header">
+      <h2>Five-Day <span class="gold">Programme</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">Each day has a distinct theme — building from foundations through to the closing ceremony. The programme balances intensive training with recovery, philosophy, and exploration.</p>
+    </div>
+    <div class="programme-days">
+
+      <!-- DAY 1 -->
+      <div class="day-card day-1">
+        <div class="day-header">
+          <div><div class="day-num">Day 1</div><h3>Arrival &amp; Foundations</h3></div>
+          <div class="day-theme">Settle In · Breathe · Begin</div>
+        </div>
+        <div class="day-body">
+          <div class="schedule-row"><div class="schedule-time">Afternoon</div><div class="schedule-desc">Arrivals — settle into the retreat house, meet your fellow practitioners</div></div>
+          <div class="schedule-row"><div class="schedule-time">17:30</div><div class="schedule-desc">Welcome ceremony in the dojang — introduction to the Dobok philosophy (도복) and the meaning of 'the clothing of the way'</div></div>
+          <div class="schedule-row"><div class="schedule-time">18:30</div><div class="schedule-desc">Gentle opening yoga session — breathwork, grounding postures, setting intentions</div></div>
+          <div class="schedule-row"><div class="schedule-time">19:30</div><div class="schedule-desc">Welcome dinner together — fresh Mediterranean food, introductions, programme overview</div></div>
+          <div class="schedule-row"><div class="schedule-time">21:00</div><div class="schedule-desc">Evening walk through Son Serra de Marina — Ioannis introduces the Peripatetic philosophy: observation, ethics, and the martial mind</div></div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card day-2">
+        <div class="day-header">
+          <div><div class="day-num">Day 2</div><h3>The Warrior's Morning</h3></div>
+          <div class="day-theme">Beach Training · Patterns · Self-Defence</div>
+        </div>
+        <div class="day-body">
+          <div class="schedule-row"><div class="schedule-time">07:00</div><div class="schedule-desc">Sunrise yoga on Sa Canova Beach — sun salutations, warrior flows, and breathwork by the sea</div></div>
+          <div class="schedule-row"><div class="schedule-time">08:30</div><div class="schedule-desc">Breakfast at the retreat house</div></div>
+          <div class="schedule-row"><div class="schedule-time">09:30</div><div class="schedule-desc">Beach training session — ITF Taekwondo kicks: front kick, roundhouse, side kick, back kick, hook kick. Focus on power generation and chamber mechanics</div></div>
+          <div class="schedule-row"><div class="schedule-time">11:00</div><div class="schedule-desc">Pattern (Tul) workshop in the dojang — Gavin leads Chon-Ji through to Yul-Gok depending on grade. Beginners learn Chon-Ji; advanced practitioners refine higher patterns</div></div>
+          <div class="schedule-row"><div class="schedule-time">12:30</div><div class="schedule-desc">Lunch — rest and free time</div></div>
+          <div class="schedule-row"><div class="schedule-time">15:00</div><div class="schedule-desc">Peripatetic walk along the GR222 coastal trail — Ioannis leads a philosophical discussion on observation, data collection, and the martial arts mindset</div></div>
+          <div class="schedule-row"><div class="schedule-time">17:30</div><div class="schedule-desc">Self-defence workshop — Ioannis's 'Art of Midwifery' method: guided discovery of natural defensive movement, wrist releases, distance management</div></div>
+          <div class="schedule-row"><div class="schedule-time">19:30</div><div class="schedule-desc">Dinner together</div></div>
+          <div class="schedule-row"><div class="schedule-time">21:00</div><div class="schedule-desc">Sports massage / foam rolling session — recovery and body awareness</div></div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card day-3">
+        <div class="day-header">
+          <div><div class="day-num">Day 3</div><h3>Mind, Body &amp; Sparring</h3></div>
+          <div class="day-theme">Meditation · Sparring · Philosophy</div>
+        </div>
+        <div class="day-body">
+          <div class="schedule-row"><div class="schedule-time">07:00</div><div class="schedule-desc">Morning meditation and breathwork in the dojang — mindfulness, focus training, and visualisation techniques used by elite martial artists</div></div>
+          <div class="schedule-row"><div class="schedule-time">08:30</div><div class="schedule-desc">Breakfast</div></div>
+          <div class="schedule-row"><div class="schedule-time">09:30</div><div class="schedule-desc">Advanced kicking combinations and pad work — flying kicks, spinning techniques, combination drills. All levels catered for</div></div>
+          <div class="schedule-row"><div class="schedule-time">11:00</div><div class="schedule-desc">Light contact sparring (Ho Sin Sul) — controlled, respectful, technique-focused. Protective equipment provided. Beginners do partner drills instead</div></div>
+          <div class="schedule-row"><div class="schedule-time">12:30</div><div class="schedule-desc">Lunch and rest</div></div>
+          <div class="schedule-row"><div class="schedule-time">15:00</div><div class="schedule-desc">Philosophy session: 'The Synthesis' — Ioannis leads a group discussion connecting the morning's physical experience to inner growth and the ancient Greek tradition of Peripateticism</div></div>
+          <div class="schedule-row"><div class="schedule-time">17:00</div><div class="schedule-desc">Yoga — restorative yin session, hip openers, and deep stretching to aid recovery</div></div>
+          <div class="schedule-row"><div class="schedule-time">19:00</div><div class="schedule-desc">Group dinner — optional local restaurant visit in Son Serra de Marina or Colonia de Sant Pere</div></div>
+          <div class="schedule-row"><div class="schedule-time">21:00</div><div class="schedule-desc">Relaxed evening — massage, journalling, or free time</div></div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card day-4">
+        <div class="day-header">
+          <div><div class="day-num">Day 4</div><h3>Power &amp; Precision</h3></div>
+          <div class="day-theme">Breaking · Patterns · Strength</div>
+        </div>
+        <div class="day-body">
+          <div class="schedule-row"><div class="schedule-time">07:00</div><div class="schedule-desc">Dynamic yoga flow — vinyasa, balance postures, and core strength. Designed to prepare the body for the day's intensive training</div></div>
+          <div class="schedule-row"><div class="schedule-time">08:30</div><div class="schedule-desc">Breakfast</div></div>
+          <div class="schedule-row"><div class="schedule-time">09:30</div><div class="schedule-desc">Power breaking workshop — technique, focus, and board breaking. Gavin guides participants through the mental and physical preparation for destruction techniques</div></div>
+          <div class="schedule-row"><div class="schedule-time">11:00</div><div class="schedule-desc">Pattern refinement and grading preparation — detailed correction session. Participants work toward a certificate of achievement presented on Day 5</div></div>
+          <div class="schedule-row"><div class="schedule-time">12:30</div><div class="schedule-desc">Lunch</div></div>
+          <div class="schedule-row"><div class="schedule-time">14:00</div><div class="schedule-desc">Free afternoon — beach, local exploration, or optional private 1-to-1 coaching session with either instructor</div></div>
+          <div class="schedule-row"><div class="schedule-time">17:00</div><div class="schedule-desc">Self-defence scenario training — real-world situations, awareness, de-escalation, and practical application of Taekwondo techniques</div></div>
+          <div class="schedule-row"><div class="schedule-time">19:00</div><div class="schedule-desc">Group dinner — celebration meal, sharing highlights from the week</div></div>
+          <div class="schedule-row"><div class="schedule-time">21:00</div><div class="schedule-desc">Sports massage and recovery — professional massage session (additional cost) or self-guided foam rolling and stretching</div></div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card day-5">
+        <div class="day-header">
+          <div><div class="day-num">Day 5</div><h3>Closing Ceremony</h3></div>
+          <div class="day-theme">Reflection · Grading · Farewell</div>
+        </div>
+        <div class="day-body">
+          <div class="schedule-row"><div class="schedule-time">07:00</div><div class="schedule-desc">Final sunrise yoga on the beach — a full-body flow to honour the week's journey</div></div>
+          <div class="schedule-row"><div class="schedule-time">08:30</div><div class="schedule-desc">Breakfast</div></div>
+          <div class="schedule-row"><div class="schedule-time">09:30</div><div class="schedule-desc">Informal grading / assessment — participants demonstrate patterns, kicks, and self-defence techniques. Certificates of achievement awarded by Gavin Cook (5th Dan) and Ioannis Tziolas</div></div>
+          <div class="schedule-row"><div class="schedule-time">11:30</div><div class="schedule-desc">Closing ceremony in the dojang — reflection circle, sharing insights, and Ioannis's final philosophical synthesis: how the week's learning connects to everyday life</div></div>
+          <div class="schedule-row"><div class="schedule-time">12:30</div><div class="schedule-desc">Farewell lunch together</div></div>
+          <div class="schedule-row"><div class="schedule-time">14:00</div><div class="schedule-desc">Departures — transfers to Palma Airport (PMI, approx. 1 hr drive)</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section" style="background:var(--dark2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>What's <span class="gold">Included</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">Everything you need for five days of focused training and genuine rest — from the moment you arrive to the moment you leave.</p>
+    </div>
+    <div class="included-grid">
+      <div class="included-card"><div class="included-icon">🏠</div><div><h4>Accommodation</h4><p>5 nights in the private retreat house — 5 double rooms, 3 bathrooms, 3 kitchens. Up to 10 guests sharing the property with both instructors on site.</p></div></div>
+      <div class="included-card"><div class="included-icon">🥋</div><div><h4>Purpose-Built Dojang</h4><p>Two dedicated training rooms with red foam mats attached to the property — no travel between sleeping and training. Plus an outdoor courtyard.</p></div></div>
+      <div class="included-card"><div class="included-icon">🧘</div><div><h4>Daily Yoga</h4><p>Morning yoga every day — beach sessions at Sa Canova and dojang sessions. Suitable for all levels from complete beginners to experienced practitioners.</p></div></div>
+      <div class="included-card"><div class="included-icon">🥊</div><div><h4>ITF Taekwondo Training</h4><p>Twice-daily sessions covering patterns (Tul), kicks, sparring, self-defence, and breaking. Led by Gavin Cook (5th Dan TAGB) and Ioannis Tziolas (ITF).</p></div></div>
+      <div class="included-card"><div class="included-icon">🛡️</div><div><h4>Self-Defence Workshops</h4><p>Practical self-defence using Ioannis's unique 'Art of Midwifery' method — guided discovery of natural defensive movement and situational awareness.</p></div></div>
+      <div class="included-card"><div class="included-icon">🏖️</div><div><h4>Beach Training Sessions</h4><p>Morning yoga and kicking practice on Sa Canova Beach — one of Mallorca's most unspoiled stretches of coastline.</p></div></div>
+      <div class="included-card"><div class="included-icon">🍽️</div><div><h4>All Meals</h4><p>Breakfast, lunch, and dinner every day — fresh Mediterranean food prepared at the retreat house. Dietary requirements accommodated.</p></div></div>
+      <div class="included-card"><div class="included-icon">📜</div><div><h4>Certificate of Achievement</h4><p>A personalised certificate awarded by Gavin Cook (5th Dan) and Ioannis Tziolas on the final day, recognising your participation and progress.</p></div></div>
+      <div class="included-card"><div class="included-icon">🧠</div><div><h4>Philosophy Seminars</h4><p>Daily Peripatetic walks and group discussions led by Ioannis — connecting the physical practice of Taekwondo to ancient Greek philosophical tradition.</p></div></div>
+    </div>
+    <div class="not-included">
+      <h4>Not Included</h4>
+      <ul>
+        <li>Flights to Palma (PMI)</li>
+        <li>Airport transfers</li>
+        <li>Travel insurance</li>
+        <li>Alcoholic beverages</li>
+        <li>Professional sports massage (optional add-on)</li>
+        <li>Personal spending money</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="reserve">
+  <div class="container">
+    <div class="section-header">
+      <h2>Reserve Your <span class="gold">Place</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">Places are limited to 10 participants. Pricing is per person, all-inclusive of accommodation, meals, and all training sessions.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Shared Room</h3>
+        <div class="price">£1,295</div>
+        <div class="price-note">per person · 5 nights</div>
+        <ul class="pricing-features">
+          <li>Shared double room (2 people)</li>
+          <li>All meals included</li>
+          <li>All training sessions</li>
+          <li>Daily yoga (beach &amp; dojang)</li>
+          <li>Certificate of achievement</li>
+          <li>Philosophy seminars</li>
+        </ul>
+        <a href="https://wa.me/447426069502?text=Hi%20Gavin%2C%20I%27d%20like%20to%20reserve%20a%20place%20on%20the%20Mallorca%20Taekwondo%20Retreat%20(shared%20room)" target="_blank" class="btn btn-gold" style="width:100%;display:block;">Reserve Now</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Private Room</div>
+        <h3>Private Room</h3>
+        <div class="price">£1,495</div>
+        <div class="price-note">per person · 5 nights</div>
+        <ul class="pricing-features">
+          <li>Private double room (sole occupancy)</li>
+          <li>All meals included</li>
+          <li>All training sessions</li>
+          <li>Daily yoga (beach &amp; dojang)</li>
+          <li>Certificate of achievement</li>
+          <li>Philosophy seminars</li>
+        </ul>
+        <a href="https://wa.me/447426069502?text=Hi%20Gavin%2C%20I%27d%20like%20to%20reserve%20a%20private%20room%20on%20the%20Mallorca%20Taekwondo%20Retreat" target="_blank" class="btn btn-gold" style="width:100%;display:block;">Reserve Now</a>
+      </div>
+    </div>
+    <p class="deposit-note">A £200 deposit secures your place. Balance due 8 weeks before the retreat date.<br>Contact Gavin directly to discuss dates and availability.</p>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="section" style="background:var(--dark2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Who Is This <span class="gold">For?</span></h2>
+      <div class="divider"></div>
+      <p style="margin-top:20px;">This retreat is designed for anyone who wants to deepen their Taekwondo practice in a focused, supportive, and beautiful environment.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <h4>Existing Train Taekwondo Students</h4>
+        <p>Students of any grade from Train Taekwondo Schools looking to fast-track their development, refine their patterns, and experience training in a dedicated environment.</p>
+      </div>
+      <div class="audience-card">
+        <h4>Taekwondo Practitioners from Other Clubs</h4>
+        <p>ITF or WTF practitioners from any club who want to experience a different approach to training — combining technical instruction with philosophy and wellness.</p>
+      </div>
+      <div class="audience-card">
+        <h4>Martial Arts Beginners</h4>
+        <p>No prior experience required. The programme is structured to welcome complete beginners alongside experienced practitioners. All sessions are adapted to your level.</p>
+      </div>
+      <div class="audience-card">
+        <h4>Yoga &amp; Wellness Enthusiasts</h4>
+        <p>If you're drawn to the yoga, philosophy, and wellness elements and want to try martial arts in a safe, supportive setting, this retreat is the perfect introduction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Getting <span class="gold">There</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="location-grid">
+      <div class="location-info">
+        <h3>Son Serra de Marina, Mallorca</h3>
+        <p>A quiet, unspoiled coastal village on the north-east coast of Mallorca — far from the tourist crowds, surrounded by nature, and just a short walk from one of the island's most beautiful beaches.</p>
+        <div class="location-detail">
+          <div class="icon">✈️</div>
+          <p><strong>Fly to Palma Airport (PMI)</strong> — direct flights from most UK airports. Ryanair, easyJet, and Jet2 all operate routes from Leeds Bradford, Manchester, and London.</p>
+        </div>
+        <div class="location-detail">
+          <div class="icon">🚗</div>
+          <p><strong>Transfer to Son Serra de Marina</strong> — approximately 1 hour from Palma Airport by car. Car hire is recommended; taxis and transfers are also available.</p>
+        </div>
+        <div class="location-detail">
+          <div class="icon">🏖️</div>
+          <p><strong>Sa Canova Beach</strong> — a 5-minute walk from the retreat house. Used for morning yoga and outdoor training sessions throughout the week.</p>
+        </div>
+        <div class="location-detail">
+          <div class="icon">🥋</div>
+          <p><strong>The Dojang</strong> — purpose-built and attached directly to the retreat house. No travel required between accommodation and training.</p>
+        </div>
+      </div>
+      <div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.123456789!2d3.1950!3d39.7300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793c0f9f9f9f9%3A0x0!2sSon+Serra+de+Marina%2C+Mallorca%2C+Spain!5e0!3m2!1sen!2suk!4v1234567890"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Son Serra de Marina, Mallorca">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-section">
+      <h2>Ready to <span class="gold">Join Us?</span></h2>
+      <p>Places are strictly limited to 10 participants. Contact Gavin directly to check availability and secure your spot with a £200 deposit.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/447426069502?text=Hi%20Gavin%2C%20I%27d%20like%20to%20find%20out%20more%20about%20the%20Mallorca%20Taekwondo%20Retreat" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+          WhatsApp Gavin
+        </a>
+        <a href="mailto:gavin@traintaekwondo.co.uk?subject=Mallorca%20Taekwondo%20Retreat%20Enquiry" class="btn btn-outline btn-lg">✉️ Send an Email</a>
+      </div>
+      <p class="cta-footer">🇬🇧 Train Taekwondo Schools · East Yorkshire · traintaekwondo.co.uk</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/gallery-01.png" alt="Train Taekwondo Schools">
+        <p>Creating Champions for Life since 2011. TAGB-affiliated Taekwondo and Ninja Skillz classes across East Yorkshire.</p>
+      </div>
+      <div class="footer-col"><h4>Locations</h4><ul><li><a href="locations.html">York</a></li><li><a href="locations.html">Beverley</a></li><li><a href="locations.html">Stamford Bridge</a></li><li><a href="locations.html">Pocklington</a></li><li><a href="locations.html">Market Weighton</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 <a href="tel:07833665905" style="color:inherit;text-decoration:none;">07833 665905</a><br>✉ <a href="mailto:gavin@traintaekwondo.co.uk" style="color:inherit;">gavin@traintaekwondo.co.uk</a></p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Train Taekwondo Schools. All Rights Reserved.</span><span>TAGB Affiliated · UK Sport Recognised</span></div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileSection(id, btn) {
+  const section = document.getElementById(id);
+  const isOpen = section.classList.contains('open');
+  section.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+</script>
+</body>
+</html>

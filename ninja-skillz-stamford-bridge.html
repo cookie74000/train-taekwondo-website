@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ninja Skillz Stamford Bridge — Opening September 2026 | Village Hall</title>
+  <meta name="description" content="Ninja Skillz is coming to Stamford Bridge Village Hall every Friday from September 2026. Early Skillz (3–4) and Basic Skillz (5–7). First taster session completely FREE. Book now." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFD700;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --grey: #1a1a1a;
+      --text: #f0f0f0;
+      --muted: #aaaaaa;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
+
+    .announcement-bar { background: var(--yellow); color: var(--black); text-align: center; padding: 10px 20px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; }
+    .announcement-bar a { color: var(--black); text-decoration: underline; cursor: pointer; }
+
+    .nav { background: #0a0a0a; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-cta { background: var(--yellow); color: var(--black); font-weight: 800; font-size: 0.9rem; padding: 10px 22px; border-radius: 6px; text-decoration: none; }
+
+    .hero { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a0a 50%, #0a0a0a 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; background-image: url('images/site-img-08.jpeg'); background-size: cover; background-position: center 30%; opacity: 0.35; }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+    .hero-logo { margin-bottom: 24px; }
+    .hero-logo img { height: 70px; width: auto; }
+    .hero-badge-pill { display: inline-block; background: rgba(255,215,0,0.15); border: 1px solid var(--yellow); color: var(--yellow); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: #fff; }
+    .hero h1 span { color: var(--yellow); }
+    .hero-sub { font-size: 1.1rem; color: #ccc; margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .free-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,215,0,0.1); border: 2px solid var(--yellow); border-radius: 8px; padding: 12px 24px; margin-bottom: 30px; font-weight: 700; color: var(--yellow); }
+    .btn-primary { display: inline-block; background: var(--yellow); color: var(--black); font-weight: 800; font-size: 1.1rem; padding: 16px 40px; border-radius: 6px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; margin: 6px; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,215,0,0.4); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--yellow); font-weight: 700; font-size: 1rem; padding: 15px 32px; border-radius: 6px; text-decoration: none; border: 2px solid var(--yellow); transition: background 0.2s; margin: 6px; }
+    .btn-secondary:hover { background: rgba(255,215,0,0.1); }
+    .hero-stars { margin-top: 20px; color: var(--yellow); font-size: 0.9rem; }
+    .hero-stars span { font-size: 1.1rem; }
+
+    .countdown-section { background: #111; border-top: 1px solid #222; border-bottom: 1px solid #222; padding: 40px 20px; text-align: center; }
+    .countdown-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--yellow); margin-bottom: 20px; }
+    .countdown-timer { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .countdown-unit { background: #1a1a1a; border: 2px solid #333; border-radius: 10px; padding: 16px 20px; min-width: 80px; text-align: center; }
+    .countdown-number { display: block; font-size: 2.2rem; font-weight: 900; color: var(--yellow); line-height: 1; margin-bottom: 6px; }
+    .countdown-unit-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+    .launch-details { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .launch-item { text-align: center; }
+    .launch-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .launch-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px; }
+    .launch-value { font-weight: 700; font-size: 1rem; color: #fff; }
+    .launch-value.gold { color: var(--yellow); }
+
+    .stats-bar { background: var(--yellow); padding: 20px; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-number { font-size: 1.8rem; font-weight: 900; color: var(--black); line-height: 1; }
+    .stat-label { font-size: 0.75rem; font-weight: 600; color: #333; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .timetable-section { padding: 70px 20px; background: var(--dark); }
+    .section-title { text-align: center; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 12px; }
+    .section-title span { color: var(--yellow); }
+    .section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .timetable-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .timetable-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 28px 24px; border-top: 4px solid var(--yellow); transition: transform 0.2s; }
+    .timetable-card:hover { transform: translateY(-3px); }
+    .timetable-card .tc-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .timetable-card .tc-age { display: inline-block; background: rgba(255,215,0,0.15); color: var(--yellow); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+    .timetable-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .timetable-card .tc-time { font-size: 1rem; font-weight: 700; color: var(--yellow); margin-bottom: 12px; }
+    .timetable-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+    .timetable-card ul { list-style: none; margin-bottom: 16px; }
+    .timetable-card ul li { padding: 4px 0; font-size: 0.85rem; color: #ccc; border-bottom: 1px solid #2a2a2a; }
+    .timetable-card ul li::before { content: "✓ "; color: var(--yellow); font-weight: 700; }
+    .spaces-warning { background: rgba(255,60,60,0.1); border: 1px solid rgba(255,60,60,0.3); color: #ff6b6b; font-size: 0.82rem; font-weight: 700; padding: 6px 12px; border-radius: 6px; margin-bottom: 12px; }
+    .full-badge { background: rgba(255,60,60,0.12); border: 1px solid rgba(255,60,60,0.4); color: #ff6b6b; font-size: 0.85rem; font-weight: 700; padding: 10px 14px; border-radius: 6px; text-align: center; margin-bottom: 10px; }
+    .waitlist-badge { background: rgba(255,165,0,0.1); border: 1px solid rgba(255,165,0,0.4); color: #ffaa44; font-size: 0.82rem; font-weight: 700; padding: 8px 12px; border-radius: 6px; text-align: center; }
+
+    .heygen-section { padding: 70px 20px; background: #0d0d0d; text-align: center; }
+
+    .benefits { padding: 70px 20px; background: var(--black); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .benefit-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px 20px; text-align: center; }
+    .benefit-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .benefit-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--yellow); }
+    .benefit-card p { font-size: 0.85rem; color: var(--muted); }
+
+    .reviews { padding: 70px 20px; background: var(--dark); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .review-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 28px 24px; }
+    .review-stars { color: var(--yellow); font-size: 1.1rem; margin-bottom: 12px; }
+    .review-text { color: #ccc; font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--yellow); color: var(--black); font-weight: 800; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .review-name { font-weight: 700; font-size: 0.9rem; }
+    .review-source { font-size: 0.78rem; color: var(--muted); }
+
+    .pdf-section { padding: 60px 20px; background: #0d0d0d; text-align: center; border-top: 1px solid #1a1a1a; }
+    .pdf-inner { max-width: 700px; margin: 0 auto; }
+    .pdf-inner h2 { font-size: 1.8rem; font-weight: 900; color: var(--yellow); margin-bottom: 16px; }
+    .pdf-inner p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 28px; }
+
+    .urgency { background: linear-gradient(135deg, #1a0a0a, #0a0a0a); border-top: 2px solid #ff4444; border-bottom: 2px solid #ff4444; padding: 50px 20px; text-align: center; }
+    .urgency h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; color: #ff6b6b; margin-bottom: 12px; }
+    .urgency p { color: #ccc; max-width: 560px; margin: 0 auto 28px; }
+    .spaces-bar-wrap { max-width: 400px; margin: 0 auto 28px; }
+    .spaces-bar-label { font-size: 0.85rem; font-weight: 700; color: #ff6b6b; margin-bottom: 8px; }
+    .spaces-bar-track { background: #2a2a2a; border-radius: 20px; height: 12px; overflow: hidden; margin-bottom: 6px; }
+    .spaces-bar-fill { background: linear-gradient(90deg, #ff4444, #ff6b6b); height: 100%; border-radius: 20px; width: 70%; }
+    .spaces-bar-sub { font-size: 0.78rem; color: var(--muted); }
+
+    .register { padding: 70px 20px; background: var(--dark); }
+    .form-inner { max-width: 560px; margin: 0 auto; background: #111; border: 1px solid #2a2a2a; border-radius: 16px; padding: 40px 36px; }
+    .form-title { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .form-subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 6px; }
+    .form-group input { width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 12px 14px; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus { border-color: var(--yellow); }
+    .class-checks { display: flex; flex-direction: column; gap: 10px; }
+    .class-check-item { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 400; color: #fff; cursor: pointer; background: rgba(255,215,0,0.04); border: 1px solid #2a2a2a; border-radius: 6px; padding: 12px 14px; }
+    .class-check-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--yellow); flex-shrink: 0; }
+    .class-check-label { display: flex; flex-direction: column; gap: 2px; }
+    .class-time { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+    .btn-submit { width: 100%; background: var(--yellow); color: var(--black); font-weight: 800; font-size: 1.05rem; padding: 16px; border: none; border-radius: 6px; cursor: pointer; margin-top: 8px; transition: transform 0.2s; }
+    .btn-submit:hover { transform: translateY(-2px); }
+    .form-privacy { font-size: 0.75rem; color: #555; text-align: center; margin-top: 12px; }
+
+    footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: var(--muted); font-size: 0.88rem; line-height: 1.8; }
+    footer img { height: 48px; width: auto; margin-bottom: 16px; opacity: 0.7; }
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--yellow); color: var(--black); padding: 12px 16px; z-index: 999; align-items: center; justify-content: space-between; gap: 12px; }
+    .sticky-cta-text { font-weight: 700; font-size: 0.88rem; line-height: 1.3; }
+    .sticky-cta-text span { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.75; }
+    .sticky-cta-btn { background: var(--black); color: var(--yellow); font-weight: 800; font-size: 0.85rem; padding: 10px 18px; border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .sticky-cta { display: flex; }
+      body { padding-bottom: 64px; }
+      .hide-mobile { display: none !important; }
+      .announcement-bar { display: none !important; }
+      .free-badge { display: none !important; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4YNS2XYEZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J4YNS2XYEZ');
+  </script>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🥷 NINJA SKILLZ STAMFORD BRIDGE — OPENING FRIDAY SEPTEMBER 2026 &nbsp;|&nbsp; 🎁 FIRST TASTER SESSION FREE &nbsp;|&nbsp; LIMITED SPACES — <a href="#register">BOOK NOW</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo"><img src="images/gallery-01.png" alt="Train Taekwondo Schools" /></div>
+  <a href="#register" class="nav-cta">Book Free Taster</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-logo"><img src="images/site-img-09.png" alt="Ninja Skillz" /></div>
+    <div class="hero-badge-pill">🥷 Stamford Bridge — Opening September 2026</div>
+    <h1>Ninja Skillz is Coming to<br><span>Stamford Bridge!</span></h1>
+    <p class="hero-sub">New Ninja Skillz classes at <strong>Stamford Bridge Village Hall</strong> — every Friday evening from September 2026. Ages 3 to 7. The first session is completely <strong>FREE</strong>.</p>
+    <div class="free-badge">
+      🎁 First Taster Session is <strong>&nbsp;FREE&nbsp;</strong> — No commitment, just come and try it!
+    </div>
+    <br>
+    <a href="#register" class="btn-primary hide-mobile">Book Your FREE Taster →</a>
+    <a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session%20at%20Stamford%20Bridge" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;border-color:#25D366;color:#25D366;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>Book via WhatsApp</a>
+    <a href="#classes" class="btn-secondary">See Class Times</a>
+    <div class="hero-stars"><span>★★★★★</span> &nbsp;100% recommended · 21 Facebook reviews</div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-section">
+  <div class="countdown-label">🚀 Opening Day Countdown</div>
+  <div class="countdown-timer" id="countdown">
+    <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-unit-label">Days</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-unit-label">Hours</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-mins">--</span><span class="countdown-unit-label">Minutes</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-secs">--</span><span class="countdown-unit-label">Seconds</span></div>
+  </div>
+  <div class="launch-details">
+    <div class="launch-item">
+      <div class="launch-icon">📅</div>
+      <div class="launch-label">Opening Date</div>
+      <div class="launch-value gold">Friday 5 September 2026</div>
+    </div>
+    <div class="launch-item">
+      <div class="launch-icon">📍</div>
+      <div class="launch-label">Venue</div>
+      <div class="launch-value">Stamford Bridge Village Hall</div>
+    </div>
+    <div class="launch-item">
+      <div class="launch-icon">⏰</div>
+      <div class="launch-label">Classes</div>
+      <div class="launch-value">5:00pm · 5:30pm · 6:00pm · 7:00pm</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number">15</div><div class="stat-label">Years helping children grow since 2011</div></div>
+  <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Families trusted across Yorkshire</div></div>
+  <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Recommended — 21 five-star Facebook reviews</div></div>
+</div>
+
+<!-- CLASS PHOTO -->
+<div style="background:#0a0a0a;padding:0;overflow:hidden;max-height:420px;">
+  <img src="images/site-img-05.jpeg" alt="Ninja Skillz class in action" style="width:100%;object-fit:cover;max-height:420px;display:block;opacity:0.92;">
+</div>
+
+<!-- CLASSES / TIMETABLE -->
+<section class="timetable-section" id="classes">
+  <h2 class="section-title">Stamford Bridge <span>Friday Night Classes</span></h2>
+  <p class="section-sub">Four programmes every Friday at Stamford Bridge Village Hall — starting September 2026.</p>
+  <div class="timetable-grid">
+
+    <!-- Ninja Skillz Ages 3-4 -->
+    <div class="timetable-card">
+      <div class="tc-icon">👶</div>
+      <div class="tc-age">Ages 3–4</div>
+      <h3>Ninja Skillz — Early</h3>
+      <div class="tc-time">📅 Friday · 5:00pm – 5:30pm</div>
+      <p>Designed for energetic preschoolers who need help with focus, coordination and confidence in a fun, structured environment.</p>
+      <ul>
+        <li>Listening &amp; focus</li>
+        <li>Balance &amp; coordination</li>
+        <li>Confidence in a group</li>
+        <li>Following instructions</li>
+        <li>Social skills &amp; sharing</li>
+      </ul>
+      <div class="spaces-warning">⚠ Limited spaces — book early</div>
+      <div style="margin-bottom:12px;color:var(--yellow);font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
+      <a href="#register" class="btn-primary hide-mobile">Book Free Taster →</a>
+    </div>
+
+    <!-- Ninja Skillz Ages 5-7 -->
+    <div class="timetable-card">
+      <div class="tc-icon">🥷</div>
+      <div class="tc-age">Ages 5–7</div>
+      <h3>Ninja Skillz — Junior</h3>
+      <div class="tc-time">📅 Friday · 5:30pm – 6:00pm</div>
+      <p>Perfect for children ready to grow in confidence and independence. We build the skills that matter in school and beyond.</p>
+      <ul>
+        <li>Self-belief &amp; resilience</li>
+        <li>Discipline &amp; focus</li>
+        <li>Better concentration at school</li>
+        <li>Anti-bullying awareness</li>
+        <li>Teamwork &amp; communication</li>
+      </ul>
+      <div class="spaces-warning">⚠ Limited spaces — book early</div>
+      <div style="margin-bottom:12px;color:var(--yellow);font-weight:700;font-size:0.9rem;">🎁 First Taster Session — FREE</div>
+      <a href="#register" class="btn-primary hide-mobile">Book Free Taster →</a>
+    </div>
+
+    <!-- Family TKD — Beginner (FULL / WAITLIST) -->
+    <div class="timetable-card" style="opacity:0.75;">
+      <div class="tc-icon">🥋</div>
+      <div class="tc-age">All ages</div>
+      <h3>Family Taekwondo — Beginner</h3>
+      <div class="tc-time">📅 Friday · 6:00pm – 7:00pm</div>
+      <p>Our established Family Taekwondo class for all ages. A brilliant next step after Ninja Skillz — or a great starting point for older children and parents.</p>
+      <ul>
+        <li>Beginner-friendly</li>
+        <li>Grading &amp; belt progression</li>
+        <li>Discipline &amp; respect</li>
+        <li>Fitness &amp; self-defence</li>
+        <li>Family sessions available</li>
+      </ul>
+      <div class="full-badge">🔴 Class Full — Waitlist Only</div>
+      <div class="waitlist-badge">📋 Join the waitlist via the form below</div>
+    </div>
+
+    <!-- Family TKD — Advanced (FULL / WAITLIST) -->
+    <div class="timetable-card" style="opacity:0.75;">
+      <div class="tc-icon">🏆</div>
+      <div class="tc-age">Higher belts</div>
+      <h3>Advanced Taekwondo</h3>
+      <div class="tc-time">📅 Friday · 7:00pm – 8:00pm</div>
+      <p>For our more experienced students working towards higher grades. Focused training on patterns, sparring, technique and competition preparation.</p>
+      <ul>
+        <li>Advanced patterns &amp; techniques</li>
+        <li>Sparring &amp; competition prep</li>
+        <li>Black belt pathway</li>
+        <li>Leadership development</li>
+        <li>Dedicated higher-belt focus</li>
+      </ul>
+      <div class="full-badge">🔴 Class Full — Waitlist Only</div>
+      <div class="waitlist-badge">📋 Join the waitlist via the form below</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HEYGEN VIDEO PLACEHOLDER -->
+<section class="heygen-section">
+  <h2 class="section-title" style="margin-bottom:12px;">A Message from <span>Mr Cook</span></h2>
+  <p style="color:var(--muted);margin-bottom:40px;">Hear directly from our Chief Instructor about what makes Ninja Skillz at Stamford Bridge special.</p>
+  <div style="max-width:720px;margin:0 auto;">
+    <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--yellow);margin-bottom:12px;">🥷 A Message from Mr Cook</div>
+    <div style="width:100%;border-radius:12px;border:2px dashed rgba(212,175,55,0.4);background:rgba(212,175,55,0.05);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;">
+      <div style="font-size:3.5rem;margin-bottom:16px;">🎬</div>
+      <p style="color:var(--yellow);font-weight:700;font-size:1.1rem;margin-bottom:8px;">Video Coming Soon</p>
+      <p style="color:var(--muted);font-size:0.9rem;max-width:400px;">Mr Cook's personal message for Stamford Bridge families will appear here shortly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REAL CLASS VIDEO -->
+<section style="padding:60px 20px;background:#0d0d0d;border-top:1px solid #1a1a1a;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--yellow);margin-bottom:12px;">🎥 See a Real Class</div>
+    <h2 style="font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:12px;">Watch <span style="color:var(--yellow);">Ninja Skillz in Action</span></h2>
+    <p style="color:#aaa;font-size:0.9rem;margin-bottom:24px;">This is what a real Ninja Skillz class looks like — energetic, focused, and a whole lot of fun.</p>
+    <video controls playsinline preload="metadata" style="width:100%;border-radius:12px;border:2px solid rgba(255,215,0,0.2);background:#000;display:block;margin:0 auto;">
+      <source src="https://d2xsxph8kpxj0f.cloudfront.net/310519663205307184/iAmcUj9ttjLgwUzG9ex4t2/IMG_2792_92e5c039.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <h2 class="section-title">Why Parents Choose <span>Ninja Skillz</span></h2>
+  <p class="section-sub">More than martial arts — we build life skills that show up everywhere.</p>
+  <div class="benefits-grid">
+    <div class="benefit-card"><div class="icon">🎯</div><h4>Focus &amp; Discipline</h4><p>Skills that carry directly into the classroom and everyday life.</p></div>
+    <div class="benefit-card"><div class="icon">💪</div><h4>Real Confidence</h4><p>Not just in the dojo — confidence that shows up everywhere.</p></div>
+    <div class="benefit-card"><div class="icon">🛡️</div><h4>Anti-Bullying</h4><p>We empower children to stand tall, stay safe and speak up.</p></div>
+    <div class="benefit-card"><div class="icon">🤝</div><h4>Social Skills</h4><p>Making friends, teamwork, communication and mutual respect.</p></div>
+    <div class="benefit-card"><div class="icon">😄</div><h4>Pure Fun</h4><p>Every class is energetic, engaging and something kids look forward to.</p></div>
+    <div class="benefit-card"><div class="icon">📈</div><h4>Structured Progress</h4><p>Clear milestones so children — and parents — see real growth.</p></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <h2 class="section-title">What Parents Are <span>Saying</span></h2>
+  <p class="section-sub">Real reviews from real families — 100% recommended on Facebook</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Gavin and the higher belts have all been fantastic with my little boy. He loves attending every session and is learning valuable life skills. I'd highly recommend the club to both adults and children."</p>
+      <div class="review-author"><div class="review-avatar">EP</div><div><div class="review-name">Emma Preston</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My eldest daughter needed a bit of confidence and coordination which is why I decided to enrol her. She has attended just once a week for 8–10 weeks and the difference is amazing, even down to her no longer tripping over her own feet!"</p>
+      <div class="review-author"><div class="review-avatar">JC</div><div><div class="review-name">Janine Coldbeck Hill</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My son who is 5 started Taekwondo classes with Gavin back in September — after his first lesson he was hooked! He looks forward to class every week. Gavin is fantastic with the kids."</p>
+      <div class="review-author"><div class="review-avatar">CL</div><div><div class="review-name">Cheryl Leng</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My son James joined 3 years ago — from the first day he met Gavin a bond was formed. Sometimes children need a helping hand in life that a parent can't give, and Gavin's bond with James and the rest of the students is something that will stay with them into adulthood."</p>
+      <div class="review-author"><div class="review-avatar">AA</div><div><div class="review-name">Annemarie Anderson</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"We've just returned from our first 'out of club' tournament and both of our kids had a great time. Bringing home a medal and some massive smiles was credit to the commitment from both our kids and the fantastic training that Gavin and the crew provide."</p>
+      <div class="review-author"><div class="review-avatar">AH</div><div><div class="review-name">Andrew Harrison</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Myself and my two sons aged 9 and 6 started training at this club just over two years ago and it's been one of the best decisions we've made as a family. Gavin is an incredible instructor — patient, encouraging and genuinely passionate about every student."</p>
+      <div class="review-author"><div class="review-avatar">MH</div><div><div class="review-name">Mark Harrison</div><div class="review-source">💬 Facebook Review</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF SECTION -->
+<section class="pdf-section">
+  <div class="pdf-inner">
+    <div style="font-size:2.5rem;margin-bottom:16px;">🎁</div>
+    <h2>The Parent Skillz Guide</h2>
+    <p><strong style="color:#fff;">20 Pages of Brain Science &amp; Parenting Strategies</strong><br><br>Written by child development experts and SKILLZ instructors — this free guide covers how your child's brain develops, what to expect at every age, game-based learning, ADHD strategies and proven parenting techniques. Completely free. No sign-up needed.</p>
+    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663205307184/SiblHmkFHWPjHLrd.pdf" download="Parent-Skillz-Guide.pdf" target="_blank" class="btn-primary" style="display:inline-block;margin:0;">📥 Download Your Free Guide Now</a>
+    <br><span style="color:#888;font-size:0.82rem;display:block;margin-top:10px;">Instant PDF download · 20 pages · 100% free</span>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <h2>⚠ Limited Ninja Skillz Spaces — September 2026</h2>
+  <p>Ninja Skillz spaces are strictly limited. The Family and Advanced Taekwondo classes are already full — join the waitlist below if you're interested. Book your Ninja Skillz taster now before spaces go.</p>
+  <div class="spaces-bar-wrap">
+    <div class="spaces-bar-label">⚡ Ninja Skillz spaces filling fast</div>
+    <div class="spaces-bar-track"><div class="spaces-bar-fill"></div></div>
+    <div class="spaces-bar-sub">Per class — first come, first served</div>
+  </div>
+  <a href="#register" class="btn-primary">Claim Your Child's Space Now →</a>
+</section>
+
+<!-- WHATSAPP BOOKING OPTION -->
+<section style="padding:50px 20px;background:#0a0a0a;border-top:1px solid #1a1a1a;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#25D366;margin-bottom:12px;">📱 Prefer to Chat?</div>
+    <h2 style="font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:12px;">Book via <span style="color:#25D366;">WhatsApp</span></h2>
+    <p style="color:#aaa;font-size:0.95rem;max-width:500px;margin:0 auto 28px;line-height:1.7;">Don't want to fill in a form? No problem — just message us on WhatsApp. Our AI agent is available 24/7, or Gavin will reply personally during the day.</p>
+    <a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session%20at%20Stamford%20Bridge" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:800;font-size:1.05rem;padding:16px 36px;border-radius:6px;text-decoration:none;margin-bottom:12px;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>Message Us on WhatsApp</a>
+    <div style="font-size:0.8rem;color:#555;margin-top:4px;">🤖 AI Agent available 24/7 &nbsp;·&nbsp; Gavin replies personally during the day</div>
+  </div>
+</section>
+
+<!-- REGISTER FORM -->
+<section class="register" id="register">
+  <h2 class="section-title" style="margin-bottom:8px;">Book Your <span>FREE Taster Session</span></h2>
+  <p class="section-sub">Fill in your details below — takes less than 2 minutes. You'll be added straight into our system and Gavin will be in touch to confirm your session. Use this form to join the waitlist for Family or Advanced Taekwondo.</p>
+  <div class="form-inner">
+    <div class="form-title">Reserve Your Child's Space Today</div>
+    <div class="form-subtitle">📍 Stamford Bridge Village Hall &nbsp;·&nbsp; 📅 Every Friday from September 2026</div>
+    <form id="stamfordBridgeForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Parent's First Name</label>
+          <input type="text" name="parent_forename" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label>Parent's Surname</label>
+          <input type="text" name="parent_surname" placeholder="Last name" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Child's Name</label>
+        <input type="text" name="child_name" placeholder="Child's first name" required />
+      </div>
+      <div class="form-group">
+        <label>Child's Date of Birth</label>
+        <input type="date" name="child_dob" required />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="07xxx xxxxxx" required />
+      </div>
+      <div class="form-group">
+        <label>Class I'm Interested In <span style="font-size:0.75rem;font-weight:400;text-transform:none;letter-spacing:0;color:#666;">(tick all that apply)</span></label>
+        <div class="class-checks">
+          <label class="class-check-item">
+            <input type="checkbox" name="class_interest" value="Ninja Skillz Early (Ages 3-4) — Fri 5:00pm" />
+            <span class="class-check-label">👶 Ninja Skillz Early · Ages 3–4<span class="class-time">Friday 5:00pm – 5:30pm</span></span>
+          </label>
+          <label class="class-check-item">
+            <input type="checkbox" name="class_interest" value="Ninja Skillz Junior (Ages 5-7) — Fri 5:30pm" />
+            <span class="class-check-label">🥷 Ninja Skillz Junior · Ages 5–7<span class="class-time">Friday 5:30pm – 6:00pm</span></span>
+          </label>
+          <label class="class-check-item" style="opacity:0.55;pointer-events:none;">
+            <input type="checkbox" name="class_interest" value="Family Taekwondo Beginner — Fri 6:00pm (Waitlist)" disabled />
+            <span class="class-check-label">🥋 Family Taekwondo — Beginner<span class="class-time">Friday 6:00pm – 7:00pm &nbsp;·&nbsp; 🔴 Full — Waitlist Only</span></span>
+          </label>
+          <label class="class-check-item" style="opacity:0.55;pointer-events:none;">
+            <input type="checkbox" name="class_interest" value="Advanced Taekwondo — Fri 7:00pm (Waitlist)" disabled />
+            <span class="class-check-label">🏆 Advanced Taekwondo · Higher Belts<span class="class-time">Friday 7:00pm – 8:00pm &nbsp;·&nbsp; 🔴 Full — Waitlist Only</span></span>
+          </label>
+        </div>
+        <div style="background:rgba(255,165,0,0.08);border:1px solid rgba(255,165,0,0.3);border-radius:8px;padding:12px 14px;margin-top:12px;font-size:0.82rem;color:#ffaa44;line-height:1.6;">
+          📋 <strong>Waitlist for Family / Advanced Taekwondo:</strong> These classes are currently full. If you'd like to be added to the waitlist, please message us on WhatsApp or email gavin@traintaekwondo.co.uk and we'll contact you as soon as a space becomes available.
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">🥷 Book My FREE Taster — Stamford Bridge</button>
+      <p class="form-privacy">We respect your privacy. Your details will only be used to confirm your taster session and will never be shared with third parties.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="images/gallery-01.png" alt="Train Taekwondo Schools" />
+  <p>Train Taekwondo Schools &nbsp;|&nbsp; Ninja Skillz Stamford Bridge</p>
+  <p>📍 Stamford Bridge Village Hall &nbsp;|&nbsp; 📅 Every Friday from September 2026</p>
+  <p>📞 07833 665905 &nbsp;|&nbsp; ✉ gavin@traintaekwondo.co.uk</p>
+  <p style="margin-top:10px;"><a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session%20at%20Stamford%20Bridge" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.732.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>WhatsApp Us</a></p>
+  <p style="margin-top:12px;font-size:0.78rem;">Classes subject to minimum enrolment. Spaces allocated on a first-come, first-served basis.<br>Part of Train Taekwondo Schools — www.traintaekwondo.co.uk</p>
+</footer>
+
+<script>
+  const form = document.getElementById('stamfordBridgeForm');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const fd = new FormData(form);
+        const classInterests = fd.getAll('class_interest').join(', ');
+        const parentForename = fd.get('parent_forename') || '';
+        const parentSurname = fd.get('parent_surname') || '';
+        const childName = fd.get('child_name') || '';
+        const rawDob = fd.get('child_dob') || '';
+        const email = fd.get('email') || '';
+        const phone = fd.get('phone') || '';
+        let dobFormatted = '';
+        if (rawDob && rawDob.includes('-')) {
+          const [y, m, d] = rawDob.split('-');
+          dobFormatted = `${d}/${m}/${y}`;
+        }
+        const message = classInterests
+          ? `Interested in: ${classInterests}. Child: ${childName} (DOB: ${dobFormatted || rawDob}). Location: Stamford Bridge Village Hall.`
+          : `Child: ${childName} (DOB: ${dobFormatted || rawDob}). Location: Stamford Bridge Village Hall.`;
+
+        const cmResponse = await fetch('https://tkddash-iamcuj9t.manus.space/api/cm-contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            Forenames: parentForename,
+            Surname: parentSurname,
+            Email: email,
+            Mobile: phone,
+            Message: message,
+            DateOfBirth: '',
+            MemberName: childName,
+            ParentSurname: parentSurname
+          })
+        });
+
+        try {
+          await fetch('https://tkddash-iamcuj9t.manus.space/api/trpc/tagbLicences.registerInterest', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              json: {
+                slug: 'stamford-bridge',
+                parentName: (parentForename + ' ' + parentSurname).trim(),
+                childName: childName,
+                childDob: dobFormatted || rawDob,
+                classChoice: classInterests || 'Not specified',
+                email: email,
+                phone: phone
+              }
+            })
+          });
+        } catch(_) { /* best-effort */ }
+
+        if (cmResponse.ok) {
+          form.innerHTML = `<div style="text-align:center;padding:40px 0;">
+            <div style="font-size:3rem;margin-bottom:16px;">🥷</div>
+            <h3 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">You're Booked In!</h3>
+            <p style="color:#aaa;">Thanks! You've been added to our system and Gavin will be in touch shortly to confirm your FREE taster session at Stamford Bridge Village Hall.</p>
+          </div>`;
+        } else {
+          btn.textContent = '🥷 Book My FREE Taster — Stamford Bridge';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email gavin@traintaekwondo.co.uk');
+        }
+      } catch(err) {
+        btn.textContent = '🥷 Book My FREE Taster — Stamford Bridge';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email gavin@traintaekwondo.co.uk');
+      }
+    });
+  }
+
+  // COUNTDOWN TIMER — Friday 5 September 2026
+  (function() {
+    var launch = new Date('2026-09-05T17:00:00+01:00').getTime();
+    function tick() {
+      var now = new Date().getTime();
+      var diff = launch - now;
+      if (diff <= 0) {
+        var el = document.getElementById('countdown');
+        if (el) el.innerHTML = '<div style="padding:16px 0;"><span style="color:var(--yellow);font-weight:800;font-size:1.2rem;">🎉 Classes are now open!</span><br><a href="#register" style="display:inline-block;margin-top:12px;background:var(--yellow);color:#000;font-weight:800;padding:12px 32px;border-radius:6px;text-decoration:none;">Book Your FREE Taster →</a></div>';
+        return;
+      }
+      var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((diff % (1000 * 60)) / 1000);
+      var dEl = document.getElementById('cd-days');
+      var hEl = document.getElementById('cd-hours');
+      var mEl = document.getElementById('cd-mins');
+      var sEl = document.getElementById('cd-secs');
+      if (dEl) dEl.textContent = String(d).padStart(2,'0');
+      if (hEl) hEl.textContent = String(h).padStart(2,'0');
+      if (mEl) mEl.textContent = String(m).padStart(2,'0');
+      if (sEl) sEl.textContent = String(s).padStart(2,'0');
+      setTimeout(tick, 1000);
+    }
+    tick();
+  })();
+
+  (function() {
+    var stickyCta = document.getElementById('sticky-cta');
+    var registerSection = document.getElementById('register');
+    if (!stickyCta || !registerSection) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        stickyCta.style.display = entry.isIntersecting ? 'none' : '';
+      });
+    }, { threshold: 0.1 });
+    observer.observe(registerSection);
+  })();
+</script>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-text">
+    🥷 Ninja Skillz Stamford Bridge
+    <span>Opens Sep · Village Hall · FREE Taster</span>
+  </div>
+  <a href="#register" class="sticky-cta-btn" style="margin-right:6px;">Book Free →</a><a href="https://wa.me/447426069502?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20taster%20session%20at%20Stamford%20Bridge" target="_blank" rel="noopener noreferrer" class="sticky-cta-btn" style="background:#25D366;color:#fff;">WhatsApp</a>
+</div>
+
+</body>
+</html>

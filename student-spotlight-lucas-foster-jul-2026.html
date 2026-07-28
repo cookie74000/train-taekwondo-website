@@ -331,16 +331,34 @@
         <img src="images/lucas-medals-portrait.jpeg" alt="Lucas Foster with his gold and bronze medals at a TAGB competition" style="object-position:top;">
       </div>
       <div class="photo-item" onclick="openLb(1)">
-        <img src="images/lucas-competition-sparring.jpeg" alt="Lucas Foster in action during a TAGB sparring competition" style="object-position:top;">
+        <img src="images/lucas-pattern-competition.jpeg" alt="Lucas Foster performing a pattern at a TAGB competition" style="object-position:top;">
       </div>
       <div class="photo-item" onclick="openLb(2)">
-        <img src="images/lucas-north-midlands-mr-cook.jpeg" alt="Lucas Foster with Mr Cook at the TAGB North Midlands Championship, both with medals" style="object-position:top;">
+        <img src="images/lucas-pattern-kick.jpeg" alt="Lucas Foster executing a kick during a TAGB pattern competition" style="object-position:top;">
       </div>
       <div class="photo-item" onclick="openLb(3)">
-        <img src="images/lucas-north-midlands-group.jpeg" alt="Lucas Foster with Mr Cook and teammate at the TAGB North Midlands Championship" style="object-position:top;">
+        <img src="images/lucas-competition-sparring.jpeg" alt="Lucas Foster in action during a TAGB sparring competition" style="object-position:top;">
       </div>
       <div class="photo-item" onclick="openLb(4)">
+        <img src="images/lucas-sparring-exchange.jpeg" alt="Lucas Foster in a close sparring exchange at a TAGB competition" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(5)">
+        <img src="images/lucas-sparring-action.jpeg" alt="Lucas Foster in full sparring action at a TAGB competition" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(6)">
+        <img src="images/lucas-sparring-down.jpeg" alt="Lucas Foster showing grit and determination during a sparring bout" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(7)">
+        <img src="images/lucas-north-midlands-mr-cook.jpeg" alt="Lucas Foster with Mr Cook at the TAGB North Midlands Championship, both with medals" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(8)">
+        <img src="images/lucas-north-midlands-group.jpeg" alt="Lucas Foster with Mr Cook and teammate at the TAGB North Midlands Championship" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(9)">
         <img src="images/lucas-2nd-dan-certificate.jpeg" alt="Lucas Foster holding his 2nd Degree Black Belt certification alongside Mr Cook and another student" style="object-position:top;">
+      </div>
+      <div class="photo-item" onclick="openLb(10)">
+        <img src="images/lucas-young-certificate.jpeg" alt="A young Lucas Foster receiving a certificate from Mr Cook — the beginning of an 11-year journey" style="object-position:top;">
       </div>
     </div>
   </div>
@@ -404,10 +422,16 @@
 <script>
 const lbImages=[
   {src:'images/lucas-medals-portrait.jpeg',alt:'Lucas Foster with his gold and bronze medals'},
+  {src:'images/lucas-pattern-competition.jpeg',alt:'Lucas Foster performing a pattern at a TAGB competition'},
+  {src:'images/lucas-pattern-kick.jpeg',alt:'Lucas Foster executing a kick during a TAGB pattern competition'},
   {src:'images/lucas-competition-sparring.jpeg',alt:'Lucas Foster in action during TAGB sparring'},
+  {src:'images/lucas-sparring-exchange.jpeg',alt:'Lucas Foster in a close sparring exchange'},
+  {src:'images/lucas-sparring-action.jpeg',alt:'Lucas Foster in full sparring action'},
+  {src:'images/lucas-sparring-down.jpeg',alt:'Lucas Foster showing grit and determination during a sparring bout'},
   {src:'images/lucas-north-midlands-mr-cook.jpeg',alt:'Lucas Foster with Mr Cook at the North Midlands Championship'},
   {src:'images/lucas-north-midlands-group.jpeg',alt:'Lucas Foster with Mr Cook and teammate at the North Midlands Championship'},
-  {src:'images/lucas-2nd-dan-certificate.jpeg',alt:'Lucas Foster holding his 2nd Degree Black Belt certification'}
+  {src:'images/lucas-2nd-dan-certificate.jpeg',alt:'Lucas Foster holding his 2nd Degree Black Belt certification'},
+  {src:'images/lucas-young-certificate.jpeg',alt:'A young Lucas receiving a certificate from Mr Cook — the start of an 11-year journey'}
 ];
 let lbIdx=0;
 function openLb(i){lbIdx=i;updateLb();document.getElementById('lb').classList.add('active');document.body.style.overflow='hidden';}

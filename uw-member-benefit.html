@@ -54,6 +54,16 @@
     .intro-copy p:first-child { margin-top:0; }
     .impact { background:#fff; border:1px solid var(--line); border-left:7px solid var(--gold); padding:25px 26px; border-radius:0 14px 14px 0; margin-top:24px; }
     .impact strong { color:var(--purple); font-size:1.08rem; }
+    .savings-example { margin-top:24px; border-radius:16px; overflow:hidden; border:1px solid #d9c5ec; background:#f8f0ff; }
+    .savings-example-head { padding:18px 22px; background:var(--purple); color:white; }
+    .savings-example-head .eyebrow { color:var(--gold); }
+    .savings-example-head strong { display:block; font-family:"Russo One",sans-serif; font-size:1.08rem; margin-top:4px; }
+    .savings-example-body { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#d9c5ec; }
+    .savings-example-stat { padding:20px; background:#fff; }
+    .savings-example-stat span { display:block; color:var(--muted); font-size:.78rem; line-height:1.3; }
+    .savings-example-stat b { display:block; color:var(--purple); font-family:"Russo One",sans-serif; font-size:1.65rem; margin:7px 0 2px; }
+    .savings-example-stat small { color:#595b63; font-size:.76rem; line-height:1.35; display:block; }
+    .savings-example-note { padding:15px 22px; margin:0; color:#554969; font-size:.78rem; line-height:1.5; }
     .video-section { background:linear-gradient(135deg,#f8f0ff,#fff 55%,#fff8cf); }
     .video-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:50px; align-items:center; }
     .video-copy p { color:#41444b; max-width:430px; }
@@ -83,7 +93,7 @@
     footer { background:#090a0d; color:#ced0d5; padding:30px 0; font-size:.82rem; }
     .foot { display:flex; gap:22px; justify-content:space-between; align-items:center; }
     .foot a { color:var(--gold); text-decoration:none; }
-    @media (max-width:800px) { .hero-grid,.intro,.video-layout { grid-template-columns:1fr; gap:34px; } .hero-grid { padding:55px 0 52px; } .hero-card { max-width:520px; } .section { padding:56px 0; } .step-grid { grid-template-columns:1fr; } .steps-heading { display:block; } .steps-heading p { margin-top:14px; } .private-note { display:none; } .foot { display:block; } .foot p { margin:8px 0; } }
+    @media (max-width:800px) { .hero-grid,.intro,.video-layout { grid-template-columns:1fr; gap:34px; } .hero-grid { padding:55px 0 52px; } .hero-card { max-width:520px; } .section { padding:56px 0; } .step-grid,.savings-example-body { grid-template-columns:1fr; } .steps-heading { display:block; } .steps-heading p { margin-top:14px; } .private-note { display:none; } .foot { display:block; } .foot p { margin:8px 0; } }
   </style>
 </head>
 <body>
@@ -123,6 +133,15 @@
           <p>We know that family life is expensive, and keeping children active is important. If a household can reduce the cost of services it already uses, that can make a real difference over a year.</p>
           <p>Some families may find that the savings they make can go a long way towards the cost of their Taekwondo training. There is no pressure and no obligation to go ahead — it is simply an opportunity for Train Taekwondo members to find out more.</p>
           <div class="impact"><strong>My aim is simple:</strong> help local families check whether a better-value household-services option is available to them, then let them decide what is right for their home.</div>
+          <div class="savings-example" aria-label="Illustrative household saving and training-cost comparison">
+            <div class="savings-example-head"><div class="eyebrow">A simple illustration</div><strong>If a household found £100 per month in savings</strong></div>
+            <div class="savings-example-body">
+              <div class="savings-example-stat"><span>Potential annual household saving</span><b>£1,200</b><small>£100 × 12 months</small></div>
+              <div class="savings-example-stat"><span>One year of Taekwondo training</span><b>£360–£480</b><small>At £30–£40 per month</small></div>
+              <div class="savings-example-stat"><span>Potential amount left over</span><b>£720–£840</b><small>After a year of training fees</small></div>
+            </div>
+            <p class="savings-example-note"><strong>This is an example only.</strong> It shows what a £100 monthly saving could mean for a household paying £30–£40 per month for training. Savings are not guaranteed and will vary according to individual circumstances, services, usage and eligibility.</p>
+          </div>
         </div>
       </div>
     </section>

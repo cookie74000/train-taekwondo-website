@@ -18,12 +18,14 @@
     .class-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; } .class-card { background:var(--panel); border:1px solid var(--line); border-top:4px solid var(--gold); border-radius:10px; padding:22px 19px; } .class-card .date { color:var(--gold); font-weight:900; font-size:.8rem; text-transform:uppercase; letter-spacing:1.1px; } .class-card h3 { font-size:1.13rem; margin:7px 0 7px; line-height:1.25; } .class-card p { color:var(--muted); font-size:.92rem; margin:0; } .class-card strong { color:#fff; } .class-card .time { color:#fff; font-weight:800; margin-bottom:3px; } .class-card .tag { margin-top:13px; display:inline-block; color:var(--gold); background:#24200b; border-radius:999px; padding:4px 9px; font-size:.75rem; font-weight:800; }
     .value-section { background:#101010; border-block:1px solid #202020; } .three-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:19px; } .value { background:#161616; border:1px solid #282828; border-radius:10px; padding:26px 22px; } .value .icon { font-size:1.85rem; } .value h3 { margin:10px 0 7px; color:#fff; font-size:1.14rem; } .value p { margin:0; color:var(--muted); font-size:.94rem; }
     .programme { display:grid; grid-template-columns:1.1fr .9fr; align-items:stretch; max-width:1050px; margin:0 auto; border:1px solid #333; border-radius:13px; overflow:hidden; background:#121212; } .programme-img { min-height:360px; background:linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.55)),var(--programme-img) center/cover; } .programme-copy { padding:45px clamp(25px,5vw,57px); } .programme-copy h2 { text-align:left; font-size:clamp(1.8rem,3.2vw,2.7rem); } .programme-copy p { color:var(--muted); margin:15px 0; } .tick-list { margin:20px 0 28px; padding:0; list-style:none; } .tick-list li { color:#ddd; margin:10px 0; padding-left:24px; position:relative; } .tick-list li::before { content:'✓'; position:absolute; left:0; color:var(--gold); font-weight:900; }
+    .club-proof { background:linear-gradient(135deg,#181300,#0f0f0f); border-block:1px solid rgba(255,215,0,.28); padding:28px 20px; } .club-proof-inner { max-width:980px; margin:0 auto; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px 34px; text-align:center; } .club-proof strong { color:var(--gold); font-size:clamp(1.38rem,3vw,2rem); } .club-proof span { color:#e8e8e8; font-weight:800; } .club-proof .divider { height:28px; width:1px; background:rgba(255,215,0,.42); }
+    .video-section { background:#0d0d0d; border-block:1px solid #242424; } .video-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1000px; margin:36px auto 0; } .video-card { padding:18px; background:#151515; border:1px solid #303030; border-radius:12px; } .video-card-label { margin:0 0 12px; color:var(--gold); text-align:center; font-size:.78rem; font-weight:900; letter-spacing:1.25px; text-transform:uppercase; } .video-frame { position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:8px; background:#080808; box-shadow:0 8px 30px rgba(0,0,0,.35); } .video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; } .heygen-placeholder { display:grid; place-items:center; align-content:center; height:100%; padding:24px; text-align:center; border:2px dashed rgba(255,215,0,.55); background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.12),transparent 55%),#0a0a0a; color:#d6d6d6; } .heygen-placeholder .play { display:grid; place-items:center; width:52px; height:52px; border:2px solid var(--gold); border-radius:50%; color:var(--gold); font-size:1.28rem; margin-bottom:11px; } .heygen-placeholder h3 { margin:0 0 5px; font-size:1.15rem; color:#fff; } .heygen-placeholder p { max-width:320px; margin:0; color:#999; font-size:.88rem; }
     .secondary { background:#0f0f0f; border-top:1px solid #242424; } .secondary-inner { max-width:1100px; margin:0 auto; border:1px solid rgba(255,215,0,.38); background:linear-gradient(135deg,#191704,#111); border-radius:13px; padding:clamp(26px,5vw,48px); } .secondary h2 { font-size:clamp(1.65rem,3vw,2.5rem); } .secondary .lead { margin-bottom:26px; } .secondary-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; } .secondary-card { background:rgba(0,0,0,.42); border:1px solid #39310d; border-radius:8px; padding:15px 13px; } .secondary-card h3 { color:var(--gold); margin:0 0 5px; font-size:.93rem; }.secondary-card p { color:#ccc; margin:0; font-size:.82rem; line-height:1.5; }.purple { color:#da97eb !important; }.purple-card { border-color:rgba(164,74,190,.65); }.secondary-note { color:#a9a9a9; text-align:center; margin:24px auto 0; max-width:720px; font-size:.9rem; }
     .how { background:var(--black); } .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:900px; margin:0 auto; } .step { text-align:center; padding:12px 16px; }.step-number { display:grid; place-items:center; width:45px; height:45px; margin:0 auto 13px; border:2px solid var(--gold); border-radius:50%; color:var(--gold); font-weight:900; font-size:1.15rem; }.step h3 { margin:0 0 7px; font-size:1.05rem; }.step p { margin:0; color:var(--muted); font-size:.92rem; }
     .form-section { background:#111; border-top:1px solid #242424; }.form-box { max-width:720px; margin:0 auto; padding:clamp(24px,5vw,45px); background:#0a0a0a; border:2px solid var(--gold); border-radius:12px; }.form-box h2 { font-size:clamp(1.6rem,3vw,2.25rem); }.form-box > p { color:var(--muted); margin:11px auto 28px; text-align:center; max-width:570px; } form { display:grid; gap:15px; } .form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; } label { display:block; color:var(--gold); font-size:.76rem; font-weight:800; text-transform:uppercase; letter-spacing:.9px; margin-bottom:6px; } input,select { width:100%; border:1px solid #3a3a3a; border-radius:6px; padding:13px; background:#171717; color:#fff; font:inherit; } input:focus,select:focus { outline:2px solid var(--gold); border-color:var(--gold); } select option { background:#171717; } .form-submit { cursor:pointer; font-size:1.05rem; width:100%; } .privacy { text-align:center; color:#888; margin:0; font-size:.77rem; }.success { display:none; text-align:center; padding:20px 0 7px; color:#ddd; }.success strong { color:var(--gold); font-size:1.25rem; display:block; margin-bottom:8px; }
     .faq { background:#0a0a0a; }.faq-grid { display:grid; grid-template-columns:repeat(2,1fr); max-width:1000px; margin:35px auto 0; gap:14px; }.faq-item { padding:20px; border:1px solid #292929; background:#141414; border-radius:8px; }.faq-item h3 { font-size:1rem; margin:0 0 7px; color:#fff; }.faq-item p { margin:0; color:var(--muted); font-size:.91rem; }
     footer { padding:42px 20px 78px; text-align:center; background:#050505; color:#999; font-size:.86rem; border-top:1px solid #1e1e1e; } footer img { height:46px; opacity:.83; margin-bottom:13px; } footer p { margin:5px; } footer a { color:var(--gold); text-decoration:none; } .sticky { display:none; position:fixed; z-index:20; bottom:0; left:0; right:0; background:var(--gold); color:#0a0a0a; padding:12px 16px; text-align:center; text-decoration:none; font-weight:900; }
-    @media(max-width:900px) { .class-grid { grid-template-columns:repeat(2,1fr); } .secondary-grid { grid-template-columns:repeat(3,1fr); } } @media(max-width:680px) { section { padding:55px 18px; }.site-nav { padding-inline:15px; }.brand img { height:39px; }.programme { grid-template-columns:1fr; }.programme-img { min-height:235px; order:2; }.programme-copy { padding:32px 24px; }.three-grid,.steps { grid-template-columns:1fr; }.class-grid { grid-template-columns:1fr; }.secondary-grid { grid-template-columns:1fr; }.form-row,.faq-grid { grid-template-columns:1fr; }.nav-cta { display:none; }.sticky { display:block; }.hero { min-height:540px; padding-top:55px; }.announcement { font-size:.76rem; }.hero p { font-size:1rem; } }
+    @media(max-width:900px) { .class-grid { grid-template-columns:repeat(2,1fr); } .secondary-grid { grid-template-columns:repeat(3,1fr); } .video-grid { grid-template-columns:1fr; max-width:650px; } } @media(max-width:680px) { section { padding:55px 18px; }.site-nav { padding-inline:15px; }.brand img { height:39px; }.programme { grid-template-columns:1fr; }.programme-img { min-height:235px; order:2; }.programme-copy { padding:32px 24px; }.three-grid,.steps { grid-template-columns:1fr; }.class-grid { grid-template-columns:1fr; }.secondary-grid { grid-template-columns:1fr; }.form-row,.faq-grid { grid-template-columns:1fr; }.nav-cta { display:none; }.sticky { display:block; }.hero { min-height:540px; padding-top:55px; }.announcement { font-size:.76rem; }.hero p { font-size:1rem; } }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4YNS2XYEZ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J4YNS2XYEZ');</script>
@@ -34,27 +36,147 @@
   <main>
     <section class="hero" style="--hero:url('images/family-tkd-class-punching.png')"><div class="hero-inner"><div class="eyebrow">October 2026 beginner intake</div><h1>Give them a journey that builds <span>confidence for life.</span></h1><p>Junior and Family Taekwondo beginner intakes are coming to four locations this October. No experience needed—just book your free taster and take the first step together.</p><div class="free">🎁 Your first session is completely FREE</div><div class="button-row"><a class="button" href="#book">Book Your FREE Taster →</a><a class="button outline" href="#dates">See October Dates</a></div></div></section>
     <div class="dates"><span>One October intake week • Four locations</span>Tuesday 13 October – Saturday 17 October 2026</div>
+    <section class="club-proof" aria-label="Established club"><div class="club-proof-inner"><div><strong>Established 2011</strong></div><div class="divider" aria-hidden="true"></div><div><span>15 years of building confidence, focus and champions</span></div><div class="divider" aria-hidden="true"></div><div><span>Trusted local martial arts for children and families</span></div></div></section>
     <section id="dates"><div class="container"><div class="section-kicker">Choose your nearest venue</div><h2>Junior &amp; Family Taekwondo <span class="gold">October intakes</span></h2><p class="lead">Choose your local class, come along for a free taster and see why families across York and East Yorkshire love training with Train Taekwondo Schools.</p><div class="class-grid"><article class="class-card"><div class="date">Tuesday 13 October</div><h3>York</h3><p class="time">6:00pm</p><p><strong>Archbishop Holgate's School</strong><br>Junior &amp; Family Taekwondo</p><span class="tag">October beginner intake</span></article>
 <article class="class-card"><div class="date">Wednesday 14 October</div><h3>Beverley</h3><p class="time">5:30pm</p><p><strong>St Mary's Primary School</strong><br>Junior &amp; Family Taekwondo</p><span class="tag">October beginner intake</span></article>
 <article class="class-card"><div class="date">Friday 16 October</div><h3>Stamford Bridge</h3><p class="time">6:00pm</p><p><strong>Stamford Bridge Village Hall</strong><br>Junior &amp; Family Taekwondo</p><span class="tag">October beginner intake</span></article>
 <article class="class-card"><div class="date">Saturday 17 October</div><h3>Market Weighton</h3><p class="time">9:30am</p><p><strong>Market Weighton Community Hall</strong><br>Junior &amp; Family Taekwondo</p><span class="tag">October beginner intake</span></article></div></div></section>
     <section class="value-section"><div class="container"><div class="section-kicker">More than a weekly class</div><h2>Skills for the mat. <span class="gold">Confidence for life.</span></h2><p class="lead">Structured martial-arts training in a friendly, supportive environment—helping children and families make real progress together.</p><div class="three-grid"><div class="value"><div class="icon">🎯</div><h3>Focus &amp; discipline</h3><p>Clear goals, positive routines and the confidence to keep trying when something feels difficult.</p></div><div class="value"><div class="icon">🥋</div><h3>A visible journey</h3><p>Learn real Taekwondo skills and work through a recognised TAGB grading pathway at your own pace.</p></div><div class="value"><div class="icon">🤝</div><h3>A great community</h3><p>Train alongside encouraging instructors and fellow families who want to see one another succeed.</p></div></div></div></section>
     <section class="programme-wrap"><div class="programme" style="--programme-img:url('images/family-tkd-class-lineup.webp')"><div class="programme-img" role="img" aria-label="Train Taekwondo Schools class in action"></div><div class="programme-copy"><div class="section-kicker" style="text-align:left">Junior &amp; Family Taekwondo</div><h2>Start a journey you can be <span class="gold">proud of.</span></h2><p>Junior Taekwondo gives children a clear, rewarding route from their first white belt onwards. Family Taekwondo makes it even more special: adults and children train together, learn the same syllabus and work towards gradings side by side.</p><ul class="tick-list"><li>Junior students can train independently from age 6</li><li>Children can train from age 5 when alongside a parent</li><li>Real TAGB Taekwondo techniques, patterns and gradings</li><li>Supportive coaching for complete beginners</li></ul><a class="button" href="#book">Reserve a FREE Taster →</a></div></div></section>
+    <section class="video-section" aria-label="Videos"><div class="container"><div class="section-kicker">Meet the team</div><h2>See why families choose <span class="gold">Train Taekwondo Schools</span></h2><p class="lead">The club has been established for 15 years. Watch us in action below—and the personal October intake message from Gavin will appear here shortly.</p><div class="video-grid"><article class="video-card"><p class="video-card-label">A message from Gavin</p><div class="video-frame" id="heygen-video-placeholder"><div class="heygen-placeholder"><div class="play" aria-hidden="true">▶</div><h3>October welcome video coming soon</h3><p>Gavin's HeyGen introduction for the Junior &amp; Family Taekwondo October intake will appear here.</p></div></div></article><article class="video-card"><p class="video-card-label">Watch the club in action</p><div class="video-frame"><iframe src="https://www.youtube.com/embed/22WZjqHc9D8" title="Train Taekwondo Schools club promo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></article></div></div></section>
     <section class="secondary"><div class="secondary-inner"><div class="section-kicker">Also available this October</div><h2>Looking for a class for a younger child? <span class="gold">Try Ninja Skillz.</span></h2><p class="lead">Our popular Ninja Skillz programme is running October intakes across the same week for children aged 3–7—with Spectrum Skillz available for ages 7–14 in Pocklington.</p><div class="secondary-grid"><article class="secondary-card"><h3>York</h3><p>Tue 13 Oct · <strong>5:30pm</strong><br>Lord Deramore's · ages 3–7</p></article>
 <article class="secondary-card"><h3>Beverley</h3><p>Wed 14 Oct · <strong>5:00pm</strong><br>St Mary's · ages 3–7</p></article>
-<article class="secondary-card"><h3>Pocklington</h3><p>Thu 15 Oct · <strong>4:30pm / 5:00pm</strong><br>Masonic Lodge · ages 3–4 / 5–6</p></article>
+<article class="secondary-card"><h3>Pocklington</h3><p>Thu 15 Oct · <strong>4:30pm / 5:00pm</strong><br>Masonic Lodge · ages 3–4 / 5–7</p></article>
 <article class="secondary-card purple-card"><h3 class="purple">Pocklington · Spectrum</h3><p>Thu 15 Oct · <strong>5:30pm</strong><br>Masonic Lodge · ages 7–14</p></article>
-<article class="secondary-card"><h3>Stamford Bridge</h3><p>Fri 16 Oct · <strong>5:00pm / 5:30pm</strong><br>Village Hall · ages 3–4 / 5–6</p></article>
+<article class="secondary-card"><h3>Stamford Bridge</h3><p>Fri 16 Oct · <strong>5:00pm / 5:30pm</strong><br>Village Hall · ages 3–4 / 5–7</p></article>
 <article class="secondary-card"><h3>Market Weighton</h3><p>Sat 17 Oct · <strong>9:00am</strong><br>Community Hall · ages 3–7</p></article></div><p class="secondary-note">Not sure which programme is the best fit? Book a free taster and Gavin will help you choose the right class for your child or family.</p><div class="button-row" style="margin-top:24px"><a class="button outline" href="#book">Ask About a FREE Taster</a></div></div></section>
     <section class="how"><div class="container"><div class="section-kicker">Getting started is simple</div><h2>Three easy steps to get on the mat</h2><div class="steps" style="margin-top:35px"><div class="step"><div class="step-number">1</div><h3>Choose your class</h3><p>Select the date and venue that works best for your family.</p></div><div class="step"><div class="step-number">2</div><h3>Book a free taster</h3><p>Send your details below. There is no cost and no obligation.</p></div><div class="step"><div class="step-number">3</div><h3>Come and try it</h3><p>Wear comfortable clothes, bring some water and enjoy your first session.</p></div></div></div></section>
-    <section class="form-section" id="book"><div class="form-box"><div class="section-kicker">Reserve your place</div><h2>Book your <span class="gold">FREE</span> taster</h2><p>Complete this quick form and Gavin will be in touch to confirm your October session.</p><form id="intake-form" action="https://formspree.io/f/xnjgdqyj" method="POST"><input type="hidden" name="campaign" value="October 2026 beginner intake"><div class="form-row"><div><label for="parent_name">Parent / guardian name</label><input id="parent_name" name="parent_name" autocomplete="name" required placeholder="Your name"></div><div><label for="child_name">Child's name</label><input id="child_name" name="child_name" required placeholder="Child's first name"></div></div><div class="form-row"><div><label for="child_age">Child's age</label><input id="child_age" name="child_age" type="number" min="3" max="18" required placeholder="e.g. 7"></div><div><label for="programme">Programme</label><select id="programme" name="programme" required><option value="" selected disabled>Select a programme</option><option value="Junior Taekwondo">Junior Taekwondo</option><option value="Family Taekwondo">Family Taekwondo</option><option value="Ninja Skillz">Ninja Skillz (ages 3–7)</option><option value="Spectrum Skillz">Spectrum Skillz (ages 7–14)</option></select></div></div><div><label for="preferred_class">Preferred October class</label><select id="preferred_class" name="preferred_class" required><option value="" selected disabled>Select your venue and time</option><option value="York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s">York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s</option><option value="Beverley – Wed 14 Oct, 5:30pm – St Mary’s">Beverley – Wed 14 Oct, 5:30pm – St Mary’s</option><option value="Stamford Bridge – Fri 16 Oct, 6:00pm – Village Hall">Stamford Bridge – Fri 16 Oct, 6:00pm – Village Hall</option><option value="Market Weighton – Sat 17 Oct, 9:30am – Community Hall">Market Weighton – Sat 17 Oct, 9:30am – Community Hall</option><option value="Ninja Skillz / Spectrum – Please call me to choose">Ninja Skillz / Spectrum – Please call me to choose</option></select></div><div class="form-row"><div><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div><div><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="07xxx xxxxxx"></div></div><button class="button form-submit" type="submit">Book My FREE Taster Session →</button><p class="privacy">Your details are used only to arrange your taster session and are never shared with third parties.</p></form><div class="success" id="form-success"><strong>You're on the list!</strong>Thank you. Gavin will be in touch shortly to confirm your free taster session.</div></div></section>
+    <section class="form-section" id="book"><div class="form-box"><div class="section-kicker">Reserve your place</div><h2>Book your <span class="gold">FREE</span> taster</h2><p>Complete this quick form and Gavin will be in touch to confirm your October session.</p><form id="intake-form" action="https://formspree.io/f/xnjgdqyj" method="POST">
+          <input type="hidden" name="campaign" value="October 2026 beginner intake">
+          <div class="form-row">
+            <div><label for="parent_name">Parent / guardian name</label><input id="parent_name" name="parent_name" autocomplete="name" required placeholder="Your name"></div>
+            <div><label for="child_name">Child's name</label><input id="child_name" name="child_name" required placeholder="Child's first name"></div>
+          </div>
+          <div class="form-row">
+            <div><label for="child_age">Child's age</label><input id="child_age" name="child_age" type="number" min="3" max="18" required placeholder="e.g. 7"></div>
+            <div><label for="programme">Programme</label>
+              <select id="programme" name="programme" required>
+                <option value="" selected disabled>Select a programme</option>
+                <option value="Junior Taekwondo">Junior Taekwondo</option>
+                <option value="Family Taekwondo">Family Taekwondo</option>
+                <option value="Ninja Skillz (ages 3–7)">Ninja Skillz (ages 3–7)</option>
+                <option value="Ninja Skillz (ages 3–4)">Ninja Skillz (ages 3–4)</option>
+                <option value="Ninja Skillz (ages 5–7)">Ninja Skillz (ages 5–7)</option>
+                <option value="Spectrum Skillz (ages 7–14)">Spectrum Skillz (ages 7–14)</option>
+              </select>
+            </div>
+          </div>
+          <div><label for="preferred_class">Preferred October class</label>
+            <select id="preferred_class" name="preferred_class" required disabled aria-describedby="class-help"><option value="" selected>Select a programme first</option></select>
+            <p class="privacy" id="class-help">Choose a programme first; only the matching October classes will be shown.</p>
+          </div>
+          <div class="form-row">
+            <div><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
+            <div><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="07xxx xxxxxx"></div>
+          </div>
+          <button class="button form-submit" type="submit">Book My FREE Taster Session →</button>
+          <p class="privacy">Your details are used only to arrange your taster session and are never shared with third parties.</p>
+        </form><div class="success" id="form-success"><strong>You're on the list!</strong>Thank you. Gavin will be in touch shortly to confirm your free taster session.</div></div></section>
     <section class="faq"><div class="container"><div class="section-kicker">Questions answered</div><h2>Everything you need to know</h2><div class="faq-grid"><div class="faq-item"><h3>Is the first session really free?</h3><p>Yes. Your first taster is completely free, with no pressure to join afterwards.</p></div><div class="faq-item"><h3>What should we wear?</h3><p>Comfortable clothes are perfect for a first session. There is no need to buy a uniform before you try it.</p></div><div class="faq-item"><h3>Can parents train too?</h3><p>Absolutely. Family Taekwondo lets parents and children train together in the same class and work towards gradings side by side.</p></div><div class="faq-item"><h3>What if we are unsure of the right class?</h3><p>Book a taster at the nearest venue. Gavin will chat through the options and make sure you are in the best-fit programme.</p></div></div></div></section>
   </main>
   <footer><img src="images/gallery-01.png" alt="Train Taekwondo Schools"><p><strong>Train Taekwondo Schools</strong> · Creating Champions Since 2011</p><p>October 2026 Junior &amp; Family Taekwondo intake · York · Beverley · Stamford Bridge · Market Weighton</p><p>📞 <a href="tel:07833665905">07833 665905</a> &nbsp;|&nbsp; ✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p><p><a href="https://www.traintaekwondo.co.uk/timetable.html">View the full timetable</a></p></footer>
   <a class="sticky" href="#book">Book Your FREE Taster Session →</a>
   <script>
-    const form=document.getElementById('intake-form');
-    form.addEventListener('submit',async(e)=>{e.preventDefault();const btn=form.querySelector('button');const original=btn.textContent;btn.textContent='Sending...';btn.disabled=true;try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Submission failed');form.style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'October 2026 intake'});}catch(error){btn.textContent='Please call 07833 665905';btn.disabled=false;btn.style.background='#b83535';btn.style.borderColor='#b83535';}});
+    const form = document.getElementById('intake-form');
+    const programme = document.getElementById('programme');
+    const preferredClass = document.getElementById('preferred_class');
+    const childAge = document.getElementById('child_age');
+    const classHelp = document.getElementById('class-help');
+
+    const octoberClasses = {
+      'Junior Taekwondo': [
+        ['York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s School', 'York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s School'],
+        ['Beverley – Wed 14 Oct, 5:30pm – St Mary’s Primary School', 'Beverley – Wed 14 Oct, 5:30pm – St Mary’s Primary School'],
+        ['Stamford Bridge – Fri 16 Oct, 6:00pm – Village Hall', 'Stamford Bridge – Fri 16 Oct, 6:00pm – Stamford Bridge Village Hall'],
+        ['Market Weighton – Sat 17 Oct, 9:30am – Community Hall', 'Market Weighton – Sat 17 Oct, 9:30am – Market Weighton Community Hall']
+      ],
+      'Family Taekwondo': [
+        ['York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s School', 'York – Tue 13 Oct, 6:00pm – Archbishop Holgate’s School'],
+        ['Beverley – Wed 14 Oct, 5:30pm – St Mary’s Primary School', 'Beverley – Wed 14 Oct, 5:30pm – St Mary’s Primary School'],
+        ['Stamford Bridge – Fri 16 Oct, 6:00pm – Village Hall', 'Stamford Bridge – Fri 16 Oct, 6:00pm – Stamford Bridge Village Hall'],
+        ['Market Weighton – Sat 17 Oct, 9:30am – Community Hall', 'Market Weighton – Sat 17 Oct, 9:30am – Market Weighton Community Hall']
+      ],
+      'Ninja Skillz (ages 3–7)': [
+        ['York – Tue 13 Oct, 5:30pm – Lord Deramore’s Primary School (ages 3–7)', 'York – Tue 13 Oct, 5:30pm – Lord Deramore’s Primary School (ages 3–7)'],
+        ['Beverley – Wed 14 Oct, 5:00pm – St Mary’s Primary School (ages 3–7)', 'Beverley – Wed 14 Oct, 5:00pm – St Mary’s Primary School (ages 3–7)'],
+        ['Market Weighton – Sat 17 Oct, 9:00am – Community Hall (ages 3–7)', 'Market Weighton – Sat 17 Oct, 9:00am – Market Weighton Community Hall (ages 3–7)']
+      ],
+      'Ninja Skillz (ages 3–4)': [
+        ['Pocklington – Thu 15 Oct, 4:30pm – The Masonic Lodge (ages 3–4)', 'Pocklington – Thu 15 Oct, 4:30pm – The Masonic Lodge (ages 3–4)'],
+        ['Stamford Bridge – Fri 16 Oct, 5:00pm – Village Hall (ages 3–4)', 'Stamford Bridge – Fri 16 Oct, 5:00pm – Stamford Bridge Village Hall (ages 3–4)']
+      ],
+      'Ninja Skillz (ages 5–7)': [
+        ['Pocklington – Thu 15 Oct, 5:00pm – The Masonic Lodge (ages 5–7)', 'Pocklington – Thu 15 Oct, 5:00pm – The Masonic Lodge (ages 5–7)'],
+        ['Stamford Bridge – Fri 16 Oct, 5:30pm – Village Hall (ages 5–7)', 'Stamford Bridge – Fri 16 Oct, 5:30pm – Stamford Bridge Village Hall (ages 5–7)']
+      ],
+      'Spectrum Skillz (ages 7–14)': [
+        ['Pocklington – Thu 15 Oct, 5:30pm – The Masonic Lodge (Spectrum Skillz ages 7–14)', 'Pocklington – Thu 15 Oct, 5:30pm – The Masonic Lodge (Spectrum Skillz ages 7–14)']
+      ]
+    };
+
+    const programmeAges = {
+      'Junior Taekwondo': [6, 18],
+      'Family Taekwondo': [5, 18],
+      'Ninja Skillz (ages 3–7)': [3, 7],
+      'Ninja Skillz (ages 3–4)': [3, 4],
+      'Ninja Skillz (ages 5–7)': [5, 7],
+      'Spectrum Skillz (ages 7–14)': [7, 14]
+    };
+
+    function updateClassChoices() {
+      const selected = programme.value;
+      const options = octoberClasses[selected] || [];
+      preferredClass.innerHTML = '';
+      const placeholder = new Option(selected ? 'Select your venue and time' : 'Select a programme first', '', true, true);
+      placeholder.disabled = true;
+      preferredClass.appendChild(placeholder);
+      options.forEach(([label, value]) => preferredClass.add(new Option(label, value)));
+      preferredClass.disabled = !selected;
+      const ageRange = programmeAges[selected];
+      if (ageRange) {
+        childAge.min = ageRange[0];
+        childAge.max = ageRange[1];
+        childAge.placeholder = `Ages ${ageRange[0]}–${ageRange[1]}`;
+        classHelp.textContent = `${options.length} matching October class${options.length === 1 ? '' : 'es'} shown for ${selected}.`;
+      } else {
+        childAge.min = 3;
+        childAge.max = 18;
+        childAge.placeholder = 'e.g. 7';
+        classHelp.textContent = 'Choose a programme first; only the matching October classes will be shown.';
+      }
+    }
+
+    programme.addEventListener('change', updateClassChoices);
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const original = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (!response.ok) throw new Error('Submission failed');
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'October 2026 intake' });
+      } catch (error) {
+        btn.textContent = 'Please call 07833 665905';
+        btn.disabled = false;
+        btn.style.background = '#b83535';
+        btn.style.borderColor = '#b83535';
+        setTimeout(() => { btn.textContent = original; btn.style.background = ''; btn.style.borderColor = ''; }, 5000);
+      }
+    });
   </script>
 </body>
 </html>

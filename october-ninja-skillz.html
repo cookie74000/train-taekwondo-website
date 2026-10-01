@@ -59,8 +59,10 @@
             <div><label for="child_name">Child's name</label><input id="child_name" name="child_name" required placeholder="Child's first name"></div>
           </div>
           <div class="form-row">
+            <div><label for="child_dob">Child's date of birth</label><input id="child_dob" name="child_dob" type="date" autocomplete="bday" required></div>
             <div><label for="child_age">Child's age</label><input id="child_age" name="child_age" type="number" min="3" max="18" required placeholder="e.g. 7"></div>
-            <div><label for="programme">Programme</label>
+          </div>
+          <div><label for="programme">Programme</label>
               <select id="programme" name="programme" required>
                 <option value="" selected disabled>Select a programme</option>
                 <option value="Junior Taekwondo">Junior Taekwondo</option>
@@ -71,7 +73,6 @@
                 <option value="Spectrum Skillz (ages 7–14)">Spectrum Skillz (ages 7–14)</option>
               </select>
             </div>
-          </div>
           <div><label for="preferred_class">Preferred October class</label>
             <select id="preferred_class" name="preferred_class" required disabled aria-describedby="class-help"><option value="" selected>Select a programme first</option></select>
             <p class="privacy" id="class-help">Choose a programme first; only the matching October classes will be shown.</p>
@@ -172,10 +173,16 @@
         const parentForename = nameParts.shift() || parentName;
         const parentSurname = nameParts.join(' ') || 'Not provided';
         const childName = (data.get('child_name') || '').trim();
+        const rawDob = data.get('child_dob') || '';
+        let dateOfBirth = rawDob;
+        if (rawDob.includes('-')) {
+          const [year, month, day] = rawDob.split('-');
+          dateOfBirth = `${day}/${month}/${year}`;
+        }
         const selectedProgramme = data.get('programme') || 'Not specified';
         const selectedClass = data.get('preferred_class') || 'Not specified';
         const age = data.get('child_age') || 'Not specified';
-        const message = `October 2026 beginner intake. Programme: ${selectedProgramme}. Preferred class: ${selectedClass}. Child age: ${age}. Source: October Ninja Skillz landing page.`;
+        const message = `October 2026 beginner intake. Programme: ${selectedProgramme}. Preferred class: ${selectedClass}. Child date of birth: ${dateOfBirth || 'Not specified'}. Child age: ${age}. Source: October Ninja Skillz landing page.`;
         const response = await fetch(clubManagerEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -185,7 +192,7 @@
             Email: data.get('email') || '',
             Mobile: data.get('phone') || '',
             Message: message,
-            DateOfBirth: '',
+            DateOfBirth: dateOfBirth,
             MemberName: childName,
             ParentSurname: parentSurname
           })

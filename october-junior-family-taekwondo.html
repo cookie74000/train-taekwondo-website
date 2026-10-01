@@ -51,7 +51,7 @@
 <article class="secondary-card"><h3>Stamford Bridge</h3><p>Fri 16 Oct · <strong>5:00pm / 5:30pm</strong><br>Village Hall · ages 3–4 / 5–7</p></article>
 <article class="secondary-card"><h3>Market Weighton</h3><p>Sat 17 Oct · <strong>9:00am</strong><br>Community Hall · ages 3–7</p></article></div><p class="secondary-note">Not sure which programme is the best fit? Book a free taster and Gavin will help you choose the right class for your child or family.</p><div class="button-row" style="margin-top:24px"><a class="button outline" href="#book">Ask About a FREE Taster</a></div></div></section>
     <section class="how"><div class="container"><div class="section-kicker">Getting started is simple</div><h2>Three easy steps to get on the mat</h2><div class="steps" style="margin-top:35px"><div class="step"><div class="step-number">1</div><h3>Choose your class</h3><p>Select the date and venue that works best for your family.</p></div><div class="step"><div class="step-number">2</div><h3>Book a free taster</h3><p>Send your details below. There is no cost and no obligation.</p></div><div class="step"><div class="step-number">3</div><h3>Come and try it</h3><p>Wear comfortable clothes, bring some water and enjoy your first session.</p></div></div></div></section>
-    <section class="form-section" id="book"><div class="form-box"><div class="section-kicker">Reserve your place</div><h2>Book your <span class="gold">FREE</span> taster</h2><p>Complete this quick form and Gavin will be in touch to confirm your October session.</p><form id="intake-form" action="https://formspree.io/f/xnjgdqyj" method="POST">
+    <section class="form-section" id="book"><div class="form-box"><div class="section-kicker">Reserve your place</div><h2>Book your <span class="gold">FREE</span> taster</h2><p>Complete this quick form and your enquiry will be added securely to our ClubManager system. Gavin will then be in touch to confirm your October session.</p><form id="intake-form" action="https://tkddash-iamcuj9t.manus.space/api/cm-contact" method="POST">
           <input type="hidden" name="campaign" value="October 2026 beginner intake">
           <div class="form-row">
             <div><label for="parent_name">Parent / guardian name</label><input id="parent_name" name="parent_name" autocomplete="name" required placeholder="Your name"></div>
@@ -81,7 +81,7 @@
           </div>
           <button class="button form-submit" type="submit">Book My FREE Taster Session →</button>
           <p class="privacy">Your details are used only to arrange your taster session and are never shared with third parties.</p>
-        </form><div class="success" id="form-success"><strong>You're on the list!</strong>Thank you. Gavin will be in touch shortly to confirm your free taster session.</div></div></section>
+        </form><div class="success" id="form-success"><strong>You're booked in!</strong>Thank you. Your enquiry has been added to ClubManager and Gavin will be in touch shortly to confirm your free taster session.</div></div></section>
     <section class="faq"><div class="container"><div class="section-kicker">Questions answered</div><h2>Everything you need to know</h2><div class="faq-grid"><div class="faq-item"><h3>Is the first session really free?</h3><p>Yes. Your first taster is completely free, with no pressure to join afterwards.</p></div><div class="faq-item"><h3>What should we wear?</h3><p>Comfortable clothes are perfect for a first session. There is no need to buy a uniform before you try it.</p></div><div class="faq-item"><h3>Can parents train too?</h3><p>Absolutely. Family Taekwondo lets parents and children train together in the same class and work towards gradings side by side.</p></div><div class="faq-item"><h3>What if we are unsure of the right class?</h3><p>Book a taster at the nearest venue. Gavin will chat through the options and make sure you are in the best-fit programme.</p></div></div></div></section>
   </main>
   <footer><img src="images/gallery-01.png" alt="Train Taekwondo Schools"><p><strong>Train Taekwondo Schools</strong> · Creating Champions Since 2011</p><p>October 2026 Junior &amp; Family Taekwondo intake · York · Beverley · Stamford Bridge · Market Weighton</p><p>📞 <a href="tel:07833665905">07833 665905</a> &nbsp;|&nbsp; ✉ <a href="mailto:gavin@traintaekwondo.co.uk">gavin@traintaekwondo.co.uk</a></p><p><a href="https://www.traintaekwondo.co.uk/timetable.html">View the full timetable</a></p></footer>
@@ -92,6 +92,7 @@
     const preferredClass = document.getElementById('preferred_class');
     const childAge = document.getElementById('child_age');
     const classHelp = document.getElementById('class-help');
+    const clubManagerEndpoint = 'https://tkddash-iamcuj9t.manus.space/api/cm-contact';
 
     const octoberClasses = {
       'Junior Taekwondo': [
@@ -161,11 +162,34 @@
       e.preventDefault();
       const btn = form.querySelector('button');
       const original = btn.textContent;
-      btn.textContent = 'Sending...';
+      btn.textContent = 'Sending to ClubManager...';
       btn.disabled = true;
       try {
-        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-        if (!response.ok) throw new Error('Submission failed');
+        const data = new FormData(form);
+        const parentName = (data.get('parent_name') || '').trim();
+        const nameParts = parentName.split(/\s+/).filter(Boolean);
+        const parentForename = nameParts.shift() || parentName;
+        const parentSurname = nameParts.join(' ') || 'Not provided';
+        const childName = (data.get('child_name') || '').trim();
+        const selectedProgramme = data.get('programme') || 'Not specified';
+        const selectedClass = data.get('preferred_class') || 'Not specified';
+        const age = data.get('child_age') || 'Not specified';
+        const message = `October 2026 beginner intake. Programme: ${selectedProgramme}. Preferred class: ${selectedClass}. Child age: ${age}. Source: October Junior & Family Taekwondo landing page.`;
+        const response = await fetch(clubManagerEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            Forenames: parentForename,
+            Surname: parentSurname,
+            Email: data.get('email') || '',
+            Mobile: data.get('phone') || '',
+            Message: message,
+            DateOfBirth: '',
+            MemberName: childName,
+            ParentSurname: parentSurname
+          })
+        });
+        if (!response.ok) throw new Error('ClubManager submission failed');
         form.style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
         if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'October 2026 intake' });
